@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1310239493
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0bb4e986230e2bb9b267bdcd787de29a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9c3ef2ee69f33b2764fe209f632226a0
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Art/Materials/Dark Red Plane.mat
+Dependencies:
+- C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_shader0

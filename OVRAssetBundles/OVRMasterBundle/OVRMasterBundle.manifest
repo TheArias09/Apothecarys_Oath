@@ -1,0 +1,29 @@
+ManifestFileVersion: 0
+CRC: 3361257571
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: asset_resources
+      Dependencies: {}
+    Info_1:
+      Name: scene_samplescene
+      Dependencies:
+        Dependency_0: asset_asset0
+        Dependency_1: asset_prefab0
+        Dependency_2: asset_mat0
+    Info_2:
+      Name: asset_asset0
+      Dependencies: {}
+    Info_3:
+      Name: asset_png0
+      Dependencies: {}
+    Info_4:
+      Name: asset_prefab0
+      Dependencies: {}
+    Info_5:
+      Name: asset_mat0
+      Dependencies:
+        Dependency_0: asset_shader0
+    Info_6:
+      Name: asset_shader0
+      Dependencies: {}

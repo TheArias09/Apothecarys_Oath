@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 4241302935
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c6f5e4d0d31c31031a9b19b3b5351ce6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 070e64028d0fb02d3485eb0d43485f8b
+HashAppended: 0
+ClassTypes:
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Packages/com.unity.render-pipelines.universal/Shaders/Lit.shader
+Dependencies: []

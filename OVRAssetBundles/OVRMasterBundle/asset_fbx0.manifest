@@ -1,0 +1,40 @@
+ManifestFileVersion: 0
+CRC: 859217623
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 99186a7810c8087cb9b579345c341654
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 41d943a52ac01a56a4a88ed384921e1f
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Oculus/VR/Meshes/OculusTouchForQuest2/OculusTouchForQuest2_Right.fbx
+- Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Left.fbx
+- Assets/Oculus/VR/Meshes/OculusTouchForQuest2/OculusTouchForQuest2_Left.fbx
+- Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Right.fbx
+- Assets/Oculus/VR/Meshes/OculusTouchForRift/left_touch_controller_model_skel.fbx
+- Assets/Oculus/VR/Meshes/OculusTouchForRift/right_touch_controller_model_skel.fbx
+Dependencies:
+- C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_shadergraph0
