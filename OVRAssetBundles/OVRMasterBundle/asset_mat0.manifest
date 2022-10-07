@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1310239493
+CRC: 1827095346
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 0bb4e986230e2bb9b267bdcd787de29a
+    Hash: c985da58e2eadb437fdc628b961ad6dd
   TypeTreeHash:
     serializedVersion: 2
     Hash: 9c3ef2ee69f33b2764fe209f632226a0
@@ -15,6 +15,9 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Art/Materials/Dark Red Plane.mat
+- Assets/Art/Materials/Drak Blue Plane.mat
+- Assets/Art/Materials/Red.mat
+- Assets/Art/Materials/Brown.mat
+- Assets/Oculus/SampleFramework/Core/CustomHands/Materials/Hands_solid.mat
 Dependencies:
 - C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_shader0

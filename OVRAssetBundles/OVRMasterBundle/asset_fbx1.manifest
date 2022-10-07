@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+CRC: 1400969099
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9adcc21c850e765b0a017f727c9be186
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 473bd2dce4419c6b946995c88b6d6dd0
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Oculus/SampleFramework/Usage/SharedAssets/Models/ball_billiard_10.fbx
+- Assets/Oculus/SampleFramework/Usage/SharedAssets/Models/door_01.fbx
+- Assets/Oculus/SampleFramework/Usage/SharedAssets/Models/table_01.fbx
+- Assets/Oculus/SampleFramework/Core/Locomotion/Models/DestinationIndicatorSimple.fbx
+- Assets/Oculus/SampleFramework/Usage/SharedAssets/Models/doorframe_01.fbx
+- Assets/Oculus/SampleFramework/Usage/SharedAssets/Models/light_01.fbx
+Dependencies:
+- C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_shader0
