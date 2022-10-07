@@ -9,17 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/Thomas/Let's Grab Some Cubes.unity
-    guid: 7605037534c0d6243bb73081db1f1ce0
-  - enabled: 1
-    path: Assets/Scenes/Thomas/Thomas' CustomHands.unity
-    guid: d2ee0e83fd561ac41b6a05a68d67b8d6
-  - enabled: 1
-    path: Assets/Scenes/Thomas/Thomas' DistanceGrab.unity
-    guid: b506edeefef27be4c8b115b3374a8f88
-  - enabled: 1
-    path: Assets/Scenes/Thomas/Thomas' StartScene.unity
-    guid: 6a1a09d9af16e6143be80533eb829799
+    path: Assets/Scenes/Thomas/Grab Cubes with Integration SDK.unity
+    guid: 1a7de19e051f695428166d05db0307b2
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c94fdcc67916ee742b39cd0b2d75b34d,
       type: 2}

@@ -1,41 +1,26 @@
 ManifestFileVersion: 0
-CRC: 1615577107
+CRC: 2641563885
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ca47e421c3e2bcc8ac48215753dbb9d1
+    Hash: 11d04b2ce97b502ff057d5dc9d78820e
   TypeTreeHash:
     serializedVersion: 2
-    Hash: c839d1afb590a8e816cfe08fc25cb117
+    Hash: 96e360f119e572ef9eb29447ef69b73d
 HashAppended: 0
 ClassTypes:
 - Class: 114
-  Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 97c23e3b12dc18c42a140437e53d3951, type: 3}
+  Script: {fileID: 11500000, guid: c5af6ab9d1bd4a47970ad151090281f3, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
-- AssemblyName: Unity.RenderPipelines.Core.Runtime
-  ClassName: UnityEngine.Rendering.BoolParameter
-- AssemblyName: Unity.RenderPipelines.Core.Runtime
-  ClassName: UnityEngine.Rendering.ClampedFloatParameter
-- AssemblyName: Unity.RenderPipelines.Core.Runtime
-  ClassName: UnityEngine.Rendering.ClampedIntParameter
-- AssemblyName: Unity.RenderPipelines.Core.Runtime
-  ClassName: UnityEngine.Rendering.ColorParameter
-- AssemblyName: Unity.RenderPipelines.Core.Runtime
-  ClassName: UnityEngine.Rendering.MinFloatParameter
-- AssemblyName: Unity.RenderPipelines.Core.Runtime
-  ClassName: UnityEngine.Rendering.TextureParameter
-- AssemblyName: Unity.RenderPipelines.Core.Runtime
-  ClassName: UnityEngine.Rendering.Vector2Parameter
-- AssemblyName: Unity.RenderPipelines.Universal.Runtime
-  ClassName: UnityEngine.Rendering.Universal.TonemappingModeParameter
+- AssemblyName: Oculus.Interaction
+  ClassName: Oculus.Interaction.PoseDetection.FingerFeatureStateThreshold
+- AssemblyName: Oculus.Interaction
+  ClassName: Oculus.Interaction.PoseDetection.FingerFeatureThresholds
 Assets:
-- Assets/Settings/SampleSceneProfile.asset
+- Assets/Oculus/Interaction/Runtime/DefaultSettings/PoseDetection/MiddleFingerFeatureStateThresholds.asset
+- Assets/Oculus/Interaction/Runtime/DefaultSettings/PoseDetection/DefaultThumbFeatureStateThresholds.asset
+- Assets/Oculus/Interaction/Runtime/DefaultSettings/PoseDetection/DefaultFingerFeatureStateThresholds.asset
+- Assets/Oculus/Interaction/Runtime/DefaultSettings/PoseDetection/IndexFingerFeatureStateThresholds.asset
 Dependencies: []

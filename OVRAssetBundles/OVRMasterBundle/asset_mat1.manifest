@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3150137828
+CRC: 3330962510
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 1141f04d55ec6d0bc871a08856df430b
+    Hash: 1c76dc86fdcd25019c85b328c3f54499
   TypeTreeHash:
     serializedVersion: 2
     Hash: 5cfde277c59e2844be8c85dba6ef7c0e
@@ -17,7 +17,13 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Oculus/SampleFramework/Usage/SharedAssets/Materials/MAT_room_atlas_01.mat
+- Assets/Oculus/Interaction/Runtime/Materials/UIDepthOverwrite.mat
+- Assets/Oculus/Interaction/Samples/Objects/Props/BigRedButton/Materials/ButtonRingShadowMat.mat
+- Assets/Oculus/Interaction/Samples/Objects/Props/BigRedButton/Materials/PodiumMat.mat
+- Assets/Oculus/Interaction/Runtime/Materials/UIUnderlayImposter.mat
+- Assets/Oculus/Interaction/Runtime/Materials/UIDefaultOverlay.mat
+- Assets/Oculus/Interaction/Runtime/Materials/Unlit Material.mat
 Dependencies:
 - C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_png0
+- C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_resources
 - C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_shader0

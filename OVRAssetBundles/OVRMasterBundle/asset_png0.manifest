@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2532861849
+CRC: 1362844771
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: dec03676d6b2ab18b853bf1becc857ff
+    Hash: 83bc6d6f351a7aa5efd05106b15f7eb2
   TypeTreeHash:
     serializedVersion: 2
     Hash: b0363f7088f9761414f730641bf9a24b
@@ -13,6 +13,15 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Packages/com.unity.render-pipelines.core/Editor/Volume/Icons/VolumeProfileAsset.png
-- Packages/com.unity.render-pipelines.core/Editor/Volume/Icons/Volume.png
+- Assets/Oculus/Interaction/Samples/Objects/Environment/MRDesk/Textures/MRDesk.png
+- Assets/Oculus/Interaction/Samples/Objects/Environment/Room/Textures/skydomeBaked.png
+- Assets/Oculus/Interaction/Samples/Objects/Environment/Room/Textures/ConcreteTiling.png
+- Assets/Oculus/Interaction/Samples/Objects/Environment/SmallRoom/Textures/furnitureBakeLight.png
+- Assets/Oculus/Interaction/Samples/Objects/Environment/Room/Textures/WoodTiling.png
+- Assets/Oculus/VR/Textures/OculusTouchForRift/touchController_albedo.png
+- Assets/Oculus/Interaction/Runtime/Textures/fingers_glow_mask.png
+- Assets/Oculus/Interaction/Samples/Objects/Environment/Room/Textures/CarpetTiling.png
+- Assets/Oculus/Interaction/Samples/Objects/Environment/Room/Textures/FabricTiling.png
+- Assets/Oculus/Interaction/Samples/Objects/Environment/MRDesk/Textures/MRDeskShadow.png
+- Assets/Oculus/Interaction/Samples/Objects/Environment/SmallRoom/Textures/groundBake.png
 Dependencies: []
