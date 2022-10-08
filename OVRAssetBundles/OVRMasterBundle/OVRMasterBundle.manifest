@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2579104867
+CRC: 3399404021
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: asset_resources
       Dependencies: {}
     Info_1:
-      Name: scene_grab cubes with integration sdk
+      Name: scene_two hand manipulation and restricted grab
       Dependencies:
         Dependency_0: asset_prefab0
     Info_2:

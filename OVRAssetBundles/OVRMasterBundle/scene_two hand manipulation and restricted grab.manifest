@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1346951554
+CRC: 1607875223
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 7e76541a9e5018a5f29c2e518c1844e3
+    Hash: 4397e953f28b050501bc8868f00b6186
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 9c826fe4cb8002e427df9bb82ba9f6b4
+    Hash: cd8c666de377a77e7e7a885b2402c5e7
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -19,15 +19,21 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 23
   Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
 - Class: 33
   Script: {instanceID: 0}
 - Class: 43
+  Script: {instanceID: 0}
+- Class: 48
   Script: {instanceID: 0}
 - Class: 54
   Script: {instanceID: 0}
 - Class: 64
   Script: {instanceID: 0}
 - Class: 65
+  Script: {instanceID: 0}
+- Class: 74
   Script: {instanceID: 0}
 - Class: 81
   Script: {instanceID: 0}
@@ -38,6 +44,8 @@ ClassTypes:
 - Class: 91
   Script: {instanceID: 0}
 - Class: 95
+  Script: {instanceID: 0}
+- Class: 104
   Script: {instanceID: 0}
 - Class: 108
   Script: {instanceID: 0}
@@ -55,6 +63,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 86bd0d3098d25db4c9c839739557480b, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 488896fe86105104a8453d9f173cf62a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1bedaac29a943f844a7074b53c8bdf9f, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: bffe606b408599b4fad696ddc889a943, type: 3}
 - Class: 114
@@ -94,7 +104,13 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: a1e477b940c8a084ab4f2dda703b49ef, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: e9597e632dfbca247bcf65e49c67078e, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: e06fe30fd4efa954b8f53ccc8da8f46b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 124f4583f657475469a45ab6fca8f921, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b053556d972eae24b947c1477538bff1, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: eb7d6cff5f17513488d465cdc4efd298, type: 3}
 - Class: 114
@@ -104,6 +120,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 2864da2f393a3e948bb12ec4ac9b1782, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 3236b8f205019504589358e7e0412a38, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: bebfb74b97b000d4899abbd61f49aa40, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: b942c16a6d6a4edaad7c18c7d5762cdf, type: 3}
@@ -111,8 +129,6 @@ ClassTypes:
   Script: {fileID: 11500000, guid: ae43f25c06eb2d9408a201216b4c3ed7, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: d61ea23b9fd13af40afe326bb23ac1cd, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: df9f338034892c44ebb62d97894772f1, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 438e12c9002f2c8489c81a2d3472b18d, type: 3}
 - Class: 114
@@ -151,37 +167,14 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 137
   Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+- Class: 196
+  Script: {instanceID: 0}
 - Class: 215
   Script: {instanceID: 0}
-SerializeReferenceClassIdentifiers:
-- AssemblyName: Oculus.Interaction
-  ClassName: Oculus.Interaction.GrabAPI.GrabbingRule
-- AssemblyName: Oculus.Interaction
-  ClassName: Oculus.Interaction.HandGrab.PoseMeasureParameters
-- AssemblyName: Oculus.Interaction
-  ClassName: Oculus.Interaction.MaterialPropertyVector
-- AssemblyName: Oculus.Interaction
-  ClassName: Oculus.Interaction.PoseDetection.FingerFeatureStateProvider/FingerStateThresholds
-- AssemblyName: Oculus.Interaction
-  ClassName: Oculus.Interaction.ProgressCurve
+SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Oculus/Interaction/Runtime/Prefabs/HandGrab/HandGrabInteractor.prefab
-- Assets/Oculus/Interaction/Runtime/Prefabs/Grab/ControllerGrabInteractor.prefab
-- Assets/Game/VR/Interactions/Physics GrabInteractable.prefab
-- Assets/Oculus/Interaction/Samples/Objects/Environment/SmallRoom/SmallRoomEnvironment.prefab
-- Assets/Oculus/Interaction/Samples/Prefabs/OculusInteractionSampleRig.prefab
-- Assets/Game/VR/Controller/InteractionRig.prefab
-- Assets/Oculus/Interaction/Runtime/Prefabs/Hands/RightHandVisual.prefab
-- Assets/Oculus/Interaction/Runtime/Prefabs/Poke/HandPokeInteractor.prefab
-- Assets/Oculus/Interaction/Samples/Objects/Environment/MRDesk/Desk.prefab
-- Assets/Oculus/Interaction/Runtime/Prefabs/Hands/LeftHandVisual.prefab
-- Assets/Game/VR/Environment/Simple Desk Room.prefab
-- Assets/Oculus/Interaction/Runtime/Prefabs/Poke/ControllerPokeInteractor.prefab
-- Assets/Oculus/VR/Prefabs/OVRCameraRig.prefab
-- Assets/Oculus/VR/Prefabs/OVRControllerPrefab.prefab
+- Assets/Scenes/Thomas/Two Hand manipulation and Restricted Grab.unity
 Dependencies:
-- C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_asset0
-- C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_controller0
-- C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_exr0
-- C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_fbx0
-- C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_prefab0
