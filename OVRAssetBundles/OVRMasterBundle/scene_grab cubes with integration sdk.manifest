@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2862305540
+CRC: 3477877321
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 92613716264692226edaf912a4db579b
+    Hash: 4855358433bf6e093d2b839a4b9c5a1d
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 8abc5e64cc1b5d9297e76c4bb182d270
+    Hash: 6bb386ea7767bf0f1a3aac6560310bc1
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -18,6 +18,8 @@ ClassTypes:
 - Class: 21
   Script: {instanceID: 0}
 - Class: 23
+  Script: {instanceID: 0}
+- Class: 28
   Script: {instanceID: 0}
 - Class: 33
   Script: {instanceID: 0}
@@ -31,6 +33,8 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 65
   Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
 - Class: 81
   Script: {instanceID: 0}
 - Class: 89
@@ -40,6 +44,8 @@ ClassTypes:
 - Class: 91
   Script: {instanceID: 0}
 - Class: 95
+  Script: {instanceID: 0}
+- Class: 104
   Script: {instanceID: 0}
 - Class: 108
   Script: {instanceID: 0}
@@ -118,8 +124,6 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: d61ea23b9fd13af40afe326bb23ac1cd, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: df9f338034892c44ebb62d97894772f1, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 438e12c9002f2c8489c81a2d3472b18d, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: d952c175ec3c6554199fd744548ce50a, type: 3}
@@ -157,38 +161,14 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 137
   Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+- Class: 196
+  Script: {instanceID: 0}
 - Class: 215
   Script: {instanceID: 0}
-SerializeReferenceClassIdentifiers:
-- AssemblyName: Oculus.Interaction
-  ClassName: Oculus.Interaction.GrabAPI.GrabbingRule
-- AssemblyName: Oculus.Interaction
-  ClassName: Oculus.Interaction.HandGrab.PoseMeasureParameters
-- AssemblyName: Oculus.Interaction
-  ClassName: Oculus.Interaction.MaterialPropertyVector
-- AssemblyName: Oculus.Interaction
-  ClassName: Oculus.Interaction.PoseDetection.FingerFeatureStateProvider/FingerStateThresholds
-- AssemblyName: Oculus.Interaction
-  ClassName: Oculus.Interaction.ProgressCurve
+SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Oculus/Interaction/Runtime/Prefabs/HandGrab/HandGrabInteractor.prefab
-- Assets/Oculus/Interaction/Runtime/Prefabs/Grab/ControllerGrabInteractor.prefab
-- Assets/Game/VR/Interactions/Apothecarys' GrabInteractable.prefab
-- Assets/Oculus/Interaction/Samples/Objects/Environment/SmallRoom/SmallRoomEnvironment.prefab
-- Assets/Oculus/Interaction/Samples/Prefabs/OculusInteractionSampleRig.prefab
-- Assets/Oculus/Interaction/Runtime/Prefabs/Grab/GrabInteractable.prefab
-- Assets/Game/VR/Controller/Apothecarys' InteractionRig.prefab
-- Assets/Oculus/Interaction/Runtime/Prefabs/Hands/RightHandVisual.prefab
-- Assets/Oculus/Interaction/Runtime/Prefabs/Poke/HandPokeInteractor.prefab
-- Assets/Oculus/Interaction/Samples/Objects/Environment/MRDesk/Desk.prefab
-- Assets/Oculus/Interaction/Runtime/Prefabs/Hands/LeftHandVisual.prefab
-- Assets/Game/VR/Environment/Simple Desk Room.prefab
-- Assets/Oculus/Interaction/Runtime/Prefabs/Poke/ControllerPokeInteractor.prefab
-- Assets/Oculus/VR/Prefabs/OVRCameraRig.prefab
-- Assets/Oculus/VR/Prefabs/OVRControllerPrefab.prefab
+- Assets/Scenes/Thomas/Grab Cubes with Integration SDK.unity
 Dependencies:
-- C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_asset0
-- C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_controller0
-- C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_exr0
-- C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_fbx0
-- C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_prefab0
