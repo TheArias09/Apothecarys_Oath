@@ -12,11 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Thomas/Interactions/Grab Cubes with Integration SDK.unity
     guid: 1a7de19e051f695428166d05db0307b2
   - enabled: 1
-    path: Assets/Scenes/Thomas/Interactions/Two Different Way of Grab Physics.unity
-    guid: 5344dab47524d0b429222faac0e6982f
-  - enabled: 1
     path: Assets/Scenes/Thomas/Interactions/Restricted Grabbing and Two Hand manipulation.unity
     guid: cd99f949001b03641beb56d453be82bc
+  - enabled: 1
+    path: Assets/Scenes/Thomas/Interactions/Hand Poses.unity
+    guid: c5103794d5a04034482f1298f11a1ea7
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c94fdcc67916ee742b39cd0b2d75b34d,
       type: 2}

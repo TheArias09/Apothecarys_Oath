@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 623630002
+CRC: 736490301
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 3f2d4154059ded4d98a1815c8f34b8cc
+    Hash: 1617aafbf420f5bea555369b1d30ba0d
   TypeTreeHash:
     serializedVersion: 2
     Hash: f991f80580d5c93b0763ecc3a2dc9cfa
@@ -38,6 +38,7 @@ Assets:
 - Assets/Oculus/VR/Meshes/OculusTouchForQuest2/OculusTouchForQuest2_Left.fbx
 - Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Left.fbx
 - Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Right.fbx
+- Assets/Oculus/Interaction/Samples/Objects/Props/Mug/Models/mugMesh.fbx
 - Assets/Oculus/Interaction/Samples/Objects/Environment/Room/Models/backgroundSkyDome.fbx
 - Assets/Oculus/VR/Meshes/HandTracking/OculusHand_R.fbx
 - Assets/Oculus/VR/Meshes/HandTracking/OculusHand_L.fbx
