@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3716439065
+CRC: 849400485
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: b7de3efb40c367e5acac4cb0520fb433
+    Hash: c9124b6cfc46f9dd9b0bb753b9638dca
   TypeTreeHash:
     serializedVersion: 2
     Hash: 5cfde277c59e2844be8c85dba6ef7c0e
@@ -30,6 +30,7 @@ Assets:
 - Assets/Oculus/Interaction/Runtime/Materials/OculusHand.mat
 - Assets/Oculus/VR/Meshes/OculusTouchForQuest2/Materials/OculusTouchForQuest2_MAT.mat
 - Assets/Oculus/Interaction/Samples/Objects/Environment/SmallRoom/Materials/SmallRoomFloorMat.mat
+- Packages/com.unity.render-pipelines.universal/Runtime/Materials/Lit.mat
 - Assets/Oculus/Interaction/Runtime/Materials/Unlit Material.mat
 Dependencies:
 - C:/JIN/PFE/Apothecarys_Oath/OVRAssetBundles/OVRMasterBundle/asset_png0
