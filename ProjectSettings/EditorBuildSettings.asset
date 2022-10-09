@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
     path: Assets/Scenes/Thomas/Interactions/Hand Poses.unity
     guid: c5103794d5a04034482f1298f11a1ea7
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/Thomas/Interactions/Grab Cubes with Integration SDK.unity
     guid: 1a7de19e051f695428166d05db0307b2
