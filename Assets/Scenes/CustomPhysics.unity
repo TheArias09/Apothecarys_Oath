@@ -1357,10 +1357,6 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 126
       objectReference: {fileID: 0}
-    - target: {fileID: 930797567, guid: bb80af4c0a06dea4da87498300d45787, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 930797580, guid: bb80af4c0a06dea4da87498300d45787, type: 3}
       propertyPath: redMaterial
       value: 

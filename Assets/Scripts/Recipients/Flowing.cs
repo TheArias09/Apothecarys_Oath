@@ -76,7 +76,7 @@ namespace Recipients
         {
             var point = GetFlowPoint();
 
-            Gizmos.DrawSphere(point, 0.01f);
+            Gizmos.DrawSphere(point, sphereCastRadius);
         }
     }
 }
