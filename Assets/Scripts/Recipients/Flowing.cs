@@ -13,19 +13,11 @@ namespace Recipients
         [SerializeField] float maxSphereCastDistance = 10;
         [SerializeField] LayerMask sphereCastLayerMask;
 
-        [SerializeField] Material defaultMaterial;
-        [SerializeField] Material greenMaterial;
-        [SerializeField] Material blueMaterial;
-        
-        Renderer rend;
-
-        bool isFlowing = false;
-        bool isFilling = false;
+        Recipient recipient;
 
         private void Awake()
         {
-            rend = GetComponent<Renderer>();
-            defaultMaterial = rend.material;
+            recipient = GetComponent<Recipient>();
         }
 
         private float GetFlowAngle()
@@ -56,30 +48,28 @@ namespace Recipients
             {
                 Flow();
             }
-            else
-            {
-                rend.material = defaultMaterial;
-            }
-
-            if(isFilling)
-            {
-                rend.material = blueMaterial;
-                isFilling = false;
-            }
         }
 
         private void Flow()
         {
-            rend.material = greenMaterial;
+            Debug.Log("Flow!");
 
             var hits = Physics.SphereCastAll(GetFlowPoint(), sphereCastRadius, Vector3.down, maxSphereCastDistance, sphereCastLayerMask);
             
             foreach(var hit in hits)
             {
                 if (hit.transform.gameObject == gameObject) continue;
+
+                Debug.Log("Fill!");
+
+                var target = hit.collider.GetComponentInParent<Recipient>();
                 
-                hit.collider.GetComponentInParent<Flowing>().isFilling = true;
+                recipient.PourIn(target);
+
+                return;
             }
+
+            recipient.PourInVoid();
         }
 
         private void OnDrawGizmos()

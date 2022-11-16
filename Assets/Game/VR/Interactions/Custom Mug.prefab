@@ -1078,7 +1078,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _customJoint: {fileID: 0}
   _isKinematicGrab: 1
---- !u!114 &930797580
+--- !u!114 &3222605891962458349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5456728671402869651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e431e92d5e2ce4a8595dd680b4f24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quantity: 0
+  maxQuantity: 1
+  pourSpeed: 0.1
+--- !u!114 &5635803170202630280
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1092,6 +1107,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottleneckCenterPoint: {fileID: 738310976}
   bottleneckRadius: 0.035
+  sphereCastRadius: 0.01
+  maxSphereCastDistance: 10
+  sphereCastLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!23 &5817187959942144582 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 62430feba95140d4094909ab2ae769d2,

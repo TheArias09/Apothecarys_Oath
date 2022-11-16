@@ -1373,9 +1373,10 @@ PrefabInstance:
       propertyPath: greenMaterial
       value: 
       objectReference: {fileID: 2100000, guid: d073608127492fa43bc3d77047ca1f35, type: 2}
-    - target: {fileID: 930797580, guid: bb80af4c0a06dea4da87498300d45787, type: 3}
-      propertyPath: sphereCastLayerMask.m_Bits
-      value: 64
+    - target: {fileID: 3222605891962458349, guid: bb80af4c0a06dea4da87498300d45787,
+        type: 3}
+      propertyPath: quantity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4679769411917715753, guid: bb80af4c0a06dea4da87498300d45787,
         type: 3}
