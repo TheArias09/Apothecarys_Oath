@@ -22,18 +22,18 @@ namespace Recipients
 
         private float GetFlowAngle()
         {
-            var axis = Vector3.Cross(Vector3.up, transform.up);
-            var flowAngle = Vector3.SignedAngle(Vector3.up, transform.up, axis);
+            var axis = Vector3.Cross(Vector3.up, bottleneckCenterPoint.up);
+            var flowAngle = Vector3.SignedAngle(Vector3.up, bottleneckCenterPoint.up, axis);
 
             return flowAngle - 90;
         }
 
         private Vector3 GetFlowPoint()
         {
-            var xProjection = Vector3.Dot(transform.right, Vector3.down);
-            var zProjection = Vector3.Dot(transform.forward, Vector3.down);
+            var xProjection = Vector3.Dot(bottleneckCenterPoint.right, Vector3.down);
+            var zProjection = Vector3.Dot(bottleneckCenterPoint.forward, Vector3.down);
 
-            var projection = transform.right * xProjection + transform.forward * zProjection;
+            var projection = bottleneckCenterPoint.right * xProjection + bottleneckCenterPoint.forward * zProjection;
 
             var point = bottleneckCenterPoint.position + bottleneckRadius * projection.normalized;
 
@@ -52,7 +52,7 @@ namespace Recipients
 
         private void Flow()
         {
-            Debug.Log("Flow!");
+            Debug.Log("Flow!" + gameObject.name);
 
             var hits = Physics.SphereCastAll(GetFlowPoint(), sphereCastRadius, Vector3.down, maxSphereCastDistance, sphereCastLayerMask);
             
