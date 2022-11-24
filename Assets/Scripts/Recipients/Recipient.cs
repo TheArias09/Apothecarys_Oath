@@ -29,7 +29,8 @@ namespace Recipients
             recipient.quantity += quantityPulled;
 
             if (recipient.quantity < 0) recipient.quantity = 0;
-            if (quantity > 1) quantity = 1;
+            if (recipient.quantity > recipient.maxQuantity) recipient.quantity = recipient.maxQuantity;
+            if (quantity > maxQuantity) quantity = maxQuantity;
         }
     }
 }
