@@ -56,28 +56,36 @@ public class LiquidManager : MonoBehaviour
         {
             currentFill = (liquids[^1].fill + 0.1f) * 5f ;
         }
+        
         fill = (Mathf.Min(1f, currentFill + Random.Range(0.0f, 1 - currentFill))) * 0.2f - 0.1f;
-        
-        fresnelPower = 5f;
-        
-        /*
-        LiquidColor = new Color(
-            (float)Random.Range(0, 255),
-            (float)Random.Range(0, 255),
-            (float)Random.Range(0, 255)
-        );
-        SurfaceColor = new Color(
-            Mathf.Max(255f, LiquidColor.r + 40),
-            Mathf.Max(255f, LiquidColor.g + 40),
-            Mathf.Max(255f, LiquidColor.b + 40)
-        );
-        FresnelColor = new Color(
-            Mathf.Max(255f, LiquidColor.r + 100),
-            Mathf.Max(255f, LiquidColor.g + 100),
-            Mathf.Max(255f, LiquidColor.b + 100)
-        );
-        */
 
+        if (currentFill > 0.9)
+        {
+            fill = 1f * 0.2f - 0.1f;
+        }
+        
+        
+        fresnelPower = Random.Range(4.5f,5.5f);
+        
+        
+        liquidColor = new Color(
+            (float)Random.Range(0f, 1f),
+            (float)Random.Range(0f, 1f),
+            (float)Random.Range(0f, 1f)
+        );
+        surfaceColor = liquidColor; /*new Color(
+            Mathf.Max(1f, liquidColor.r + 0.15f),
+            Mathf.Max(1f, liquidColor.g + 0.15f),
+            Mathf.Max(1f, liquidColor.b + 0.15f)
+        );*/
+        fresnelColor = new Color(
+            Mathf.Max(1f, liquidColor.r + 0.45f),
+            Mathf.Max(1f, liquidColor.g + 0.45f),
+            Mathf.Max(1f, liquidColor.b + 0.45f)
+        );
+        
+
+        /*
         switch (liquids.Count)
         {
             case 0 :
@@ -101,32 +109,60 @@ public class LiquidManager : MonoBehaviour
                 fresnelColor = Color.white;
                 break;
         }
+        */
+
+        int liquidNumber = (liquids.Count + 1);
 
 
         GameObject newLiquidVolume = Instantiate(liquidVolume, transform) as GameObject;
         newLiquidVolume.transform.parent = gameObject.transform;
         newLiquidVolume.transform.position += new Vector3(0f, 0f, 0.00025f);
+        newLiquidVolume.transform.localScale -=
+            new Vector3(liquidNumber / 1000f, liquidNumber / 1000f, liquidNumber / 1000f);
 
-        newLiquidVolume.name = "Liquid" + (liquids.Count + 1);
+        newLiquidVolume.name = "Liquid" + liquidNumber;
         
         Liquid newLiquid = newLiquidVolume.AddComponent<Liquid>();
 
         Material liquidRendererMaterial = newLiquidVolume.GetComponent<Renderer>().material;
 
         //liquidRendererMaterial = new Material(liquidRendererMaterial);
-        liquidRendererMaterial.SetFloat(FillV4, fill);
-        liquidRendererMaterial.SetColor(LiquidColorV4, liquidColor);
-        liquidRendererMaterial.SetColor(SurfaceColorV4, surfaceColor);
-        liquidRendererMaterial.SetFloat(FresnelPowerV4,fresnelPower);
-        liquidRendererMaterial.SetColor(FresnelColorV4,fresnelColor);
+        liquidRendererMaterial.SetFloat("_FillV4", fill);
+        liquidRendererMaterial.SetColor("_LiquidColorV4", liquidColor);
+        liquidRendererMaterial.SetColor("_SurfaceColorV4", surfaceColor);
+        liquidRendererMaterial.SetFloat("_FresnelPowerV4",fresnelPower);
+        liquidRendererMaterial.SetColor("_FresnelColorV4",fresnelColor);
 
         liquidVolumes.Add(newLiquidVolume);
         liquids.Add(newLiquid);
     }
-
-    void SyncLiquids()
+    
+    void AddLiquid(Liquid addedLiquid)
     {
+        int liquidNumber = (liquids.Count + 1);
+
+
+        GameObject newLiquidVolume = Instantiate(liquidVolume, transform) as GameObject;
+        newLiquidVolume.transform.parent = gameObject.transform;
+        newLiquidVolume.transform.position += new Vector3(0f, 0f, 0.00025f);
+        newLiquidVolume.transform.localScale -=
+            new Vector3(liquidNumber / 1000f, liquidNumber / 1000f, liquidNumber / 1000f);
+
+        newLiquidVolume.name = "Liquid" + liquidNumber;
         
+        Liquid newLiquid = newLiquidVolume.AddComponent<Liquid>();
+
+        Material liquidRendererMaterial = newLiquidVolume.GetComponent<Renderer>().material;
+
+        //liquidRendererMaterial = new Material(liquidRendererMaterial);
+        liquidRendererMaterial.SetFloat("_FillV4", addedLiquid.fill);
+        liquidRendererMaterial.SetColor("_LiquidColorV4", addedLiquid.liquidColor);
+        liquidRendererMaterial.SetColor("_SurfaceColorV4", addedLiquid.surfaceColor);
+        liquidRendererMaterial.SetFloat("_FresnelPowerV4", addedLiquid.fresnelPower);
+        liquidRendererMaterial.SetColor("_FresnelColorV4", addedLiquid.fresnelColor);
+
+        liquidVolumes.Add(newLiquidVolume);
+        liquids.Add(newLiquid);
     }
 
     void RemoveLiquid()
