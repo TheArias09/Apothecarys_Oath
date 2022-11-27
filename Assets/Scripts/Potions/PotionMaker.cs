@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class PotionMaker : MonoBehaviour
 {
-    [SerializeField] private Ingredient[] ingredients;
+    [SerializeField] private List<Ingredient> ingredients;
     [Space(10)]
-    [SerializeField] private Recipe[] recipes;
+    [SerializeField] private List<Recipe> recipes;
 
     private Ingredient potion;
     private Dictionary<string, Recipe> recipeDict;
