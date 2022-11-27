@@ -1,6 +1,5 @@
 using NUnit.Framework;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace UnitTests
 {
@@ -25,7 +24,7 @@ namespace UnitTests
             Ingredient potion = new(1, ingredients);
             potion.AddState(IngredientState.MIXED);
 
-           Assert.AreEqual(0, Recipe.CheckPotion(recipe, potion));
+            Assert.AreEqual(0, Recipe.CheckPotion(recipe, potion));
         }
 
         [Test]

@@ -32,9 +32,8 @@ public class Recipe
         if (recipe.states.Count != potion.States.Count || !recipe.states.All(potion.States.Contains)) return 0;
 
         //Wrong ingredients
-        List<Ingredient> checker = new (potion.Ingredients);
-        if (checker.Count != potion.Ingredients.Count || !checker.All(potion.Ingredients.Contains)) return 0;
-
+        if (recipe.Ingredients.Count != potion.Ingredients.Count || !recipe.Ingredients.All(potion.Ingredients.Contains)) return 0;
+        
         //Potion corresponds to recipe
         Debug.Log(recipe.name + " crafted !");
         potion.SetName(recipe.Name);
