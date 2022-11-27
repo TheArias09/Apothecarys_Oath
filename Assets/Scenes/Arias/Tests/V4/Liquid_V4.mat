@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Liquid_2
-  m_Shader: {fileID: -6465566751694194690, guid: 26f8524e97a289d479c91d0038e7d73d,
+  m_Name: Liquid_V4
+  m_Shader: {fileID: -6465566751694194690, guid: f466a59bac4f21d40bfe58f2f8dbe8a7,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -90,10 +90,8 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Fill: 0
-    - _FillV3: 0.02
-    - _FresnelPower: 5
-    - _FresnelPowerV3: 5
+    - _FillV4: 0
+    - _FresnelPowerV4: 5
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -116,15 +114,12 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FresnelColor: {r: 0.37735847, g: 0, b: 0.37285966, a: 0}
-    - _FresnelColorV3: {r: 1, g: 0.53742373, b: 0, a: 0}
-    - _LiquidColor: {r: 0.08304801, g: 0.046760365, b: 0.6698113, a: 0}
-    - _LiquidColorV3: {r: 0.58032274, g: 0.6037736, b: 0.0022783459, a: 0}
+    - _FresnelColorV4: {r: 1, g: 1, b: 1, a: 0}
+    - _LiquidColorV4: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _SurfaceColor: {r: 0.09242534, g: 0.052687734, b: 0.75471693, a: 0}
-    - _SurfaceColorV3: {r: 0.7529412, g: 0.7369353, b: 0.050980378, a: 0}
+    - _SurfaceColorV4: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &4618957529134178493
+--- !u!114 &694876380317209076
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
