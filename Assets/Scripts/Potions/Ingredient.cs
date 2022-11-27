@@ -61,6 +61,10 @@ public class Ingredient
 
     public void AddState(IngredientState state) => States.Add(state);
 
+    public void RemoveState(IngredientState state) => States.Remove(state);
+
+    public void RemoveIngredients() => Ingredients.Clear();
+
 
     /// <summary>
     /// Adds a new Ingredient to the composition. This removes the MIXED state of the ingredient.
