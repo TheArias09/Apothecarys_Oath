@@ -72,7 +72,7 @@ namespace UnitTests
         [Test]
         public void TestMissingState2()
         {
-            List<Ingredient> ingredients = new()
+            List<Ingredient> ingredients1 = new()
             {
                 new Ingredient("citron", 2),
                 new Ingredient("sucre", 2, new List<IngredientState>() { IngredientState.CRUSHED }),
@@ -81,11 +81,18 @@ namespace UnitTests
                 new Ingredient("eau gazeuse", 5)
             };
 
-            Recipe recipe = new("Mojito", new(ingredients), new() { IngredientState.MIXED });
+            Recipe recipe = new("Mojito", ingredients1, new() { IngredientState.MIXED });
 
-            ingredients.Find(ing => ing.Name == "sucre").RemoveState(IngredientState.CRUSHED);
+            List<Ingredient> ingredients2 = new()
+            {
+                new Ingredient("citron", 2),
+                new Ingredient("sucre", 2),
+                new Ingredient("menthe", 1),
+                new Ingredient("sirop", 0.1f),
+                new Ingredient("eau gazeuse", 5)
+            };
 
-            Ingredient potion = new(1, ingredients);
+            Ingredient potion = new(1, ingredients2);
             potion.AddState(IngredientState.MIXED);
 
             Assert.AreEqual(0, Recipe.CheckPotion(recipe, potion));
@@ -115,7 +122,7 @@ namespace UnitTests
         [Test]
         public void TestAddedState2()
         {
-            List<Ingredient> ingredients = new()
+            List<Ingredient> ingredients1 = new()
             {
                 new Ingredient("citron", 2),
                 new Ingredient("sucre", 2, new List<IngredientState>() { IngredientState.CRUSHED }),
@@ -124,11 +131,18 @@ namespace UnitTests
                 new Ingredient("eau gazeuse", 5)
             };
 
-            Recipe recipe = new("Mojito", new(ingredients), new() { IngredientState.MIXED });
+            Recipe recipe = new("Mojito", ingredients1, new() { IngredientState.MIXED });
 
-            ingredients[0].AddState(IngredientState.CRUSHED);
+            List<Ingredient> ingredients2 = new()
+            {
+                new Ingredient("citron", 2, new List<IngredientState>() { IngredientState.CRUSHED }),
+                new Ingredient("sucre", 2, new List<IngredientState>() { IngredientState.CRUSHED }),
+                new Ingredient("menthe", 1),
+                new Ingredient("sirop", 0.1f),
+                new Ingredient("eau gazeuse", 5)
+            };
 
-            Ingredient potion = new(1, ingredients);
+            Ingredient potion = new(1, ingredients2);
             potion.AddState(IngredientState.MIXED);
 
             Assert.AreEqual(0, Recipe.CheckPotion(recipe, potion));
@@ -180,7 +194,18 @@ namespace UnitTests
         [Test]
         public void TestQuality2()
         {
-            List<Ingredient> ingredients = new()
+            List<Ingredient> ingredients1 = new()
+            {
+                new Ingredient("citron", 1),
+                new Ingredient("sucre", 2, new List<IngredientState>() { IngredientState.CRUSHED }),
+                new Ingredient("menthe", 1),
+                new Ingredient("sirop", 0.1f),
+                new Ingredient("eau gazeuse", 5)
+            };
+
+            Recipe recipe = new("Mojito", ingredients1, new() { IngredientState.MIXED });
+
+            List<Ingredient> ingredients2 = new()
             {
                 new Ingredient("citron", 2),
                 new Ingredient("sucre", 2, new List<IngredientState>() { IngredientState.CRUSHED }),
@@ -189,11 +214,7 @@ namespace UnitTests
                 new Ingredient("eau gazeuse", 5)
             };
 
-            Recipe recipe = new("Mojito", new(ingredients), new() { IngredientState.MIXED });
-
-            ingredients[0].SetQuantity(1);
-
-            Ingredient potion = new(1, ingredients);
+            Ingredient potion = new(1, ingredients2);
             potion.AddState(IngredientState.MIXED);
 
             Assert.AreNotEqual(0, Recipe.CheckPotion(recipe, potion));

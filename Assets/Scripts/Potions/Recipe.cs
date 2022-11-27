@@ -33,7 +33,7 @@ public class Recipe
 
         //Wrong ingredients
         if (recipe.Ingredients.Count != potion.Ingredients.Count || !recipe.Ingredients.All(potion.Ingredients.Contains)) return 0;
-        
+
         //Potion corresponds to recipe
         Debug.Log(recipe.name + " crafted !");
         potion.SetName(recipe.Name);
