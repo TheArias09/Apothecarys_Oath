@@ -666,6 +666,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Glass_Outside_V4_2
       objectReference: {fileID: 0}
+    - target: {fileID: 4242624484383254212, guid: b5fc2d9347bcb454da4cc0ed34b0d8ad,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6394512853615321405, guid: b5fc2d9347bcb454da4cc0ed34b0d8ad,
         type: 3}
       propertyPath: m_RootOrder

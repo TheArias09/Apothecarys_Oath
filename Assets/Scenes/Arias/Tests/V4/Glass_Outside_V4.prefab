@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 6394512853615321407}
   - component: {fileID: 6394512853615321404}
   - component: {fileID: 2011991459792762929}
+  - component: {fileID: -8767462412837869525}
   m_Layer: 0
   m_Name: Glass_Outside_V4
   m_TagString: Untagged
@@ -290,3 +291,18 @@ MonoBehaviour:
   liquids: []
   liquidVolume: {fileID: 7484622077490460816, guid: 929cefe638aafa34d829b999c09b3cda,
     type: 3}
+--- !u!114 &-8767462412837869525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4242624484383254212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38b6165e67d9b7649bd7b51cb44d361d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxWobble: 1
+  WobbleSpeed: 1
+  Recovery: 1
