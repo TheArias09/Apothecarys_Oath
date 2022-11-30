@@ -27,6 +27,10 @@ public class IngredientWrapper : MonoBehaviour
     public float AvgQuality() => Ingredients.Average(ing => ing.Quality);
 
 
+    /// <summary>
+    /// Called by the IngredientWrapper receiving another liquid.
+    /// </summary>
+    /// <returns>true if liquid has been added, false if there is overflow</returns>
     public bool FillWith(IngredientWrapper wrap, float deltaQty)
     {
         if (quantity >= recipientVolume) return false;
@@ -43,8 +47,29 @@ public class IngredientWrapper : MonoBehaviour
             else quantity += deltaQty;
 
             foreach(var ingredient in wrap.Ingredients) AddQuantity(ingredient, deltaQty);
+            
+            SetTotalQty();
             return no_overflow;
         }
+    }
+
+    /// <summary>
+    /// Called by the IngredientWrapper pouring its content.
+    /// </summary>
+    /// <returns></returns>
+    public float Pour(IngredientWrapper wrap, float deltaQty)
+    {
+        SetTotalQty();
+        float totalPoured = 0;
+
+        foreach (var ingredient in wrap.Ingredients)
+        {
+            float removedQty = Mathf.Max(ingredient.Quantity, deltaQty * ingredient.Quantity / quantity);
+            ingredient.Quantity -= removedQty;
+            totalPoured += removedQty;
+        }
+
+        return totalPoured;
     }
 
     private void AddQuantity(Ingredient ingredient, float value)
