@@ -14,17 +14,12 @@ public class IngredientWrapper : MonoBehaviour
     private float quantity = 0;
 
     public float RecipientQuantity { get => recipientQuantity; set => recipientQuantity = value; }
-
     public List<Ingredient> Ingredients { get => ingredients; }
     public List<IngredientState> States { get => states; }
 
     public event Action OnQuantityUpdated;
 
-    //TODO: Clean
-    public void CallOnQuantityUpdated()
-    {
-        OnQuantityUpdated?.Invoke();
-    }
+    public void CallOnQuantityUpdated() => OnQuantityUpdated?.Invoke();
 
     public void SetTotalQty() => quantity = ingredients.Sum(ing => ing.Quantity);
 
@@ -85,7 +80,7 @@ public class IngredientWrapper : MonoBehaviour
         if (deltaQty > quantity) deltaQty = quantity;
         if (quantity == 0) return null;
 
-        List<Ingredient> pouredIngredients = new List<Ingredient>();
+        List<Ingredient> pouredIngredients = new();
 
         foreach (var ing in ingredients)
         {
