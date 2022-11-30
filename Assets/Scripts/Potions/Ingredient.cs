@@ -56,6 +56,12 @@ public class Ingredient
 
     public void SetTotalQantity() => quantity = Ingredients.Sum(ing => ing.quantity);
 
+    public float GetTotalQantity()
+    {
+        if (Ingredients.Count > 0) SetTotalQantity();
+        return quantity;
+    }
+
     public void SetAvgQuality() => quality = Ingredients.Average(ing => ing.Quality);
 
     public void AddState(IngredientState state) => States.Add(state);
@@ -81,7 +87,7 @@ public class Ingredient
     /// <summary>
     /// Adds a new Ingredient to the composition. This removes the MIXED state of the ingredient.
     /// </summary>
-    public void AddIngredient(Ingredient ingredient)
+    private void AddIngredient(Ingredient ingredient)
     {
         Ingredients.Add(ingredient);
         States.Remove(IngredientState.MIXED);
