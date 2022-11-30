@@ -73,13 +73,13 @@ namespace Recipients
                 var deltaQuantity = pourSpeed * Time.deltaTime;
 
                 List<Ingredient> pouredIngredients = ingredientWrapper.Pour(deltaQuantity);
-                deltaQuantity = pouredIngredients.Sum(ing => ing.Quantity);
 
-                var filledCorrectly = targetIngredientWrapper.FillWith(pouredIngredients, deltaQuantity);
-
-                if(!filledCorrectly)
+                if (pouredIngredients != null)
                 {
-                    Overflow();
+                    deltaQuantity = pouredIngredients.Sum(ing => ing.Quantity);
+                    var filledCorrectly = targetIngredientWrapper.FillWith(pouredIngredients, deltaQuantity);
+                    
+                    if (!filledCorrectly) Overflow();
                 }
 
                 return;

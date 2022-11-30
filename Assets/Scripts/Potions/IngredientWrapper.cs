@@ -76,11 +76,14 @@ public class IngredientWrapper : MonoBehaviour
     public List<Ingredient> Pour(float deltaQty)
     {
         SetTotalQty();
+        if (deltaQty > quantity) deltaQty = quantity;
+        if (quantity == 0) return null;
+
         List<Ingredient> pouredIngredients = new List<Ingredient>();
 
         foreach (var ing in ingredients)
         {
-            float removedQty = Mathf.Max(ing.Quantity, deltaQty * ing.Quantity / quantity);
+            float removedQty = Mathf.Min(ing.Quantity, deltaQty * ing.Quantity / quantity);
             ing.Quantity -= removedQty;
 
             Ingredient pouredIngredient = new Ingredient(ing.Name, removedQty, ing.Quality, ing.Color, ing.Cures);
