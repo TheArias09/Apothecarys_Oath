@@ -14,6 +14,9 @@ public class Ingredient
 {
     [SerializeField] private string name;
     [SerializeField] private float quantity;
+    
+    [SerializeField] private Color color;
+
     [SerializeField, Range(0,1)] private float quality;
     [SerializeField] private List<IngredientState> states;
 
@@ -21,6 +24,7 @@ public class Ingredient
     public string Name { get { return name; } }
     public float Quantity { get { return quantity; } }
     public float Quality { get { return quality; } }
+    public Color Color { get { return color; } }
     public List<IngredientState> States { get { return states; } }
     public List<Ingredient> Ingredients { get; }
 
