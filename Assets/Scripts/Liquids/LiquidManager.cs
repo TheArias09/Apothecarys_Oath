@@ -25,7 +25,7 @@ public class LiquidManager : MonoBehaviour
 
     private void Awake()
     {
-        _ingredientWrapper = liquidVolume.GetComponent<IngredientWrapper>();
+        _ingredientWrapper = GetComponent<IngredientWrapper>();
         _ingredientWrapper.SetRecipient(this);
 
         if (_ingredientWrapper.Ingredients == null) potionCount = 0;
