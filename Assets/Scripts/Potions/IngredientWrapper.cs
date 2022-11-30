@@ -6,12 +6,14 @@ using UnityEngine;
 
 public class IngredientWrapper : MonoBehaviour
 {
+    [SerializeField] private float recipientQuantity = 0;
+    [Space(10)]
     [SerializeField] private List<Ingredient> ingredients;
     [SerializeField] private List<IngredientState> states;
 
-    [SerializeField] private float recipientQuantity = 0;
-    public float RecipientQuantity { get { return recipientQuantity; } set { recipientQuantity = value; } }
     private float quantity = 0;
+
+    public float RecipientQuantity { get => recipientQuantity; set => recipientQuantity = value; }
 
     public List<Ingredient> Ingredients { get => ingredients; }
     public List<IngredientState> States { get => states; }
