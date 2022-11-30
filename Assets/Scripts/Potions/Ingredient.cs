@@ -21,11 +21,11 @@ public class Ingredient
     [SerializeField] private List<IngredientState> states;
 
     //Name of the ingredient can be null.
-    public string Name { get { return name; } }
-    public float Quantity { get { return quantity; } }
-    public float Quality { get { return quality; } }
-    public Color Color { get { return color; } }
-    public List<IngredientState> States { get { return states; } }
+    public string Name { get => name; set => name = value; }
+    public float Quantity { get => quantity; set => quantity = value; }
+    public float Quality { get => quality; set => quality = value; }
+    public Color Color { get => color; set => color = value; }
+    public List<IngredientState> States { get => states; }
     public List<Ingredient> Ingredients { get; }
 
     public DiseaseName? Cures { get; set; }
@@ -54,25 +54,29 @@ public class Ingredient
 
     public Ingredient(float quantity, List<Ingredient> ingredients) : this(null, quantity, ingredients) { }
 
-
-    public void SetName(string name) => this.name = name;
-
-    public void SetQuantity(float value) => quantity = value;
-
-    public void AddQuantity(float value) => quantity += value;
-
     public void SetTotalQantity() => quantity = Ingredients.Sum(ing => ing.quantity);
-
-    public void SetQuality(float value) => quality = value;
 
     public void SetAvgQuality() => quality = Ingredients.Average(ing => ing.Quality);
 
     public void AddState(IngredientState state) => States.Add(state);
 
-    public void RemoveState(IngredientState state) => States.Remove(state);
-
     public void RemoveIngredients() => Ingredients.Clear();
 
+
+    public void AddQuantity(Ingredient ingredient, float value)
+    {
+        if (name == ingredient.name) quantity += value;
+        else
+        {
+            Ingredient ing = Ingredients.Find(ing => ing.Equals(ingredient));
+            if (ing != null) ing.quantity += value;
+            else
+            {
+                ingredient.quantity = value;
+                AddIngredient(ingredient);
+            }
+        }
+    }
 
     /// <summary>
     /// Adds a new Ingredient to the composition. This removes the MIXED state of the ingredient.

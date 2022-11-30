@@ -65,10 +65,12 @@ public class PotionMaker : MonoBehaviour
 
         //Potion corresponds to recipe
         Debug.Log(recipe.Name + " crafted !");
-        potion.SetName(recipe.Name);
+        potion.Name = recipe.Name;
         potion.SetTotalQantity();
         potion.SetAvgQuality();
+        potion.Color = recipe.Color;
         potion.Cures = recipe.Cures;
+        potion.RemoveIngredients();
 
         CheckProportions(recipe, potion);
         return potion.Quality;
@@ -89,7 +91,7 @@ public class PotionMaker : MonoBehaviour
         float std_dev = (float)Math.Sqrt(squarDiff / proportions.Length);
 
         float quality = std_dev > 1 ? Instance.minQuality : 1 - std_dev;
-        potion.SetQuality(potion.Quality * quality);
+        potion.Quality *= quality;
 
         Debug.Log("std_dev: " + std_dev + " => quality: " + quality);
         Debug.Log("Final quality: " + potion.Quality);
