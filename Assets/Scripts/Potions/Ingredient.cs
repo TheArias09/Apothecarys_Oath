@@ -14,10 +14,10 @@ public class Ingredient
 {
     [SerializeField] private string name;
     [SerializeField] private float quantity;
-    
+    [SerializeField, Range(0, 1)] private float quality;
     [SerializeField] private Color color;
+    [SerializeField] private DiseaseName? cures;
 
-    [SerializeField, Range(0,1)] private float quality;
     [SerializeField] private List<IngredientState> states;
 
     //Name of the ingredient can be null.
@@ -26,72 +26,21 @@ public class Ingredient
     public float Quality { get => quality; set => quality = value; }
     public Color Color { get => color; set => color = value; }
     public List<IngredientState> States { get => states; }
-    public List<Ingredient> Ingredients { get; }
 
-    public DiseaseName? Cures { get; set; }
+    public DiseaseName? Cures { get => cures; set => cures = value; }
 
-    public Ingredient(string name, float quantity)
+    public Ingredient(string name, float quantity, float quality, Color color, DiseaseName disease)
     {
         this.name = name;
         this.quantity = quantity;
-        quality = 1;
+        this.quality = quality;
+        this.color = color;
+        cures = disease;
+
         states = new List<IngredientState>();
-        Ingredients = new List<Ingredient>();
     }
-
-    /// <summary>
-    /// This constructor should only be used to list an ingredient as part of a recipe.
-    /// </summary>
-    public Ingredient(string name, float quantity, List<IngredientState> states) : this(name, quantity)
-    {
-        this.states = states;
-    }
-
-    public Ingredient(string name, float quantity, List<Ingredient> ingredients) : this(name, quantity)
-    {
-        Ingredients = ingredients;
-    }
-
-    public Ingredient(float quantity, List<Ingredient> ingredients) : this(null, quantity, ingredients) { }
-
-    public void SetTotalQantity() => quantity = Ingredients.Sum(ing => ing.quantity);
-
-    public float GetTotalQantity()
-    {
-        if (Ingredients.Count > 0) SetTotalQantity();
-        return quantity;
-    }
-
-    public void SetAvgQuality() => quality = Ingredients.Average(ing => ing.Quality);
 
     public void AddState(IngredientState state) => States.Add(state);
-
-    public void RemoveIngredients() => Ingredients.Clear();
-
-
-    public void AddQuantity(Ingredient ingredient, float value)
-    {
-        if (name == ingredient.name) quantity += value;
-        else
-        {
-            Ingredient ing = Ingredients.Find(ing => ing.Equals(ingredient));
-            if (ing != null) ing.quantity += value;
-            else
-            {
-                ingredient.quantity = value;
-                AddIngredient(ingredient);
-            }
-        }
-    }
-
-    /// <summary>
-    /// Adds a new Ingredient to the composition. This removes the MIXED state of the ingredient.
-    /// </summary>
-    private void AddIngredient(Ingredient ingredient)
-    {
-        Ingredients.Add(ingredient);
-        States.Remove(IngredientState.MIXED);
-    }
 
     public override string ToString()
     {
