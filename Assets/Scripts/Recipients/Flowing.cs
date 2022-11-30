@@ -13,11 +13,13 @@ namespace Recipients
         [SerializeField] float maxSphereCastDistance = 10;
         [SerializeField] LayerMask sphereCastLayerMask;
 
-        Recipient recipient;
+        [SerializeField] float pourSpeed = 0.1f;
+
+        IngredientWrapper ingredientWrapper;
 
         private void Awake()
         {
-            recipient = GetComponent<Recipient>();
+            ingredientWrapper = GetComponent<IngredientWrapper>();
         }
 
         private float GetFlowAngle()
@@ -62,14 +64,27 @@ namespace Recipients
 
                 Debug.Log("Fill!");
 
-                var target = hit.collider.GetComponentInParent<Recipient>();
-                
-                recipient.PourIn(target);
+                var targetIngredientWrapper = hit.collider.GetComponentInParent<IngredientWrapper>();
+
+                //TODO: Take flowAngle into account.
+                var deltaQuantity = pourSpeed * Time.deltaTime;
+
+                var filledCorrectly = targetIngredientWrapper.FillWith(ingredientWrapper, deltaQuantity);
+
+                if(!filledCorrectly)
+                {
+                    Overflow();
+                }
 
                 return;
             }
 
-            recipient.PourInVoid();
+            //recipient.PourInVoid();
+        }
+
+        private static void Overflow()
+        {
+            Debug.Log("Overflow!");
         }
 
         private void OnDrawGizmos()
