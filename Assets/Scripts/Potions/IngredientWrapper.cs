@@ -76,7 +76,7 @@ public class IngredientWrapper : MonoBehaviour
     public List<Ingredient> Pour(float deltaQty)
     {
         SetTotalQty();
-        List<Ingredient> pouredIngredients = new List<Ingredient>();
+        List<Ingredient> pouredIngredients = new();
 
         foreach (var ing in ingredients)
         {
