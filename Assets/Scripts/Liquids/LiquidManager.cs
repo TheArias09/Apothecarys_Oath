@@ -22,7 +22,6 @@ public class LiquidManager : MonoBehaviour
 
     public float RecipientQuantity { get => recipientQuantity;  }
 
-
     private void Awake()
     {
         _ingredientWrapper = GetComponent<IngredientWrapper>();
@@ -39,6 +38,16 @@ public class LiquidManager : MonoBehaviour
                 AddLiquid(_ingredientWrapper.Ingredients[i]);
             }
         }
+    }
+
+    private void OnEnable()
+    {
+        _ingredientWrapper.OnQuantityUpdated += UpdateVolumes;
+    }
+
+    private void OnDisable()
+    {
+        _ingredientWrapper.OnQuantityUpdated -= UpdateVolumes;
     }
 
     //Sert à des tests

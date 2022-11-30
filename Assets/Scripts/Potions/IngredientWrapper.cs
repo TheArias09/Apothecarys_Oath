@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,8 @@ public class IngredientWrapper : MonoBehaviour
 
     public List<Ingredient> Ingredients { get => ingredients; }
     public List<IngredientState> States { get => states; }
+
+    public event Action OnQuantityUpdated;
 
     public void SetRecipient(LiquidManager liquidManager) => recipientVolume = liquidManager.RecipientQuantity;
 
@@ -51,6 +54,8 @@ public class IngredientWrapper : MonoBehaviour
             SetTotalQty();
             return no_overflow;
         }
+
+        OnQuantityUpdated?.Invoke();
     }
 
     /// <summary>
