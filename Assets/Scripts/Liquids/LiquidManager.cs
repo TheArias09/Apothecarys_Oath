@@ -38,6 +38,8 @@ public class LiquidManager : MonoBehaviour
                 AddLiquid(_ingredientWrapper.Ingredients[i]);
             }
         }
+
+        UpdateVolumes();
     }
 
     private void OnEnable()
