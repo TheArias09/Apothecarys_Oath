@@ -20,6 +20,12 @@ public class IngredientWrapper : MonoBehaviour
 
     public event Action OnQuantityUpdated;
 
+    //TODO: Clean
+    public void CallOnQuantityUpdated()
+    {
+        OnQuantityUpdated?.Invoke();
+    }
+
     public void SetTotalQty() => quantity = ingredients.Sum(ing => ing.Quantity);
 
     public float GetTotalQty()

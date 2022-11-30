@@ -165,6 +165,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &351236547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 351236549}
+  - component: {fileID: 351236548}
+  m_Layer: 0
+  m_Name: Potion Maker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &351236548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351236547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e07c95abd48594fa67d7d1348b0718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minQuality: 0.1
+  recipes:
+  - name: Stimulant
+    color: {r: 0.2516465, g: 0.8207547, b: 0.6055485, a: 1}
+    cures: 0
+    ingredients:
+    - name: Water
+      quantity: 0.5
+      quality: 0
+      color: {r: 0, g: 0, b: 0, a: 0}
+      states: 
+    - name: Vitalis
+      quantity: 0.25
+      quality: 0
+      color: {r: 0, g: 0, b: 0, a: 0}
+      states: 
+    states: 
+--- !u!4 &351236549
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351236547}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.45535153, y: 1.0123669, z: 0.23638129}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &424812154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -752,7 +813,7 @@ PrefabInstance:
     - target: {fileID: -8292239926303675061, guid: c1cbccd0512eaa74995b24f6bd99f18d,
         type: 3}
       propertyPath: ingredients.Array.data[0].name
-      value: Eau
+      value: Water
       objectReference: {fileID: 0}
     - target: {fileID: -8292239926303675061, guid: c1cbccd0512eaa74995b24f6bd99f18d,
         type: 3}

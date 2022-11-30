@@ -13,6 +13,13 @@ public class Mix : MonoBehaviour
     Vector3 previousPreviousPosition;
     Vector3 previousPosition;
 
+    IngredientWrapper ingredientWrapper;
+
+    private void Awake()
+    {
+        ingredientWrapper = GetComponent<IngredientWrapper>(); 
+    }
+
     private void Start()
     {
         previousPreviousPosition = transform.position;
@@ -43,7 +50,8 @@ public class Mix : MonoBehaviour
 
     private void MixComplete()
     {
-        //TODO: Call IngredientWrapper mix
+        PotionMaker.Instance.CheckPotion(ingredientWrapper);
+        ingredientWrapper.CallOnQuantityUpdated();
         Debug.Log("MixComplete!");
         mixCompletion = 0f;
     }
