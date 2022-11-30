@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1189456450770299338
 Transform:
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 3570544957478636073}
   - component: {fileID: 3184800614776773171}
   - component: {fileID: 3053748593040945441}
-  - component: {fileID: 1915714280}
+  - component: {fileID: -8292239926303675061}
   m_Layer: 0
   m_Name: Glass_Outside_V4 Clean
   m_TagString: Untagged
@@ -294,6 +294,8 @@ MonoBehaviour:
   liquids: []
   liquidVolume: {fileID: 7484622077490460816, guid: 929cefe638aafa34d829b999c09b3cda,
     type: 3}
+  RecipientQuantity: 0
+  PotionCount: 0
 --- !u!114 &3184800614776773171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,7 +330,7 @@ MonoBehaviour:
   sphereCastLayerMask:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &1915714280
+--- !u!114 &-8292239926303675061
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -337,14 +339,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1189456451744781532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6e431e92d5e2ce4a8595dd680b4f24d, type: 3}
+  m_Script: {fileID: 11500000, guid: 02306037b2ed42e438ee35e480016fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quantity: 0.7
-  maxQuantity: 1
-  pourSpeed: 0.1
-  affectsShader: 0
-  shaderObject: {fileID: 0}
+  ingredient:
+    name: 
+    quantity: 0
+    color: {r: 0, g: 0, b: 0, a: 0}
+    quality: 0
+    states: 
 --- !u!1 &3053748591156872114
 GameObject:
   m_ObjectHideFlags: 0
