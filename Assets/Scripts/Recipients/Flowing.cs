@@ -6,7 +6,7 @@ namespace Recipients
 {
     public class Flowing : MonoBehaviour
     {
-        //TODO: Gérer l'influence de l'angle et du remplissage en fonciton de la forme.
+        //TODO: Gérer l'influence de l'angle et du remplissage en fonciton 
 
         [SerializeField] Transform bottleneckCenterPoint;
         [SerializeField] float bottleneckRadius;
