@@ -29,7 +29,7 @@ public class Ingredient
 
     public DiseaseName? Cures { get => cures; set => cures = value; }
 
-    public Ingredient(string name, float quantity, float quality, Color color, DiseaseName disease)
+    public Ingredient(string name, float quantity, float quality, Color color, DiseaseName? disease)
     {
         this.name = name;
         this.quantity = quantity;
