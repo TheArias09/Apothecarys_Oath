@@ -38,7 +38,11 @@ public class WobbleChildren : MonoBehaviour
         
         foreach(Transform child in transform)
         {
+            //TODO: clean this.
             rend = child.gameObject.GetComponent<Renderer>();
+
+            if (rend == null) continue;
+
             
             // send it to the shader
             rend.material.SetFloat("_WobbleX", wobbleAmountX);

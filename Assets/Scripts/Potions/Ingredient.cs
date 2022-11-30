@@ -59,6 +59,8 @@ public class Ingredient
 
     public void SetQuantity(float value) => quantity = value;
 
+    public void AddQuantity(float value) => quantity += value;
+
     public void SetTotalQantity() => quantity = Ingredients.Sum(ing => ing.quantity);
 
     public void SetQuality(float value) => quality = value;

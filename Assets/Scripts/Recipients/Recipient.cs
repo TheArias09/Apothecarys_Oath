@@ -27,6 +27,7 @@ namespace Recipients
             {
                 Debug.Log("Update with: " + (quantity * 0.2f - 0.1f).ToString());
                 rend.material.SetFloat("_FillV2", quantity * 0.2f - 0.1f);
+
             }
         }
 
