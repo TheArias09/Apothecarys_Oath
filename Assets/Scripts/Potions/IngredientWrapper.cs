@@ -26,8 +26,6 @@ public class IngredientWrapper : MonoBehaviour
 
     public float AvgQuality() => Ingredients.Average(ing => ing.Quality);
 
-    public void Empty() => ingredients.Clear();
-
 
     public bool FillWith(IngredientWrapper wrap, float deltaQty)
     {
