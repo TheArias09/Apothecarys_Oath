@@ -182,7 +182,7 @@ namespace UnitTests
 
             Recipe recipe = new("Mojito", new(ingredients), new() { IngredientState.MIXED });
 
-            ingredients[0].SetQuality(0.5f);
+            ingredients[0].Quality = 0.5f;
 
             Ingredient potion = new(1, ingredients);
             potion.AddState(IngredientState.MIXED);
