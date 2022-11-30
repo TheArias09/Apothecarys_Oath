@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Recipients
@@ -71,7 +72,10 @@ namespace Recipients
                 //TODO: Take flowAngle into account.
                 var deltaQuantity = pourSpeed * Time.deltaTime;
 
-                var filledCorrectly = targetIngredientWrapper.FillWith(ingredientWrapper, deltaQuantity);
+                List<Ingredient> pouredIngredients = ingredientWrapper.Pour(deltaQuantity);
+                deltaQuantity = pouredIngredients.Sum(ing => ing.Quantity);
+
+                var filledCorrectly = targetIngredientWrapper.FillWith(pouredIngredients, deltaQuantity);
 
                 if(!filledCorrectly)
                 {

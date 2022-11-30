@@ -34,7 +34,7 @@ public class IngredientWrapper : MonoBehaviour
     /// Called by the IngredientWrapper receiving another liquid.
     /// </summary>
     /// <returns>true if liquid has been added, false if there is overflow</returns>
-    public bool FillWith(IngredientWrapper wrap, float deltaQty)
+    public bool FillWith(List<Ingredient> ingredients, float deltaQty)
     {
         if (quantity >= recipientVolume) return false;
         else
@@ -43,38 +43,17 @@ public class IngredientWrapper : MonoBehaviour
 
             if (quantity + deltaQty >= recipientVolume)
             {
-                deltaQty = recipientVolume - quantity;
                 quantity = recipientVolume;
                 no_overflow = false;
             }
             else quantity += deltaQty;
 
-            foreach(var ingredient in wrap.Ingredients) AddQuantity(ingredient, deltaQty);
+            foreach(var ing in ingredients) AddQuantity(ing, ing.Quantity);
             
             SetTotalQty();
+            OnQuantityUpdated?.Invoke();
             return no_overflow;
         }
-
-        OnQuantityUpdated?.Invoke();
-    }
-
-    /// <summary>
-    /// Called by the IngredientWrapper pouring its content.
-    /// </summary>
-    /// <returns></returns>
-    public float Pour(IngredientWrapper wrap, float deltaQty)
-    {
-        SetTotalQty();
-        float totalPoured = 0;
-
-        foreach (var ingredient in wrap.Ingredients)
-        {
-            float removedQty = Mathf.Max(ingredient.Quantity, deltaQty * ingredient.Quantity / quantity);
-            ingredient.Quantity -= removedQty;
-            totalPoured += removedQty;
-        }
-
-        return totalPoured;
     }
 
     private void AddQuantity(Ingredient ingredient, float value)
@@ -87,5 +66,27 @@ public class IngredientWrapper : MonoBehaviour
             ingredient.Quantity = value;
             Ingredients.Add(ingredient);
         }
+    }
+
+    /// <summary>
+    /// Called by the IngredientWrapper pouring its content.
+    /// </summary>
+    /// <returns></returns>
+    public List<Ingredient> Pour(float deltaQty)
+    {
+        SetTotalQty();
+        List<Ingredient> pouredIngredients = new();
+
+        foreach (var ing in ingredients)
+        {
+            float removedQty = Mathf.Max(ing.Quantity, deltaQty * ing.Quantity / quantity);
+            ing.Quantity -= removedQty;
+
+            Ingredient pouredIngredient = new(ing.Name, removedQty, ing.Quality, ing.Color, ing.Cures.Value);
+            pouredIngredients.Add(pouredIngredient);
+        }
+
+        OnQuantityUpdated?.Invoke();
+        return pouredIngredients;
     }
 }
