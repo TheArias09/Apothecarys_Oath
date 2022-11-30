@@ -9,10 +9,12 @@ public class Recipe
     [SerializeField] private static float minQuality = 0.1f;
 
     [SerializeField] private string name;
+    [SerializeField] private DiseaseName cures;
     [SerializeField] private List<Ingredient> ingredients;
     [SerializeField] private List<IngredientState> states;
 
     public string Name { get { return name; } }
+    public DiseaseName Cures { get { return cures; } }
     public List<Ingredient> Ingredients { get { return ingredients; } }
     public List<IngredientState> States { get { return states; } }
 
@@ -29,16 +31,17 @@ public class Recipe
     public static float CheckPotion(Recipe recipe, Ingredient potion)
     {
         //Wrong States
-        if (recipe.states.Count != potion.States.Count || !recipe.states.All(potion.States.Contains)) return 0;
+        if (recipe.States.Count != potion.States.Count || !recipe.States.All(potion.States.Contains)) return 0;
 
         //Wrong ingredients
         if (recipe.Ingredients.Count != potion.Ingredients.Count || !recipe.Ingredients.All(potion.Ingredients.Contains)) return 0;
 
         //Potion corresponds to recipe
-        Debug.Log(recipe.name + " crafted !");
+        Debug.Log(recipe.Name + " crafted !");
         potion.SetName(recipe.Name);
         potion.SetTotalQantity();
         potion.SetAvgQuality();
+        potion.Cures = recipe.Cures;
 
         CheckProportions(recipe, potion);
         return potion.Quality;

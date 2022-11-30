@@ -24,12 +24,14 @@ public class Ingredient
     public List<IngredientState> States { get { return states; } }
     public List<Ingredient> Ingredients { get; }
 
+    public DiseaseName? Cures { get; set; }
+
     public Ingredient(string name, float quantity)
     {
         this.name = name;
         this.quantity = quantity;
         quality = 1;
-        this.states = new List<IngredientState>();
+        states = new List<IngredientState>();
         Ingredients = new List<Ingredient>();
     }
 

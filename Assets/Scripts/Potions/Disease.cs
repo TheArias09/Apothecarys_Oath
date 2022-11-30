@@ -5,7 +5,7 @@ using UnityEngine;
 [Serializable]
 public enum DiseaseName
 {
-    STRESS, COLD, POISONED
+    STRESS, COLD, POISON
 }
 
 [Serializable]

@@ -12,16 +12,13 @@ public class Client
 
     private readonly List<Symptom> symptoms;
 
+    public string Name { get => name; }
+    public DiseaseName Disease { get => disease; }
+
     public Client(string name, DiseaseName disease)
     {
         this.name = name;
         this.disease = disease;
         symptoms = new List<Symptom>();
     }
-
-    public void AddSymptom(Symptom symptom) => symptoms.Add(symptom);
-
-    public void RemoveSymptom(Symptom symptom) => symptoms.Remove(symptom);
-
-    public void Heal() => symptoms.Clear();
 }
