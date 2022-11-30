@@ -25,7 +25,7 @@ public class LiquidManager : MonoBehaviour
     private void Awake()
     {
         _ingredientWrapper = GetComponent<IngredientWrapper>();
-        _ingredientWrapper.SetRecipient(this);
+        recipientQuantity = _ingredientWrapper.RecipientQuantity;
 
         if (_ingredientWrapper.Ingredients == null) potionCount = 0;
         else
@@ -80,7 +80,9 @@ public class LiquidManager : MonoBehaviour
         {
             for (int i = 0; i < potionCount; i++)
             {
-                _newFill = (recipientQuantity / _ingredientWrapper.Ingredients[i].Quantity) * 0.2f - 0.1f;
+                //_newFill = (recipientQuantity / _ingredientWrapper.Ingredients[i].Quantity) * 0.2f - 0.1f;
+                //_newFill = _ingredientWrapper.Ingredients[i].Quantity / recipientQuantity;
+                _newFill = (_ingredientWrapper.Ingredients[i].Quantity / recipientQuantity) * 0.2f - 0.1f;
 
                 if (Math.Abs(_newFill - liquids[i].fill) > 0.0001f)
                 {
@@ -114,7 +116,8 @@ public class LiquidManager : MonoBehaviour
     void UpdateLiquidFill(int liquidNumber, float desiredFill)
     {
         Material volumeMaterial;
-        float fillDifference = (desiredFill * 0.2f - 0.1f) - liquids[liquidNumber].fill; //Negative if lowering
+        float fillDifference = desiredFill - liquids[liquidNumber].fill; //Negative if lowering
+        //float fillDifference = (desiredFill * 0.2f - 0.1f) - liquids[liquidNumber].fill; //Negative if lowering
 
         for (int i = liquidNumber; i < liquidVolumes.Count; i++)
         {

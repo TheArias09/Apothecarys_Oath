@@ -9,15 +9,14 @@ public class IngredientWrapper : MonoBehaviour
     [SerializeField] private List<Ingredient> ingredients;
     [SerializeField] private List<IngredientState> states;
 
-    private float recipientVolume = 0;
+    [SerializeField] private float recipientQuantity = 0;
+    public float RecipientQuantity { get { return recipientQuantity; } set { recipientQuantity = value; } }
     private float quantity = 0;
 
     public List<Ingredient> Ingredients { get => ingredients; }
     public List<IngredientState> States { get => states; }
 
     public event Action OnQuantityUpdated;
-
-    public void SetRecipient(LiquidManager liquidManager) => recipientVolume = liquidManager.RecipientQuantity;
 
     public void SetTotalQty() => quantity = ingredients.Sum(ing => ing.Quantity);
 
@@ -36,15 +35,15 @@ public class IngredientWrapper : MonoBehaviour
     /// <returns>true if liquid has been added, false if there is overflow</returns>
     public bool FillWith(IngredientWrapper wrap, float deltaQty)
     {
-        if (quantity >= recipientVolume) return false;
+        if (quantity >= recipientQuantity) return false;
         else
         {
             bool no_overflow = true;
 
-            if (quantity + deltaQty >= recipientVolume)
+            if (quantity + deltaQty >= recipientQuantity)
             {
-                deltaQty = recipientVolume - quantity;
-                quantity = recipientVolume;
+                deltaQty = recipientQuantity - quantity;
+                quantity = recipientQuantity;
                 no_overflow = false;
             }
             else quantity += deltaQty;
@@ -52,10 +51,9 @@ public class IngredientWrapper : MonoBehaviour
             foreach(var ingredient in wrap.Ingredients) AddQuantity(ingredient, deltaQty);
             
             SetTotalQty();
+            OnQuantityUpdated?.Invoke();
             return no_overflow;
         }
-
-        OnQuantityUpdated?.Invoke();
     }
 
     /// <summary>
@@ -74,6 +72,7 @@ public class IngredientWrapper : MonoBehaviour
             totalPoured += removedQty;
         }
 
+        wrap.OnQuantityUpdated?.Invoke();
         return totalPoured;
     }
 
