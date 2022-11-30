@@ -8,12 +8,9 @@ public class PotionMaker : MonoBehaviour
 {
     [SerializeField] private float minQuality = 0.1f;
     [Space(10)]
-    [SerializeField] private List<Ingredient> ingredients;
-    [Space(10)]
     [SerializeField] private List<Recipe> recipes;
 
     private Ingredient potion;
-    private Dictionary<string, Recipe> recipeDict;
 
     public static PotionMaker Instance;
 
@@ -23,27 +20,8 @@ public class PotionMaker : MonoBehaviour
         else Destroy(this);
     }
 
-    private void Start()
+    public void CheckPotion(IngredientWrapper potion)
     {
-        recipeDict = new Dictionary<string, Recipe>();
-        foreach (var recipe in recipes) recipeDict.Add(recipe.Name, recipe);
-    }
-
-    void UpdateIngredients()
-    {
-        potion = new(1, ingredients.ToList());
-        potion.AddState(IngredientState.MIXED);
-    }
-
-    public void UpdatePotion()
-    {
-        UpdateIngredients();
-        CheckPotion(potion);
-    }
-
-    public void CheckPotion(Ingredient potion)
-    {
-        UpdateIngredients();
         foreach(var recipe in recipes)
         {
             float quality = CheckPotion(recipe, potion);
@@ -55,7 +33,7 @@ public class PotionMaker : MonoBehaviour
     /// <summary>
     /// Checks if a potion followed a recipe correctly and returns a bool accordingly.
     /// </summary>
-    public float CheckPotion(Recipe recipe, Ingredient potion)
+    public float CheckPotion(Recipe recipe, IngredientWrapper potion)
     {
         //Wrong States
         if (recipe.States.Count != potion.States.Count || !recipe.States.All(potion.States.Contains)) return 0;
@@ -65,18 +43,19 @@ public class PotionMaker : MonoBehaviour
 
         //Potion corresponds to recipe
         Debug.Log(recipe.Name + " crafted !");
-        potion.Name = recipe.Name;
-        potion.SetTotalQantity();
-        potion.SetAvgQuality();
-        potion.Color = recipe.Color;
-        potion.Cures = recipe.Cures;
-        potion.RemoveIngredients();
 
-        CheckProportions(recipe, potion);
-        return potion.Quality;
+        Ingredient result = new(recipe.Name, potion.GetTotalQty(), potion.AvgQuality(), recipe.Color, recipe.Cures);
+        float craftQuality = CheckProportions(recipe, potion);
+        result.Quality *= craftQuality;
+
+        potion.Ingredients.Clear();
+        potion.Ingredients.Add(result);
+
+        Debug.Log("Final quality: " + result.Quality);
+        return result.Quality;
     }
 
-    private void CheckProportions(Recipe recipe, Ingredient potion)
+    private float CheckProportions(Recipe recipe, IngredientWrapper potion)
     {
         float[] proportions = new float[potion.Ingredients.Count];
 
@@ -91,9 +70,8 @@ public class PotionMaker : MonoBehaviour
         float std_dev = (float)Math.Sqrt(squarDiff / proportions.Length);
 
         float quality = std_dev > 1 ? Instance.minQuality : 1 - std_dev;
-        potion.Quality *= quality;
 
         Debug.Log("std_dev: " + std_dev + " => quality: " + quality);
-        Debug.Log("Final quality: " + potion.Quality);
+        return quality;
     }
 }

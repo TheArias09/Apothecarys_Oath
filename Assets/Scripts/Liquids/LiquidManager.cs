@@ -10,40 +10,33 @@ public class LiquidManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> liquidVolumes;
     [SerializeField] private List<Liquid> liquids;
-    private IngredientWrapper _ingredientWrapper;
 
     [SerializeField] private GameObject liquidVolume;
 
-    [SerializeField] private float RecipientQuantity;
-    [SerializeField] private int PotionCount;
-    private int PreviousPotionCount;
+    [SerializeField] private float recipientQuantity;
+    [SerializeField] private int potionCount;
 
+    private IngredientWrapper _ingredientWrapper;
+    private int _previousPotionCount;
     private float _newFill;
+
+    public float RecipientQuantity { get => recipientQuantity;  }
+
 
     private void Awake()
     {
         _ingredientWrapper = liquidVolume.GetComponent<IngredientWrapper>();
-        //_ingredientWrapper.setRecipient();
+        _ingredientWrapper.SetRecipient(this);
 
-        if (_ingredientWrapper.Ingredient == null)  //y'a 0 potions
-        {
-            PotionCount = 0;
-        }
+        if (_ingredientWrapper.Ingredients == null) potionCount = 0;
         else
         {
-            PotionCount = Math.Max(1,_ingredientWrapper.Ingredient.Ingredients.Count);
-            PreviousPotionCount = PotionCount;
-            
-            if (PotionCount == 1) 
+            potionCount = _ingredientWrapper.Ingredients.Count;
+            _previousPotionCount = potionCount;
+
+            for (int i = 0; i < potionCount; i++)
             {
-                AddLiquid(_ingredientWrapper.Ingredient);
-            }
-            else
-            {
-                for (int i = 0; i < PotionCount; i++)
-                {
-                    AddLiquid(_ingredientWrapper.Ingredient.Ingredients[i]);
-                }
+                AddLiquid(_ingredientWrapper.Ingredients[i]);
             }
         }
     }
@@ -67,42 +60,22 @@ public class LiquidManager : MonoBehaviour
 
     public void UpdateVolumes()
     {
-        if (_ingredientWrapper.Ingredient == null)  //y'a 0 potions
-        {
-            PotionCount = 0;
-        }
-        else
-        {
-            PotionCount = Math.Max(1,_ingredientWrapper.Ingredient.Ingredients.Count);
-        }
+        potionCount = _ingredientWrapper.Ingredients.Count;
 
-        if (PotionCount != PreviousPotionCount)
+        if (potionCount != _previousPotionCount)
         {
             RefreshLiquids();
-            PreviousPotionCount = PotionCount;
+            _previousPotionCount = potionCount;
         }
-
         else
         {
-            if (PotionCount == 1) 
+            for (int i = 0; i < potionCount; i++)
             {
-                _newFill = (RecipientQuantity / _ingredientWrapper.Ingredient.Quantity) * 0.2f - 0.1f;
+                _newFill = (recipientQuantity / _ingredientWrapper.Ingredients[i].Quantity) * 0.2f - 0.1f;
 
-                if (Math.Abs(_newFill - liquids[0].fill) > 0.0001f)
+                if (Math.Abs(_newFill - liquids[i].fill) > 0.0001f)
                 {
-                    UpdateLiquidFill(0, _newFill);
-                };
-            }
-            else
-            {
-                for (int i = 0; i < PotionCount; i++)
-                {
-                    _newFill = (RecipientQuantity / _ingredientWrapper.Ingredient.Ingredients[i].Quantity) * 0.2f - 0.1f;
-
-                    if (Math.Abs(_newFill - liquids[i].fill) > 0.0001f)
-                    {
-                        UpdateLiquidFill(i, _newFill);
-                    }
+                    UpdateLiquidFill(i, _newFill);
                 }
             }
         }
@@ -118,9 +91,9 @@ public class LiquidManager : MonoBehaviour
             Destroy(liquidToRemove);
         }
 
-        if (PotionCount > 0)
+        if (potionCount > 0)
         {
-            List<Ingredient> ingredients = _ingredientWrapper.Ingredient.Ingredients;
+            List<Ingredient> ingredients = _ingredientWrapper.Ingredients;
 
             for (int i = 0; i < ingredients.Count ; i++)
             {
@@ -157,7 +130,7 @@ public class LiquidManager : MonoBehaviour
             currentFill = liquids[liquids.Count-1].fill  ;
         }
 
-        fill = currentFill + (ingredient.Quantity / RecipientQuantity) * 0.2f - 0.1f ;
+        fill = currentFill + (ingredient.Quantity / recipientQuantity) * 0.2f - 0.1f ;
         
         fresnelPower = Random.Range(4f, 6f);
         
