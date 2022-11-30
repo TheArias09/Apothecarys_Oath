@@ -24,7 +24,7 @@ namespace UnitTests
             Ingredient potion = new(1, ingredients);
             potion.AddState(IngredientState.MIXED);
 
-            Assert.AreEqual(0, Recipe.CheckPotion(recipe, potion));
+            Assert.AreEqual(0, PotionMaker.Instance.CheckPotion(recipe, potion));
         }
 
         [Test]
@@ -46,7 +46,7 @@ namespace UnitTests
             Ingredient potion = new(1, ingredients);
             potion.AddState(IngredientState.MIXED);
 
-            Assert.AreEqual(0, Recipe.CheckPotion(recipe, potion));
+            Assert.AreEqual(0, PotionMaker.Instance.CheckPotion(recipe, potion));
         }
 
         [Test]
@@ -66,7 +66,7 @@ namespace UnitTests
             Ingredient potion = new(1, ingredients);
             //Potion is not mixed after the new ingredient is added
 
-            Assert.AreEqual(0, Recipe.CheckPotion(recipe, potion));
+            Assert.AreEqual(0, PotionMaker.Instance.CheckPotion(recipe, potion));
         }
 
         [Test]
@@ -95,7 +95,7 @@ namespace UnitTests
             Ingredient potion = new(1, ingredients2);
             potion.AddState(IngredientState.MIXED);
 
-            Assert.AreEqual(0, Recipe.CheckPotion(recipe, potion));
+            Assert.AreEqual(0, PotionMaker.Instance.CheckPotion(recipe, potion));
         }
 
         [Test]
@@ -116,7 +116,7 @@ namespace UnitTests
             potion.AddState(IngredientState.MIXED);
             potion.AddState(IngredientState.CRUSHED);
 
-            Assert.AreEqual(0, Recipe.CheckPotion(recipe, potion));
+            Assert.AreEqual(0, PotionMaker.Instance.CheckPotion(recipe, potion));
         }
 
         [Test]
@@ -145,7 +145,7 @@ namespace UnitTests
             Ingredient potion = new(1, ingredients2);
             potion.AddState(IngredientState.MIXED);
 
-            Assert.AreEqual(0, Recipe.CheckPotion(recipe, potion));
+            Assert.AreEqual(0, PotionMaker.Instance.CheckPotion(recipe, potion));
         }
 
         [Test]
@@ -165,7 +165,7 @@ namespace UnitTests
             Ingredient potion = new(1, ingredients);
             potion.AddState(IngredientState.MIXED);
 
-            Assert.AreEqual(1, Recipe.CheckPotion(recipe, potion));
+            Assert.AreEqual(1, PotionMaker.Instance.CheckPotion(recipe, potion));
         }
 
         [Test]
@@ -187,8 +187,8 @@ namespace UnitTests
             Ingredient potion = new(1, ingredients);
             potion.AddState(IngredientState.MIXED);
 
-            Assert.AreNotEqual(0, Recipe.CheckPotion(recipe, potion));
-            Assert.AreNotEqual(1, Recipe.CheckPotion(recipe, potion));
+            Assert.AreNotEqual(0, PotionMaker.Instance.CheckPotion(recipe, potion));
+            Assert.AreNotEqual(1, PotionMaker.Instance.CheckPotion(recipe, potion));
         }
 
         [Test]
@@ -217,8 +217,8 @@ namespace UnitTests
             Ingredient potion = new(1, ingredients2);
             potion.AddState(IngredientState.MIXED);
 
-            Assert.AreNotEqual(0, Recipe.CheckPotion(recipe, potion));
-            Assert.AreNotEqual(1, Recipe.CheckPotion(recipe, potion));
+            Assert.AreNotEqual(0, PotionMaker.Instance.CheckPotion(recipe, potion));
+            Assert.AreNotEqual(1, PotionMaker.Instance.CheckPotion(recipe, potion));
         }
     }
 }
