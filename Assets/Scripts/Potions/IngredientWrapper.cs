@@ -90,13 +90,13 @@ public class IngredientWrapper : MonoBehaviour
             pouredIngredients.Add(pouredIngredient);
         }
 
-        CleanIngredients();
+        CleanEmptyIngredients();
 
         OnQuantityUpdated?.Invoke();
         return pouredIngredients;
     }
 
-    private void CleanIngredients()
+    private void CleanEmptyIngredients()
     {
         for(int i = Ingredients.Count - 1; i >= 0; i--)
         {
