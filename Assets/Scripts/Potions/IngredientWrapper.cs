@@ -31,7 +31,6 @@ public class IngredientWrapper : MonoBehaviour
 
     public float AvgQuality() => Ingredients.Average(ing => ing.Quality);
 
-
     /// <summary>
     /// Called by the IngredientWrapper receiving another liquid.
     /// </summary>
@@ -91,7 +90,20 @@ public class IngredientWrapper : MonoBehaviour
             pouredIngredients.Add(pouredIngredient);
         }
 
+        CleanEmptyIngredients();
+
         OnQuantityUpdated?.Invoke();
         return pouredIngredients;
+    }
+
+    private void CleanEmptyIngredients()
+    {
+        for(int i = Ingredients.Count - 1; i >= 0; i--)
+        {
+            if(ingredients[i].Quantity == 0)
+            {
+                ingredients.RemoveAt(i);
+            }
+        }
     }
 }
