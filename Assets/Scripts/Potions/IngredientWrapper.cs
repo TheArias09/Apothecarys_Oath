@@ -87,7 +87,7 @@ public class IngredientWrapper : MonoBehaviour
             float removedQty = Mathf.Min(ing.Quantity, deltaQty * ing.Quantity / quantity);
             ing.Quantity -= removedQty;
 
-            Ingredient pouredIngredient = new Ingredient(ing.Name, removedQty, ing.Quality, ing.Color, ing.Cures);
+            Ingredient pouredIngredient = new (ing.Name, removedQty, ing.Quality, ing.Color, ing.Cures);
             pouredIngredients.Add(pouredIngredient);
         }
 
