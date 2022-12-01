@@ -90,20 +90,9 @@ public class IngredientWrapper : MonoBehaviour
             pouredIngredients.Add(pouredIngredient);
         }
 
-        CleanEmptyIngredients();
+        ingredients.RemoveAll(ing => ing.Quantity == 0);
 
         OnQuantityUpdated?.Invoke();
         return pouredIngredients;
-    }
-
-    private void CleanEmptyIngredients()
-    {
-        for(int i = Ingredients.Count - 1; i >= 0; i--)
-        {
-            if(ingredients[i].Quantity == 0)
-            {
-                ingredients.RemoveAt(i);
-            }
-        }
     }
 }
