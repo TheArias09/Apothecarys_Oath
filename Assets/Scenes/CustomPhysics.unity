@@ -197,7 +197,7 @@ MonoBehaviour:
   minQuality: 0.1
   recipes:
   - name: Stimulant
-    color: {r: 0.2516465, g: 0.8207547, b: 0.6055485, a: 1}
+    color: {r: 0.8962264, g: 0.43543077, b: 0.8560476, a: 1}
     cures: 0
     ingredients:
     - name: Water
@@ -473,6 +473,11 @@ PrefabInstance:
       propertyPath: pourSpeed
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 3053748593040945441, guid: c1cbccd0512eaa74995b24f6bd99f18d,
+        type: 3}
+      propertyPath: angleThreshold
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 3570544957478636073, guid: c1cbccd0512eaa74995b24f6bd99f18d,
         type: 3}
       propertyPath: recipientQuantity
@@ -481,7 +486,7 @@ PrefabInstance:
     - target: {fileID: 8276709729744163617, guid: c1cbccd0512eaa74995b24f6bd99f18d,
         type: 3}
       propertyPath: m_IsKinematic
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8276709729744163619, guid: c1cbccd0512eaa74995b24f6bd99f18d,
         type: 3}
@@ -865,6 +870,11 @@ PrefabInstance:
       propertyPath: pourSpeed
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 3053748593040945441, guid: c1cbccd0512eaa74995b24f6bd99f18d,
+        type: 3}
+      propertyPath: angleThreshold
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 3570544957478636073, guid: c1cbccd0512eaa74995b24f6bd99f18d,
         type: 3}
       propertyPath: recipientQuantity
@@ -873,7 +883,7 @@ PrefabInstance:
     - target: {fileID: 8276709729744163617, guid: c1cbccd0512eaa74995b24f6bd99f18d,
         type: 3}
       propertyPath: m_IsKinematic
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8276709729744163619, guid: c1cbccd0512eaa74995b24f6bd99f18d,
         type: 3}
@@ -1813,6 +1823,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pourSpeed: 0.1
+  angleThreshold: 30
 --- !u!114 &1968440813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2186,10 +2197,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Glass_Outside_V4 Clean
       objectReference: {fileID: 0}
+    - target: {fileID: 3053748593040945441, guid: c1cbccd0512eaa74995b24f6bd99f18d,
+        type: 3}
+      propertyPath: angleThreshold
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 8276709729744163617, guid: c1cbccd0512eaa74995b24f6bd99f18d,
         type: 3}
       propertyPath: m_IsKinematic
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8276709729744163621, guid: c1cbccd0512eaa74995b24f6bd99f18d,
         type: 3}

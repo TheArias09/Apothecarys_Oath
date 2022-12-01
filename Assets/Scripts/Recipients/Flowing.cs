@@ -18,6 +18,8 @@ namespace Recipients
 
         [SerializeField] float pourSpeed = 0.1f;
 
+        [SerializeField] float angleThreshold = 30f;
+
         IngredientWrapper ingredientWrapper;
 
         private void Awake()
@@ -49,7 +51,7 @@ namespace Recipients
         {
             var flowAngle = GetFlowAngle();
 
-            if(flowAngle > 0)
+            if(flowAngle > angleThreshold)
             {
                 Flow();
             }
@@ -60,8 +62,11 @@ namespace Recipients
             Debug.Log("Flow!" + gameObject.name);
 
             var hits = Physics.SphereCastAll(GetFlowPoint(), sphereCastRadius, Vector3.down, maxSphereCastDistance, sphereCastLayerMask);
-            
-            foreach(var hit in hits)
+
+            //TODO: Take flowAngle into account.
+            var deltaQuantity = pourSpeed * Time.deltaTime;
+
+            foreach (var hit in hits)
             {
                 if (hit.transform.gameObject == gameObject) continue;
 
@@ -69,8 +74,6 @@ namespace Recipients
 
                 var targetIngredientWrapper = hit.collider.GetComponentInParent<IngredientWrapper>();
 
-                //TODO: Take flowAngle into account.
-                var deltaQuantity = pourSpeed * Time.deltaTime;
 
                 List<Ingredient> pouredIngredients = ingredientWrapper.Pour(deltaQuantity);
 
@@ -84,6 +87,8 @@ namespace Recipients
 
                 return;
             }
+
+            ingredientWrapper.Pour(deltaQuantity);
 
             //recipient.PourInVoid();
         }
