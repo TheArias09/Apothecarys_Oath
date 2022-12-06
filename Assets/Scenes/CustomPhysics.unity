@@ -1153,11 +1153,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e4c379009165a246a1c837da7541d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accelerationThreshold: 0.01
-  mixCompletion: 0
+  accelerationThreshold: 0.0001
   mixCompletionIncreaseSpeed: 1
   mixCompletionDecreaseSpeed: 0.5
-  mixCompletionThreshold: 0.5
+  mixCompletionThreshold: 1
+  mixCompletion: 0
 --- !u!1001 &768644882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1919,10 +1919,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accelerationThreshold: 0.01
-  mixCompletion: 0
   mixCompletionIncreaseSpeed: 1
   mixCompletionDecreaseSpeed: 0.5
   mixCompletionThreshold: 1
+  mixCompletion: 0
 --- !u!1001 &1247407204
 PrefabInstance:
   m_ObjectHideFlags: 0

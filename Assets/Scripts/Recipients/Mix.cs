@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Mix : MonoBehaviour
 {
-    [SerializeField] float accelerationThreshold = 0.01f;
+    [Header("Parameters")]
+    [SerializeField] private float accelerationThreshold = 0.01f;
+    [SerializeField] private float mixCompletionIncreaseSpeed = 1f;
+    [SerializeField] private float mixCompletionDecreaseSpeed = 1f;
+    [SerializeField] private float mixCompletionThreshold = 1f;
+    
+    [Header(("Debug"))]
     [SerializeField] float mixCompletion = 0;
-    [SerializeField] float mixCompletionIncreaseSpeed = 1f;
-    [SerializeField] float mixCompletionDecreaseSpeed = 1f;
-    [SerializeField] float mixCompletionThreshold = 1f;
-
+    
     Vector3 previousPreviousPosition;
     Vector3 previousPosition;
-
     IngredientWrapper ingredientWrapper;
 
     private void Awake()
@@ -39,10 +41,7 @@ public class Mix : MonoBehaviour
             if(mixCompletion < 0) mixCompletion = 0;
         }
 
-        if(mixCompletion > mixCompletionThreshold)
-        {
-            MixComplete();
-        }
+        if(mixCompletion > mixCompletionThreshold) MixComplete();
 
         previousPreviousPosition = previousPosition;
         previousPosition = transform.position;
@@ -52,9 +51,9 @@ public class Mix : MonoBehaviour
     {
         PotionMaker.Instance.CheckPotion(ingredientWrapper);
         ingredientWrapper.CallOnQuantityUpdated();
-        Debug.Log("MixComplete!");
+        Debug.Log("Mix complete!");
         mixCompletion = 0f;
     }
 
-    //TODO: Prendre en compte le débordement (possibilité de boucher ?)
+    //TODO: Prendre en compte le dï¿½bordement (possibilitï¿½ de boucher ?)
 }
