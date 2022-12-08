@@ -1157,7 +1157,8 @@ MonoBehaviour:
   mixCompletion: 0
   mixCompletionIncreaseSpeed: 2
   mixCompletionDecreaseSpeed: 0.5
-  mixCompletionThreshold: 0.5
+  mixCompletionThreshold: 1
+  mixCompletion: 0
 --- !u!1001 &768644882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1919,10 +1920,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accelerationThreshold: 0.01
-  mixCompletion: 0
   mixCompletionIncreaseSpeed: 1
   mixCompletionDecreaseSpeed: 0.5
   mixCompletionThreshold: 1
+  mixCompletion: 0
 --- !u!1001 &1247407204
 PrefabInstance:
   m_ObjectHideFlags: 0

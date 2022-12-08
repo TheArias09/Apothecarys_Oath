@@ -114,15 +114,9 @@ public class LiquidManager : MonoBehaviour
             Destroy(liquidToRemove);
         }
 
-        if (potionCount > 0)
-        {
-            List<Ingredient> ingredients = _ingredientWrapper.Ingredients;
-
-            for (int i = 0; i < ingredients.Count ; i++)
-            {
-                AddLiquid(ingredients[i]);
-            }
-        }
+        if (potionCount <= 0) return;
+        List<Ingredient> ingredients = _ingredientWrapper.Ingredients;
+        foreach (var t in ingredients) AddLiquid(t);
     }
     
     void UpdateLiquidFill(int liquidNumber, float desiredTrueFill)  // desiredTrueFill entre 0 et 1

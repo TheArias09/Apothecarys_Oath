@@ -7,20 +7,20 @@ namespace Recipients
 {
     public class Flowing : MonoBehaviour
     {
-        //TODO: Gérer l'influence de l'angle et du remplissage en fonciton 
+        //TODO: Gï¿½rer l'influence de l'angle et du remplissage en fonciton 
 
-        [SerializeField] Transform bottleneckCenterPoint;
-        [SerializeField] float bottleneckRadius;
+        [SerializeField] private Transform bottleneckCenterPoint;
+        [SerializeField] private float bottleneckRadius;
 
-        [SerializeField] float sphereCastRadius = 0.01f;
-        [SerializeField] float maxSphereCastDistance = 10;
-        [SerializeField] LayerMask sphereCastLayerMask;
+        [SerializeField] private float sphereCastRadius = 0.01f;
+        [SerializeField] private float maxSphereCastDistance = 10;
+        [SerializeField] private LayerMask sphereCastLayerMask;
 
-        [SerializeField] float pourSpeed = 0.1f;
+        [SerializeField] private float pourSpeed = 0.1f;
 
-        [SerializeField] float angleThreshold = 30f;
+        [SerializeField] private float angleThreshold = 30f;
 
-        IngredientWrapper ingredientWrapper;
+        private IngredientWrapper ingredientWrapper;
 
         private void Awake()
         {
@@ -50,17 +50,12 @@ namespace Recipients
         private void Update()
         {
             var flowAngle = GetFlowAngle();
-
-            if(flowAngle > angleThreshold)
-            {
-                Flow();
-            }
+            if (flowAngle > angleThreshold) Flow();
         }
 
         private void Flow()
         {
             Debug.Log("Flow!" + gameObject.name);
-
             var hits = Physics.SphereCastAll(GetFlowPoint(), sphereCastRadius, Vector3.down, maxSphereCastDistance, sphereCastLayerMask);
 
             //TODO: Take flowAngle into account.
@@ -71,25 +66,20 @@ namespace Recipients
                 if (hit.transform.gameObject == gameObject) continue;
 
                 Debug.Log("Fill!");
-
                 var targetIngredientWrapper = hit.collider.GetComponentInParent<IngredientWrapper>();
-
-
                 List<Ingredient> pouredIngredients = ingredientWrapper.Pour(deltaQuantity);
 
                 if (pouredIngredients != null)
                 {
                     deltaQuantity = pouredIngredients.Sum(ing => ing.Quantity);
                     var filledCorrectly = targetIngredientWrapper.FillWith(pouredIngredients, deltaQuantity);
-                    
                     if (!filledCorrectly) Overflow();
                 }
-
+                
                 return;
             }
 
             ingredientWrapper.Pour(deltaQuantity);
-
             //recipient.PourInVoid();
         }
 
@@ -101,7 +91,6 @@ namespace Recipients
         private void OnDrawGizmos()
         {
             var point = GetFlowPoint();
-
             Gizmos.DrawSphere(point, sphereCastRadius);
         }
     }
