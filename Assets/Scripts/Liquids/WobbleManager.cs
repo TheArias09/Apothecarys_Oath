@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WobbleChildren : MonoBehaviour
+public class WobbleManager : MonoBehaviour
 {
     Renderer rend;
     Vector3 lastPos;
@@ -19,11 +19,6 @@ public class WobbleChildren : MonoBehaviour
     float pulse;
     float time = 0.5f;
     
-    // Use this for initialization
-    void Start()
-    {
-        rend = GetComponent<Renderer>();
-    }
     private void Update()
     {
         time += Time.deltaTime;

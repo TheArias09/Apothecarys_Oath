@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Liquid_V4
+  m_Name: Liquid_Material
   m_Shader: {fileID: -6465566751694194690, guid: f466a59bac4f21d40bfe58f2f8dbe8a7,
     type: 3}
   m_ValidKeywords: []
