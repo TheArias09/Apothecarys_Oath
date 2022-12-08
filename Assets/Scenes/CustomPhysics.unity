@@ -1063,6 +1063,11 @@ PrefabInstance:
       propertyPath: angleThreshold
       value: -20
       objectReference: {fileID: 0}
+    - target: {fileID: 3184800614776773171, guid: c1cbccd0512eaa74995b24f6bd99f18d,
+        type: 3}
+      propertyPath: MaxWobble
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3570544957478636073, guid: c1cbccd0512eaa74995b24f6bd99f18d,
         type: 3}
       propertyPath: recipientQuantity
@@ -1154,7 +1159,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accelerationThreshold: 0.002
-  mixCompletion: 0
   mixCompletionIncreaseSpeed: 2
   mixCompletionDecreaseSpeed: 0.5
   mixCompletionThreshold: 1
