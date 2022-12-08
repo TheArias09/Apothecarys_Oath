@@ -16,9 +16,10 @@ namespace Recipients
         [SerializeField] private float maxSphereCastDistance = 10;
         [SerializeField] private LayerMask sphereCastLayerMask;
 
-        [SerializeField] private float pourSpeed = 0.1f;
-
         [SerializeField] private float angleThreshold = 30f;
+        [SerializeField] private AnimationCurve fillCoefficientToAngleThreshold;
+        [SerializeField] private AnimationCurve deltaAngleToPourSpeed;
+        [SerializeField] private float maxPourSpeed = 0.5f;
 
         private IngredientWrapper ingredientWrapper;
 
@@ -35,6 +36,22 @@ namespace Recipients
             return flowAngle - 90;
         }
 
+        private float ComputeAngleThreshold()
+        {
+            // FillCoefficient between 0 and 1.
+            var fillCoefficient = ingredientWrapper.GetTotalQty() / ingredientWrapper.RecipientQuantity;
+
+            var angleThresholdNormalized = fillCoefficientToAngleThreshold.Evaluate(fillCoefficient);
+            // AngleThreshold between -90f and 90f.
+            return -fillCoefficientToAngleThreshold.Evaluate(fillCoefficient) * 180f + 90f;
+        }
+
+        private float ComputeDeltaAngle()
+        {
+            Debug.Log("Angle Threshold: " + ComputeAngleThreshold());
+            return GetFlowAngle() - ComputeAngleThreshold();
+        }
+
         private Vector3 GetFlowPoint()
         {
             var xProjection = Vector3.Dot(bottleneckCenterPoint.right, Vector3.down);
@@ -48,18 +65,26 @@ namespace Recipients
         }
 
         private void Update()
-        {
-            var flowAngle = GetFlowAngle();
-            if (flowAngle > angleThreshold) Flow();
+        { 
+            var deltaAngle = ComputeDeltaAngle();
+
+            Debug.Log("DeltaAngle: " + deltaAngle);
+
+            if (deltaAngle > 0) Flow(deltaAngle);
         }
 
-        private void Flow()
+        private void Flow(float deltaAngle)
         {
+            var deltaAngleNormalized = Mathf.InverseLerp(0, 180 - (ComputeAngleThreshold() + 90f), deltaAngle);
+            Debug.Log("DeltaAngleNormalized: " + deltaAngleNormalized);
+            var pourSpeed = deltaAngleToPourSpeed.Evaluate(deltaAngleNormalized) * maxPourSpeed;
+
+            var deltaQuantity = pourSpeed * Time.deltaTime;
+
+            Debug.Log("PourSpeed: " + pourSpeed);
+
             Debug.Log("Flow!" + gameObject.name);
             var hits = Physics.SphereCastAll(GetFlowPoint(), sphereCastRadius, Vector3.down, maxSphereCastDistance, sphereCastLayerMask);
-
-            //TODO: Take flowAngle into account.
-            var deltaQuantity = pourSpeed * Time.deltaTime;
 
             foreach (var hit in hits)
             {
