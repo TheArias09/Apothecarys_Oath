@@ -13,10 +13,15 @@ public class WobbleManager : MonoBehaviour
     private Vector3 velocity;
     private Vector3 lastRot;  
     private Vector3 angularVelocity;
+    
     public float MaxWobble = 2.5f;
     private float balancedMaxWobble;
     public float WobbleSpeed = 1f;
+    private float balancedWobbleSpeed;
     public float Recovery = 1f;
+    private float balancedRecovery;
+    private float viscocityFactor;
+    
     private float wobbleAmountX;
     private float wobbleAmountZ;
     private float wobbleAmountToAddX;
@@ -33,7 +38,10 @@ public class WobbleManager : MonoBehaviour
         liquidVisualsManager = GetComponent<LiquidVisualsManager>();
         liquidCount = liquidVisualsManager.LiquidCount;
         previousLiquidCount = liquidCount;
-        balancedMaxWobble = FindMaxWobble();
+        viscocityFactor = FindViscosityFactor();
+        balancedMaxWobble = viscocityFactor * MaxWobble;
+        balancedWobbleSpeed = viscocityFactor * balancedWobbleSpeed;
+        balancedRecovery = viscocityFactor * Recovery;
     }
 
     private void Update()
@@ -42,16 +50,19 @@ public class WobbleManager : MonoBehaviour
         if (liquidCount != previousLiquidCount)
         {
             previousLiquidCount = liquidCount;
-            balancedMaxWobble = FindMaxWobble();
+            viscocityFactor = FindViscosityFactor();
+            balancedMaxWobble = viscocityFactor * MaxWobble;
+            balancedWobbleSpeed = viscocityFactor * balancedWobbleSpeed;
+            balancedRecovery = viscocityFactor * Recovery;
         }
         
         time += Time.deltaTime;
         // decrease wobble over time
-        wobbleAmountToAddX = Mathf.Lerp(wobbleAmountToAddX, 0, Time.deltaTime * (Recovery));
-        wobbleAmountToAddZ = Mathf.Lerp(wobbleAmountToAddZ, 0, Time.deltaTime * (Recovery));
+        wobbleAmountToAddX = Mathf.Lerp(wobbleAmountToAddX, 0, Time.deltaTime * (balancedRecovery));
+        wobbleAmountToAddZ = Mathf.Lerp(wobbleAmountToAddZ, 0, Time.deltaTime * (balancedRecovery));
 
         // make a sine wave of the decreasing wobble
-        pulse = 2 * Mathf.PI * WobbleSpeed;
+        pulse = 2 * Mathf.PI * balancedWobbleSpeed;
         wobbleAmountX = wobbleAmountToAddX * Mathf.Sin(pulse * time);
         wobbleAmountZ = wobbleAmountToAddZ * Mathf.Sin(pulse * time);
         
@@ -82,21 +93,21 @@ public class WobbleManager : MonoBehaviour
             }
         }
     }
-
-    float FindMaxWobble()
+    
+    float FindViscosityFactor()
     {
-        float returnWobble = 0f; //wobble bas -> liquide lent
+        float returnFactor = 0f; 
         float totalTrueFill = 0f;
         List<LiquidVisuals> liquids = liquidVisualsManager.Liquids;
        
         for (int i = 0; i < liquids.Count; i++)
         {
-            returnWobble += liquids[i].viscosity * liquids[i].trueFill;
+            returnFactor += liquids[i].viscosity * liquids[i].trueFill;
             totalTrueFill += liquids[i].trueFill;
         }
         
-        returnWobble = returnWobble * MaxWobble / totalTrueFill;
-        return returnWobble;
+        returnFactor /= totalTrueFill;
+        return returnFactor;
     }
 
 }
