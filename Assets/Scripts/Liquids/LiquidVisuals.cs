@@ -10,8 +10,9 @@ public class LiquidVisuals : MonoBehaviour
     public Color surfaceColor;
     public float fresnelPower;
     public Color fresnelColor;
+    public float viscosity; //Water = 1, Honey < 1, Gaz > 1
 
-    public LiquidVisuals(float TrueFill,float DisplayedFill,Color LiquidColor,Color SurfaceColor,float FresnelPower,Color FresnelColor)
+    public LiquidVisuals(float TrueFill,float DisplayedFill,Color LiquidColor,Color SurfaceColor,float FresnelPower,Color FresnelColor, float Viscosity)
     {
         trueFill = TrueFill;
         displayedFill = DisplayedFill;
@@ -19,5 +20,6 @@ public class LiquidVisuals : MonoBehaviour
         surfaceColor = SurfaceColor;
         fresnelPower = FresnelPower;
         fresnelColor = FresnelColor;
+        viscosity = Viscosity;
     }
 }

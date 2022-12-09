@@ -23,8 +23,11 @@ public class LiquidVisualsManager : MonoBehaviour
 
     [SerializeField] private float absoluteDisplayFill = 0.1f;
     
-    public float RecipientQuantity { get => recipientQuantity;  }
-
+    public float RecipientQuantity => recipientQuantity;
+    public List<LiquidVisuals> Liquids => liquids;
+    public int LiquidCount => liquidCount;
+    
+    
     private void Awake()
     {
         ingredientWrapper = GetComponent<IngredientWrapper>();
@@ -104,7 +107,6 @@ public class LiquidVisualsManager : MonoBehaviour
         float desiredDisplayedFill = previousDisplayedFill + desiredTrueFill * 2 * absoluteDisplayFill;
         
         float displayedFillDifference = desiredDisplayedFill - liquids[liquidNumber].displayedFill; //Negative if lowering
-        //float fillDifference = (desiredFill * 0.2f - 0.1f) - liquids[liquidNumber].fill; //Negative if lowering
 
         for (int i = liquidNumber; i < liquidVolumes.Count; i++)
         {
@@ -123,6 +125,7 @@ public class LiquidVisualsManager : MonoBehaviour
         Color surfaceColor;
         float fresnelPower;
         Color fresnelColor;
+        float viscosity;
 
         trueFill = ingredient.Quantity / recipientQuantity;
         
@@ -134,7 +137,9 @@ public class LiquidVisualsManager : MonoBehaviour
 
         displayedFill = previousDisplayedFill + (trueFill * 2 * absoluteDisplayFill) ;
         
+        //TODO give data in ingredient
         fresnelPower = Random.Range(4f, 6f);
+        viscosity = Random.Range(0.5f, 1.5f);
         
         liquidColor = ingredient.Color;
         surfaceColor = new Color(
@@ -166,6 +171,7 @@ public class LiquidVisualsManager : MonoBehaviour
         newLiquid.surfaceColor = surfaceColor;
         newLiquid.fresnelPower = fresnelPower;
         newLiquid.fresnelColor = fresnelColor;
+        newLiquid.viscosity = viscosity;
 
         Material liquidRendererMaterial = newLiquidVolume.GetComponent<Renderer>().material;
 
@@ -188,6 +194,7 @@ public class LiquidVisualsManager : MonoBehaviour
         Color surfaceColor;
         float fresnelPower;
         Color fresnelColor;
+        float viscosity;
 
         float previousDisplayedFill = - absoluteDisplayFill;
         if (liquids.Count > 0)
@@ -203,6 +210,7 @@ public class LiquidVisualsManager : MonoBehaviour
         
 
         fresnelPower = Random.Range(4.5f, 5.5f);
+        viscosity = Random.Range(0.5f, 1.5f);
         
         liquidColor = new Color(
             (float)Random.Range(0f, 1f),
@@ -231,17 +239,16 @@ public class LiquidVisualsManager : MonoBehaviour
         newLiquidVolume.name = "Liquid" + liquidNumber;
 
         LiquidVisuals newLiquid = newLiquidVolume.AddComponent<LiquidVisuals>();
-        //Liquid newLiquid = Liquid(fill, liquidColor, surfaceColor, fresnelPower, fresnelColor);
         newLiquid.trueFill = trueFill;
         newLiquid.displayedFill = displayedFill;
         newLiquid.liquidColor = liquidColor;
         newLiquid.surfaceColor = surfaceColor;
         newLiquid.fresnelPower = fresnelPower;
         newLiquid.fresnelColor = fresnelColor;
+        newLiquid.viscosity = viscosity;
 
         Material liquidRendererMaterial = newLiquidVolume.GetComponent<Renderer>().material;
 
-        //liquidRendererMaterial = new Material(liquidRendererMaterial);
         liquidRendererMaterial.SetFloat("_Fill", displayedFill);
         liquidRendererMaterial.SetColor("_LiquidColor", liquidColor);
         liquidRendererMaterial.SetColor("_SurfaceColor", surfaceColor);
@@ -298,6 +305,7 @@ public class LiquidVisualsManager : MonoBehaviour
         Color surfaceColor;
         float fresnelPower;
         Color fresnelColor;
+        float viscosity;
 
         trueFill = 0;
 
@@ -310,6 +318,8 @@ public class LiquidVisualsManager : MonoBehaviour
         displayedFill = previousdisplayedFill + (trueFill * 2 * absoluteDisplayFill) ;
         
         fresnelPower = Random.Range(4.5f, 5.5f);
+        viscosity = Random.Range(0.5f, 1.5f);
+        
         liquidColor = Color.white;
         surfaceColor = Color.white;
         fresnelColor = Color.black;
@@ -331,6 +341,7 @@ public class LiquidVisualsManager : MonoBehaviour
         newLiquid.surfaceColor = surfaceColor;
         newLiquid.fresnelPower = fresnelPower;
         newLiquid.fresnelColor = fresnelColor;
+        newLiquid.viscosity = viscosity;
 
         Material liquidRendererMaterial = newLiquidVolume.GetComponent<Renderer>().material;
 
