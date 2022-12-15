@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 3184800614776773171}
   - component: {fileID: 3053748593040945441}
   - component: {fileID: -8292239926303675061}
+  - component: {fileID: 7651305684829197164}
   m_Layer: 0
   m_Name: Glass_Outside_V4 Clean
   m_TagString: Untagged
@@ -321,6 +322,23 @@ MonoBehaviour:
   recipientQuantity: 0
   ingredients: []
   states: 
+--- !u!114 &7651305684829197164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189456451744781532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e4c379009165a246a1c837da7541d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accelerationThreshold: 0.002
+  mixCompletionIncreaseSpeed: 2
+  mixCompletionDecreaseSpeed: 0.5
+  mixCompletionThreshold: 1
+  mixCompletion: 0
 --- !u!1 &3053748591156872114
 GameObject:
   m_ObjectHideFlags: 0
