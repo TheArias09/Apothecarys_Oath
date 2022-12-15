@@ -184,7 +184,18 @@ public class LiquidVisualsManager : MonoBehaviour
         liquidVolumes.Add(newLiquidVolume);
         liquids.Add(newLiquid);
     }
-    
+
+    public float FindTotalTrueFill()
+    {
+        float totalTrueFill = 0f;
+
+        foreach (LiquidVisuals liquid in liquids)
+        {
+            totalTrueFill += liquid.trueFill;
+        }
+
+        return totalTrueFill;
+    }
     
     void AddRandomLiquid()
     {
@@ -263,7 +274,7 @@ public class LiquidVisualsManager : MonoBehaviour
     {
         if (liquids.Count >= 1)
         {
-            GameObject liquidToRemove = liquidVolumes[liquidVolumes.Count - 1];
+            GameObject liquidToRemove = liquidVolumes[^1];
             liquidVolumes.RemoveAt(liquidVolumes.Count - 1);
             liquids.RemoveAt(liquids.Count - 1);
             Destroy(liquidToRemove);
@@ -356,23 +367,24 @@ public class LiquidVisualsManager : MonoBehaviour
     }
 
     //Sert à des tests
-    /*
+    
     private void Update()
     {
-        if (Input.GetKeyDown("p") || OVRInput.GetDown(OVRInput.Button.One)) //p for plus
+        if (Input.GetKeyDown("p") /*|| OVRInput.GetDown(OVRInput.Button.One) */ ) //p for plus
         {
             Debug.Log("Adding Liquid");
             AddRandomLiquid();
             liquidCount += 1;
         }
 
-        if (Input.GetKeyDown("m") || OVRInput.GetDown(OVRInput.Button.Two)) //m for minus
+        if (Input.GetKeyDown("m") /*|| OVRInput.GetDown(OVRInput.Button.Two) */ ) //m for minus
         {
             Debug.Log("Removing Liquid");
             RemoveLiquid();
             liquidCount -= 1;
         }
         
+        /*
         if (Input.GetKeyDown("u")) //u for update
         {
             Debug.Log("Updating Liquids");
@@ -384,7 +396,8 @@ public class LiquidVisualsManager : MonoBehaviour
             Debug.Log("Refresh Liquids");
             RefreshLiquids();
         }
+        */
     }
-    */
+    
     
 }
