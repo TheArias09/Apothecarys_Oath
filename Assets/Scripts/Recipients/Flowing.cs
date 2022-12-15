@@ -1,3 +1,4 @@
+using Oculus.Interaction;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,6 @@ namespace Recipients
         [SerializeField] private float maxSphereCastDistance = 10;
         [SerializeField] private LayerMask sphereCastLayerMask;
 
-        [SerializeField] private float angleThreshold = 30f;
         [SerializeField] private AnimationCurve fillCoefficientToAngleThreshold;
         [SerializeField] private AnimationCurve deltaAngleToPourSpeed;
         [SerializeField] private float maxPourSpeed = 0.5f;
@@ -69,6 +69,13 @@ namespace Recipients
             var deltaAngle = ComputeDeltaAngle();
 
             Debug.Log("DeltaAngle: " + deltaAngle);
+
+            var snap = GetComponentInChildren<SnapInteractable>();
+            if(snap)
+            {
+                Debug.Log(snap.Interactors.Count);
+                if (snap.Interactors.Count > 0) return;
+            }
 
             if (deltaAngle > 0) Flow(deltaAngle);
         }
