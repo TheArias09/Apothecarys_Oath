@@ -77,7 +77,7 @@ public class IngredientWrapper : MonoBehaviour
     {
         SetTotalQty();
         if (deltaQty > quantity) deltaQty = quantity;
-        if (quantity == 0) return null;
+        if (quantity <= 0) return null;
 
         List<Ingredient> pouredIngredients = new();
 

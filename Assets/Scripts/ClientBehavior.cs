@@ -21,7 +21,7 @@ public class ClientBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time < BirthTime + StayTime || !hasLeft) Leave(true);
+        if (Time.time > BirthTime + StayTime || !hasLeft) Leave(true);
     }
 
     public void ReceivePotion(Ingredient potion)
@@ -30,14 +30,14 @@ public class ClientBehavior : MonoBehaviour
         {
             Debug.Log(Client.Name + " was cured correclty!");
             GameManager.Instance.AddScore(potion.Quality);
-            Leave(false);
         }
         else
         {
             Debug.Log(Client.Name + " was not given the correct potion...");
             GameManager.Instance.AddError();
-            Leave(false);
         }
+
+        Leave(false);
     }
 
     private void Leave(bool timeout)
@@ -55,6 +55,5 @@ public class ClientBehavior : MonoBehaviour
         }
 
         Destroy(this);
-
     }
 }

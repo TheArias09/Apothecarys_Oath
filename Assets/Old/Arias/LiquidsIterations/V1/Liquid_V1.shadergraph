@@ -1210,7 +1210,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "3eab15f7144e46f7858dae3f212dab8d",
     "m_Id": 0,
-    "m_DisplayName": "Fill",
+    "m_DisplayName": "FillV1",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -2528,10 +2528,10 @@
     "m_Guid": {
         "m_GuidSerialized": "17fc8eab-24ac-4f2f-8321-503262d36f49"
     },
-    "m_Name": "Fill",
+    "m_Name": "FillV1",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Fill",
-    "m_DefaultReferenceName": "_Fill",
+    "m_RefNameGeneratedByDisplayName": "FillV1",
+    "m_DefaultReferenceName": "_FillV1",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,

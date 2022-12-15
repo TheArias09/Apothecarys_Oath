@@ -7,20 +7,21 @@ namespace Recipients
 {
     public class Flowing : MonoBehaviour
     {
-        //TODO: Gérer l'influence de l'angle et du remplissage en fonciton 
+        //TODO: Gï¿½rer l'influence de l'angle et du remplissage en fonciton 
 
-        [SerializeField] Transform bottleneckCenterPoint;
-        [SerializeField] float bottleneckRadius;
+        [SerializeField] private Transform bottleneckCenterPoint;
+        [SerializeField] private float bottleneckRadius;
 
-        [SerializeField] float sphereCastRadius = 0.01f;
-        [SerializeField] float maxSphereCastDistance = 10;
-        [SerializeField] LayerMask sphereCastLayerMask;
+        [SerializeField] private float sphereCastRadius = 0.01f;
+        [SerializeField] private float maxSphereCastDistance = 10;
+        [SerializeField] private LayerMask sphereCastLayerMask;
 
-        [SerializeField] float pourSpeed = 0.1f;
+        [SerializeField] private float angleThreshold = 30f;
+        [SerializeField] private AnimationCurve fillCoefficientToAngleThreshold;
+        [SerializeField] private AnimationCurve deltaAngleToPourSpeed;
+        [SerializeField] private float maxPourSpeed = 0.5f;
 
-        [SerializeField] float angleThreshold = 30f;
-
-        IngredientWrapper ingredientWrapper;
+        private IngredientWrapper ingredientWrapper;
 
         private void Awake()
         {
@@ -33,6 +34,22 @@ namespace Recipients
             var flowAngle = Vector3.SignedAngle(Vector3.up, bottleneckCenterPoint.up, axis);
 
             return flowAngle - 90;
+        }
+
+        private float ComputeAngleThreshold()
+        {
+            // FillCoefficient between 0 and 1.
+            var fillCoefficient = ingredientWrapper.GetTotalQty() / ingredientWrapper.RecipientQuantity;
+
+            var angleThresholdNormalized = fillCoefficientToAngleThreshold.Evaluate(fillCoefficient);
+            // AngleThreshold between -90f and 90f.
+            return -fillCoefficientToAngleThreshold.Evaluate(fillCoefficient) * 180f + 90f;
+        }
+
+        private float ComputeDeltaAngle()
+        {
+            Debug.Log("Angle Threshold: " + ComputeAngleThreshold());
+            return GetFlowAngle() - ComputeAngleThreshold();
         }
 
         private Vector3 GetFlowPoint()
@@ -48,48 +65,46 @@ namespace Recipients
         }
 
         private void Update()
-        {
-            var flowAngle = GetFlowAngle();
+        { 
+            var deltaAngle = ComputeDeltaAngle();
 
-            if(flowAngle > angleThreshold)
-            {
-                Flow();
-            }
+            Debug.Log("DeltaAngle: " + deltaAngle);
+
+            if (deltaAngle > 0) Flow(deltaAngle);
         }
 
-        private void Flow()
+        private void Flow(float deltaAngle)
         {
-            Debug.Log("Flow!" + gameObject.name);
+            var deltaAngleNormalized = Mathf.InverseLerp(0, 180 - (ComputeAngleThreshold() + 90f), deltaAngle);
+            Debug.Log("DeltaAngleNormalized: " + deltaAngleNormalized);
+            var pourSpeed = deltaAngleToPourSpeed.Evaluate(deltaAngleNormalized) * maxPourSpeed;
 
-            var hits = Physics.SphereCastAll(GetFlowPoint(), sphereCastRadius, Vector3.down, maxSphereCastDistance, sphereCastLayerMask);
-
-            //TODO: Take flowAngle into account.
             var deltaQuantity = pourSpeed * Time.deltaTime;
+
+            Debug.Log("PourSpeed: " + pourSpeed);
+
+            Debug.Log("Flow!" + gameObject.name);
+            var hits = Physics.SphereCastAll(GetFlowPoint(), sphereCastRadius, Vector3.down, maxSphereCastDistance, sphereCastLayerMask);
 
             foreach (var hit in hits)
             {
                 if (hit.transform.gameObject == gameObject) continue;
 
                 Debug.Log("Fill!");
-
                 var targetIngredientWrapper = hit.collider.GetComponentInParent<IngredientWrapper>();
-
-
                 List<Ingredient> pouredIngredients = ingredientWrapper.Pour(deltaQuantity);
 
                 if (pouredIngredients != null)
                 {
                     deltaQuantity = pouredIngredients.Sum(ing => ing.Quantity);
                     var filledCorrectly = targetIngredientWrapper.FillWith(pouredIngredients, deltaQuantity);
-                    
                     if (!filledCorrectly) Overflow();
                 }
-
+                
                 return;
             }
 
             ingredientWrapper.Pour(deltaQuantity);
-
             //recipient.PourInVoid();
         }
 
@@ -101,7 +116,6 @@ namespace Recipients
         private void OnDrawGizmos()
         {
             var point = GetFlowPoint();
-
             Gizmos.DrawSphere(point, sphereCastRadius);
         }
     }

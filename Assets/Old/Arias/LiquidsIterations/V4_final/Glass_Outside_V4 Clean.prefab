@@ -294,8 +294,8 @@ MonoBehaviour:
   liquids: []
   liquidVolume: {fileID: 7484622077490460816, guid: 929cefe638aafa34d829b999c09b3cda,
     type: 3}
-  RecipientQuantity: 0
-  PotionCount: 0
+  recipientQuantity: 0
+  potionCount: 0
 --- !u!114 &3184800614776773171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b6165e67d9b7649bd7b51cb44d361d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxWobble: 1
+  MaxWobble: 2.5
   WobbleSpeed: 1
   Recovery: 1
 --- !u!114 &3053748593040945441
@@ -330,6 +330,8 @@ MonoBehaviour:
   sphereCastLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  pourSpeed: 0.1
+  angleThreshold: 30
 --- !u!114 &-8292239926303675061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,12 +344,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02306037b2ed42e438ee35e480016fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient:
-    name: 
-    quantity: 0
-    color: {r: 0, g: 0, b: 0, a: 0}
-    quality: 0
-    states: 
+  recipientQuantity: 0
+  ingredients: []
+  states: 
 --- !u!1 &3053748591156872114
 GameObject:
   m_ObjectHideFlags: 0
