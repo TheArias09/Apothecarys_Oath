@@ -755,11 +755,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3053748593040945441, guid: c1cbccd0512eaa74995b24f6bd99f18d,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3053748593040945441, guid: c1cbccd0512eaa74995b24f6bd99f18d,
-        type: 3}
       propertyPath: pourSpeed
       value: 0.25
       objectReference: {fileID: 0}
