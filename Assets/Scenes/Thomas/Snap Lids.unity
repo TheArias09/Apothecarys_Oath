@@ -2450,7 +2450,7 @@ MonoBehaviour:
     _ringRequirement: 2
     _pinkyRequirement: 1
     _unselectMode: 0
-  _movementProvider: {fileID: 0}
+  _movementProvider: {fileID: 1695623167}
   _handAligment: 1
   _handGrabPoses: []
 --- !u!114 &1695623160
@@ -2520,6 +2520,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tags:
   - Default Recipient
+--- !u!114 &1695623167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695623156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4120d88f4ba2a3f48989ce4b2ff1e317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 20000
 --- !u!1001 &1785062728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2989,6 +3002,7 @@ GameObject:
   - component: {fileID: 2014760968}
   - component: {fileID: 2014760967}
   - component: {fileID: 2014760969}
+  - component: {fileID: 2014760970}
   m_Layer: 0
   m_Name: Snap Collider
   m_TagString: Untagged
@@ -3027,7 +3041,7 @@ MonoBehaviour:
   - {fileID: 2014760969}
   _maxInteractors: -1
   _maxSelectingInteractors: -1
-  _movementProvider: {fileID: 0}
+  _movementProvider: {fileID: 2014760970}
   _snapPosesProvider: {fileID: 0}
   _rigidbody: {fileID: 3053748591290711435}
 --- !u!135 &2014760968
@@ -3058,6 +3072,19 @@ MonoBehaviour:
   _requireTags:
   - Default Recipient
   _excludeTags: []
+--- !u!114 &2014760970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014760965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4120d88f4ba2a3f48989ce4b2ff1e317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 20000
 --- !u!1001 &2077344401
 PrefabInstance:
   m_ObjectHideFlags: 0
