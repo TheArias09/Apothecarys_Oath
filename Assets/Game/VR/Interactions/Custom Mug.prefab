@@ -1093,6 +1093,8 @@ MonoBehaviour:
   quantity: 0
   maxQuantity: 1
   pourSpeed: 0.1
+  affectsShader: 0
+  shaderObject: {fileID: 0}
 --- !u!114 &5635803170202630280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1112,6 +1114,21 @@ MonoBehaviour:
   sphereCastLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  fillCoefficientToAngleThreshold:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  deltaAngleToPourSpeed:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  maxPourSpeed: 0.5
+  flowOnGrab: 0
+  isGrabbing: 0
 --- !u!23 &5817187959942144582 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 62430feba95140d4094909ab2ae769d2,

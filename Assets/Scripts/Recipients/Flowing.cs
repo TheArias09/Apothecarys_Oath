@@ -8,8 +8,6 @@ namespace Recipients
 {
     public class Flowing : MonoBehaviour
     {
-        //TODO: G�rer l'influence de l'angle et du remplissage en fonciton 
-
         [SerializeField] private Transform bottleneckCenterPoint;
         [SerializeField] private float bottleneckRadius;
 
@@ -20,6 +18,9 @@ namespace Recipients
         [SerializeField] private AnimationCurve fillCoefficientToAngleThreshold;
         [SerializeField] private AnimationCurve deltaAngleToPourSpeed;
         [SerializeField] private float maxPourSpeed = 0.5f;
+
+        [SerializeField] bool flowOnGrab = false;
+        [SerializeField] bool isPalmed = false;
 
         private IngredientWrapper ingredientWrapper;
 
@@ -48,7 +49,7 @@ namespace Recipients
 
         private float ComputeDeltaAngle()
         {
-            Debug.Log("Angle Threshold: " + ComputeAngleThreshold());
+            //Debug.Log("Angle Threshold: " + ComputeAngleThreshold());
             return GetFlowAngle() - ComputeAngleThreshold();
         }
 
@@ -65,19 +66,25 @@ namespace Recipients
         }
 
         private void Update()
-        { 
-            var deltaAngle = ComputeDeltaAngle();
-
-            Debug.Log("DeltaAngle: " + deltaAngle);
-
-            var snap = GetComponentInChildren<SnapInteractable>();
-            if(snap)
+        {
+            if(flowOnGrab)
             {
-                Debug.Log(snap.Interactors.Count);
-                if (snap.Interactors.Count > 0) return;
+                if (isPalmed)
+                {
+                    Flow(90f);
+                }
+                return;
             }
 
-            if (deltaAngle > 0) Flow(deltaAngle);
+            var deltaAngle = ComputeDeltaAngle();
+
+            var snap = GetComponentInChildren<SnapInteractable>();
+
+            if (snap && snap.Interactors.Count > 0) return;
+
+            if (deltaAngle <= 0) return;
+
+            Flow(deltaAngle);
         }
 
         private void Flow(float deltaAngle)
@@ -97,7 +104,7 @@ namespace Recipients
             {
                 if (hit.transform.gameObject == gameObject) continue;
 
-                Debug.Log("Fill!");
+                Debug.Log("Fill in " + hit.collider.name);
                 var targetIngredientWrapper = hit.collider.GetComponentInParent<IngredientWrapper>();
                 List<Ingredient> pouredIngredients = ingredientWrapper.Pour(deltaQuantity);
 
@@ -125,5 +132,8 @@ namespace Recipients
             var point = GetFlowPoint();
             Gizmos.DrawSphere(point, sphereCastRadius);
         }
+
+        public void HandleSelect() => isPalmed = true;
+        public void HandleUnselect() => isPalmed = false;
     }
 }
