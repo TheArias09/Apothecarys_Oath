@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private ScoreDisplay scoreDisplay;
     [SerializeField] private GameObject clientPrefab;
     [SerializeField] private Transform clientsParent;
 
@@ -32,43 +31,25 @@ public class GameManager : MonoBehaviour
         if (timer <= 0)
         {
             timer = timeBetweenClients;
-            
+
             GameObject newClientInstance = Instantiate(clientPrefab, clientsParent);
-            Client client = new (clientNumber.ToString(), DiseaseName.FATIGUE);
+            Client client = new (clientNumber.ToString(), DiseaseName.STRESS);
             newClientInstance.GetComponent<ClientBehavior>().Client = client;
             newClientInstance.GetComponent<ClientBehavior>().StayTime = clientStayTime;
-
-            clientNumber++;
         }
 
         timer += Time.deltaTime;
     }
 
-    public void GivePotion(GameObject potionContainer)
-    {
-        potionContainer.TryGetComponent<IngredientWrapper>(out IngredientWrapper wrapper);
-        if (wrapper == null || wrapper.Ingredients.Count > 1)
-        {
-            Debug.Log("No correct potion submited");
-            return;
-        }
-
-        Ingredient potion = wrapper.Ingredients[0];
-
-    }
-
     public void AddScore(float value)
     {
         score += (int) (value * scoreMultiplier);
-        scoreDisplay.UpdateDisplay(score, maxErrors - errors);
     }
 
     public void AddError()
     {
         errors++;
         if (errors >= maxErrors) GameOver();
-
-        scoreDisplay.UpdateDisplay(score, maxErrors - errors);
     }
 
     public void GameOver()
