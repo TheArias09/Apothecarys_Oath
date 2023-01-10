@@ -15,13 +15,13 @@ public class ClientBehavior : MonoBehaviour
     void Start()
     {
         BirthTime = Time.time;
-        Debug.Log(Client.Name + "has arrived ! He has " + Client.Disease.ToString());
+        Debug.Log(Client.Name + " has arrived ! He has " + Client.Disease.ToString());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > BirthTime + StayTime || !hasLeft) Leave(true);
+        if (Time.time > BirthTime + StayTime && !hasLeft) Leave(true);
     }
 
     public void ReceivePotion(Ingredient potion)
@@ -54,6 +54,7 @@ public class ClientBehavior : MonoBehaviour
             Debug.Log(Client.Name + " left!");
         }
 
-        Destroy(this);
+        GameManager.Instance.ClientLeave();
+        Destroy(this.gameObject);
     }
 }
