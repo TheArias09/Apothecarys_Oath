@@ -22,11 +22,14 @@ namespace Recipients
         [SerializeField] bool flowOnGrab = false;
         [SerializeField] bool isPalmed = false;
 
+        private GrabHandInfo grabHandInfo;
+
         private IngredientWrapper ingredientWrapper;
 
         private void Awake()
         {
             ingredientWrapper = GetComponent<IngredientWrapper>();
+            grabHandInfo = GetComponent<GrabHandInfo>();
         }
 
         private float GetFlowAngle()
@@ -65,11 +68,26 @@ namespace Recipients
             return point;
         }
 
+        private bool GetLeftPalmInput()
+        {
+            return OVRInput.Get(OVRInput.Button.Three) &&
+                   OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) != 0 &&
+                   OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) != 0;
+        }
+
+        private bool GetRightPalmInput()
+        {
+            return OVRInput.Get(OVRInput.Button.One) &&
+                   OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) != 0 &&
+                   OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger) != 0;
+        }
+
         private void Update()
         {
             if(flowOnGrab)
             {
-                if (isPalmed)
+                if (grabHandInfo.GrabHand == GrabHandInfo.GrabHandType.Left && GetLeftPalmInput()
+                    || grabHandInfo.GrabHand == GrabHandInfo.GrabHandType.Right && GetRightPalmInput())
                 {
                     Flow(90f);
                 }
@@ -98,7 +116,7 @@ namespace Recipients
             Debug.Log("PourSpeed: " + pourSpeed);
 
             Debug.Log("Flow!" + gameObject.name);
-            var hits = Physics.SphereCastAll(GetFlowPoint(), sphereCastRadius, Vector3.down, maxSphereCastDistance, sphereCastLayerMask);
+            var hits = Physics.SphereCastAll(flowOnGrab ? transform.position : GetFlowPoint(), sphereCastRadius, Vector3.down, maxSphereCastDistance, sphereCastLayerMask);
 
             foreach (var hit in hits)
             {
@@ -133,7 +151,7 @@ namespace Recipients
             Gizmos.DrawSphere(point, sphereCastRadius);
         }
 
-        public void HandleSelect() => isPalmed = true;
-        public void HandleUnselect() => isPalmed = false;
+        //public void HandleSelect() => isPalmed = true;
+        //public void HandleUnselect() => isPalmed = false;
     }
 }
