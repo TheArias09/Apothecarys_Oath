@@ -5,13 +5,13 @@ using UnityEngine;
 [Serializable]
 public enum DiseaseName
 {
-    STRESS, COLD, POISON
+    FATIGUE, STRESS, COLD, POISON
 }
 
 [Serializable]
 public enum Symptom
 {
-    HEADACHE, TIRED, FEVER, COUGH, SNEEZE, CRAMPS, VOMIT
+    HEADACHE, TIRED, FEVER, COUGH, SNEEZE, CRAMPS, VOMIT, WEAK
 }
 
 [Serializable]
