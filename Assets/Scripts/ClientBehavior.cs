@@ -1,27 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ClientBehavior : MonoBehaviour
 {
+    [SerializeField] private TextMeshPro title;
+    [SerializeField] private TextMeshPro content;
+
     public Client Client { get; set; }
 
     public float BirthTime { get; private set; }
     public float StayTime { get; set; }
 
     private bool hasLeft = false;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         BirthTime = Time.time;
-        Debug.Log(Client.Name + "has arrived ! He has " + Client.Disease.ToString());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > BirthTime + StayTime || !hasLeft) Leave(true);
+        if (Time.time > BirthTime + StayTime && !hasLeft) Leave(true);
+    }
+
+    public void UpdateDisplay()
+    {
+        title.text = "Client #" + Client.Name;
+        content.text = "Symptoms:\n";
+
+        foreach (Symptom symptom in Client.Symptoms) content.text += symptom + "\n";
     }
 
     public void ReceivePotion(Ingredient potion)
@@ -54,6 +65,7 @@ public class ClientBehavior : MonoBehaviour
             Debug.Log(Client.Name + " left!");
         }
 
-        Destroy(this);
+        GameManager.Instance.ClientLeave();
+        Destroy(this.gameObject);
     }
 }
