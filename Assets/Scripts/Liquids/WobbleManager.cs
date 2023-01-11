@@ -35,6 +35,9 @@ public class WobbleManager : MonoBehaviour
     private float totalTrueFill;
     private float previousTotalTrueFill;
 
+    public float WobbleAmountX => wobbleAmountX;
+    public float WobbleAmountZ => wobbleAmountZ;
+
     private void Awake()
     {
         liquidVisualsManager = GetComponent<LiquidVisualsManager>();
@@ -106,7 +109,6 @@ public class WobbleManager : MonoBehaviour
     float FindViscosityFactor()
     {
         float returnFactor = 0f; 
-        float totalTrueFill = 0f;
         List<LiquidVisuals> liquids = liquidVisualsManager.Liquids;
        
         for (int i = 0; i < liquids.Count; i++)
