@@ -196,6 +196,15 @@ public class LiquidVisualsManager : MonoBehaviour
 
         return totalTrueFill;
     }
+
+    public float FindTotalDisplayedFill()
+    {
+        if (liquidCount == 0 )
+        {
+            return -absoluteDisplayFill;
+        }
+        return liquids[liquidCount - 1].displayedFill;
+    }
     
     void AddRandomLiquid()
     {
