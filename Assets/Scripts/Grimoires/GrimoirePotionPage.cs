@@ -4,13 +4,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GrimoireDiseasePage : MonoBehaviour
+public class GrimoirePotionPage : MonoBehaviour
 {
-    [SerializeField] Image symptomImage;
     [SerializeField] Image potionImage;
-    [SerializeField] TMP_Text diseaseDescription;
     [SerializeField] TMP_Text potionDescription;
-    [SerializeField] TMP_Text diseaseName;
+    [SerializeField] TMP_Text recipeDescription;
+    [SerializeField] TMP_Text potionName;
 
     [SerializeField] TMP_Text bookTitle;
     [SerializeField] Image bookImage;
@@ -19,7 +18,7 @@ public class GrimoireDiseasePage : MonoBehaviour
     [SerializeField] GameObject frontCoverPanel;
     [SerializeField] GameObject backCoverPanel;
 
-    public void DisplayData(GrimoireDiseasePageData data)
+    public void DisplayData(GrimoirePotionPageData data)
     {
         pagePanel.SetActive(false);
         frontCoverPanel.SetActive(false);
@@ -28,8 +27,8 @@ public class GrimoireDiseasePage : MonoBehaviour
         if (data.isFrontCover)
         {
             frontCoverPanel.SetActive(true);
-            bookTitle.text = data.diseaseDescription;
-            bookImage.sprite = data.symptomImage;
+            bookTitle.text = data.potionDescription;
+            bookImage.sprite = data.potionImage;
         }
         else if (data.isBackCover)
         {
@@ -38,20 +37,24 @@ public class GrimoireDiseasePage : MonoBehaviour
         else
         {
             pagePanel.SetActive(true);
-            symptomImage.sprite = data.symptomImage;
-            potionImage.sprite = data.potionImage;
-            diseaseDescription.text = data.diseaseDescription;
-            potionDescription.text = data.potionDescription;
-            diseaseName.text = data.name;
+            if (recipeDescription)
+            {
+                recipeDescription.text = data.recipeDescription;
+            }
+            else
+            {
+                potionImage.sprite = data.potionImage;
+                potionDescription.text = data.potionDescription;
+                potionName.text = data.name;
+            }
         }
     }
 
     public void Clear()
     {
-        symptomImage.sprite = null;
-        potionImage.sprite = null;
-        diseaseDescription.text = "";
-        potionDescription.text = "";
-        diseaseName.text = "";
+        if(potionImage) potionImage.sprite = null;
+        if(potionDescription) potionDescription.text = "";
+        if(recipeDescription) recipeDescription.text = "";
+        if(potionName) potionName.text = "";
     }
 }
