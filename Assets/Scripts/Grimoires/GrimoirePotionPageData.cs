@@ -8,4 +8,7 @@ public class GrimoirePotionPageData : ScriptableObject
     public Sprite potionImage;
     public string potionDescription;
     public string recipeDescription;
+
+    public bool isFrontCover;
+    public bool isBackCover;
 }

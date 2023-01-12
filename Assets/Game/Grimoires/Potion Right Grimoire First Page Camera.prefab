@@ -25,8 +25,8 @@ PrefabInstance:
     - target: {fileID: 5362564677062774818, guid: 9f16b04137eefe4408ad753f2efcc7a3,
         type: 3}
       propertyPath: m_text
-      value: "- BOUUUUUUUUUUUUM Mettre trois trucs\n- BOUUUUUUUUUUUUM m\xE9langer\n-
-        BOUUUUUUUUUUUUM faire d'autres choses\n- BOUUUUUUUUUUUUM et zou"
+      value: "- BOUUUUUUUUUM Mettre trois trucs\n- BOUUUUUUUUUM m\xE9langer\n- BOUUUUUUUUUM
+        faire d'autres choses\n- BOUUUUUUUUUM et zou"
       objectReference: {fileID: 0}
     - target: {fileID: 5362564677062774818, guid: 9f16b04137eefe4408ad753f2efcc7a3,
         type: 3}
@@ -121,7 +121,7 @@ PrefabInstance:
     - target: {fileID: 6889961187310198673, guid: 9f16b04137eefe4408ad753f2efcc7a3,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200.35
+      value: 166.311
       objectReference: {fileID: 0}
     - target: {fileID: 6889961187310198673, guid: 9f16b04137eefe4408ad753f2efcc7a3,
         type: 3}
@@ -151,6 +151,48 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4258825923154778942, guid: 9f16b04137eefe4408ad753f2efcc7a3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9f16b04137eefe4408ad753f2efcc7a3, type: 3}
+--- !u!1 &1681249026152919947 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2410198345208971782, guid: 9f16b04137eefe4408ad753f2efcc7a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3901878372451135885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2493269273255632479 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1495087896912654290, guid: 9f16b04137eefe4408ad753f2efcc7a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3901878372451135885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2863025907995501381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1269385418864153288, guid: 9f16b04137eefe4408ad753f2efcc7a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3901878372451135885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3679315037365458059 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 372053005263004934, guid: 9f16b04137eefe4408ad753f2efcc7a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3901878372451135885}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5698860348297922136 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8732526948256970709, guid: 9f16b04137eefe4408ad753f2efcc7a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3901878372451135885}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7975783434650186305 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6379891422396302284, guid: 9f16b04137eefe4408ad753f2efcc7a3,
@@ -185,6 +227,11 @@ MonoBehaviour:
   potionDescription: {fileID: 8957072096842277295}
   recipeDescription: {fileID: 8957072096842277295}
   potionName: {fileID: 0}
+  bookTitle: {fileID: 5698860348297922136}
+  bookImage: {fileID: 3679315037365458059}
+  pagePanel: {fileID: 2863025907995501381}
+  frontCoverPanel: {fileID: 1681249026152919947}
+  backCoverPanel: {fileID: 2493269273255632479}
 --- !u!114 &8957072096842277295 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5362564677062774818, guid: 9f16b04137eefe4408ad753f2efcc7a3,

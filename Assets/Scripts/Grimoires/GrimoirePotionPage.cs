@@ -11,16 +11,43 @@ public class GrimoirePotionPage : MonoBehaviour
     [SerializeField] TMP_Text recipeDescription;
     [SerializeField] TMP_Text potionName;
 
-    public void DisplayDataForLeftPage(GrimoirePotionPageData data)
-    {
-        potionImage.sprite = data.potionImage;
-        potionDescription.text = data.potionDescription;
-        potionName.text = data.name;
-    }
+    [SerializeField] TMP_Text bookTitle;
+    [SerializeField] Image bookImage;
 
-    public void DisplayDataForRightPage(GrimoirePotionPageData data)
+    [SerializeField] GameObject pagePanel;
+    [SerializeField] GameObject frontCoverPanel;
+    [SerializeField] GameObject backCoverPanel;
+
+    public void DisplayData(GrimoirePotionPageData data)
     {
-        recipeDescription.text = data.recipeDescription;
+        pagePanel.SetActive(false);
+        frontCoverPanel.SetActive(false);
+        backCoverPanel.SetActive(false);
+
+        if (data.isFrontCover)
+        {
+            frontCoverPanel.SetActive(true);
+            bookTitle.text = data.potionDescription;
+            bookImage.sprite = data.potionImage;
+        }
+        else if (data.isBackCover)
+        {
+            backCoverPanel.SetActive(true);
+        }
+        else
+        {
+            pagePanel.SetActive(true);
+            if (recipeDescription)
+            {
+                recipeDescription.text = data.recipeDescription;
+            }
+            else
+            {
+                potionImage.sprite = data.potionImage;
+                potionDescription.text = data.potionDescription;
+                potionName.text = data.name;
+            }
+        }
     }
 
     public void Clear()

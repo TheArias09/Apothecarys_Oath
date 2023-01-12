@@ -29,7 +29,7 @@ public class GrimoirePotionNavigator : MonoBehaviour
         firstPageGameObject.SetActive(false);
         middlePageFront.Clear();
         middlePageBack.Clear();
-        lastPage.DisplayDataForRightPage(grimoirePageDatas[0]);
+        lastPage.DisplayData(grimoirePageDatas[0]);
     }
 
     private void Update()
@@ -54,12 +54,12 @@ public class GrimoirePotionNavigator : MonoBehaviour
     {
         isLocked = true;
 
-        middlePageFront.DisplayDataForRightPage(grimoirePageDatas[currentLeftPageIndex]);
-        middlePageBack.DisplayDataForLeftPage(grimoirePageDatas[currentLeftPageIndex + 1]);
+        middlePageFront.DisplayData(grimoirePageDatas[currentLeftPageIndex]);
+        middlePageBack.DisplayData(grimoirePageDatas[currentLeftPageIndex + 1]);
 
         if (currentIndex != maxIndex - 1)
         {
-            lastPage.DisplayDataForRightPage(grimoirePageDatas[currentLeftPageIndex + 1]);
+            lastPage.DisplayData(grimoirePageDatas[currentLeftPageIndex + 1]);
         }
         else
         {
@@ -71,7 +71,7 @@ public class GrimoirePotionNavigator : MonoBehaviour
 
         currentIndex++;
 
-        firstPage.DisplayDataForLeftPage(grimoirePageDatas[currentLeftPageIndex]);
+        firstPage.DisplayData(grimoirePageDatas[currentLeftPageIndex]);
         firstPageGameObject.SetActive(true);
 
         isLocked = false;
@@ -87,12 +87,12 @@ public class GrimoirePotionNavigator : MonoBehaviour
     {
         isLocked = true;
 
-        middlePageFront.DisplayDataForRightPage(grimoirePageDatas[currentLeftPageIndex - 1]);
-        middlePageBack.DisplayDataForLeftPage(grimoirePageDatas[currentLeftPageIndex]);
+        middlePageFront.DisplayData(grimoirePageDatas[currentLeftPageIndex - 1]);
+        middlePageBack.DisplayData(grimoirePageDatas[currentLeftPageIndex]);
 
         if (currentIndex != 1)
         {
-            firstPage.DisplayDataForLeftPage(grimoirePageDatas[currentLeftPageIndex - 1]);
+            firstPage.DisplayData(grimoirePageDatas[currentLeftPageIndex - 1]);
         }
         else
         {
@@ -104,7 +104,7 @@ public class GrimoirePotionNavigator : MonoBehaviour
 
         currentIndex--;
 
-        lastPage.DisplayDataForRightPage(grimoirePageDatas[currentLeftPageIndex]);
+        lastPage.DisplayData(grimoirePageDatas[currentLeftPageIndex]);
         lastPageGameObject.SetActive(true);
 
         isLocked = false;

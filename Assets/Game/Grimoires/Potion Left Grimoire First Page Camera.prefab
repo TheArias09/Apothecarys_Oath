@@ -106,7 +106,7 @@ PrefabInstance:
     - target: {fileID: 6151893454712811684, guid: 9f16b04137eefe4408ad753f2efcc7a3,
         type: 3}
       propertyPath: m_Name
-      value: Potion Left Grimoire First Page Camera 1
+      value: Potion Left Grimoire First Page Camera
       objectReference: {fileID: 0}
     - target: {fileID: 6330678878277708938, guid: 9f16b04137eefe4408ad753f2efcc7a3,
         type: 3}
@@ -131,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 6889961187310198673, guid: 9f16b04137eefe4408ad753f2efcc7a3,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200.35
+      value: 182.035
       objectReference: {fileID: 0}
     - target: {fileID: 6889961187310198673, guid: 9f16b04137eefe4408ad753f2efcc7a3,
         type: 3}
@@ -156,61 +156,3 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4258825923154778942, guid: 9f16b04137eefe4408ad753f2efcc7a3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9f16b04137eefe4408ad753f2efcc7a3, type: 3}
---- !u!114 &4011012325032720989 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 112514956497472464, guid: 9f16b04137eefe4408ad753f2efcc7a3,
-    type: 3}
-  m_PrefabInstance: {fileID: 3901878372451135885}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7975783434650186305 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6379891422396302284, guid: 9f16b04137eefe4408ad753f2efcc7a3,
-    type: 3}
-  m_PrefabInstance: {fileID: 3901878372451135885}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &8038114050355382037 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6461363166520080024, guid: 9f16b04137eefe4408ad753f2efcc7a3,
-    type: 3}
-  m_PrefabInstance: {fileID: 3901878372451135885}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &629214638235401687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8038114050355382037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bf3df1120d16514c8f1d9e8085f79ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  potionImage: {fileID: 7975783434650186305}
-  potionDescription: {fileID: 8957072096842277295}
-  recipeDescription: {fileID: 0}
-  potionName: {fileID: 4011012325032720989}
---- !u!114 &8957072096842277295 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5362564677062774818, guid: 9f16b04137eefe4408ad753f2efcc7a3,
-    type: 3}
-  m_PrefabInstance: {fileID: 3901878372451135885}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

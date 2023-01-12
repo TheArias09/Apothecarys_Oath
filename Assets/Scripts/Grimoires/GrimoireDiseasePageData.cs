@@ -9,4 +9,7 @@ public class GrimoireDiseasePageData : ScriptableObject
     public string diseaseDescription;
     public Sprite potionImage;
     public string potionDescription;
+
+    public bool isFrontCover;
+    public bool isBackCover;
 }
