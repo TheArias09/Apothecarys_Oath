@@ -26,7 +26,6 @@ public class GameManager : MonoBehaviour
 
     private int currentClients = 0;
     private int clientNumber = 0;
-    private float xPos = 0;
 
     public static GameManager Instance;
 
@@ -47,22 +46,17 @@ public class GameManager : MonoBehaviour
         {
             timer = timeBetweenClients;
 
-            GameObject newClientInstance = Instantiate(clientPrefab, clientsParent);
-            newClientInstance.transform.localPosition = new Vector3(xPos, 0, 0);
-
             Client client = new(clientNumber.ToString(), DiseaseName.FATIGUE);
-            ClientBehavior behavior = newClientInstance.GetComponent<ClientBehavior>();
-            
-            behavior.Client = client;
-            behavior.StayTime = clientStayTime;
+            Transform clientObject = clientsParent.GetChild(clientNumber % maxClients);
+            ClientBehavior behavior = clientObject.GetComponent<ClientBehavior>();
+
+            behavior.Setup(client, clientStayTime, clientNumber % maxClients);
             behavior.UpdateDisplay();
+
+            clientObject.gameObject.SetActive(true);
 
             currentClients++;
             clientNumber++;
-
-            //Update ticket position for next ticket
-            xPos += spaceBetweenTickets;
-            if (clientNumber % maxClients == 0) xPos = 0;
         }
     }
 
@@ -96,7 +90,11 @@ public class GameManager : MonoBehaviour
         Debug.Log("Potion does not correspond to any client");
     }
 
-    public void ClientLeave() => currentClients--;
+    public void ClientLeave(int position)
+    {
+        currentClients--;
+        clientsParent.GetChild(position).gameObject.SetActive(false);
+    }
 
     public void AddScore(float value)
     {

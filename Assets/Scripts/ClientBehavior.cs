@@ -8,23 +8,29 @@ public class ClientBehavior : MonoBehaviour
     [SerializeField] private TextMeshPro title;
     [SerializeField] private TextMeshPro content;
 
-    public Client Client { get; set; }
+    public Client Client { get; private set; }
 
-    public float BirthTime { get; private set; }
-    public float StayTime { get; set; }
+    private float birthTime;
+    private float stayTime;
+    private int position;
 
     private bool hasLeft = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        BirthTime = Time.time;
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > BirthTime + StayTime && !hasLeft) Leave(true);
+        if (Time.time > birthTime + stayTime && !hasLeft) Leave(true);
+    }
+
+    public void Setup(Client client, float staytime, int position)
+    {
+        birthTime = Time.time;
+
+        this.Client = client;
+        this.stayTime = staytime;
+        this.position = position;
+
+        hasLeft = false;
     }
 
     public void UpdateDisplay()
@@ -65,7 +71,6 @@ public class ClientBehavior : MonoBehaviour
             Debug.Log(Client.Name + " left!");
         }
 
-        GameManager.Instance.ClientLeave();
-        Destroy(this.gameObject);
+        GameManager.Instance.ClientLeave(position);
     }
 }
