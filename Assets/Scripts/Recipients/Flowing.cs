@@ -157,7 +157,14 @@ namespace Recipients
             }
 
             var pouredIngredientsInVoid = ingredientWrapper.Pour(deltaQuantity);
-            IsFlowing = pouredIngredientsInVoid.Count != 0;
+            if (pouredIngredientsInVoid != null)
+            {
+                IsFlowing = pouredIngredientsInVoid.Count != 0;
+            }
+            else
+            {
+                IsFlowing = false;
+            }
             if(!IsFlowing) CurrentDeltaQuantity = 0;
             
             //recipient.PourInVoid();
