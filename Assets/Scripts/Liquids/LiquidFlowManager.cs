@@ -31,6 +31,9 @@ public class LiquidFlowManager : MonoBehaviour
         flowSystemMain = flowSystem.main;
         flowSystemTrails = flowSystem.trails;
 
+        isFlowing = potionFlowing.IsFlowing;
+        flowSystem.Play();
+        
         SetPosition();
         SetColor();
     }
@@ -38,31 +41,31 @@ public class LiquidFlowManager : MonoBehaviour
     void FixedUpdate()
     {
         SetPosition();
-        
+        isFlowing = potionFlowing.IsFlowing;
         liquidCount = potionLiquids.LiquidCount;
+        
         if (liquidCount != previousLiquidCount)
         {
             SetColor();
             previousLiquidCount = liquidCount;
         }
 
-        if(Input.GetKeyDown(KeyCode.O))
-        { 
-            isFlowing = !isFlowing;
-        }
-     
-        if(isFlowing)
+        if (isFlowing)
         {
-            if(!flowSystem.isPlaying)
+            Debug.Log("ça coule");
+            if (flowSystem.isEmitting)
             {
-                flowSystem.Play();
+                
             }
         }
-        else{ 
-            if(flowSystem.isPlaying) 
-            { 
-                flowSystem.Stop(); 
-            }
+        
+        if(isFlowing && !flowSystem.isPlaying)
+        {
+            flowSystem.Play();
+        }
+        if(!isFlowing && flowSystem.isPlaying) 
+        { 
+            flowSystem.Stop(); 
         }
 
         if (Input.GetKeyDown(KeyCode.I))
@@ -74,7 +77,7 @@ public class LiquidFlowManager : MonoBehaviour
 
     void SetPosition()
     {
-        transform.position = potionFlowing.GetFlowPoint() + new Vector3(0,0,0.01f);
+        transform.position = potionFlowing.GetFlowPoint() + new Vector3(0,0.01f,0);
         transform.rotation = Quaternion.identity;
     }
     

@@ -22,6 +22,9 @@ namespace Recipients
         [SerializeField] bool flowOnGrab = false;
         [SerializeField] bool isPalmed = false;
 
+        public bool IsFlowing { get; private set; } = false;
+        public float CurrentDeltaQuantity { get; private set; } = 0f;
+
         private GrabHandInfo grabHandInfo;
 
         private IngredientWrapper ingredientWrapper;
@@ -91,6 +94,11 @@ namespace Recipients
                 {
                     Flow(90f);
                 }
+                else
+                {
+                    IsFlowing = false;
+                    CurrentDeltaQuantity = 0;
+                }
                 return;
             }
 
@@ -98,9 +106,19 @@ namespace Recipients
 
             var snap = GetComponentInChildren<SnapInteractable>();
 
-            if (snap && snap.Interactors.Count > 0) return;
+            if (snap && snap.Interactors.Count > 0)
+            {
+                IsFlowing = false;
+                CurrentDeltaQuantity = 0;
+                return;
+            }
 
-            if (deltaAngle <= 0) return;
+            if (deltaAngle <= 0)
+            {
+                IsFlowing = false;
+                CurrentDeltaQuantity = 0;
+                return;
+            }
 
             Flow(deltaAngle);
         }
@@ -109,10 +127,13 @@ namespace Recipients
         {
             var deltaAngleNormalized = Mathf.InverseLerp(0, 180 - (ComputeAngleThreshold() + 90f), deltaAngle);
             var pourSpeed = deltaAngleToPourSpeed.Evaluate(deltaAngleNormalized) * maxPourSpeed;
-
             var deltaQuantity = pourSpeed * Time.deltaTime;
-            var hits = Physics.SphereCastAll(flowOnGrab ? transform.position : GetFlowPoint(), sphereCastRadius, Vector3.down, maxSphereCastDistance, sphereCastLayerMask);
 
+            CurrentDeltaQuantity = deltaQuantity;
+
+            Debug.Log("Flow!" + gameObject.name);
+            var hits = Physics.SphereCastAll(flowOnGrab ? transform.position : GetFlowPoint(), sphereCastRadius, Vector3.down, maxSphereCastDistance, sphereCastLayerMask);
+            Debug.Log("Hits Count: " + hits.Length);
             foreach (var hit in hits)
             {
                 if (hit.transform.gameObject == gameObject) continue;
@@ -120,17 +141,33 @@ namespace Recipients
                 var targetIngredientWrapper = hit.collider.GetComponentInParent<IngredientWrapper>();
                 List<Ingredient> pouredIngredients = ingredientWrapper.Pour(deltaQuantity);
 
-                if (pouredIngredients != null)
+                if (pouredIngredients != null && pouredIngredients.Count != 0)
                 {
+                    IsFlowing = true;
                     deltaQuantity = pouredIngredients.Sum(ing => ing.Quantity);
                     var filledCorrectly = targetIngredientWrapper.FillWith(pouredIngredients, deltaQuantity);
                     if (!filledCorrectly) Overflow();
+                }
+                else
+                {
+                    IsFlowing = false;
+                    CurrentDeltaQuantity = 0;
                 }
                 
                 return;
             }
 
-            ingredientWrapper.Pour(deltaQuantity);
+            var pouredIngredientsInVoid = ingredientWrapper.Pour(deltaQuantity);
+            if (pouredIngredientsInVoid != null)
+            {
+                IsFlowing = pouredIngredientsInVoid.Count != 0;
+            }
+            else
+            {
+                IsFlowing = false;
+            }
+            if(!IsFlowing) CurrentDeltaQuantity = 0;
+            
             //recipient.PourInVoid();
         }
 
