@@ -1129,8 +1129,8 @@ MonoBehaviour:
   scoreDisplay: {fileID: 1176801859}
   clientsParent: {fileID: 222129131}
   diseaseBook: {fileID: 11400000, guid: 100bcd3edecb1ce4bb0ea4ae9d870126, type: 2}
-  timeBetweenClients: 3
-  clientStayTime: 21
+  timeBetweenClients: 5
+  clientStayTime: 60
   maxClients: 6
   minSymptoms: 2
   maxSymptoms: 3

@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float scoreMultiplier = 5;
     [SerializeField] private int maxErrors = 3;
 
-
+    private bool gameStarted = false;
     private float timer = 0;
     private int score = 0;
     private int errors = 0;
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (currentClients >= maxClients) return;
+        if (!gameStarted || currentClients >= maxClients) return;
 
         timer -= Time.deltaTime;
 
@@ -107,6 +107,8 @@ public class GameManager : MonoBehaviour
 
         scoreDisplay.UpdateDisplay(score, maxErrors - errors);
     }
+
+    public void ChangeGameStatus(bool status) => gameStarted = status;
 
     public void GameOver()
     {
