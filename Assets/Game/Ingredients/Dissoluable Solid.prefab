@@ -95,6 +95,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 9153299999916106716, guid: fbe828282a84ef34a9206593f35276af, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fbe828282a84ef34a9206593f35276af, type: 3}
+--- !u!23 &419862108436974890 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 272199838631465495, guid: fbe828282a84ef34a9206593f35276af,
+    type: 3}
+  m_PrefabInstance: {fileID: 438162063777619773}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1568944262316903180 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1428389218577355825, guid: fbe828282a84ef34a9206593f35276af,
@@ -130,9 +136,25 @@ MonoBehaviour:
   - name: Jus Noir
     quantity: 0.25
     quality: 1
-    color: {r: 0.18133679, g: 0.23584908, b: 0.23584908, a: 1}
+    color: {r: 0.35444108, g: 0.4245283, b: 0.4245283, a: 1}
     states: 
-  layer: 6
-  OnDissolution:
+  collisionTag: Bottleneck
+  OnDissolutionStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 419862108436974890}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDissolutionEnd:
     m_PersistentCalls:
       m_Calls: []
+  pourSpeed: 1
