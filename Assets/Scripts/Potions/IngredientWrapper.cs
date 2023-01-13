@@ -95,4 +95,11 @@ public class IngredientWrapper : MonoBehaviour
         OnQuantityUpdated?.Invoke();
         return pouredIngredients;
     }
+
+    public void Empty()
+    {
+        Ingredients.Clear();
+        States.Clear();
+        quantity = 0;
+    }
 }

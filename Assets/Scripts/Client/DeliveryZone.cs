@@ -10,5 +10,6 @@ public class DeliveryZone : MonoBehaviour
         if (ingredientWrapper == null) return;
 
         GameManager.Instance.GivePotion(ingredientWrapper);
+        ingredientWrapper.Empty();
     }
 }
