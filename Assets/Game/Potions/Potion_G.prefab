@@ -266,10 +266,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5773606507907782162}
-  m_LocalRotation: {x: 0.70710677, y: -0.00000011534316, z: -0.000000115343155, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.002}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.19, z: 0}
+  m_LocalScale: {x: 95, y: 95, z: 95}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5773606506387283652}
   - {fileID: 5773606507599410612}
@@ -469,13 +469,58 @@ MonoBehaviour:
     m_Bits: 64
   fillCoefficientToAngleThreshold:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.0015640259
+      value: 0.5
+      inSlope: 0.46036625
+      outSlope: 0.46036625
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.9610863
+      inSlope: 0.46036625
+      outSlope: 0.46036625
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   deltaAngleToPourSpeed:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.001564945
+      value: 0.106132075
+      inSlope: 4.521227
+      outSlope: 4.521227
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.09600757
+    - serializedVersion: 3
+      time: 0.26771113
+      value: 0.7815449
+      inSlope: 0.9080757
+      outSlope: 0.9080757
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.29406193
+      outWeight: 0.08625621
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -0.026911441
+      outSlope: -0.026911441
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13864085
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

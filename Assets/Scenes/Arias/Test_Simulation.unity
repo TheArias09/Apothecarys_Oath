@@ -1211,12 +1211,12 @@ PrefabInstance:
     - target: {fileID: 622102617626141988, guid: 4e01b0912315675499e0f263ef86fce3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.4
+      value: 1.1443
       objectReference: {fileID: 0}
     - target: {fileID: 622102617626141988, guid: 4e01b0912315675499e0f263ef86fce3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 1.2657
       objectReference: {fileID: 0}
     - target: {fileID: 622102617626141988, guid: 4e01b0912315675499e0f263ef86fce3,
         type: 3}
@@ -1276,32 +1276,32 @@ PrefabInstance:
     - target: {fileID: 8544149922650413898, guid: 4e01b0912315675499e0f263ef86fce3,
         type: 3}
       propertyPath: recipientQuantity
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8544149922650413898, guid: 4e01b0912315675499e0f263ef86fce3,
         type: 3}
       propertyPath: ingredients.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8544149922650413898, guid: 4e01b0912315675499e0f263ef86fce3,
         type: 3}
       propertyPath: ingredients.Array.data[0].name
-      value: Patate
+      value: pat
       objectReference: {fileID: 0}
     - target: {fileID: 8544149922650413898, guid: 4e01b0912315675499e0f263ef86fce3,
         type: 3}
       propertyPath: ingredients.Array.data[0].color.b
-      value: 0
+      value: 0.193681
       objectReference: {fileID: 0}
     - target: {fileID: 8544149922650413898, guid: 4e01b0912315675499e0f263ef86fce3,
         type: 3}
       propertyPath: ingredients.Array.data[0].color.g
-      value: 0.98724854
+      value: 0.8773585
       objectReference: {fileID: 0}
     - target: {fileID: 8544149922650413898, guid: 4e01b0912315675499e0f263ef86fce3,
         type: 3}
       propertyPath: ingredients.Array.data[0].color.r
-      value: 1
+      value: 0.87729216
       objectReference: {fileID: 0}
     - target: {fileID: 8544149922650413898, guid: 4e01b0912315675499e0f263ef86fce3,
         type: 3}
@@ -1311,7 +1311,7 @@ PrefabInstance:
     - target: {fileID: 8544149922650413898, guid: 4e01b0912315675499e0f263ef86fce3,
         type: 3}
       propertyPath: ingredients.Array.data[0].quantity
-      value: 0.3
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e01b0912315675499e0f263ef86fce3, type: 3}
@@ -6533,6 +6533,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773606506797991712, guid: 4e01b0912315675499e0f263ef86fce3,
+        type: 3}
+      propertyPath: bottleneckRadius
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7709930539688567517, guid: 4e01b0912315675499e0f263ef86fce3,
         type: 3}
