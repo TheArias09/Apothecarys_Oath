@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3510823387575552078
+--- !u!1001 &7178822540469707200
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,37 +11,37 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 4300000, guid: ce93ea910d1da401981ca97860369446, type: 3}
+      objectReference: {fileID: 4300002, guid: 88f9810cdc36b466cb152006feafd25e, type: 3}
     - target: {fileID: 3318193849181367755, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.403307
+      value: 1.359411
       objectReference: {fileID: 0}
     - target: {fileID: 3318193849181367755, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.729377
+      value: 1.767221
       objectReference: {fileID: 0}
     - target: {fileID: 3318193849181367755, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: m_Size.z
-      value: 1.403306
+      value: 1.35941
       objectReference: {fileID: 0}
     - target: {fileID: 3318193849181367755, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: m_Center.x
-      value: 0.0006715059
+      value: 0.00000047683716
       objectReference: {fileID: 0}
     - target: {fileID: 3318193849181367755, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: m_Center.y
-      value: -0.08343449
+      value: -0.10235551
       objectReference: {fileID: 0}
     - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: liquidVolume
       value: 
-      objectReference: {fileID: 3852235348393020416, guid: a9b621fa17ffe9e4eac8c29d9d114a7c,
+      objectReference: {fileID: 2630733350097751640, guid: 01bc5d106a3877246bc484f7485537d1,
         type: 3}
     - target: {fileID: 3342941435504424051, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
@@ -101,7 +101,7 @@ PrefabInstance:
     - target: {fileID: 3346590250814863891, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: m_Name
-      value: Potion_E
+      value: Potion_B
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02055f7bc04734d408dc84367fa3e62e, type: 3}

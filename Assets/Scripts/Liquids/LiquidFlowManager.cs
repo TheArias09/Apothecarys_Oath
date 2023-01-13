@@ -32,8 +32,8 @@ public class LiquidFlowManager : MonoBehaviour
         flowSystemTrails = flowSystem.trails;
 
         isFlowing = potionFlowing.IsFlowing;
-        flowSystem.Play();
-        
+        //flowSystem.Play();
+
         SetPosition();
         SetColor();
     }
@@ -49,23 +49,36 @@ public class LiquidFlowManager : MonoBehaviour
             SetColor();
             previousLiquidCount = liquidCount;
         }
-
+/*
         if (isFlowing)
         {
             Debug.Log("ça coule");
-            if (flowSystem.isEmitting)
+            if (!flowSystem.isPlaying)
             {
-                
+                Debug.Log("Effet activé");
+                flowSystem.Play();
             }
         }
-        
-        if(isFlowing && !flowSystem.isPlaying)
+        if(!isFlowing) 
         {
-            flowSystem.Play();
-        }
-        if(!isFlowing && flowSystem.isPlaying) 
-        { 
-            flowSystem.Stop(); 
+            if (flowSystem.isPlaying)
+            {
+                Debug.Log("Effet désactivé");
+                flowSystem.Stop(); 
+            }
+        }*/
+        
+        if(isFlowing)
+        {
+            if(!flowSystem.isPlaying)
+            {
+                flowSystem.Play();
+            }
+        }else{
+            if(flowSystem.isPlaying)
+            {
+                flowSystem.Stop();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.I))
