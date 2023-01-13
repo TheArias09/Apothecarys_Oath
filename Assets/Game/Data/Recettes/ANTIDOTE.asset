@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ANTIDOTE
   m_EditorClassIdentifier: 
   recipe:
-    name: 
+    name: Antidote
     color: {r: 0.64955825, g: 0.14159843, b: 0.6981132, a: 1}
     cures: 3
     ingredients:
@@ -22,12 +22,12 @@ MonoBehaviour:
       quality: 0
       color: {r: 0, g: 0, b: 0, a: 0}
       states: 
-    - name: Bezoard
+    - name: Bezoar
       quantity: 1
       quality: 0
       color: {r: 0, g: 0, b: 0, a: 0}
       states: 
-    - name: Sang de salamendre
+    - name: Salamander blood
       quantity: 1
       quality: 0
       color: {r: 0, g: 0, b: 0, a: 0}

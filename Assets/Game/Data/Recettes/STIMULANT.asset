@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipe:
     name: Stimulant
-    color: {r: 0, g: 0.6415094, b: 0.18789127, a: 1}
+    color: {r: 0.3119081, g: 0.9339623, b: 0.49463654, a: 1}
     cures: 0
     ingredients:
     - name: Water

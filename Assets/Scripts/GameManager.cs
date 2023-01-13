@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [Header("Clients")]
     [SerializeField] private float timeBetweenClients = 60;
     [SerializeField] private float clientStayTime = 120;
-    [SerializeField] private int maxClients = 6;
+    [SerializeField] private int maxClients = 10;
     [SerializeField] private int minSymptoms = 2;
     [SerializeField] private int maxSymptoms = 3;
 
@@ -23,12 +23,12 @@ public class GameManager : MonoBehaviour
     private float timer = 0;
     private int score = 0;
     private int errors = 0;
+    private int maxTickets;
 
     private int currentClients = 0;
     private int clientNumber = 0;
 
     public static GameManager Instance;
-
 
     private void Awake()
     {
@@ -36,9 +36,14 @@ public class GameManager : MonoBehaviour
         else Destroy(this);
     }
 
+    private void Start()
+    {
+        maxTickets = clientsParent.childCount;
+    }
+
     private void Update()
     {
-        if (!gameStarted || currentClients >= maxClients) return;
+        if (!gameStarted || currentClients >= maxTickets) return;
 
         timer -= Time.deltaTime;
 
@@ -53,10 +58,10 @@ public class GameManager : MonoBehaviour
         int symptoms = Random.Range(minSymptoms, maxSymptoms + 1);
 
         Client client = new(clientNumber.ToString(), diseaseBook.diseases[random].disease, symptoms);
-        Transform clientObject = clientsParent.GetChild(clientNumber % maxClients);
+        Transform clientObject = clientsParent.GetChild(clientNumber % maxTickets);
         ClientBehavior behavior = clientObject.GetComponent<ClientBehavior>();
 
-        behavior.Setup(client, clientStayTime, clientNumber % maxClients);
+        behavior.Setup(client, clientStayTime, clientNumber % maxTickets);
         behavior.UpdateDisplay();
 
         clientObject.gameObject.SetActive(true);
@@ -92,6 +97,8 @@ public class GameManager : MonoBehaviour
     {
         currentClients--;
         clientsParent.GetChild(position).gameObject.SetActive(false);
+
+        if (clientNumber >= maxClients) GameOver();
     }
 
     public void AddScore(float value)
@@ -103,7 +110,7 @@ public class GameManager : MonoBehaviour
     public void AddError()
     {
         errors++;
-        if (errors >= maxErrors) GameOver();
+        //if (errors >= maxErrors) GameOver();
 
         scoreDisplay.UpdateDisplay(score, maxErrors - errors);
     }
@@ -112,6 +119,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        gameStarted = false;
         Application.Quit();
     }
 }

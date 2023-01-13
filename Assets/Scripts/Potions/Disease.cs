@@ -5,7 +5,7 @@ using UnityEngine;
 [Serializable]
 public enum DiseaseName
 {
-    FATIGUE, STRESS, COLD, POISON, INSOMNIA
+    FATIGUE, MYSTICOLD, POISON, INSOMNIA, EXISTANTIAL_FLU, UGLINESS, GROGGINESS, MISFORTUNE, CHASTITY
 }
 
 [Serializable]

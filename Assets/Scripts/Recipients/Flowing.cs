@@ -108,21 +108,15 @@ namespace Recipients
         private void Flow(float deltaAngle)
         {
             var deltaAngleNormalized = Mathf.InverseLerp(0, 180 - (ComputeAngleThreshold() + 90f), deltaAngle);
-            Debug.Log("DeltaAngleNormalized: " + deltaAngleNormalized);
             var pourSpeed = deltaAngleToPourSpeed.Evaluate(deltaAngleNormalized) * maxPourSpeed;
 
             var deltaQuantity = pourSpeed * Time.deltaTime;
-
-            Debug.Log("PourSpeed: " + pourSpeed);
-
-            Debug.Log("Flow!" + gameObject.name);
             var hits = Physics.SphereCastAll(flowOnGrab ? transform.position : GetFlowPoint(), sphereCastRadius, Vector3.down, maxSphereCastDistance, sphereCastLayerMask);
 
             foreach (var hit in hits)
             {
                 if (hit.transform.gameObject == gameObject) continue;
 
-                Debug.Log("Fill in " + hit.collider.name);
                 var targetIngredientWrapper = hit.collider.GetComponentInParent<IngredientWrapper>();
                 List<Ingredient> pouredIngredients = ingredientWrapper.Pour(deltaQuantity);
 

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +9,7 @@ public class ClientBehavior : MonoBehaviour
     [SerializeField] private TextMeshPro title;
     [SerializeField] private TextMeshPro content;
     [SerializeField] private Image uiTimer;
+    [SerializeField] private Gradient uiColor;
 
     public Client Client { get; private set; }
 
@@ -23,9 +23,10 @@ public class ClientBehavior : MonoBehaviour
     void Update()
     {
         float lifeTime = Time.time - birthTime;
-
         if (lifeTime > stayTime && !hasLeft) Leave(true);
+
         uiTimer.fillAmount = 1 - (lifeTime / stayTime);
+        uiTimer.color = uiColor.Evaluate(uiTimer.fillAmount);
     }
 
     public void Setup(Client client, float staytime, int position)

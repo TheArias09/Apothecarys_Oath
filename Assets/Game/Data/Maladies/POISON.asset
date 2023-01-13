@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: POISON
   m_EditorClassIdentifier: 
   disease:
-    name: 3
+    name: 2
     symptoms: 020000000500000006000000
-    cure: 

@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a784123dc43fc64c8f2703b79e9236b, type: 3}
-  m_Name: COLD
+  m_Script: {fileID: 11500000, guid: 875f619f2023d2f47b6bdce6459e35f7, type: 3}
+  m_Name: Bezoar
   m_EditorClassIdentifier: 
-  disease:
-    name: 1
-    symptoms: 020000000300000004000000
+  name: Bezoar
+  color: {r: 0.5566038, g: 0.43318766, b: 0.33291206, a: 1}
+  fresnelPower: 2
+  viscosity: 0.6
+  symbol: {fileID: 0}

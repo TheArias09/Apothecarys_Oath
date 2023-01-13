@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a784123dc43fc64c8f2703b79e9236b, type: 3}
-  m_Name: COLD
+  m_Name: INSOMNIA
   m_EditorClassIdentifier: 
   disease:
-    name: 1
-    symptoms: 020000000300000004000000
+    name: 3
+    symptoms: 080000000700000005000000

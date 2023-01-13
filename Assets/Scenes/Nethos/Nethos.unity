@@ -1129,9 +1129,9 @@ MonoBehaviour:
   scoreDisplay: {fileID: 1176801859}
   clientsParent: {fileID: 222129131}
   diseaseBook: {fileID: 11400000, guid: 100bcd3edecb1ce4bb0ea4ae9d870126, type: 2}
-  timeBetweenClients: 5
-  clientStayTime: 60
-  maxClients: 6
+  timeBetweenClients: 1
+  clientStayTime: 3
+  maxClients: 10
   minSymptoms: 2
   maxSymptoms: 3
   scoreMultiplier: 5
@@ -3355,7 +3355,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2001163582}
+    m_TransformParent: {fileID: 1670839306}
     m_Modifications:
     - target: {fileID: 8178109065456489191, guid: 5062c1312f2beb14694d90a058d444e4,
         type: 3}
@@ -3365,7 +3365,7 @@ PrefabInstance:
     - target: {fileID: 8209778948206908569, guid: 5062c1312f2beb14694d90a058d444e4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8209778948206908569, guid: 5062c1312f2beb14694d90a058d444e4,
         type: 3}
@@ -6483,6 +6483,7 @@ Transform:
   - {fileID: 1598467355}
   - {fileID: 29040237}
   - {fileID: 177500434}
+  - {fileID: 766637286}
   m_Father: {fileID: 2001163582}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7412,7 +7413,6 @@ Transform:
   - {fileID: 1952630824}
   - {fileID: 129357665}
   - {fileID: 2079483091}
-  - {fileID: 766637286}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}

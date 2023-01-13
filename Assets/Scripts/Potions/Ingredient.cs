@@ -12,29 +12,28 @@ using UnityEngine;
 [Serializable]
 public class Ingredient
 {
-    [SerializeField] private string name;
+    [SerializeField] private IngredientData data;
     [SerializeField] private float quantity;
     [SerializeField, Range(0, 1)] private float quality;
-    [SerializeField] private Color color;
     [SerializeField] private DiseaseName? cures;
 
     [SerializeField] private List<IngredientState> states;
 
     //Name of the ingredient can be null.
-    public string Name { get => name; set => name = value; }
+    public string Name { get => data.name; set => data.name = value; }
     public float Quantity { get => quantity; set => quantity = value; }
     public float Quality { get => quality; set => quality = value; }
-    public Color Color { get => color; set => color = value; }
+    public Color Color { get => data.color; set => data.color = value; }
     public List<IngredientState> States { get => states; }
 
     public DiseaseName? Cures { get => cures; set => cures = value; }
 
     public Ingredient(string name, float quantity, float quality, Color color, DiseaseName? disease)
     {
-        this.name = name;
+        this.data.name = name;
         this.quantity = quantity;
         this.quality = quality;
-        this.color = color;
+        this.data.color = color;
         cures = disease;
 
         states = new List<IngredientState>();
