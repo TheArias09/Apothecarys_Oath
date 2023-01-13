@@ -11,6 +11,7 @@ public class Recipe
     [SerializeField] private List<Ingredient> ingredients;
     [SerializeField] private List<IngredientState> states;
 
+    public IngredientData Result { get => result; }
     public string Name { get => result.ingredientName; }
     public Color Color { get => result.color; }
     public DiseaseName Cures { get => cures; }

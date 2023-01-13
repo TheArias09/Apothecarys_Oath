@@ -61,7 +61,7 @@ public class SolidDissolution : MonoBehaviour
                 float removedQty = Mathf.Min(ing.Quantity, quantityToPourThisFrame * ing.Quantity / totalQuantity);
                 ing.Quantity -= removedQty;
 
-                Ingredient pouredIngredient = new(ing.Name, removedQty, ing.Quality, ing.Color, ing.Cures);
+                Ingredient pouredIngredient = new(ing.Data, removedQty, ing.Quality, ing.Cures);
                 pouredIngredientsThisFrame.Add(pouredIngredient);
             }
 

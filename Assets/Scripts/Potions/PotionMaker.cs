@@ -41,7 +41,7 @@ public class PotionMaker : MonoBehaviour
         //Potion corresponds to recipe
         Debug.Log(recipe.Name + " crafted !");
 
-        Ingredient result = new(recipe.Name, potion.GetTotalQty(), potion.AvgQuality(), recipe.Color, recipe.Cures);
+        Ingredient result = new(recipe.Result, potion.GetTotalQty(), potion.AvgQuality(), recipe.Cures);
         float craftQuality = CheckProportions(recipe, potion);
         result.Quality *= craftQuality;
 
