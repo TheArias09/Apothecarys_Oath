@@ -56,7 +56,7 @@ namespace Recipients
             return GetFlowAngle() - ComputeAngleThreshold();
         }
 
-        private Vector3 GetFlowPoint()
+        public Vector3 GetFlowPoint()
         {
             var xProjection = Vector3.Dot(bottleneckCenterPoint.right, Vector3.down);
             var zProjection = Vector3.Dot(bottleneckCenterPoint.forward, Vector3.down);
