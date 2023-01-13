@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875f619f2023d2f47b6bdce6459e35f7, type: 3}
   m_Name: Hydroxyl
   m_EditorClassIdentifier: 
-  name: Hydroxyl Cristal
+  ingredientName: Hydroxyl crystal
   color: {r: 0.85882354, g: 0.09411765, b: 0.46811888, a: 1}
   fresnelPower: 4
   viscosity: 1

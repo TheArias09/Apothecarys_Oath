@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875f619f2023d2f47b6bdce6459e35f7, type: 3}
   m_Name: Bulb
   m_EditorClassIdentifier: 
-  name: Lucky bulb
+  ingredientName: Lucky Bulb
   color: {r: 0.43749496, g: 0.6415094, b: 0.11740828, a: 1}
-  fresnelPower: 4
+  fresnelPower: 6
   viscosity: 0.9
   symbol: {fileID: 0}

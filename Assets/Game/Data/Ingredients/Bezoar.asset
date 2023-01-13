@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875f619f2023d2f47b6bdce6459e35f7, type: 3}
   m_Name: Bezoar
   m_EditorClassIdentifier: 
-  name: Bezoar
+  ingredientName: Bezoar
   color: {r: 0.5566038, g: 0.43318766, b: 0.33291206, a: 1}
-  fresnelPower: 2
+  fresnelPower: 5
   viscosity: 0.6
   symbol: {fileID: 0}

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875f619f2023d2f47b6bdce6459e35f7, type: 3}
   m_Name: WonderSirup
   m_EditorClassIdentifier: 
-  name: Wonder sirup
+  ingredientName: Wonder sirup
   color: {r: 0.23494123, g: 0.6320754, b: 0.5452443, a: 1}
-  fresnelPower: 5
+  fresnelPower: 2.3
   viscosity: 0.75
   symbol: {fileID: 0}

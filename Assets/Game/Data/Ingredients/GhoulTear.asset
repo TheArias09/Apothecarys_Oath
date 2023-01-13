@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875f619f2023d2f47b6bdce6459e35f7, type: 3}
   m_Name: GhoulTear
   m_EditorClassIdentifier: 
-  name: Ghoul tear
+  ingredientName: Ghoul tear
   color: {r: 0.33247066, g: 0.26614454, b: 0.5283019, a: 1}
-  fresnelPower: 7
+  fresnelPower: 2
   viscosity: 0.9
   symbol: {fileID: 0}

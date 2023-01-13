@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875f619f2023d2f47b6bdce6459e35f7, type: 3}
   m_Name: ToadSlime
   m_EditorClassIdentifier: 
-  name: Toad slime
+  ingredientName: Toad slime
   color: {r: 0.63679796, g: 0.6792453, b: 0.5344251, a: 1}
   fresnelPower: 1
   viscosity: 0.8

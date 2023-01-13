@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875f619f2023d2f47b6bdce6459e35f7, type: 3}
   m_Name: Lemon
   m_EditorClassIdentifier: 
-  name: '"Lemon"'
+  ingredientName: '"Lemon"'
   color: {r: 0.8301887, g: 0.7802361, b: 0.15977213, a: 1}
   fresnelPower: 1
   viscosity: 1
+  symbol: {fileID: 0}

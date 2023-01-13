@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875f619f2023d2f47b6bdce6459e35f7, type: 3}
   m_Name: SalaBlood
   m_EditorClassIdentifier: 
-  name: Salamander blood
+  ingredientName: Salamander blood
   color: {r: 0.74509805, g: 0.13730791, b: 0, a: 1}
   fresnelPower: 3
   viscosity: 0.8
+  symbol: {fileID: 0}

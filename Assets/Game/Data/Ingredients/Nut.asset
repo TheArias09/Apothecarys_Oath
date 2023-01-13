@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875f619f2023d2f47b6bdce6459e35f7, type: 3}
   m_Name: Nut
   m_EditorClassIdentifier: 
-  name: 
-  color: {r: 1, g: 1, b: 1, a: 0}
-  fresnelPower: 0
-  viscosity: 0
+  ingredientName: Shiny nut
+  color: {r: 0.5283019, g: 0.34739214, b: 0.2810965, a: 1}
+  fresnelPower: 2.8
+  viscosity: 0.8
   symbol: {fileID: 0}

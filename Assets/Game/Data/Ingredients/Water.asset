@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875f619f2023d2f47b6bdce6459e35f7, type: 3}
   m_Name: Water
   m_EditorClassIdentifier: 
-  name: Water
+  ingredientName: Water
   color: {r: 0.63529414, g: 0.9054454, b: 1, a: 1}
-  fresnelPower: 0
+  fresnelPower: 8
   viscosity: 1
+  symbol: {fileID: 0}

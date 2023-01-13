@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875f619f2023d2f47b6bdce6459e35f7, type: 3}
   m_Name: Venusia
   m_EditorClassIdentifier: 
-  name: Venusia extract
+  ingredientName: Venusia extract
   color: {r: 0.9056604, g: 0.6271271, b: 0.886913, a: 1}
   fresnelPower: 3
   viscosity: 1.2
