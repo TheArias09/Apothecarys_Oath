@@ -20,7 +20,6 @@ namespace Recipients
         [SerializeField] private float maxPourSpeed = 0.5f;
 
         [SerializeField] bool flowOnGrab = false;
-        [SerializeField] bool isPalmed = false;
 
         public bool IsFlowing { get; private set; } = false;
         public float CurrentDeltaQuantity { get; private set; } = 0f;
@@ -55,7 +54,6 @@ namespace Recipients
 
         private float ComputeDeltaAngle()
         {
-            //Debug.Log("Angle Threshold: " + ComputeAngleThreshold());
             return GetFlowAngle() - ComputeAngleThreshold();
         }
 
@@ -157,6 +155,7 @@ namespace Recipients
                 return;
             }
 
+            // Pour in void.
             var pouredIngredientsInVoid = ingredientWrapper.Pour(deltaQuantity);
             if (pouredIngredientsInVoid != null)
             {
@@ -167,8 +166,6 @@ namespace Recipients
                 IsFlowing = false;
             }
             if(!IsFlowing) CurrentDeltaQuantity = 0;
-            
-            //recipient.PourInVoid();
         }
 
         private static void Overflow()
@@ -181,8 +178,5 @@ namespace Recipients
             var point = GetFlowPoint();
             Gizmos.DrawSphere(point, sphereCastRadius);
         }
-
-        //public void HandleSelect() => isPalmed = true;
-        //public void HandleUnselect() => isPalmed = false;
     }
 }
