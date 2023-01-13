@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float timeBetweenClients = 60;
     [SerializeField] private float clientStayTime = 120;
     [SerializeField] private int maxClients = 6;
+    [SerializeField] private int minSymptoms = 2;
     [SerializeField] private int maxSymptoms = 3;
 
     [Header("Parameters")]

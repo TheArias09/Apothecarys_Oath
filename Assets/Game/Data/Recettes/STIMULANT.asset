@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0416a5a902d56bd4ab8cb5b09b603502, type: 3}
+  m_Name: STIMULANT
+  m_EditorClassIdentifier: 
+  recipe:
+    name: Stimulant
+    color: {r: 0, g: 0.6415094, b: 0.18789127, a: 1}
+    cures: 0
+    ingredients:
+    - name: Water
+      quantity: 2
+      quality: 0
+      color: {r: 0, g: 0, b: 0, a: 0}
+      states: 
+    - name: Vitalis
+      quantity: 1
+      quality: 0
+      color: {r: 0, g: 0, b: 0, a: 0}
+      states: 
+    states: 
