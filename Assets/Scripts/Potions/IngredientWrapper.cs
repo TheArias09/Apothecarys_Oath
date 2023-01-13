@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class IngredientWrapper : MonoBehaviour
 {
-    [SerializeField] private float recipientQuantity = 0;
+    [SerializeField] private float recipientQuantity = 1;
+    [SerializeField] private bool infiniteSource;
     [Space(10)]
     [SerializeField] private List<Ingredient> ingredients;
     [SerializeField] private List<IngredientState> states;
@@ -84,7 +85,7 @@ public class IngredientWrapper : MonoBehaviour
         foreach (var ing in ingredients)
         {
             float removedQty = Mathf.Min(ing.Quantity, deltaQty * ing.Quantity / quantity);
-            ing.Quantity -= removedQty;
+            if (!infiniteSource) ing.Quantity -= removedQty;
 
             Ingredient pouredIngredient = new (ing.Name, removedQty, ing.Quality, ing.Color, ing.Cures);
             pouredIngredients.Add(pouredIngredient);

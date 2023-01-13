@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float scoreMultiplier = 5;
     [SerializeField] private int maxErrors = 3;
 
-    private bool gameStarted = false;
+    private bool gameStarted = true;
     private float timer = 0;
     private int score = 0;
     private int errors = 0;

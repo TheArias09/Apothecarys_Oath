@@ -25,7 +25,7 @@ public class ClientBehavior : MonoBehaviour
         float lifeTime = Time.time - birthTime;
 
         if (lifeTime > stayTime && !hasLeft) Leave(true);
-        uiTimer.fillAmount = lifeTime / stayTime;
+        uiTimer.fillAmount = 1 - (lifeTime / stayTime);
     }
 
     public void Setup(Client client, float staytime, int position)
