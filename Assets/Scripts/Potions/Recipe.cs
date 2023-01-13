@@ -6,22 +6,14 @@ using UnityEngine;
 [Serializable]
 public class Recipe
 {
-    [SerializeField] private string name;
-    [SerializeField] private Color color;
+    [SerializeField] private IngredientData result;
     [SerializeField] private DiseaseName cures;
     [SerializeField] private List<Ingredient> ingredients;
     [SerializeField] private List<IngredientState> states;
 
-    public string Name { get => name; }
-    public Color Color { get => color; }
+    public string Name { get => result.ingredientName; }
+    public Color Color { get => result.color; }
     public DiseaseName Cures { get => cures; }
     public List<Ingredient> Ingredients { get => ingredients; }
     public List<IngredientState> States { get => states; }
-
-    public Recipe(string name, List<Ingredient> ingredients, List<IngredientState> states)
-    {
-        this.name = name;
-        this.ingredients = ingredients;
-        this.states = states;
-    }
 }

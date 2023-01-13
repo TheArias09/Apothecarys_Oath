@@ -13,23 +13,19 @@ MonoBehaviour:
   m_Name: LIFE NECTAR
   m_EditorClassIdentifier: 
   recipe:
-    name: Life nectar
-    color: {r: 0.9622642, g: 0.9064615, b: 0.21333215, a: 1}
+    result: {fileID: 11400000, guid: b3fede9b7257bf042b4932286f83106c, type: 2}
     cures: 2
     ingredients:
-    - name: Eau
+    - data: {fileID: 11400000, guid: 5eb2c77c6b133f74ba26743c048d0cf1, type: 2}
       quantity: 3
       quality: 0
-      color: {r: 0, g: 0, b: 0, a: 0}
       states: 
-    - name: Citron
+    - data: {fileID: 11400000, guid: 5fdc87b45b2a3414eb9884c62c43a04e, type: 2}
       quantity: 1
       quality: 0
-      color: {r: 0, g: 0, b: 0, a: 0}
       states: 
-    - name: "Nectar dor\xE9"
+    - data: {fileID: 11400000, guid: f5e35cb29a29af843ad48780551d76c4, type: 2}
       quantity: 1
       quality: 0
-      color: {r: 0, g: 0, b: 0, a: 0}
       states: 
     states: 

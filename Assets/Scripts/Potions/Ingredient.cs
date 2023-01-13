@@ -20,7 +20,7 @@ public class Ingredient
     [SerializeField] private List<IngredientState> states;
 
     //Name of the ingredient can be null.
-    public string Name { get => data.name; set => data.name = value; }
+    public string Name { get => data.ingredientName; set => data.ingredientName = value; }
     public float Quantity { get => quantity; set => quantity = value; }
     public float Quality { get => quality; set => quality = value; }
     public Color Color { get => data.color; set => data.color = value; }
@@ -30,7 +30,7 @@ public class Ingredient
 
     public Ingredient(string name, float quantity, float quality, Color color, DiseaseName? disease)
     {
-        this.data.name = name;
+        this.data.ingredientName = name;
         this.quantity = quantity;
         this.quality = quality;
         this.data.color = color;

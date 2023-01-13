@@ -13,18 +13,15 @@ MonoBehaviour:
   m_Name: STIMULANT
   m_EditorClassIdentifier: 
   recipe:
-    name: Stimulant
-    color: {r: 0.3119081, g: 0.9339623, b: 0.49463654, a: 1}
+    result: {fileID: 11400000, guid: fbf61fa49ae3bdf4194b663eaab3c3e0, type: 2}
     cures: 0
     ingredients:
-    - name: Water
+    - data: {fileID: 11400000, guid: 5eb2c77c6b133f74ba26743c048d0cf1, type: 2}
       quantity: 2
       quality: 0
-      color: {r: 0, g: 0, b: 0, a: 0}
       states: 
-    - name: Vitalis
+    - data: {fileID: 11400000, guid: 7048c975d7c8b4840b9d0eddee91dcda, type: 2}
       quantity: 1
       quality: 0
-      color: {r: 0, g: 0, b: 0, a: 0}
       states: 
     states: 

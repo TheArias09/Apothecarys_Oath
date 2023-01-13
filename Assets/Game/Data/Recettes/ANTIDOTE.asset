@@ -13,23 +13,19 @@ MonoBehaviour:
   m_Name: ANTIDOTE
   m_EditorClassIdentifier: 
   recipe:
-    name: Antidote
-    color: {r: 0.64955825, g: 0.14159843, b: 0.6981132, a: 1}
+    result: {fileID: 11400000, guid: 7e5907d8f3366a14190caca1e7a734ef, type: 2}
     cures: 3
     ingredients:
-    - name: Vitalis
+    - data: {fileID: 11400000, guid: 7048c975d7c8b4840b9d0eddee91dcda, type: 2}
       quantity: 1
       quality: 0
-      color: {r: 0, g: 0, b: 0, a: 0}
       states: 
-    - name: Bezoar
+    - data: {fileID: 11400000, guid: 770e78e012583c44182eaad65b9ed35b, type: 2}
       quantity: 1
       quality: 0
-      color: {r: 0, g: 0, b: 0, a: 0}
       states: 
-    - name: Salamander blood
+    - data: {fileID: 11400000, guid: b75ec2979a06b624eaf73325cd5a9f97, type: 2}
       quantity: 1
       quality: 0
-      color: {r: 0, g: 0, b: 0, a: 0}
       states: 
     states: 

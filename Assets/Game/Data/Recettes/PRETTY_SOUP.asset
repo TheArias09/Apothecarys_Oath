@@ -10,18 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0416a5a902d56bd4ab8cb5b09b603502, type: 3}
-  m_Name: SOMNUS
+  m_Name: PRETTY_SOUP
   m_EditorClassIdentifier: 
   recipe:
-    result: {fileID: 11400000, guid: 535d347ec0cfdf14893da570fd0004f0, type: 2}
-    cures: 4
-    ingredients:
-    - data: {fileID: 11400000, guid: 59c3aec5fb4444c479e5d6848b2c37c7, type: 2}
-      quantity: 1
-      quality: 0
-      states: 
-    - data: {fileID: 11400000, guid: 54955293b53b57449ab70af2ed354f1b, type: 2}
-      quantity: 1
-      quality: 0
-      states: 
+    result: {fileID: 11400000, guid: 39a4b69815359ae4690798581afa4087, type: 2}
+    cures: 0
+    ingredients: []
     states: 

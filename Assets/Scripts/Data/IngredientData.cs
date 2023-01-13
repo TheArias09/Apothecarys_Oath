@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Data/IngredientData", fileName = "IngredientData")]
 public class IngredientData : ScriptableObject
 {
-    public string name;
+    public string ingredientName;
     public Color color;
     public float fresnelPower;
     public float viscosity;

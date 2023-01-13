@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 875f619f2023d2f47b6bdce6459e35f7, type: 3}
-  m_Name: Nut
+  m_Script: {fileID: 11500000, guid: 1a784123dc43fc64c8f2703b79e9236b, type: 3}
+  m_Name: EXISTANTIAL_FLU
   m_EditorClassIdentifier: 
-  name: 
-  color: {r: 1, g: 1, b: 1, a: 0}
-  fresnelPower: 0
-  viscosity: 0
-  symbol: {fileID: 0}
+  disease:
+    name: 0
+    symptoms: 01000000090000000a0000000b000000
