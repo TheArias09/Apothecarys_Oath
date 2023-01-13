@@ -8,6 +8,11 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1790476457, guid: f970b837f4182474ab5516076b86faf3, type: 3}
+      propertyPath: ingredients.Array.data[0].data
+      value: 
+      objectReference: {fileID: 11400000, guid: 982fc2afe38cf6c45bc73f1fe00e64fe,
+        type: 2}
+    - target: {fileID: 1790476457, guid: f970b837f4182474ab5516076b86faf3, type: 3}
       propertyPath: ingredients.Array.data[0].name
       value: Eye Juice
       objectReference: {fileID: 0}
