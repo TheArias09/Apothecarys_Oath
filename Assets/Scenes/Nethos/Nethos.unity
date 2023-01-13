@@ -1127,14 +1127,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreDisplay: {fileID: 1176801859}
-  clientPrefab: {fileID: 386734356994526561, guid: 5dd393c44296adc4b9ca586ae5a6d6aa,
-    type: 3}
   clientsParent: {fileID: 222129131}
-  timeBetweenClients: 1
-  clientStayTime: 10
+  diseaseBook: {fileID: 11400000, guid: 100bcd3edecb1ce4bb0ea4ae9d870126, type: 2}
+  timeBetweenClients: 3
+  clientStayTime: 21
   maxClients: 6
+  minSymptoms: 2
   maxSymptoms: 3
-  spaceBetweenTickets: 0.6
   scoreMultiplier: 5
   maxErrors: 3
 --- !u!1001 &234522916
@@ -1551,6 +1550,64 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 14771467}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &348113103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 348113104}
+  - component: {fileID: 348113105}
+  - component: {fileID: 348113106}
+  m_Layer: 0
+  m_Name: Livraison
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &348113104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348113103}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.37, z: -2.051}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1845532324}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &348113105
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348113103}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.25, z: 0.4}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &348113106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348113103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b90db19fc7e795c45905779e2999dcfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &351345608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3793,22 +3850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minQuality: 0.1
-  recipes:
-  - name: Stimulant
-    color: {r: 0, g: 0.6415094, b: 0.18789127, a: 1}
-    cures: 0
-    ingredients:
-    - name: Water
-      quantity: 0.5
-      quality: 0
-      color: {r: 0, g: 0, b: 0, a: 0}
-      states: 
-    - name: Vitalis
-      quantity: 0.25
-      quality: 0
-      color: {r: 0, g: 0, b: 0, a: 0}
-      states: 
-    states: 
+  recipeBook: {fileID: 11400000, guid: 48636ae9784a3b847819afc6337b22dc, type: 2}
 --- !u!4 &859042915
 Transform:
   m_ObjectHideFlags: 0
@@ -6695,6 +6737,7 @@ Transform:
   m_Children:
   - {fileID: 859042915}
   - {fileID: 222129131}
+  - {fileID: 348113104}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6711,13 +6754,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreDisplay: {fileID: 0}
-  clientPrefab: {fileID: 0}
   clientsParent: {fileID: 0}
+  diseaseBook: {fileID: 0}
   timeBetweenClients: 60
   clientStayTime: 120
   maxClients: 6
+  minSymptoms: 2
   maxSymptoms: 3
-  spaceBetweenTickets: 0.55
   scoreMultiplier: 5
   maxErrors: 3
 --- !u!1 &1870384767

@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClientBehavior : MonoBehaviour
 {
     [SerializeField] private TextMeshPro title;
     [SerializeField] private TextMeshPro content;
+    [SerializeField] private Image uiTimer;
 
     public Client Client { get; private set; }
 
@@ -19,7 +22,10 @@ public class ClientBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > birthTime + stayTime && !hasLeft) Leave(true);
+        float lifeTime = Time.time - birthTime;
+
+        if (lifeTime > stayTime && !hasLeft) Leave(true);
+        uiTimer.fillAmount = lifeTime / stayTime;
     }
 
     public void Setup(Client client, float staytime, int position)
@@ -43,9 +49,9 @@ public class ClientBehavior : MonoBehaviour
 
     public void ReceivePotion(Ingredient potion)
     {
-        if (potion.Cures != null && potion.Cures == Client.Disease)
+        if (potion.Cures != null && potion.Cures == Client.Disease.name)
         {
-            Debug.Log(Client.Name + " was cured correclty!");
+            Debug.Log(Client.Name + " was cured correctly!");
             GameManager.Instance.AddScore(potion.Quality);
         }
         else

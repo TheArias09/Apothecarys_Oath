@@ -5,8 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private ScoreDisplay scoreDisplay;
-    [SerializeField] private GameObject clientPrefab;
     [SerializeField] private Transform clientsParent;
+    [SerializeField] private DiseaseBook diseaseBook;
 
     [Header("Clients")]
     [SerializeField] private float timeBetweenClients = 60;
@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxSymptoms = 3;
 
     [Header("Parameters")]
-    [SerializeField] private float spaceBetweenTickets = 0.55f;
     [SerializeField] private float scoreMultiplier = 5;
     [SerializeField] private int maxErrors = 3;
 
@@ -43,36 +42,34 @@ public class GameManager : MonoBehaviour
 
         timer -= Time.deltaTime;
 
-        if (timer <= 0)
-        {
-            timer = timeBetweenClients;
-
-            Client client = new(clientNumber.ToString(), DiseaseName.FATIGUE);
-            Transform clientObject = clientsParent.GetChild(clientNumber % maxClients);
-            ClientBehavior behavior = clientObject.GetComponent<ClientBehavior>();
-
-            behavior.Setup(client, clientStayTime, clientNumber % maxClients);
-            behavior.UpdateDisplay();
-
-            clientObject.gameObject.SetActive(true);
-
-            currentClients++;
-            clientNumber++;
-        }
+        if (timer <= 0) CreateClient();
     }
 
-    public void GivePotion(GameObject potionContainer)
+    private void CreateClient()
     {
-        potionContainer.TryGetComponent(out IngredientWrapper wrapper);
-        if (wrapper == null || wrapper.Ingredients.Count != 1)
-        {
-            Debug.Log("No correct potion submited");
-            return;
-        }
+        timer = timeBetweenClients;
 
+        int random = Random.Range(0, diseaseBook.diseases.Count);
+        int symptoms = Random.Range(minSymptoms, maxSymptoms + 1);
+
+        Client client = new(clientNumber.ToString(), diseaseBook.diseases[random].disease, symptoms);
+        Transform clientObject = clientsParent.GetChild(clientNumber % maxClients);
+        ClientBehavior behavior = clientObject.GetComponent<ClientBehavior>();
+
+        behavior.Setup(client, clientStayTime, clientNumber % maxClients);
+        behavior.UpdateDisplay();
+
+        clientObject.gameObject.SetActive(true);
+
+        currentClients++;
+        clientNumber++;
+    }
+
+    public void GivePotion(IngredientWrapper wrapper)
+    {
         Ingredient potion = wrapper.Ingredients[0];
 
-        if (potion.Cures == null)
+        if (potion.Cures == null || wrapper.Ingredients.Count != 1)
         {
             Debug.Log("No correct potion submited");
             return;
@@ -81,7 +78,7 @@ public class GameManager : MonoBehaviour
         foreach (Transform child in clientsParent)
         {
             child.TryGetComponent(out ClientBehavior behavior);
-            if (behavior.Client.Disease == potion.Cures)
+            if (behavior.Client.Disease.name == potion.Cures)
             {
                 behavior.ReceivePotion(potion);
                 return;

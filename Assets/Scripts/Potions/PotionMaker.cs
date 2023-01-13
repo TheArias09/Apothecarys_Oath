@@ -7,10 +7,7 @@ using UnityEngine;
 public class PotionMaker : MonoBehaviour
 {
     [SerializeField] private float minQuality = 0.1f;
-    [Space(10)]
-    [SerializeField] private List<Recipe> recipes;
-
-    private Ingredient potion;
+    [SerializeField] private RecipeBook recipeBook;
 
     public static PotionMaker Instance;
 
@@ -22,9 +19,9 @@ public class PotionMaker : MonoBehaviour
 
     public void CheckPotion(IngredientWrapper potion)
     {
-        foreach(var recipe in recipes)
+        foreach(var recipeData in recipeBook.recipes)
         {
-            float quality = CheckPotion(recipe, potion);
+            float quality = CheckPotion(recipeData.recipe, potion);
             if (quality > 0) break;
         }
     }

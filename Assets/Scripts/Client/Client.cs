@@ -3,26 +3,35 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 [Serializable]
 public class Client
 {
-    [SerializeField] private string name;
-    [SerializeField] private DiseaseName disease;
-
-    public string Name { get => name; }
-    public DiseaseName Disease { get => disease; }
+    public string Name { get; private set; }
+    public Disease Disease { get; private set; }
     public List<Symptom> Symptoms { get; private set; }
 
-    public Client(string name, DiseaseName disease)
+    public Client(string name, Disease disease, int symptoms)
     {
-        this.name = name;
-        this.disease = disease;
-        Symptoms = new List<Symptom>();
+        Name = name;
+        Disease = disease;
+        Symptoms = new();
+        AddSymptoms(symptoms);
     }
 
-    public void AddSymptoms(params Symptom[] symptoms)
+    public void AddSymptoms(int quantity)
     {
-        foreach(Symptom symptom in symptoms) Symptoms.Add(symptom);
+        List<Symptom> symptomsCopy = new(Disease.symptoms);
+
+        //Get quantity number of random symptoms from disease without repetition 
+        for(int i=0; i< quantity; i++)
+        {
+            int rand = UnityEngine.Random.Range(0, symptomsCopy.Count);
+            Symptom s = symptomsCopy[rand];
+
+            symptomsCopy.RemoveAt(rand);
+            Symptoms.Add(s);
+        }
     }
 }
