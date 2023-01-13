@@ -295,6 +295,7 @@ GameObject:
   - component: {fileID: 702169052211728210}
   - component: {fileID: 7765866274210966954}
   - component: {fileID: 2783236154209912608}
+  - component: {fileID: 5391285831533405110}
   m_Layer: 0
   m_Name: Potion_D
   m_TagString: Untagged
@@ -414,7 +415,7 @@ MonoBehaviour:
   liquids: []
   liquidVolume: {fileID: 6823226990313342821, guid: d771238c420cd5f408d28bae3ac9ea39,
     type: 3}
-  recipientQuantity: 0
+  recipientQuantity: 0.5
   liquidCount: 0
   absoluteDisplayFill: 0.1
 --- !u!114 &6730070773628002653
@@ -444,7 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02306037b2ed42e438ee35e480016fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recipientQuantity: 0
+  recipientQuantity: 0.5
   ingredients: []
   states: 
 --- !u!114 &702169052211728210
@@ -460,7 +461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bottleneckCenterPoint: {fileID: 8361909539596441952}
-  bottleneckRadius: 0
+  bottleneckRadius: 0.03
   sphereCastRadius: 0.01
   maxSphereCastDistance: 10
   sphereCastLayerMask:
@@ -535,3 +536,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _customJoint: {fileID: 0}
   _isKinematicGrab: 1
+--- !u!114 &5391285831533405110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6715777884637899037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transferOnSecondSelection: 0
+  _addNewPointsToFront: 0
+  _forwardElement: {fileID: 0}
+  _oneGrabTransformer: {fileID: 2783236154209912608}
+  _twoGrabTransformer: {fileID: 0}
+  _maxGrabPoints: -1

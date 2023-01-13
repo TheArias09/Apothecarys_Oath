@@ -31,7 +31,7 @@ public class LiquidFlowManager : MonoBehaviour
         flowSystemMain = flowSystem.main;
         flowSystemTrails = flowSystem.trails;
 
-        //isFlowing = potionFlowing.IsFlowing;
+        isFlowing = potionFlowing.IsFlowing;
         flowSystem.Play();
         
         SetPosition();
@@ -41,13 +41,22 @@ public class LiquidFlowManager : MonoBehaviour
     void FixedUpdate()
     {
         SetPosition();
-        //isFlowing = potionFlowing.IsFlowing;
+        isFlowing = potionFlowing.IsFlowing;
         liquidCount = potionLiquids.LiquidCount;
         
         if (liquidCount != previousLiquidCount)
         {
             SetColor();
             previousLiquidCount = liquidCount;
+        }
+
+        if (isFlowing)
+        {
+            Debug.Log("ça coule");
+            if (flowSystem.isEmitting)
+            {
+                
+            }
         }
         
         if(isFlowing && !flowSystem.isPlaying)

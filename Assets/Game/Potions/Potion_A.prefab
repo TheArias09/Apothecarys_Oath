@@ -169,7 +169,7 @@ MonoBehaviour:
   liquids: []
   liquidVolume: {fileID: 6778700540804885475, guid: c1b9dbc4f9db033449807fad77e758c1,
     type: 3}
-  recipientQuantity: 0
+  recipientQuantity: 1
   liquidCount: 0
   absoluteDisplayFill: 0.1
 --- !u!114 &3318193849181367756
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02306037b2ed42e438ee35e480016fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recipientQuantity: 0
+  recipientQuantity: 1
   ingredients: []
   states: 
 --- !u!114 &1699042132820929040
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bottleneckCenterPoint: {fileID: 5104730530396893631}
-  bottleneckRadius: 0
+  bottleneckRadius: 0.03
   sphereCastRadius: 0.01
   maxSphereCastDistance: 10
   sphereCastLayerMask:
