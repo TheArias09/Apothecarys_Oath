@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float scoreMultiplier = 5;
     [SerializeField] private int maxErrors = 3;
 
-    private bool gameStarted = true;
+    private bool gameStarted = false;
     private float timer = 0;
     private int score = 0;
     private int errors = 0;
@@ -115,7 +116,9 @@ public class GameManager : MonoBehaviour
         scoreDisplay.UpdateDisplay(score, maxErrors - errors);
     }
 
-    public void ChangeGameStatus(bool status) => gameStarted = status;
+    public void StartGame() => gameStarted = true;
+
+    public void Restart() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     public void GameOver()
     {

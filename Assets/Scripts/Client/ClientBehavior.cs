@@ -6,10 +6,34 @@ using UnityEngine.UI;
 
 public class ClientBehavior : MonoBehaviour
 {
+    [Header("UI")]
     [SerializeField] private TextMeshPro title;
     [SerializeField] private TextMeshPro content;
     [SerializeField] private Image uiTimer;
-    [SerializeField] private Gradient uiColor;
+    [SerializeField] private Gradient timerColor;
+    [SerializeField] private Color uiColor;
+
+    [Header("Animation")]
+    [SerializeField] private float tintTime;
+    [Space(5)]
+    [SerializeField] private MeshRenderer outline;
+    [SerializeField] private MeshRenderer board;
+    [Space(5)]
+    [SerializeField] private Material outlineMaterial;
+    [SerializeField] private Material boardMaterial;
+    [Space(5)]
+    [SerializeField] private Material errorMaterial;
+    [SerializeField] private Material successMaterial;
+    [Space(5)]
+    [SerializeField] private Color successColor;
+    [SerializeField] private Color errorColor;
+
+    [Header("Shaking")]
+    [Tooltip("Percent of lifetime left before starting to shake.")]
+    [SerializeField, Range(0, 1)] private float shakeStart;
+    [SerializeField] private float shakeMagnitude;
+    [SerializeField] private float shakeFrequency;
+    [SerializeField] private AnimationCurve shakeEvolution;
 
     public Client Client { get; private set; }
 
@@ -18,15 +42,40 @@ public class ClientBehavior : MonoBehaviour
     private int position;
 
     private bool hasLeft = false;
+   
+    private Vector3 initialPosition;
+    private float shakePeriod;
+    private float shakeTimer;
 
-    // Update is called once per frame
+    private void Awake()
+    {
+        initialPosition = transform.localPosition;
+        shakePeriod = 1 / shakeFrequency;
+    }
+
     void Update()
     {
         float lifeTime = Time.time - birthTime;
-        if (lifeTime > stayTime && !hasLeft) Leave(true);
+        if (lifeTime > stayTime && !hasLeft) Leave(false);
 
         uiTimer.fillAmount = 1 - (lifeTime / stayTime);
-        uiTimer.color = uiColor.Evaluate(uiTimer.fillAmount);
+        uiTimer.color = timerColor.Evaluate(uiTimer.fillAmount);
+    }
+
+    private void FixedUpdate()
+    {
+        if (shakeTimer > 0)
+        {
+            shakeTimer -= Time.deltaTime;
+            return;
+        }
+
+        shakeTimer = shakePeriod;
+        float shakeEvalutation = shakeStart - uiTimer.fillAmount;
+
+        if (shakeEvalutation > 0)
+            transform.localPosition = initialPosition + shakeEvolution.Evaluate(shakeEvalutation / shakeStart) * shakeMagnitude * Random.insideUnitSphere;
+
     }
 
     public void Setup(Client client, float staytime, int position)
@@ -52,31 +101,50 @@ public class ClientBehavior : MonoBehaviour
     {
         if (potion.Cures != null && potion.Cures == Client.Disease.name)
         {
-            Debug.Log(Client.Name + " was cured correctly!");
             GameManager.Instance.AddScore(potion.Quality);
+            Leave(true);
         }
         else
         {
-            Debug.Log(Client.Name + " was not given the correct potion...");
-            GameManager.Instance.AddError();
+            Debug.Log(Client.Name + " was not given the correct potion.");
+            Leave(false);
         }
-
-        Leave(false);
     }
 
-    private void Leave(bool timeout)
+    private void Leave(bool success)
     {
         hasLeft = true;
 
-        if (timeout)
+        if (!success) GameManager.Instance.AddError();
+        StartCoroutine(TintTicket(success));
+    }
+
+    private IEnumerator TintTicket(bool success)
+    {
+        if (success)
         {
-            Debug.Log(Client.Name + " has had enough, he left.");
-            GameManager.Instance.AddError();
+            outline.material = successMaterial;
+            board.material = successMaterial;
+
+            title.color = successColor;
+            content.color = successColor;
         }
         else
         {
-            Debug.Log(Client.Name + " left!");
+            outline.material = errorMaterial;
+            board.material = errorMaterial;
+
+            title.color = errorColor;
+            content.color = errorColor;
         }
+
+        yield return new WaitForSeconds(tintTime);
+
+        outline.material = outlineMaterial;
+        board.material = boardMaterial;
+
+        title.color = Color.white;
+        content.color = uiColor;
 
         GameManager.Instance.ClientLeave(position);
     }

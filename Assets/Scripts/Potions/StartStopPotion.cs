@@ -5,10 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(IngredientWrapper))]
 public class StartStopPotion : MonoBehaviour
 {
-    [Tooltip("If true, this potion will start the game. If false, it will end it.")]
-    [SerializeField] private bool startGame;
     [SerializeField] private float triggerQuantity;
-    [SerializeField] private string triggerLiquidName;
+    [Space(10)]
+    [SerializeField] private IngredientData startIngredient;
+    [SerializeField] private IngredientData restartIngredient;
+    [SerializeField] private IngredientData quitIngredient;
 
     private IngredientWrapper ingredientWrapper;
 
@@ -22,9 +23,12 @@ public class StartStopPotion : MonoBehaviour
         if (ingredientWrapper.Ingredients.Count < 1) return;
 
         Ingredient ing = ingredientWrapper.Ingredients[0];
-        if (ing.Name == triggerLiquidName && ing.Quantity >= triggerQuantity)
+
+        if (ing.Quantity >= triggerQuantity)
         {
-            GameManager.Instance.ChangeGameStatus(startGame);
+            if (ing.Data == startIngredient) GameManager.Instance.StartGame();
+            else if (ing.Data == restartIngredient) GameManager.Instance.Restart();
+            else if (ing.Data == quitIngredient) GameManager.Instance.GameOver();
         }
     }
 }
