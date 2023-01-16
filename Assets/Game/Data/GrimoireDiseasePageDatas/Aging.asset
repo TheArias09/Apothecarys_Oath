@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a21b436af6b00e44796c8e00d01eee0c, type: 3}
-  m_Name: Maladie 2
+  m_Name: Aging
   m_EditorClassIdentifier: 
-  symptomImage: {fileID: 21300000, guid: e5600378dd761e64d9423790c482bf36, type: 3}
-  diseaseDescription: Une maladie terrible
-  potionImage: {fileID: 21300000, guid: 321e52832c1c44b929fba78b700660b7, type: 3}
-  potionDescription: Une Potion qu'elle soigne
+  disease: {fileID: 11400000, guid: 01794e8ef0683e2438c073d854a0dc0a, type: 2}
+  curePotion: {fileID: 11400000, guid: 39a4b69815359ae4690798581afa4087, type: 2}
+  isFrontCover: 0
+  isBackCover: 0
+  coverSprite: {fileID: 0}
+  coverTitle: 

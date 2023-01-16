@@ -11,7 +11,7 @@ public enum DiseaseName
 [Serializable]
 public enum Symptom
 {
-    HEADACHE, TIRED, FEVER, COUGH, SNEEZE, CRAMPS, VOMIT, WEAK, HALLUCINATIONS, LONELINESS, DEPRESSION, ANXIETY, IRRITATED, BLUE_POX, CLUMSY
+    Headache, Tired, Fever, Cough, Sneeze, Cramps, Vomit, Weak, Hallucinations, Loneliness, Depression, Anxiety, Irritated, BluePox, Clumsy
 }
 
 [Serializable]
@@ -19,4 +19,5 @@ public class Disease
 {
     public DiseaseName name;
     public List<Symptom> symptoms;
+    public Sprite sprite;
 }

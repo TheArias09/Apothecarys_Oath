@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 875f619f2023d2f47b6bdce6459e35f7, type: 3}
-  m_Name: Life Nectar
+  m_Script: {fileID: 11500000, guid: 4caa8ee716dc41445bfdce84594d514a, type: 3}
+  m_Name: Antidote
   m_EditorClassIdentifier: 
-  ingredientName: Life nectar
-  color: {r: 1, g: 0.654902, b: 0, a: 1}
-  fresnelPower: 2
-  viscosity: 0.5
-  symbol: {fileID: 0}
+  recipeData: {fileID: 11400000, guid: d4a4cdbaa1e094642a73066a0f702598, type: 2}
+  isFrontCover: 0
+  isBackCover: 0
+  coverSprite: {fileID: 0}
+  coverTitle: 

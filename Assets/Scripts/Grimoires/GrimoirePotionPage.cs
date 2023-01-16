@@ -8,8 +8,12 @@ public class GrimoirePotionPage : MonoBehaviour
 {
     [SerializeField] Image potionImage;
     [SerializeField] TMP_Text potionDescription;
-    [SerializeField] TMP_Text recipeDescription;
     [SerializeField] TMP_Text potionName;
+
+    [SerializeField] List<GameObject> recipeParts;
+    [SerializeField] List<Image> recipePartImages;
+    [SerializeField] List<TMP_Text> recipePartTexts;
+    [SerializeField] int recipePartMaxCount;
 
     [SerializeField] TMP_Text bookTitle;
     [SerializeField] Image bookImage;
@@ -27,8 +31,8 @@ public class GrimoirePotionPage : MonoBehaviour
         if (data.isFrontCover)
         {
             frontCoverPanel.SetActive(true);
-            bookTitle.text = data.potionDescription;
-            bookImage.sprite = data.potionImage;
+            bookTitle.text = data.coverTitle;
+            bookImage.sprite = data.coverSprite;
         }
         else if (data.isBackCover)
         {
@@ -37,14 +41,24 @@ public class GrimoirePotionPage : MonoBehaviour
         else
         {
             pagePanel.SetActive(true);
-            if (recipeDescription)
+            if (recipeParts.Count > 0)
             {
-                recipeDescription.text = data.recipeDescription;
+                for(int i = 0; i < recipePartMaxCount; i++)
+                {
+                    if(i < data.recipeData.recipe.Ingredients.Count)
+                    {
+                        var ingredientData = data.recipeData.recipe.Ingredients[i];
+                        recipePartImages[i].sprite = ingredientData.Data.symbol;
+                        var recipePartText = "Add " + ingredientData.Quantity.ToString() + " vol of " + ingredientData.Name;
+                        recipePartTexts[i].text = recipePartText;
+                    }
+                    recipeParts[i].SetActive(i < data.recipeData.recipe.Ingredients.Count);
+                }
             }
             else
             {
-                potionImage.sprite = data.potionImage;
-                potionDescription.text = data.potionDescription;
+                potionImage.sprite = data.recipeData.recipe.Result.symbol;
+                potionDescription.text = data.recipeData.recipe.Result.description;
                 potionName.text = data.name;
             }
         }
@@ -54,7 +68,7 @@ public class GrimoirePotionPage : MonoBehaviour
     {
         if(potionImage) potionImage.sprite = null;
         if(potionDescription) potionDescription.text = "";
-        if(recipeDescription) recipeDescription.text = "";
+        //if(recipeDescription) recipeDescription.text = "";
         if(potionName) potionName.text = "";
     }
 }

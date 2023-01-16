@@ -11,4 +11,5 @@ public class IngredientData : ScriptableObject
     public float viscosity;
     [Space(10)]
     public Sprite symbol;
+    public string description;
 }

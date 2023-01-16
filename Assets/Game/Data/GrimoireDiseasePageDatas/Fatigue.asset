@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a21b436af6b00e44796c8e00d01eee0c, type: 3}
-  m_Name: Maladie 4
+  m_Name: Fatigue
   m_EditorClassIdentifier: 
-  symptomImage: {fileID: 21300000, guid: a04ecc9d5e12d5d449077414eb86635e, type: 3}
-  diseaseDescription: Une maladie terrible
-  potionImage: {fileID: 21300000, guid: 58cba0f23a50444719e48c44013aa2d3, type: 3}
-  potionDescription: Une Potion qu'elle soigne
+  disease: {fileID: 11400000, guid: 0cc9d9abf0213374f81bff3be2b6d42b, type: 2}
+  curePotion: {fileID: 11400000, guid: fbf61fa49ae3bdf4194b663eaab3c3e0, type: 2}
+  isFrontCover: 0
+  isBackCover: 0
+  coverSprite: {fileID: 0}
+  coverTitle: 

@@ -5,11 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Grimoires/GrimoireDiseasePageData", fileName = "GrimoireDiseasePageData")]
 public class GrimoireDiseasePageData : ScriptableObject
 {
-    public Sprite symptomImage;
-    public string diseaseDescription;
-    public Sprite potionImage;
-    public string potionDescription;
+    public DiseaseData disease;
+    public IngredientData curePotion;
 
     public bool isFrontCover;
     public bool isBackCover;
+    public Sprite coverSprite;
+    public string coverTitle;
 }

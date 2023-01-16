@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4caa8ee716dc41445bfdce84594d514a, type: 3}
-  m_Name: Potion 3
+  m_Name: Serenity Essence
   m_EditorClassIdentifier: 
-  potionImage: {fileID: 21300000, guid: 58cba0f23a50444719e48c44013aa2d3, type: 3}
-  potionDescription: "Une Potion qu'elle est d\xE9licieuse"
-  recipeDescription: Une recette qu'elle en jette
+  recipeData: {fileID: 11400000, guid: 1838378954ceb53459102602f7556b51, type: 2}
+  isFrontCover: 0
+  isBackCover: 0
+  coverSprite: {fileID: 0}
+  coverTitle: 
