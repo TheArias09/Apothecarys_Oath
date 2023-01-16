@@ -9,5 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Thomas/Grimoires.unity
     guid: ed43802418a851442b1b475aaa157abe
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c94fdcc67916ee742b39cd0b2d75b34d,
+      type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: d8c0ee7050cbfc94784315c9330d19bb,
       type: 2}

@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 1699042132820929040}
   - component: {fileID: 5486843988471007360}
   - component: {fileID: 8012480377573428420}
+  - component: {fileID: 8545980648741706361}
   m_Layer: 0
   m_Name: Potion_A_(Main)
   m_TagString: Untagged
@@ -71,6 +72,7 @@ Transform:
   m_Children:
   - {fileID: 4336258599735917074}
   - {fileID: 5104730530396893631}
+  - {fileID: 6297267117826346919}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -200,6 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipientQuantity: 1
+  infiniteSource: 0
   ingredients: []
   states: 
 --- !u!114 &1699042132820929040
@@ -280,7 +283,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   maxPourSpeed: 0.5
   flowOnGrab: 0
-  isPalmed: 0
 --- !u!114 &5486843988471007360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +337,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _customJoint: {fileID: 0}
   _isKinematicGrab: 1
+--- !u!95 &8545980648741706361
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3346590250814863891}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: deb0045224b9c0546ad51389ff5507e4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4280555305350937640
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +390,107 @@ Transform:
   m_Father: {fileID: 3342941435504424051}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4294714705833039872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6297267117826346919}
+  - component: {fileID: 3510848793099451872}
+  - component: {fileID: 6539887261967586214}
+  m_Layer: 7
+  m_Name: Respawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6297267117826346919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294714705833039872}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.225, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3342941435504424051}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3510848793099451872
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294714705833039872}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6539887261967586214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294714705833039872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8565167f76f23de4c9cb5b74dadf3eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnTarget: {fileID: 0}
+  respawnPoint: {fileID: 3342941435504424051}
+  collidingTimeBeforeRespawn: 3
+  collidingTimeBeforeRespawnClock: 0
+  colliderCount: 0
+  despawnTime: 0.333
+  respawnTime: 0.333
+  OnDespawnStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8545980648741706361}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Despawn
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDespawnEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRespawnStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8545980648741706361}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Respawn
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnRespawnEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6190739063238049720
 GameObject:
   m_ObjectHideFlags: 0

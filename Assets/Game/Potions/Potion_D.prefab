@@ -263,5 +263,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Potion_D
       objectReference: {fileID: 0}
+    - target: {fileID: 3510848793099451872, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3510848793099451872, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02055f7bc04734d408dc84367fa3e62e, type: 3}
