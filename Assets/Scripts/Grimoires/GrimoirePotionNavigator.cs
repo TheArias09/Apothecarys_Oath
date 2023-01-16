@@ -11,6 +11,8 @@ public class GrimoirePotionNavigator : MonoBehaviour
 
     [SerializeField] GameObject firstPageGameObject;
     [SerializeField] GameObject lastPageGameObject;
+    [SerializeField] GrimoirePageAnchor firstPageAnchor;
+    [SerializeField] GrimoirePageAnchor lastPageAnchor;
 
     [SerializeField] List<GrimoirePotionPageData> grimoirePageDatas;
 
@@ -27,6 +29,7 @@ public class GrimoirePotionNavigator : MonoBehaviour
 
         firstPage.Clear();
         firstPageGameObject.SetActive(false);
+        firstPageAnchor.DeactivateAnchor();
         middlePageFront.Clear();
         middlePageBack.Clear();
         lastPage.DisplayData(grimoirePageDatas[0]);
@@ -63,6 +66,7 @@ public class GrimoirePotionNavigator : MonoBehaviour
         }
         else
         {
+            lastPageAnchor.DeactivateAnchor();
             lastPageGameObject.SetActive(false);
             lastPage.Clear();
         }
@@ -73,6 +77,7 @@ public class GrimoirePotionNavigator : MonoBehaviour
 
         firstPage.DisplayData(grimoirePageDatas[currentLeftPageIndex]);
         firstPageGameObject.SetActive(true);
+        firstPageAnchor.ActivateAnchor();
 
         isLocked = false;
     }
@@ -96,6 +101,7 @@ public class GrimoirePotionNavigator : MonoBehaviour
         }
         else
         {
+            firstPageAnchor.DeactivateAnchor();
             firstPageGameObject.SetActive(false);
             firstPage.Clear();
         }
@@ -106,6 +112,7 @@ public class GrimoirePotionNavigator : MonoBehaviour
 
         lastPage.DisplayData(grimoirePageDatas[currentLeftPageIndex]);
         lastPageGameObject.SetActive(true);
+        lastPageAnchor.ActivateAnchor();
 
         isLocked = false;
     }

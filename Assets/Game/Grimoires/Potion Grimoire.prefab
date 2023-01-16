@@ -7,6 +7,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4942226330629767573, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,
+        type: 3}
+      propertyPath: OnPositionTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6817844715732764272}
+    - target: {fileID: 4942226330629767573, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,
+        type: 3}
+      propertyPath: OnPositionTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GrimoirePotionNavigator, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5572601953033420188, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,
+        type: 3}
+      propertyPath: OnPositionTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6817844715732764272}
+    - target: {fileID: 5572601953033420188, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,
+        type: 3}
+      propertyPath: OnPositionTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GrimoirePotionNavigator, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6465708017526066483, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,
         type: 3}
       propertyPath: m_RootOrder
@@ -106,4 +126,30 @@ MonoBehaviour:
   middlePageBack: {fileID: 0}
   firstPageGameObject: {fileID: 2726788318581160568}
   lastPageGameObject: {fileID: 5103740286590065016}
+  firstPageAnchor: {fileID: 5817568139393692582}
+  lastPageAnchor: {fileID: 6449062566403608495}
   grimoirePageDatas: []
+--- !u!114 &5817568139393692582 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4942226330629767573, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,
+    type: 3}
+  m_PrefabInstance: {fileID: 1453105563976462899}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ea29c07618c4e4cbc1726776e8de2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6449062566403608495 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5572601953033420188, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,
+    type: 3}
+  m_PrefabInstance: {fileID: 1453105563976462899}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ea29c07618c4e4cbc1726776e8de2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

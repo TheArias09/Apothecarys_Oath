@@ -1377,11 +1377,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 45
       objectReference: {fileID: 0}
-    - target: {fileID: 4565524197097817751, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,
-        type: 3}
-      propertyPath: _rigidbody
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4590558534567355218, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1452,8 +1447,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Disease Grimoire
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 824051580200899077, guid: 5e1f67abbe690d54faaf9f29fe2bfb72, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e1f67abbe690d54faaf9f29fe2bfb72, type: 3}
 --- !u!4 &1853360089963281998 stripped
 Transform:

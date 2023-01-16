@@ -249,7 +249,7 @@ MonoBehaviour:
   selectColor: {r: 0, g: 1, b: 0.306108, a: 1}
   movementTrackerGrabbable: {fileID: 8718957077393800009}
   movementTrackerGrabbableCollider: {fileID: 5549373006474604030}
-  triggerPosition: {x: 0.1, y: 0, z: 0}
+  triggerPosition: {x: 0.05, y: 0, z: 0}
   OnPositionTriggered:
     m_PersistentCalls:
       m_Calls:
@@ -528,7 +528,7 @@ MonoBehaviour:
       Value: 0
     MaxX:
       Constrain: 1
-      Value: 0.1
+      Value: 0.05
     MinY:
       Constrain: 1
       Value: 0
