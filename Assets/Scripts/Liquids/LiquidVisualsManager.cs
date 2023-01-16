@@ -140,7 +140,7 @@ public class LiquidVisualsManager : MonoBehaviour
         //TODO give data in ingredient
         fresnelPower = Random.Range(4f, 6f);
         viscosity = Random.Range(0.5f, 1.5f);
-        
+
         liquidColor = ingredient.Color;
         surfaceColor = new Color(
             Mathf.Min(1f, liquidColor.r + 0.05f),
