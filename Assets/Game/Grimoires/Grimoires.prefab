@@ -980,8 +980,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3275024289112999177, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
         type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 3275024289112999177, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
+        type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -45
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 3865007788129648214, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
         type: 3}
@@ -997,6 +1002,21 @@ PrefabInstance:
         type: 3}
       propertyPath: OnPositionTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GrimoirePotionNavigator, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976412629004619218, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976412629004619218, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976412629004619218, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 5249822359547336725, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
         type: 3}
@@ -1081,7 +1101,7 @@ PrefabInstance:
     - target: {fileID: 6817844715732764272, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
         type: 3}
       propertyPath: grimoirePageDatas.Array.size
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6817844715732764272, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
         type: 3}
@@ -1093,41 +1113,59 @@ PrefabInstance:
         type: 3}
       propertyPath: grimoirePageDatas.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 2d20243d190fda04db6239aa79fcd449,
+      objectReference: {fileID: 11400000, guid: 2a54c7b1131cf1e47b31aac90aba4bc4,
         type: 2}
     - target: {fileID: 6817844715732764272, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
         type: 3}
       propertyPath: grimoirePageDatas.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 2a54c7b1131cf1e47b31aac90aba4bc4,
+      objectReference: {fileID: 11400000, guid: d25dd66818062c24398b5846192c3061,
         type: 2}
     - target: {fileID: 6817844715732764272, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
         type: 3}
       propertyPath: grimoirePageDatas.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: d25dd66818062c24398b5846192c3061,
+      objectReference: {fileID: 11400000, guid: 85beeba2b48822b4db52b0e9127c8eb4,
         type: 2}
     - target: {fileID: 6817844715732764272, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
         type: 3}
       propertyPath: grimoirePageDatas.Array.data[4]
       value: 
-      objectReference: {fileID: 11400000, guid: 85beeba2b48822b4db52b0e9127c8eb4,
+      objectReference: {fileID: 11400000, guid: 0123fa3a2bd974a469a567b34f06f35c,
         type: 2}
     - target: {fileID: 6817844715732764272, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
         type: 3}
       propertyPath: grimoirePageDatas.Array.data[5]
       value: 
-      objectReference: {fileID: 11400000, guid: 0123fa3a2bd974a469a567b34f06f35c,
+      objectReference: {fileID: 11400000, guid: fa8a02b731a87914aa524fe8cb694e83,
         type: 2}
     - target: {fileID: 6817844715732764272, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
         type: 3}
       propertyPath: grimoirePageDatas.Array.data[6]
       value: 
-      objectReference: {fileID: 11400000, guid: fa8a02b731a87914aa524fe8cb694e83,
+      objectReference: {fileID: 11400000, guid: 2d20243d190fda04db6239aa79fcd449,
         type: 2}
     - target: {fileID: 6817844715732764272, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
         type: 3}
       propertyPath: grimoirePageDatas.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7b5fd73298c010646a0eab0226d808d1,
+        type: 2}
+    - target: {fileID: 6817844715732764272, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
+        type: 3}
+      propertyPath: grimoirePageDatas.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 94c3da8f7f363434c9dcec455203af1e,
+        type: 2}
+    - target: {fileID: 6817844715732764272, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
+        type: 3}
+      propertyPath: grimoirePageDatas.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: 252baf880b7d0ef41848a2585c20bdbc,
+        type: 2}
+    - target: {fileID: 6817844715732764272, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
+        type: 3}
+      propertyPath: grimoirePageDatas.Array.data[10]
       value: 
       objectReference: {fileID: 11400000, guid: 022ba8d26f1dd054e9c5543a34219670,
         type: 2}
@@ -1258,6 +1296,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2523557272702386145, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523557272702386145, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523557272702386145, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 3054309320233502372, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1313,6 +1366,11 @@ PrefabInstance:
       propertyPath: OnPositionTriggered.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: Oculus.Interaction.Interactable`2[[Oculus.Interaction.HandGrab.HandGrabInteractor,
         Oculus.Interaction
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132420938516838202, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.38268343
       objectReference: {fileID: 0}
     - target: {fileID: 4132420938516838202, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,
         type: 3}
