@@ -129,9 +129,9 @@ namespace Recipients
 
             CurrentDeltaQuantity = deltaQuantity;
 
-            Debug.Log("Flow!" + gameObject.name);
             var hits = Physics.SphereCastAll(flowOnGrab ? transform.position : GetFlowPoint(), sphereCastRadius, Vector3.down, maxSphereCastDistance, sphereCastLayerMask);
-            Debug.Log("Hits Count: " + hits.Length);
+            Debug.Log("Pour!\nHits Count: " + hits.Length);
+
             foreach (var hit in hits)
             {
                 if (hit.transform.gameObject == gameObject) continue;
@@ -143,6 +143,7 @@ namespace Recipients
                 {
                     IsFlowing = true;
                     deltaQuantity = pouredIngredients.Sum(ing => ing.Quantity);
+
                     var filledCorrectly = targetIngredientWrapper.FillWith(pouredIngredients, deltaQuantity);
                     if (!filledCorrectly) Overflow();
                 }
@@ -157,15 +158,9 @@ namespace Recipients
 
             // Pour in void.
             var pouredIngredientsInVoid = ingredientWrapper.Pour(deltaQuantity);
-            if (pouredIngredientsInVoid != null)
-            {
-                IsFlowing = pouredIngredientsInVoid.Count != 0;
-            }
-            else
-            {
-                IsFlowing = false;
-            }
-            if(!IsFlowing) CurrentDeltaQuantity = 0;
+
+            IsFlowing = (pouredIngredientsInVoid != null) && (pouredIngredientsInVoid.Count != 0);
+            if (!IsFlowing) CurrentDeltaQuantity = 0;
         }
 
         private static void Overflow()
