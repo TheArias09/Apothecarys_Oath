@@ -137,9 +137,8 @@ public class LiquidVisualsManager : MonoBehaviour
 
         displayedFill = previousDisplayedFill + (trueFill * 2 * absoluteDisplayFill) ;
         
-        //TODO give data in ingredient
-        fresnelPower = Random.Range(4f, 6f);
-        viscosity = Random.Range(0.5f, 1.5f);
+        fresnelPower = ingredient.Data.fresnelPower;
+        viscosity = ingredient.Data.viscosity;
 
         liquidColor = ingredient.Color;
         surfaceColor = new Color(
@@ -204,6 +203,19 @@ public class LiquidVisualsManager : MonoBehaviour
             return -absoluteDisplayFill;
         }
         return liquids[liquidCount - 1].displayedFill;
+    }
+    
+    public float FindViscosityFactor()
+    {
+        float returnFactor = 0f;
+
+        for (int i = 0; i < Liquids.Count; i++)
+        {
+            returnFactor += Liquids[i].viscosity * Liquids[i].trueFill;
+        }
+        
+        returnFactor /= FindTotalTrueFill();
+        return returnFactor;
     }
     
     void AddRandomLiquid()
@@ -316,7 +328,41 @@ public class LiquidVisualsManager : MonoBehaviour
         liquids.RemoveAt(liquidNumber);
         Destroy(liquidToRemove);
     }
+
+    //Sert à des tests
     
+    private void Update()
+    {
+        if (Input.GetKeyDown("p") /*|| OVRInput.GetDown(OVRInput.Button.One) */ ) //p for plus
+        {
+            Debug.Log("Adding Liquid");
+            AddRandomLiquid();
+            liquidCount += 1;
+        }
+
+        if (Input.GetKeyDown("m") /*|| OVRInput.GetDown(OVRInput.Button.Two) */ ) //m for minus
+        {
+            Debug.Log("Removing Liquid");
+            RemoveLiquid();
+            liquidCount -= 1;
+        }
+        
+        /*
+        if (Input.GetKeyDown("u")) //u for update
+        {
+            Debug.Log("Updating Liquids");
+            UpdateVolumes();
+        }
+        
+        if (Input.GetKeyDown("r")) //r for refresh
+        {
+            Debug.Log("Refresh Liquids");
+            RefreshLiquids();
+        }
+        */
+    }
+    
+    /*
     void AddLiquid()
     {
         float trueFill;
@@ -374,39 +420,5 @@ public class LiquidVisualsManager : MonoBehaviour
         liquidVolumes.Add(newLiquidVolume);
         liquids.Add(newLiquid);
     }
-
-    //Sert à des tests
-    
-    private void Update()
-    {
-        if (Input.GetKeyDown("p") /*|| OVRInput.GetDown(OVRInput.Button.One) */ ) //p for plus
-        {
-            Debug.Log("Adding Liquid");
-            AddRandomLiquid();
-            liquidCount += 1;
-        }
-
-        if (Input.GetKeyDown("m") /*|| OVRInput.GetDown(OVRInput.Button.Two) */ ) //m for minus
-        {
-            Debug.Log("Removing Liquid");
-            RemoveLiquid();
-            liquidCount -= 1;
-        }
-        
-        /*
-        if (Input.GetKeyDown("u")) //u for update
-        {
-            Debug.Log("Updating Liquids");
-            UpdateVolumes();
-        }
-        
-        if (Input.GetKeyDown("r")) //r for refresh
-        {
-            Debug.Log("Refresh Liquids");
-            RefreshLiquids();
-        }
-        */
-    }
-    
-    
+    */
 }
