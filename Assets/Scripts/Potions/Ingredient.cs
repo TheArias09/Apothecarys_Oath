@@ -23,7 +23,7 @@ public class Ingredient
     public string Name { get => data.ingredientName; set => data.ingredientName = value; }
     public float Quantity { get => quantity; set => quantity = value; }
     public float Quality { get => quality; set => quality = value; }
-    public Color Color { get => data.color; set => data.color = value; }
+    public Color Color { get => data.color; }
     public List<IngredientState> States { get => states; }
 
     public DiseaseName? Cures { get => cures; set => cures = value; }
