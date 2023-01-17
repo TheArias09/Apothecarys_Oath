@@ -4545,10 +4545,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3318193849181367754, guid: 02055f7bc04734d408dc84367fa3e62e,
+    - target: {fileID: 3318193849181367758, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
+      propertyPath: ingredients.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367758, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: ingredients.Array.data[0].data
+      value: 
+      objectReference: {fileID: 11400000, guid: 5fdc87b45b2a3414eb9884c62c43a04e,
+        type: 2}
+    - target: {fileID: 3318193849181367758, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: ingredients.Array.data[0].quantity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3342941435504424051, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
