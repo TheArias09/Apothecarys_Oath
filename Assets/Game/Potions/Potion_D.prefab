@@ -195,6 +195,16 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
+      propertyPath: maxDisplayFill
+      value: 0.104
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: minDisplayFill
+      value: -0.142
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
       propertyPath: recipientQuantity
       value: 0.5
       objectReference: {fileID: 0}
@@ -287,6 +297,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.10000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7387210249228914651, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: m_Name
+      value: Surface_D
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02055f7bc04734d408dc84367fa3e62e, type: 3}

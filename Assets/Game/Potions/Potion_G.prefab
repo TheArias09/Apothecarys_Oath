@@ -204,6 +204,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7484622077490460816, guid: 929cefe638aafa34d829b999c09b3cda,
         type: 3}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: maxDisplayFill
+      value: 0.096
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: minDisplayFill
+      value: -0.072
+      objectReference: {fileID: 0}
     - target: {fileID: 3342941435504424051, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: m_RootOrder
@@ -323,6 +333,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.006
+      objectReference: {fileID: 0}
+    - target: {fileID: 7387210249228914651, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: m_Name
+      value: Surface_G
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02055f7bc04734d408dc84367fa3e62e, type: 3}

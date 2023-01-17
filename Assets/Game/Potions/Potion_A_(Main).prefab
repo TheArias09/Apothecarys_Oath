@@ -177,7 +177,32 @@ MonoBehaviour:
     type: 3}
   recipientQuantity: 1
   liquidCount: 0
-  absoluteDisplayFill: 0.1
+  minDisplayFill: -0.1379
+  maxDisplayFill: 0.105
+  angleToFillCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &3318193849181367756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5497,7 +5522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4336258599735917074
 Transform:
   m_ObjectHideFlags: 0
