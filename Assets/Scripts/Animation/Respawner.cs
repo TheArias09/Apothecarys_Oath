@@ -22,11 +22,15 @@ public class Respawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.layer != LayerMask.NameToLayer("Respawn Area")) return;
+
         colliderCount++;
     }
 
     private void OnTriggerExit(Collider other)
     {
+        if (other.gameObject.layer != LayerMask.NameToLayer("Respawn Area")) return;
+
         colliderCount--;
     }
 
