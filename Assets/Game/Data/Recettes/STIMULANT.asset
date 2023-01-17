@@ -25,3 +25,6 @@ MonoBehaviour:
       quality: 0
       states: 
     states: 
+    recipeInstructions:
+    - Pour 50cl of water in a recipient.
+    - Add 25cl of homeop... no, Vitalis.

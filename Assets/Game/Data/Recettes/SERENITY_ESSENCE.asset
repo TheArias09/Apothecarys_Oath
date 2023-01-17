@@ -14,6 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipe:
     result: {fileID: 11400000, guid: 3a2f3c8b81f2436468715ae47319e7ec, type: 2}
-    cures: 0
-    ingredients: []
+    cures: 4
+    ingredients:
+    - data: {fileID: 11400000, guid: 54955293b53b57449ab70af2ed354f1b, type: 2}
+      quantity: 2
+      quality: 0
+      states: 
+    - data: {fileID: 11400000, guid: 7048c975d7c8b4840b9d0eddee91dcda, type: 2}
+      quantity: 1
+      quality: 0
+      states: 
+    - data: {fileID: 11400000, guid: b3fede9b7257bf042b4932286f83106c, type: 2}
+      quantity: 2
+      quality: 0
+      states: 
     states: 
+    recipeInstructions:
+    - 'Pour 30cl of wonder sirup in a recipient. '
+    - Add 10cl of Vitalis. Take a deep breath.
+    - Finally add 30cl of Life Nectar.

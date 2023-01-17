@@ -14,6 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipe:
     result: {fileID: 11400000, guid: b5e29ac798fd1424ab0b0ccee02e22f1, type: 2}
-    cures: 0
-    ingredients: []
+    cures: 7
+    ingredients:
+    - data: {fileID: 11400000, guid: f5e35cb29a29af843ad48780551d76c4, type: 2}
+      quantity: 2
+      quality: 0
+      states: 
+    - data: {fileID: 11400000, guid: ddf10fa9dbc3fbd448510821d3101037, type: 2}
+      quantity: 2
+      quality: 0
+      states: 
+    - data: {fileID: 11400000, guid: 99709d2d4a906a349823aaa5d74494a6, type: 2}
+      quantity: 1
+      quality: 0
+      states: 
+    - data: {fileID: 11400000, guid: 982fc2afe38cf6c45bc73f1fe00e64fe, type: 2}
+      quantity: 1
+      quality: 0
+      states: 
+    - data: {fileID: 11400000, guid: 0e87a7a382bcf5c4bbb0cf5960a3b191, type: 2}
+      quantity: 1
+      quality: 0
+      states: 
     states: 
+    recipeInstructions:
+    - Pour 20cl of gold nectar in a recipient.
+    - Extract and add 20cl of lucky bulb juice.
+    - Add a four leafed club. (More luck is better !)
+    - Add a protuding eye.
+    - Finally, add a shiny nut ;)
