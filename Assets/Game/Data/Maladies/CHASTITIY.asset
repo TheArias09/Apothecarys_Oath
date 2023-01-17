@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: CHASTITIY
   m_EditorClassIdentifier: 
   disease:
-    name: 0
+    name: 8
     symptoms: 07000000090000000c000000
+    sprite: {fileID: 0}
