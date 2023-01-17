@@ -65,8 +65,8 @@ public class LiquidSurfaceManager : MonoBehaviour
         wobbleAmountZ = wobbleManager.WobbleAmountZ;
         
         //Setting the desired rotation
-        rotationZ = -90f * wobbleAmountZ * Mathf.Deg2Rad;
-        rotationX = -90f * wobbleAmountX * Mathf.Deg2Rad;
+        rotationZ = -90f * wobbleAmountZ * Mathf.Deg2Rad * 500;
+        rotationX = -90f * wobbleAmountX * Mathf.Deg2Rad * 500;
         
         //rotationZ += 10f * Mathf.Deg2Rad;
         //rotationX += 10f * Mathf.Deg2Rad;

@@ -16,7 +16,7 @@ public class LiquidFlowManager : MonoBehaviour
     private ParticleSystem.MainModule flowSystemMain;
     private ParticleSystem.TrailModule flowSystemTrails;
 
-    private bool isFlowing = true;
+    public bool isFlowing = true;
 
     void Start()
     {
@@ -36,6 +36,7 @@ public class LiquidFlowManager : MonoBehaviour
 
         SetPosition();
         SetColor();
+        SetWidth();
     }
 
     void FixedUpdate()
@@ -47,6 +48,7 @@ public class LiquidFlowManager : MonoBehaviour
         if (liquidCount != previousLiquidCount)
         {
             SetColor();
+            SetWidth();
             previousLiquidCount = liquidCount;
         }
 /*
@@ -109,5 +111,10 @@ public class LiquidFlowManager : MonoBehaviour
     void SetHeight(float desiredHeight)
     {
         flowSystemMain.gravityModifierMultiplier = 0.25f * desiredHeight;
+    }
+
+    void SetWidth()
+    {
+        flowSystemTrails.widthOverTrail = (ParticleSystem.MinMaxCurve)(0.05 * potionLiquids.FindViscosityFactor());
     }
 }

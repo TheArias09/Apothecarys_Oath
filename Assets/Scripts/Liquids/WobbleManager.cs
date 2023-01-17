@@ -45,7 +45,7 @@ public class WobbleManager : MonoBehaviour
         previousLiquidCount = liquidCount;
         totalTrueFill = liquidVisualsManager.FindTotalTrueFill();
         previousTotalTrueFill = totalTrueFill;
-        viscocityFactor = FindViscosityFactor();
+        viscocityFactor = liquidVisualsManager.FindViscosityFactor();
         balancedMaxWobble = viscocityFactor * MaxWobble;
         balancedWobbleSpeed = viscocityFactor * WobbleSpeed;
         balancedRecovery = viscocityFactor * Recovery;
@@ -58,7 +58,7 @@ public class WobbleManager : MonoBehaviour
         if (liquidCount != previousLiquidCount || Math.Abs(totalTrueFill - previousTotalTrueFill) > 0.005f)
         {
             previousLiquidCount = liquidCount;
-            viscocityFactor = FindViscosityFactor();
+            viscocityFactor = liquidVisualsManager.FindViscosityFactor();
             balancedMaxWobble = viscocityFactor * MaxWobble;
             balancedWobbleSpeed = viscocityFactor * WobbleSpeed;
             balancedRecovery = viscocityFactor * Recovery;
@@ -104,20 +104,6 @@ public class WobbleManager : MonoBehaviour
 
             }
         }
-    }
-    
-    float FindViscosityFactor()
-    {
-        float returnFactor = 0f; 
-        List<LiquidVisuals> liquids = liquidVisualsManager.Liquids;
-       
-        for (int i = 0; i < liquids.Count; i++)
-        {
-            returnFactor += liquids[i].viscosity * liquids[i].trueFill;
-        }
-        
-        returnFactor /= liquidVisualsManager.FindTotalTrueFill();
-        return returnFactor;
     }
 
 }
