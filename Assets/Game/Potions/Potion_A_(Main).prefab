@@ -5325,7 +5325,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnTarget: {fileID: 0}
-  respawnPoint: {fileID: 3342941435504424051}
+  ultimateParentTransform: {fileID: 3342941435504424051}
+  respawnEulerAngles: {x: 0, y: 0, z: 0}
   collidingTimeBeforeRespawn: 3
   collidingTimeBeforeRespawnClock: 0
   colliderCount: 0

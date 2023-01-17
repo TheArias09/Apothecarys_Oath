@@ -6,7 +6,8 @@ using UnityEngine.Events;
 public class Respawner : MonoBehaviour
 {
     [SerializeField] Transform respawnTarget;
-    [SerializeField] Transform respawnPoint;
+    [SerializeField] Transform ultimateParentTransform;
+    [SerializeField] Vector3 respawnEulerAngles = Vector3.zero;
 
     [SerializeField] float collidingTimeBeforeRespawn;
     [SerializeField] float collidingTimeBeforeRespawnClock;
@@ -56,7 +57,8 @@ public class Respawner : MonoBehaviour
         yield return new WaitForSeconds(despawnTime);
         OnDespawnEnd?.Invoke();
 
-        respawnPoint.position = respawnTarget.position;
+        ultimateParentTransform.position = respawnTarget.position;
+        ultimateParentTransform.eulerAngles = respawnEulerAngles;
 
         OnRespawnStart?.Invoke();
         yield return new WaitForSeconds(respawnTime);
