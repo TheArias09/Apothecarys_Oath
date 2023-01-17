@@ -171,7 +171,32 @@ MonoBehaviour:
     type: 3}
   recipientQuantity: 1
   liquidCount: 0
-  absoluteDisplayFill: 0.1
+  minDisplayFill: -0.1
+  maxDisplayFill: 0.1
+  angleToFillCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &3318193849181367756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipientQuantity: 1
+  infiniteSource: 0
   ingredients: []
   states: 
 --- !u!114 &1699042132820929040
@@ -235,7 +261,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   maxPourSpeed: 0.5
   flowOnGrab: 0
-  isPalmed: 0
 --- !u!114 &5486843988471007360
 MonoBehaviour:
   m_ObjectHideFlags: 0
