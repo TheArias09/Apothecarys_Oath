@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: GROGGYNESS
   m_EditorClassIdentifier: 
   disease:
-    name: 0
+    name: 6
     symptoms: 000000000800000006000000
+    sprite: {fileID: 0}

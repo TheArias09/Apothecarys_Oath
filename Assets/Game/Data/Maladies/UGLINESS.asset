@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: UGLINESS
   m_EditorClassIdentifier: 
   disease:
-    name: 0
+    name: 5
     symptoms: 0d0000000a0000000c000000
+    sprite: {fileID: 0}

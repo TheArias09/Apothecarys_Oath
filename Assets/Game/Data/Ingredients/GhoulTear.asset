@@ -16,4 +16,5 @@ MonoBehaviour:
   color: {r: 0.33247066, g: 0.26614454, b: 0.5283019, a: 1}
   fresnelPower: 2
   viscosity: 0.9
-  symbol: {fileID: 0}
+  symbol: {fileID: 21300000, guid: 56d6236121e6c4382b5099572d20d479, type: 3}
+  description: 

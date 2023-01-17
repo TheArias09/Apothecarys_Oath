@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: MISFORTUNE
   m_EditorClassIdentifier: 
   disease:
-    name: 0
+    name: 7
     symptoms: 0e000000080000000b000000
+    sprite: {fileID: 0}
