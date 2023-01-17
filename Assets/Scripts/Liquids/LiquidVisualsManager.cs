@@ -10,6 +10,7 @@ public class LiquidVisualsManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> liquidVolumes;
     [SerializeField] private List<LiquidVisuals> liquids;
+    [SerializeField] private List<Material> liquidRenderersMaterials;
 
     [SerializeField] private GameObject liquidVolume;
 
@@ -21,11 +22,16 @@ public class LiquidVisualsManager : MonoBehaviour
     private float trueFill; //Entre 0 et 1
     private float displayedFill; //Entre -0.1 et 0.1
 
-    //[SerializeField] private float absoluteDisplayFill = 0.1f;
-    [SerializeField] private float minDisplayFill = -0.1f;
-    [SerializeField] private float maxDisplayFill = 0.1f;
+    private float calculatedTrueFill;
+    private float angleToTop;
     
-    [SerializeField] private AnimationCurve angleToFillCurve;
+    //[SerializeField] private float absoluteDisplayFill = 0.1f;
+    //[SerializeField] private float minDisplayFill = -0.1f;
+    //[SerializeField] private float maxDisplayFill = 0.1f;
+    
+    [SerializeField] private AnimationCurve displayFillCurve;
+    [SerializeField] private AnimationCurve horizontalDisplayFillCurve;
+    
     public float RecipientQuantity => recipientQuantity;
     public List<LiquidVisuals> Liquids => liquids;
     public int LiquidCount => liquidCount;
@@ -49,6 +55,18 @@ public class LiquidVisualsManager : MonoBehaviour
         }
 
         UpdateVolumes();
+    }
+
+    private void FixedUpdate()
+    {
+        calculatedTrueFill = 0;
+        
+        for (int i = 0; i < liquids.Count; i++)
+        {
+            calculatedTrueFill += liquids[i].trueFill;
+            liquids[i].displayedFill = CalculateDisplayedFill(calculatedTrueFill);
+            liquidRenderersMaterials[i].SetFloat("_Fill", liquids[i].displayedFill);
+        }
     }
 
     private void OnEnable()
@@ -98,7 +116,7 @@ public class LiquidVisualsManager : MonoBehaviour
     
     void UpdateLiquidFill(int liquidNumber, float desiredTrueFill)  // desiredTrueFill entre 0 et 1
     {
-        Material volumeMaterial;
+        //Material volumeMaterial;
 
         float previousTotalTrueFill = 0;
 
@@ -107,8 +125,7 @@ public class LiquidVisualsManager : MonoBehaviour
             previousTotalTrueFill += liquids[i].trueFill;
         }
         
-        float desiredDisplayedFill = ((previousTotalTrueFill + desiredTrueFill) * (maxDisplayFill - minDisplayFill) + minDisplayFill) 
-                                     * angleToFillCurve.Evaluate(previousTotalTrueFill + desiredTrueFill);
+        float desiredDisplayedFill = CalculateDisplayedFill(previousTotalTrueFill + desiredTrueFill);
          
         float displayedFillDifference = desiredDisplayedFill - liquids[liquidNumber].displayedFill; //Negative if lowering
 
@@ -116,8 +133,9 @@ public class LiquidVisualsManager : MonoBehaviour
         
         for (int i = liquidNumber; i < liquidVolumes.Count; i++)
         {
-            volumeMaterial = liquidVolumes[i].GetComponent<Renderer>().material;
-            volumeMaterial.SetFloat("_Fill",volumeMaterial.GetFloat("_Fill")+displayedFillDifference);
+            //volumeMaterial = liquidVolumes[i].GetComponent<Renderer>().material;
+            //volumeMaterial.SetFloat("_Fill",volumeMaterial.GetFloat("_Fill")+displayedFillDifference);
+            liquidRenderersMaterials[i].SetFloat("_Fill",liquidRenderersMaterials[i].GetFloat("_Fill")+displayedFillDifference);
             liquids[i].displayedFill += displayedFillDifference;
         }
     }
@@ -141,8 +159,7 @@ public class LiquidVisualsManager : MonoBehaviour
             previousTotalTrueFill += liquids[i].trueFill;
         }
         
-        displayedFill = ((previousTotalTrueFill + trueFill) * (maxDisplayFill - minDisplayFill) + minDisplayFill) 
-                                     * angleToFillCurve.Evaluate(FindAngleToTop());
+        displayedFill = CalculateDisplayedFill(previousTotalTrueFill + trueFill);
         
         fresnelPower = ingredient.Data.fresnelPower;
         viscosity = ingredient.Data.viscosity;
@@ -189,6 +206,7 @@ public class LiquidVisualsManager : MonoBehaviour
 
         liquidVolumes.Add(newLiquidVolume);
         liquids.Add(newLiquid);
+        liquidRenderersMaterials.Add(liquidRendererMaterial);
     }
 
     public float FindTotalTrueFill()
@@ -207,9 +225,22 @@ public class LiquidVisualsManager : MonoBehaviour
     {
         if (liquidCount <= 0 )
         {
-            return minDisplayFill;
+            return displayFillCurve.Evaluate(0f);
         }
         return liquids[liquidCount - 1].displayedFill;
+    }
+
+    public float CalculateDisplayedFill(float totalTrueFill)
+    {
+        
+        angleToTop = (FindAngleToTop() - 0.5f) * 2;
+
+        // f(x) = - x * a + b * (1 - abs(x))
+        // a étant le dFC et b le hDFC
+        float calculatedDisplayedFill = -angleToTop * displayFillCurve.Evaluate(totalTrueFill)
+                                        + horizontalDisplayFillCurve.Evaluate(totalTrueFill) * (1 - Mathf.Abs(angleToTop));
+
+        return calculatedDisplayedFill;
     }
     
     public float FindViscosityFactor()
@@ -225,7 +256,7 @@ public class LiquidVisualsManager : MonoBehaviour
         return returnFactor;
     }
 
-    public float FindAngleToTop()
+    public float FindAngleToTop() //0 Si vers le haut, 1 si vers le bas
     {
         var axis = Vector3.Cross(Vector3.up, transform.up);
         var flowAngle = Vector3.SignedAngle(Vector3.up, transform.up, axis);
@@ -253,9 +284,8 @@ public class LiquidVisualsManager : MonoBehaviour
         }
         
         trueFill = Random.Range(0f, 1f - previousTotalTrueFill);
-        
-        displayedFill = ((previousTotalTrueFill + trueFill) * (maxDisplayFill - minDisplayFill) + minDisplayFill) 
-                        * angleToFillCurve.Evaluate(FindAngleToTop());
+
+        displayedFill = CalculateDisplayedFill(previousTotalTrueFill + trueFill);
 
         fresnelPower = Random.Range(4.5f, 5.5f);
         viscosity = Random.Range(0.5f, 1.5f);
@@ -305,6 +335,7 @@ public class LiquidVisualsManager : MonoBehaviour
 
         liquidVolumes.Add(newLiquidVolume);
         liquids.Add(newLiquid);
+        liquidRenderersMaterials.Add(liquidRendererMaterial);
     }
 
     void RemoveLiquid()
@@ -314,6 +345,7 @@ public class LiquidVisualsManager : MonoBehaviour
             GameObject liquidToRemove = liquidVolumes[^1];
             liquidVolumes.RemoveAt(liquidVolumes.Count - 1);
             liquids.RemoveAt(liquids.Count - 1);
+            liquidRenderersMaterials.RemoveAt(liquidRenderersMaterials.Count - 1);
             Destroy(liquidToRemove);
         }
     }
@@ -342,6 +374,7 @@ public class LiquidVisualsManager : MonoBehaviour
         GameObject liquidToRemove = liquidVolumes[liquidNumber];
         liquidVolumes.RemoveAt(liquidNumber);
         liquids.RemoveAt(liquidNumber);
+        liquidRenderersMaterials.RemoveAt(liquidNumber);
         Destroy(liquidToRemove);
     }
 

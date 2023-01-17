@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Respawner : MonoBehaviour
 {
     [SerializeField] Transform respawnTarget;
+    [SerializeField] BoxCollider respawnTargetBox;
     [SerializeField] Transform ultimateParentTransform;
     [SerializeField] Vector3 respawnEulerAngles = Vector3.zero;
 
@@ -20,6 +21,11 @@ public class Respawner : MonoBehaviour
     [SerializeField] UnityEvent OnDespawnEnd;
     [SerializeField] UnityEvent OnRespawnStart;
     [SerializeField] UnityEvent OnRespawnEnd;
+
+    public void Init(BoxCollider boxCollider)
+    {
+        respawnTargetBox = boxCollider;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -48,20 +54,43 @@ public class Respawner : MonoBehaviour
         if (collidingTimeBeforeRespawnClock < collidingTimeBeforeRespawn) return;
 
         collidingTimeBeforeRespawnClock = 0f;
-        StartCoroutine(RespawnCoroutine());
+        StartCoroutine(SpawnAndRespawnCoroutine());
     }
 
-    private IEnumerator RespawnCoroutine()
+    private IEnumerator SpawnAndRespawnCoroutine()
     {
         OnDespawnStart?.Invoke();
         yield return new WaitForSeconds(despawnTime);
         OnDespawnEnd?.Invoke();
 
-        ultimateParentTransform.position = respawnTarget.position;
+
+        var position = respawnTarget != null ? respawnTarget.position : RandomPointInBounds(respawnTargetBox.bounds);
+        ultimateParentTransform.position = position;
         ultimateParentTransform.eulerAngles = respawnEulerAngles;
 
         OnRespawnStart?.Invoke();
         yield return new WaitForSeconds(respawnTime);
         OnRespawnEnd?.Invoke();
+    }
+
+    public void StartRespawnCoroutine()
+    {
+        StartCoroutine(RespawnCoroutine());
+    }
+
+    private IEnumerator RespawnCoroutine()
+    {
+        OnRespawnStart?.Invoke();
+        yield return new WaitForSeconds(respawnTime);
+        OnRespawnEnd?.Invoke();
+    }
+
+    private Vector3 RandomPointInBounds(Bounds bounds)
+    {
+        return new Vector3(
+            Random.Range(bounds.min.x, bounds.max.x),
+            Random.Range(bounds.min.y, bounds.max.y),
+            Random.Range(bounds.min.z, bounds.max.z)
+        );
     }
 }
