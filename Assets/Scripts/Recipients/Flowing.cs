@@ -130,7 +130,6 @@ namespace Recipients
             CurrentDeltaQuantity = deltaQuantity;
 
             var hits = Physics.SphereCastAll(flowOnGrab ? transform.position : GetFlowPoint(), sphereCastRadius, Vector3.down, maxSphereCastDistance, sphereCastLayerMask);
-            Debug.Log("Pour!\nHits Count: " + hits.Length);
 
             foreach (var hit in hits)
             {

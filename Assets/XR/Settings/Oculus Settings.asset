@@ -18,7 +18,7 @@ MonoBehaviour:
   DashSupport: 1
   LowOverheadMode: 1
   OptimizeBufferDiscards: 1
-  PhaseSync: 1
+  PhaseSync: 0
   SymmetricProjection: 1
   SubsampledLayout: 0
   LateLatching: 0
