@@ -49,8 +49,8 @@ public class GrimoirePotionPage : MonoBehaviour
                     {
                         var ingredientData = data.recipeData.recipe.Ingredients[i];
                         recipePartImages[i].sprite = ingredientData.Data.symbol;
-                        var recipePartText = "Add " + ingredientData.Quantity.ToString() + " vol of " + ingredientData.Name;
-                        recipePartTexts[i].text = recipePartText;
+                        var displayPartText = i < data.recipeData.recipe.RecipeInstructions.Count;
+                        recipePartTexts[i].text = displayPartText ? data.recipeData.recipe.RecipeInstructions[i] : "";
                     }
                     recipeParts[i].SetActive(i < data.recipeData.recipe.Ingredients.Count);
                 }

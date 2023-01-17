@@ -29,3 +29,7 @@ MonoBehaviour:
       quality: 0
       states: 
     states: 
+    recipeInstructions:
+    - Pour 30cl of Vitalis in a recipient.
+    - Add one Bezoard in the mixture.
+    - Pour 30cl of Salamander Blood
