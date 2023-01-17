@@ -243,6 +243,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 77632213}
     m_Modifications:
+    - target: {fileID: 2925661961714708246, guid: 19d60edea4267d04abbf603e0303fb78,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4119047939375812878, guid: 19d60edea4267d04abbf603e0303fb78,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887273253016754851, guid: 19d60edea4267d04abbf603e0303fb78,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5876936945597405858, guid: 19d60edea4267d04abbf603e0303fb78,
         type: 3}
       propertyPath: m_Name
@@ -256,7 +271,7 @@ PrefabInstance:
     - target: {fileID: 5880270235411797186, guid: 19d60edea4267d04abbf603e0303fb78,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.2
+      value: 1.15
       objectReference: {fileID: 0}
     - target: {fileID: 5880270235411797186, guid: 19d60edea4267d04abbf603e0303fb78,
         type: 3}
@@ -305,9 +320,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5905062025817378175, guid: 19d60edea4267d04abbf603e0303fb78,
         type: 3}
-      propertyPath: ingredients.Array.size
-      value: 2
+      propertyPath: infiniteSource
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5905062025817378175, guid: 19d60edea4267d04abbf603e0303fb78,
+        type: 3}
+      propertyPath: ingredients.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5905062025817378175, guid: 19d60edea4267d04abbf603e0303fb78,
+        type: 3}
+      propertyPath: ingredients.Array.data[0].data
+      value: 
+      objectReference: {fileID: 11400000, guid: 5eb2c77c6b133f74ba26743c048d0cf1,
+        type: 2}
     - target: {fileID: 5905062025817378175, guid: 19d60edea4267d04abbf603e0303fb78,
         type: 3}
       propertyPath: ingredients.Array.data[0].name
@@ -351,12 +377,12 @@ PrefabInstance:
     - target: {fileID: 5905062025817378175, guid: 19d60edea4267d04abbf603e0303fb78,
         type: 3}
       propertyPath: ingredients.Array.data[0].quantity
-      value: 0.25
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5905062025817378175, guid: 19d60edea4267d04abbf603e0303fb78,
         type: 3}
       propertyPath: ingredients.Array.data[1].quantity
-      value: 0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7523928143755709089, guid: 19d60edea4267d04abbf603e0303fb78,
         type: 3}
@@ -997,7 +1023,7 @@ PrefabInstance:
     - target: {fileID: 3346590250814863891, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: m_Name
-      value: Potion_A_(T1)
+      value: Potion_A
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02055f7bc04734d408dc84367fa3e62e, type: 3}
@@ -44756,7 +44782,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1044790729}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4588683879802240148
 MonoBehaviour:
@@ -44770,6 +44796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 863758fc53785464e8c41db928dc7bb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFlowing: 1
 --- !u!4 &4588683879859298745
 Transform:
   m_ObjectHideFlags: 0

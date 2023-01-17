@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipe:
     result: {fileID: 11400000, guid: b3fede9b7257bf042b4932286f83106c, type: 2}
-    cures: 2
+    cures: 1
     ingredients:
     - data: {fileID: 11400000, guid: 5eb2c77c6b133f74ba26743c048d0cf1, type: 2}
       quantity: 3
@@ -29,3 +29,7 @@ MonoBehaviour:
       quality: 0
       states: 
     states: 
+    recipeInstructions:
+    - Pour 30cl of water in a recipient.
+    - Press a "Lemon" in order to add 10cl of its juice.
+    - Then add 10cl of gold nectar.

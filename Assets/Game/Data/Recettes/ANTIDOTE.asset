@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipe:
     result: {fileID: 11400000, guid: 7e5907d8f3366a14190caca1e7a734ef, type: 2}
-    cures: 3
+    cures: 2
     ingredients:
     - data: {fileID: 11400000, guid: 7048c975d7c8b4840b9d0eddee91dcda, type: 2}
       quantity: 1
@@ -29,3 +29,7 @@ MonoBehaviour:
       quality: 0
       states: 
     states: 
+    recipeInstructions:
+    - Pour 30cl of vitalis in a recipient.
+    - Add one bezoard in the mixture.
+    - Pour 30cl of salamander blood.

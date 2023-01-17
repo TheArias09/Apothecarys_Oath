@@ -14,6 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipe:
     result: {fileID: 11400000, guid: 8c806baa19120bc409cd32db69e4b3c6, type: 2}
-    cures: 0
-    ingredients: []
+    cures: 8
+    ingredients:
+    - data: {fileID: 11400000, guid: 5eb2c77c6b133f74ba26743c048d0cf1, type: 2}
+      quantity: 4
+      quality: 0
+      states: 
+    - data: {fileID: 11400000, guid: 73f13c5f213fb2744b6782f31c77f8ac, type: 2}
+      quantity: 1
+      quality: 0
+      states: 
+    - data: {fileID: 11400000, guid: 0e87a7a382bcf5c4bbb0cf5960a3b191, type: 2}
+      quantity: 1
+      quality: 0
+      states: 
+    - data: {fileID: 11400000, guid: 535d347ec0cfdf14893da570fd0004f0, type: 2}
+      quantity: 2
+      quality: 0
+      states: 
     states: 
+    recipeInstructions:
+    - Pour (with all your love) 40cl of water in a recipient.
+    - Gently add 10cl of Venusia extract.
+    - 'Add a shiny nut in order to add some spice ;) '
+    - Then pour 20cl of a Somnus potion.

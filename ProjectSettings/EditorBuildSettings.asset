@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Nethos/Nethos.unity
-    guid: 50334000f76838743be03b6d422fe8ea
+    path: Assets/Scenes/Thomas/Object Respawn.unity
+    guid: 8b836a3f7ab063645af1430acbb540b1
   - enabled: 1
     path: Assets/Scenes/Thomas/Grimoires.unity
     guid: ed43802418a851442b1b475aaa157abe
+  - enabled: 1
+    path: Assets/Scenes/Nethos/Nethos.unity
+    guid: 50334000f76838743be03b6d422fe8ea
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c94fdcc67916ee742b39cd0b2d75b34d,
       type: 2}

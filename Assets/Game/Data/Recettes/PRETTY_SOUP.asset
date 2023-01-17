@@ -14,6 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipe:
     result: {fileID: 11400000, guid: 39a4b69815359ae4690798581afa4087, type: 2}
-    cures: 0
-    ingredients: []
+    cures: 5
+    ingredients:
+    - data: {fileID: 11400000, guid: 73f13c5f213fb2744b6782f31c77f8ac, type: 2}
+      quantity: 2
+      quality: 0
+      states: 
+    - data: {fileID: 11400000, guid: 6d6a321283678ee4c9dc8bf0a1f0d0a2, type: 2}
+      quantity: 1
+      quality: 0
+      states: 
+    - data: {fileID: 11400000, guid: 56d69206c3eddd242be4782b6e72847b, type: 2}
+      quantity: 2
+      quality: 0
+      states: 
+    - data: {fileID: 11400000, guid: 982fc2afe38cf6c45bc73f1fe00e64fe, type: 2}
+      quantity: 1
+      quality: 0
+      states: 
     states: 
+    recipeInstructions:
+    - Pour 20cl of Venusia extract.
+    - Extract and add 10cl of toad slime (be creative).
+    - Then pour 20cl of primal sand in the mix.
+    - Finally add a protuding eye UwU.
