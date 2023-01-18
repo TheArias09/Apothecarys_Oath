@@ -68,8 +68,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ajouter 5cl de jus de guimauve moisie
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dbe7a5d0b319f40308593b90abb4b4aa, type: 2}
+  m_sharedMaterial: {fileID: 8582439708986759795, guid: dbe7a5d0b319f40308593b90abb4b4aa,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
