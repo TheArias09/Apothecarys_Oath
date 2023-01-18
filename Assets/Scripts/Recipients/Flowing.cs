@@ -88,7 +88,9 @@ namespace Recipients
             if(flowOnGrab)
             {
                 if (grabHandInfo.GrabHand == GrabHandInfo.GrabHandType.Left && GetLeftPalmInput()
-                    || grabHandInfo.GrabHand == GrabHandInfo.GrabHandType.Right && GetRightPalmInput())
+                    || grabHandInfo.GrabHand == GrabHandInfo.GrabHandType.Right && GetRightPalmInput()
+                    || Input.GetKey(KeyCode.Space)
+                    )
                 {
                     Flow(90f);
                 }
@@ -96,6 +98,11 @@ namespace Recipients
                 {
                     IsFlowing = false;
                     CurrentDeltaQuantity = 0;
+                }
+
+                if (ingredientWrapper.GetTotalQty() <= 0f)
+                {
+                    Destroy(gameObject);
                 }
                 return;
             }
