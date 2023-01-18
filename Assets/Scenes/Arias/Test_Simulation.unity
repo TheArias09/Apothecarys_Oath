@@ -2032,6 +2032,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5294065390567794824, guid: 45a4f2bd86587e94f9b51db9fc3f624b,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294065390567794828, guid: 45a4f2bd86587e94f9b51db9fc3f624b,
+        type: 3}
+      propertyPath: ingredients.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294065390567794828, guid: 45a4f2bd86587e94f9b51db9fc3f624b,
+        type: 3}
+      propertyPath: ingredients.Array.data[0].data
+      value: 
+      objectReference: {fileID: 11400000, guid: 5eb2c77c6b133f74ba26743c048d0cf1,
+        type: 2}
+    - target: {fileID: 5294065390567794828, guid: 45a4f2bd86587e94f9b51db9fc3f624b,
+        type: 3}
+      propertyPath: ingredients.Array.data[0].quantity
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45a4f2bd86587e94f9b51db9fc3f624b, type: 3}
 --- !u!4 &4423981185216740 stripped
@@ -50062,7 +50083,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -50180,7 +50201,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipientQuantity: 0.5
   infiniteSource: 1
-  ingredients: []
+  ingredients:
+  - data: {fileID: 11400000, guid: 7048c975d7c8b4840b9d0eddee91dcda, type: 2}
+    quantity: 0.4
+    quality: 0
+    states: 
   states: 
 --- !u!1001 &6225272505414847496
 PrefabInstance:

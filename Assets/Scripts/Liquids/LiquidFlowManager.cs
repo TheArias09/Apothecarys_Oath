@@ -16,6 +16,8 @@ public class LiquidFlowManager : MonoBehaviour
     private ParticleSystem.MainModule flowSystemMain;
     private ParticleSystem.TrailModule flowSystemTrails;
 
+    private GameObject targetPotion;
+
     public bool isFlowing = true;
 
     void Start()
@@ -33,15 +35,19 @@ public class LiquidFlowManager : MonoBehaviour
 
         isFlowing = potionFlowing.IsFlowing;
         //flowSystem.Play();
-
+        
+        targetPotion = potionFlowing.GetTargetPotion();
         SetPosition();
+        SetHeight();
         SetColor();
         SetWidth();
     }
 
     void FixedUpdate()
     {
+        targetPotion = potionFlowing.GetTargetPotion();
         SetPosition();
+        SetHeight();
         isFlowing = potionFlowing.IsFlowing;
         liquidCount = potionLiquids.LiquidCount;
         
@@ -51,25 +57,7 @@ public class LiquidFlowManager : MonoBehaviour
             SetWidth();
             previousLiquidCount = liquidCount;
         }
-/*
-        if (isFlowing)
-        {
-            Debug.Log("ça coule");
-            if (!flowSystem.isPlaying)
-            {
-                Debug.Log("Effet activé");
-                flowSystem.Play();
-            }
-        }
-        if(!isFlowing) 
-        {
-            if (flowSystem.isPlaying)
-            {
-                Debug.Log("Effet désactivé");
-                flowSystem.Stop(); 
-            }
-        }*/
-        
+
         if(isFlowing)
         {
             if(!flowSystem.isPlaying)
@@ -108,8 +96,46 @@ public class LiquidFlowManager : MonoBehaviour
         }
     }
 
-    void SetHeight(float desiredHeight)
+    public float GetTargetPointY()
     {
+        return targetPotion.transform.position.y + 
+               targetPotion.GetComponent<LiquidVisualsManager>().FindTotalDisplayedFill();
+    }
+
+    /*
+    public Quaternion getTargetPointRotation()
+    {
+        targetPotion = potionFlowing.GetTargetPotion();
+
+        float wobbleAmountX = targetPotion.GetComponent<WobbleManager>().WobbleAmountX;
+        float wobbleAmountZ = targetPotion.GetComponent<WobbleManager>().WobbleAmountZ;
+        
+        //Setting the desired rotation
+        float rotationZ = -90f * wobbleAmountZ * Mathf.Deg2Rad * 500;
+        float rotationX = -90f * wobbleAmountX * Mathf.Deg2Rad * 500;
+
+        if (targetPotion.GetComponent<LiquidVisualsManager>().LiquidCount == 0)
+        {
+            rotationZ = 0f;
+            rotationX = 0f;
+        }
+
+        return Quaternion.Euler(rotationZ,0f,rotationX);
+    }
+    */
+    
+    void SetHeight()
+    {
+        float desiredHeight;
+        if (targetPotion != null)
+        {
+            desiredHeight = transform.position.y - GetTargetPointY();
+        }
+        else
+        {
+            desiredHeight = transform.position.y;
+        }
+        
         flowSystemMain.gravityModifierMultiplier = 0.25f * desiredHeight;
     }
 

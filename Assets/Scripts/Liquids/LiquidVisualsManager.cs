@@ -106,6 +106,7 @@ public class LiquidVisualsManager : MonoBehaviour
             GameObject liquidToRemove = liquidVolumes[i];
             liquidVolumes.RemoveAt(i);
             liquids.RemoveAt(i);
+            liquidRenderersMaterials.RemoveAt(i);
             Destroy(liquidToRemove);
         }
 
@@ -135,8 +136,8 @@ public class LiquidVisualsManager : MonoBehaviour
         {
             //volumeMaterial = liquidVolumes[i].GetComponent<Renderer>().material;
             //volumeMaterial.SetFloat("_Fill",volumeMaterial.GetFloat("_Fill")+displayedFillDifference);
-            liquidRenderersMaterials[i].SetFloat("_Fill",liquidRenderersMaterials[i].GetFloat("_Fill")+displayedFillDifference);
             liquids[i].displayedFill += displayedFillDifference;
+            liquidRenderersMaterials[i].SetFloat("_Fill",liquids[i].displayedFill);
         }
     }
 
@@ -384,14 +385,12 @@ public class LiquidVisualsManager : MonoBehaviour
     {
         if (Input.GetKeyDown("p") /*|| OVRInput.GetDown(OVRInput.Button.One) */ ) //p for plus
         {
-            Debug.Log("Adding Liquid");
             AddRandomLiquid();
             liquidCount += 1;
         }
 
         if (Input.GetKeyDown("m") /*|| OVRInput.GetDown(OVRInput.Button.Two) */ ) //m for minus
         {
-            Debug.Log("Removing Liquid");
             RemoveLiquid();
             liquidCount -= 1;
         }

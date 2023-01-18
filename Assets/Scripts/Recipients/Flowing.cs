@@ -162,6 +162,19 @@ namespace Recipients
             if (!IsFlowing) CurrentDeltaQuantity = 0;
         }
 
+        public GameObject GetTargetPotion()
+        {
+            var hits = Physics.SphereCastAll(flowOnGrab ? transform.position : GetFlowPoint(), sphereCastRadius, Vector3.down, maxSphereCastDistance, sphereCastLayerMask);
+
+            foreach (var hit in hits)
+            {
+                if (hit.transform.gameObject == gameObject) continue;
+                return hit.transform.gameObject;
+            }
+
+            return null;
+        }
+
         private static void Overflow()
         {
             Debug.Log("Overflow!");
