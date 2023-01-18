@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class LiquidFlowManager : MonoBehaviour
 {
+    private Transform flowTransform;
+    private Vector3 flowPosition;
+    
     private GameObject potion;
     private Flowing potionFlowing;
     private LiquidVisualsManager potionLiquids;
@@ -16,13 +19,24 @@ public class LiquidFlowManager : MonoBehaviour
     private ParticleSystem.MainModule flowSystemMain;
     private ParticleSystem.TrailModule flowSystemTrails;
 
+    private bool targetPotionExists;
     private GameObject targetPotion;
+    private GameObject previousTargetPotion;
+    private Vector3 targetPotionPosition;
+    private LiquidVisualsManager targetPotionLVM;
+    private WobbleManager targetPotionWM;
 
-    public bool isFlowing = true;
+    private bool isFlowing = true;
 
+    public bool IsFlowing => isFlowing;
+    public bool TargetPotionExists => targetPotionExists;
+    
     void Start()
     {
-        potion = transform.parent.gameObject;
+        flowTransform = transform;
+        flowPosition = flowTransform.position;
+
+        potion = flowTransform.parent.gameObject;
         potionFlowing = potion.GetComponent<Flowing>();
         potionLiquids = potion.GetComponent<LiquidVisualsManager>();
         
@@ -37,6 +51,14 @@ public class LiquidFlowManager : MonoBehaviour
         //flowSystem.Play();
         
         targetPotion = potionFlowing.GetTargetPotion();
+        targetPotionExists = (targetPotion != null);
+        if (targetPotionExists)
+        {
+            previousTargetPotion = targetPotion;
+            targetPotionPosition = targetPotion.transform.position;
+            targetPotionLVM = targetPotion.GetComponent<LiquidVisualsManager>();
+            targetPotionWM = targetPotion.GetComponent<WobbleManager>();
+        }
         SetPosition();
         SetHeight();
         SetColor();
@@ -45,19 +67,10 @@ public class LiquidFlowManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        targetPotion = potionFlowing.GetTargetPotion();
         SetPosition();
         SetHeight();
         isFlowing = potionFlowing.IsFlowing;
-        liquidCount = potionLiquids.LiquidCount;
         
-        if (liquidCount != previousLiquidCount)
-        {
-            SetColor();
-            SetWidth();
-            previousLiquidCount = liquidCount;
-        }
-
         if(isFlowing)
         {
             if(!flowSystem.isPlaying)
@@ -70,6 +83,25 @@ public class LiquidFlowManager : MonoBehaviour
                 flowSystem.Stop();
             }
         }
+        
+        targetPotion = potionFlowing.GetTargetPotion();
+        
+        targetPotionExists = (targetPotion != null);
+        if (targetPotion != previousTargetPotion && targetPotionExists)
+        {
+            targetPotionPosition = targetPotion.transform.position;
+            targetPotionLVM = targetPotion.GetComponent<LiquidVisualsManager>();
+            targetPotionWM = targetPotion.GetComponent<WobbleManager>();
+            previousTargetPotion = targetPotion;
+        }
+
+        liquidCount = potionLiquids.LiquidCount;
+        if (liquidCount != previousLiquidCount)
+        {
+            SetColor();
+            SetWidth();
+            previousLiquidCount = liquidCount;
+        }
 
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -80,8 +112,8 @@ public class LiquidFlowManager : MonoBehaviour
 
     void SetPosition()
     {
-        transform.position = potionFlowing.GetFlowPoint() + new Vector3(0,0.01f,0);
-        transform.rotation = Quaternion.identity;
+        flowTransform.position = potionFlowing.GetFlowPoint() + new Vector3(0,0.01f,0);
+        flowTransform.rotation = Quaternion.identity;
     }
     
     void SetColor()
@@ -99,41 +131,60 @@ public class LiquidFlowManager : MonoBehaviour
     public float GetTargetPointY()
     {
         return targetPotion.transform.position.y + 
-               targetPotion.GetComponent<LiquidVisualsManager>().FindTotalDisplayedFill();
+               targetPotionLVM.FindTotalDisplayedFill();
     }
 
-    /*
-    public Quaternion getTargetPointRotation()
+    public Vector3 GetTargetPointPosition()
     {
-        targetPotion = potionFlowing.GetTargetPotion();
 
-        float wobbleAmountX = targetPotion.GetComponent<WobbleManager>().WobbleAmountX;
-        float wobbleAmountZ = targetPotion.GetComponent<WobbleManager>().WobbleAmountZ;
-        
-        //Setting the desired rotation
-        float rotationZ = -90f * wobbleAmountZ * Mathf.Deg2Rad * 500;
-        float rotationX = -90f * wobbleAmountX * Mathf.Deg2Rad * 500;
-
-        if (targetPotion.GetComponent<LiquidVisualsManager>().LiquidCount == 0)
+        if (targetPotionExists)
         {
-            rotationZ = 0f;
-            rotationX = 0f;
+            return new Vector3(targetPotionPosition.x,targetPotionPosition.y + targetPotionLVM.FindTotalDisplayedFill(),targetPotionPosition.z);
         }
-
-        return Quaternion.Euler(rotationZ,0f,rotationX);
+        else
+        {
+            Vector3 startPoint = potionFlowing.GetFlowPoint();
+            return new Vector3(startPoint.x, 0, startPoint.z);
+        }
     }
-    */
+
+    
+    public Quaternion GetTargetPointRotation()
+    {
+        if (targetPotionExists)
+        {
+            float wobbleAmountX = targetPotionWM.WobbleAmountX;
+            float wobbleAmountZ = targetPotionWM.WobbleAmountZ;
+        
+            //Setting the desired rotation
+            float rotationZ = -90f * wobbleAmountZ * Mathf.Deg2Rad * 500;
+            float rotationX = -90f * wobbleAmountX * Mathf.Deg2Rad * 500;
+
+            if (targetPotionLVM.LiquidCount == 0)
+            {
+                rotationZ = 0f;
+                rotationX = 0f;
+            }
+
+            return Quaternion.Euler(rotationZ,0f,rotationX);        }
+        else
+        {
+            return new Quaternion();
+        }
+        
+    }
+    
     
     void SetHeight()
     {
         float desiredHeight;
-        if (targetPotion != null)
+        if (targetPotionExists)
         {
-            desiredHeight = transform.position.y - GetTargetPointY();
+            desiredHeight = flowPosition.y - GetTargetPointY();
         }
         else
         {
-            desiredHeight = transform.position.y;
+            desiredHeight = flowPosition.y;
         }
         
         flowSystemMain.gravityModifierMultiplier = 0.25f * desiredHeight;
