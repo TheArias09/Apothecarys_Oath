@@ -8781,6 +8781,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grimoires
       objectReference: {fileID: 0}
+    - target: {fileID: 1328511945080990922, guid: 73c7e7291193ba94db64c40200436781,
+        type: 3}
+      propertyPath: MinDistance
+      value: 8.41202
+      objectReference: {fileID: 0}
     - target: {fileID: 1853360089963281998, guid: 73c7e7291193ba94db64c40200436781,
         type: 3}
       propertyPath: m_LocalPosition.x

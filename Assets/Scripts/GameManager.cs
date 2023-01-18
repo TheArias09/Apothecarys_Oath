@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,9 +18,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxSymptoms = 3;
 
     [Header("Parameters")]
+    [SerializeField] private bool gameStarted = false;
     [SerializeField] private float scoreMultiplier = 5;
     [SerializeField] private int maxErrors = 3;
-    [SerializeField] private bool gameStarted = false;
+    [Space(10)]
+    [SerializeField] private int[] ranks;
+    [SerializeField] private string[] rankTitles;
 
     private float timer = 0;
     private int score = 0;
@@ -28,6 +32,7 @@ public class GameManager : MonoBehaviour
 
     private int currentClients = 0;
     private int clientNumber = 0;
+    private int clientsHealed = 0;
 
     public static GameManager Instance;
 
@@ -40,6 +45,9 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         maxTickets = clientsParent.childCount;
+
+        if (ranks.Count() != rankTitles.Count()) 
+            Debug.LogWarning("There should be an equal amount of ranks and rank titles.");
     }
 
     private void Update()
@@ -104,6 +112,7 @@ public class GameManager : MonoBehaviour
 
     public void AddScore(float value)
     {
+        clientsHealed++;
         score += (int)(value * scoreMultiplier);
         scoreDisplay.UpdateScore(score);
     }
