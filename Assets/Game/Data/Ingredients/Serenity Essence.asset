@@ -17,4 +17,4 @@ MonoBehaviour:
   fresnelPower: 2
   viscosity: 0.8
   symbol: {fileID: 21300000, guid: 4d8753216f53e4c768b1935ce2e92858, type: 3}
-  description: 
+  description: "The sweet smell of this cure can heal anyone\u2019s soul."
