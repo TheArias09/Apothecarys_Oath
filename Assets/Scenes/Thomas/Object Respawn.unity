@@ -1206,6 +1206,7 @@ MonoBehaviour:
   maxSymptoms: 3
   scoreMultiplier: 5
   maxErrors: 3
+  gameStarted: 0
 --- !u!1 &240103509
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,24 +2674,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3809022564840903909, guid: c9f3e273c49065a4fb22014012d7feaa,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.025
-      objectReference: {fileID: 0}
-    - target: {fileID: 3809022564840903909, guid: c9f3e273c49065a4fb22014012d7feaa,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3809022564840903909, guid: c9f3e273c49065a4fb22014012d7feaa,
-        type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.744
       objectReference: {fileID: 0}
-    - target: {fileID: 7065202612299622863, guid: c9f3e273c49065a4fb22014012d7feaa,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3c81b073f6332104aa891c0a47519223, type: 2}
     - target: {fileID: 8673918972590901875, guid: c9f3e273c49065a4fb22014012d7feaa,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -7088,6 +7074,7 @@ MonoBehaviour:
   maxSymptoms: 3
   scoreMultiplier: 5
   maxErrors: 3
+  gameStarted: 0
 --- !u!4 &1888360567 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6603488554207994483, guid: 98f5378049f9b5745a77677f581b32b1,
