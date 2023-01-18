@@ -17,4 +17,5 @@ MonoBehaviour:
   fresnelPower: 2.5
   viscosity: 1
   symbol: {fileID: 21300000, guid: b5ce61843f9c94400b7aead1017e581a, type: 3}
-  description: 
+  description: Even the greatest hypnotists agree on the fact that this potion is
+    the most effective way to cope with insomnia.

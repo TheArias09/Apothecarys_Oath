@@ -17,4 +17,4 @@ MonoBehaviour:
   fresnelPower: 2
   viscosity: 0.95
   symbol: {fileID: 21300000, guid: 841da48b682d24f03a7235a89c27eaa8, type: 3}
-  description: 
+  description: Exhausted ? This is the perfect energizer that one needs.
