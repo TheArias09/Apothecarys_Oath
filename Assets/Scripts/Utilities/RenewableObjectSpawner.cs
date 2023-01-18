@@ -35,7 +35,10 @@ public class RenewableObjectSpawner : MonoBehaviour
                 respawn.StartRespawnCoroutine();
             }
 
-            objects.Add(objectInstance);
+            foreach(var trackedGameObject in respawn.TrackedGameObjects)
+            {
+                objects.Add(trackedGameObject);
+            }
         }
     }
 

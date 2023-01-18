@@ -115,6 +115,8 @@ MonoBehaviour:
   OnRespawnEnd:
     m_PersistentCalls:
       m_Calls: []
+  trackedGameObjects:
+  - {fileID: 4143162007631972900}
 --- !u!1001 &3222736314994852136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5073,75 +5075,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1433904640946112980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4143162007631972900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8565167f76f23de4c9cb5b74dadf3eb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawnTarget: {fileID: 0}
-  respawnTargetBox: {fileID: 0}
-  ultimateParentTransform: {fileID: 4143162007631972901}
-  respawnEulerAngles: {x: 0, y: 0, z: 0}
-  collidingTimeBeforeRespawn: 3
-  collidingTimeBeforeRespawnClock: 0
-  colliderCount: 0
-  despawnTime: 0.333
-  respawnTime: 0.333
-  OnDespawnStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3570489227268934283}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Despawn
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnDespawnEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRespawnStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3570489227268934283}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Respawn
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: -8353863655411472835}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnRespawnEnd:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &4143162007631972901 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1568944262316903181, guid: f970b837f4182474ab5516076b86faf3,

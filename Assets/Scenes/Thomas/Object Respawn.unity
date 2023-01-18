@@ -1335,6 +1335,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1101649422859820430, guid: f492c549ac793a947bf12815e1e4cef3,
+        type: 3}
+      propertyPath: respawnTargetBox
+      value: 
+      objectReference: {fileID: 1010542414}
+    - target: {fileID: 1101649422859820430, guid: f492c549ac793a947bf12815e1e4cef3,
+        type: 3}
+      propertyPath: ultimateParentTransform
+      value: 
+      objectReference: {fileID: 2115734896}
     - target: {fileID: 3721369641934243076, guid: f492c549ac793a947bf12815e1e4cef3,
         type: 3}
       propertyPath: m_RootOrder
@@ -4274,7 +4284,7 @@ GameObject:
   - component: {fileID: 1010542414}
   - component: {fileID: 1010542413}
   m_Layer: 0
-  m_Name: Eye Spawner
+  m_Name: Lemon Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4312,7 +4322,7 @@ MonoBehaviour:
   objectPrefab: {fileID: 3721369641934243077, guid: f492c549ac793a947bf12815e1e4cef3,
     type: 3}
   box: {fileID: 1010542414}
-  maxCount: 5
+  maxCount: 12
   maxTimeBetweenSpawn: 0.1
 --- !u!65 &1010542414
 BoxCollider:
@@ -5003,7 +5013,7 @@ GameObject:
   - component: {fileID: 1192589384}
   - component: {fileID: 1192589383}
   m_Layer: 0
-  m_Name: Eye Box (1)
+  m_Name: Lemon Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8315,6 +8325,12 @@ BoxCollider:
 --- !u!1 &2115734887 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3721369641934243077, guid: f492c549ac793a947bf12815e1e4cef3,
+    type: 3}
+  m_PrefabInstance: {fileID: 257783749}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2115734896 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3721369641934243076, guid: f492c549ac793a947bf12815e1e4cef3,
     type: 3}
   m_PrefabInstance: {fileID: 257783749}
   m_PrefabAsset: {fileID: 0}

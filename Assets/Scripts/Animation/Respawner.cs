@@ -22,6 +22,9 @@ public class Respawner : MonoBehaviour
     [SerializeField] UnityEvent OnRespawnStart;
     [SerializeField] UnityEvent OnRespawnEnd;
 
+    [SerializeField] List<GameObject> trackedGameObjects;
+    public List<GameObject> TrackedGameObjects => trackedGameObjects;
+
     public void Init(BoxCollider boxCollider)
     {
         respawnTargetBox = boxCollider;
