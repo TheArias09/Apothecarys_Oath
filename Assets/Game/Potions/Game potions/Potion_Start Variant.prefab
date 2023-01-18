@@ -96,7 +96,7 @@ PrefabInstance:
     - target: {fileID: 3346590250814863891, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: m_Name
-      value: Potion_Start
+      value: Potion_Start Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02055f7bc04734d408dc84367fa3e62e, type: 3}

@@ -22,10 +22,12 @@ public class GrimoireDiseaseNavigator : MonoBehaviour
     private int currentLeftPageIndex => currentIndex * 2 - 1;
 
     private GrimoirePageAnimation grimoirePageAnimation;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         grimoirePageAnimation = GetComponent<GrimoirePageAnimation>();
+        audioSource = GetComponent<AudioSource>();
 
         firstPage.Clear();
         firstPageGameObject.SetActive(false);
@@ -56,6 +58,7 @@ public class GrimoireDiseaseNavigator : MonoBehaviour
     public IEnumerator NextPage()
     {
         isLocked = true;
+        audioSource.Play();
 
         middlePageFront.DisplayData(grimoirePageDatas[currentLeftPageIndex + 1]);
         middlePageBack.DisplayData(grimoirePageDatas[currentLeftPageIndex + 2]);
@@ -91,6 +94,7 @@ public class GrimoireDiseaseNavigator : MonoBehaviour
     public IEnumerator PreviousPage()
     {
         isLocked = true;
+        audioSource.Play();
 
         middlePageFront.DisplayData(grimoirePageDatas[currentLeftPageIndex - 1]);
         middlePageBack.DisplayData(grimoirePageDatas[currentLeftPageIndex]);
