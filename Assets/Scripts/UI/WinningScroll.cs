@@ -16,7 +16,7 @@ public class WinningScroll : MonoBehaviour
 
     public void FiredDisplay(int score, string Rank)
     {
-        text.text = score.ToString();
+        text.text = "You failed to heal too many clients\n\nFinal score: " + score;
         rankText.text = Rank;
     }
 }

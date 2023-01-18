@@ -1132,8 +1132,8 @@ MonoBehaviour:
   diseaseBook: {fileID: 11400000, guid: 100bcd3edecb1ce4bb0ea4ae9d870126, type: 2}
   winPage: {fileID: 1587057805}
   firedPage: {fileID: 3246251893210755468}
-  timeBetweenClients: 4
-  clientStayTime: 10
+  timeBetweenClients: 2
+  clientStayTime: 3
   maxClients: 10
   minSymptoms: 2
   maxSymptoms: 3

@@ -98,7 +98,7 @@ PrefabInstance:
       value: 'You failed to heal too many clients
 
 
-        Final score :'
+        Final score : 00'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 828098ce6dcd12d4fa5ba224f455aec1, type: 3}
