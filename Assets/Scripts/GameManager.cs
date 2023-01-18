@@ -116,12 +116,21 @@ public class GameManager : MonoBehaviour
         if (errors >= maxErrors) GameOver();
     }
 
-    public void StartGame() => gameStarted = true;
+    public void StartGame()
+    {
+        Debug.Log("Start game");
+        gameStarted = true;
+    }
 
-    public void Restart() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    public void Restart()
+    {
+        Debug.Log("Restart game");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
     public void GameOver()
     {
+        Debug.Log("Game Over");
         gameStarted = false;
     }
 }

@@ -26,9 +26,13 @@ public class StartStopPotion : MonoBehaviour
 
         if (ing.Quantity >= triggerQuantity)
         {
+            Debug.Log("Game potion triggered");
+
             if (ing.Data == startIngredient) GameManager.Instance.StartGame();
             else if (ing.Data == restartIngredient) GameManager.Instance.Restart();
             else if (ing.Data == quitIngredient) GameManager.Instance.GameOver();
+
+            ingredientWrapper.Empty();
         }
     }
 }
