@@ -17,6 +17,6 @@ public class ScoreDisplay : MonoBehaviour
 
     public void UpdateErrors(int errors)
     {
-        icons.GetChild(errors).GetComponent<Image>().sprite = errorSprite;
+        icons.GetChild(errors - 1).GetComponent<Image>().sprite = errorSprite;
     }
 }

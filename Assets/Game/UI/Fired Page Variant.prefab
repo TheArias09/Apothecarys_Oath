@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7311459198063579082
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4391761495432509571, guid: 828098ce6dcd12d4fa5ba224f455aec1,
+        type: 3}
+      propertyPath: m_text
+      value: You are fired!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391761495432509571, guid: 828098ce6dcd12d4fa5ba224f455aec1,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 18.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810250099257601124, guid: 828098ce6dcd12d4fa5ba224f455aec1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810250099257601124, guid: 828098ce6dcd12d4fa5ba224f455aec1,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810250099257601124, guid: 828098ce6dcd12d4fa5ba224f455aec1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555875163785693981, guid: 828098ce6dcd12d4fa5ba224f455aec1,
+        type: 3}
+      propertyPath: m_Name
+      value: Fired Page Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946813374472407962, guid: 828098ce6dcd12d4fa5ba224f455aec1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946813374472407962, guid: 828098ce6dcd12d4fa5ba224f455aec1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.059
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946813374472407962, guid: 828098ce6dcd12d4fa5ba224f455aec1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2800001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946813374472407962, guid: 828098ce6dcd12d4fa5ba224f455aec1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.1470003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946813374472407962, guid: 828098ce6dcd12d4fa5ba224f455aec1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99841636
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946813374472407962, guid: 828098ce6dcd12d4fa5ba224f455aec1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946813374472407962, guid: 828098ce6dcd12d4fa5ba224f455aec1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.056257002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946813374472407962, guid: 828098ce6dcd12d4fa5ba224f455aec1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946813374472407962, guid: 828098ce6dcd12d4fa5ba224f455aec1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946813374472407962, guid: 828098ce6dcd12d4fa5ba224f455aec1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 186.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946813374472407962, guid: 828098ce6dcd12d4fa5ba224f455aec1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243740022385774011, guid: 828098ce6dcd12d4fa5ba224f455aec1,
+        type: 3}
+      propertyPath: m_text
+      value: 'You failed to heal too many clients
+
+
+        Final score :'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 828098ce6dcd12d4fa5ba224f455aec1, type: 3}

@@ -16,4 +16,4 @@ MonoBehaviour:
   isFrontCover: 1
   isBackCover: 0
   coverSprite: {fileID: 21300000, guid: 6d80c8ad6685347afaa2a176a1e2c6f0, type: 3}
-  coverTitle: Grimoire of potions
+  coverTitle: Grimoire of Potions
