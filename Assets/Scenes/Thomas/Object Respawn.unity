@@ -1204,9 +1204,11 @@ MonoBehaviour:
   maxClients: 10
   minSymptoms: 2
   maxSymptoms: 3
+  gameStarted: 0
   scoreMultiplier: 5
   maxErrors: 3
-  gameStarted: 0
+  ranks: 
+  rankTitles: []
 --- !u!1 &240103509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,11 +1342,6 @@ PrefabInstance:
       propertyPath: respawnTargetBox
       value: 
       objectReference: {fileID: 1010542414}
-    - target: {fileID: 1101649422859820430, guid: f492c549ac793a947bf12815e1e4cef3,
-        type: 3}
-      propertyPath: ultimateParentTransform
-      value: 
-      objectReference: {fileID: 2115734896}
     - target: {fileID: 3721369641934243076, guid: f492c549ac793a947bf12815e1e4cef3,
         type: 3}
       propertyPath: m_RootOrder
@@ -1353,7 +1350,7 @@ PrefabInstance:
     - target: {fileID: 3721369641934243076, guid: f492c549ac793a947bf12815e1e4cef3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.528
+      value: -0.494
       objectReference: {fileID: 0}
     - target: {fileID: 3721369641934243076, guid: f492c549ac793a947bf12815e1e4cef3,
         type: 3}
@@ -1363,7 +1360,7 @@ PrefabInstance:
     - target: {fileID: 3721369641934243076, guid: f492c549ac793a947bf12815e1e4cef3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.775
+      value: 0.921
       objectReference: {fileID: 0}
     - target: {fileID: 3721369641934243076, guid: f492c549ac793a947bf12815e1e4cef3,
         type: 3}
@@ -2687,6 +2684,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.744
       objectReference: {fileID: 0}
+    - target: {fileID: 7264720081629447783, guid: c9f3e273c49065a4fb22014012d7feaa,
+        type: 3}
+      propertyPath: respawnTarget
+      value: 
+      objectReference: {fileID: 809319888}
     - target: {fileID: 8673918972590901875, guid: c9f3e273c49065a4fb22014012d7feaa,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2761,6 +2763,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189281047740660012, guid: c9f3e273c49065a4fb22014012d7feaa,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9189281047740660013, guid: c9f3e273c49065a4fb22014012d7feaa,
         type: 3}
@@ -3696,6 +3703,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98f5378049f9b5745a77677f581b32b1, type: 3}
+--- !u!1 &809319887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 809319888}
+  m_Layer: 0
+  m_Name: Knife Spawn Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &809319888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809319887}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0.858}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &841448263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4322,7 +4360,7 @@ MonoBehaviour:
   objectPrefab: {fileID: 3721369641934243077, guid: f492c549ac793a947bf12815e1e4cef3,
     type: 3}
   box: {fileID: 1010542414}
-  maxCount: 12
+  maxCount: 20
   maxTimeBetweenSpawn: 0.1
 --- !u!65 &1010542414
 BoxCollider:
@@ -5090,8 +5128,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192589382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.491, y: 0.92, z: 0.762}
-  m_LocalScale: {x: 0.35, y: 0.05, z: 0.35}
+  m_LocalPosition: {x: -0.377, y: 0.92, z: 0.831}
+  m_LocalScale: {x: 0.5, y: 0.05, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1963690486}
@@ -6091,7 +6129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581214899}
   m_LocalRotation: {x: -0, y: -0.9999672, z: -0, w: 0.008101825}
-  m_LocalPosition: {x: -1.341, y: 1.7077868, z: -4.045}
+  m_LocalPosition: {x: -1.215, y: 1.7077868, z: -4.118}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7082,9 +7120,11 @@ MonoBehaviour:
   maxClients: 6
   minSymptoms: 2
   maxSymptoms: 3
+  gameStarted: 0
   scoreMultiplier: 5
   maxErrors: 3
-  gameStarted: 0
+  ranks: 
+  rankTitles: []
 --- !u!4 &1888360567 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6603488554207994483, guid: 98f5378049f9b5745a77677f581b32b1,
@@ -8325,12 +8365,6 @@ BoxCollider:
 --- !u!1 &2115734887 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3721369641934243077, guid: f492c549ac793a947bf12815e1e4cef3,
-    type: 3}
-  m_PrefabInstance: {fileID: 257783749}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2115734896 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3721369641934243076, guid: f492c549ac793a947bf12815e1e4cef3,
     type: 3}
   m_PrefabInstance: {fileID: 257783749}
   m_PrefabAsset: {fileID: 0}
