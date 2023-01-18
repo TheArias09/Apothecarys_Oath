@@ -2,13 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreDisplay : MonoBehaviour
 {
     [SerializeField] private TextMeshPro board;
+    [SerializeField] private Transform icons;
+    [SerializeField] private Sprite errorSprite;
 
-    public void UpdateDisplay(int score, int trust)
+    public void UpdateScore(int score)
     {
-        board.text = "Score: " + score + "\nConfiance: " + trust;
+        board.text = "Score: " + score + "\nConfiance: ";
+    }
+
+    public void UpdateErrors(int errors)
+    {
+        icons.GetChild(errors).GetComponent<Image>().sprite = errorSprite;
     }
 }

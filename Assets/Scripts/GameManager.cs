@@ -105,15 +105,15 @@ public class GameManager : MonoBehaviour
     public void AddScore(float value)
     {
         score += (int)(value * scoreMultiplier);
-        scoreDisplay.UpdateDisplay(score, maxErrors - errors);
+        scoreDisplay.UpdateScore(score);
     }
 
     public void AddError()
     {
         errors++;
-        //if (errors >= maxErrors) GameOver();
+        scoreDisplay.UpdateErrors(errors);
 
-        scoreDisplay.UpdateDisplay(score, maxErrors - errors);
+        if (errors >= maxErrors) GameOver();
     }
 
     public void StartGame() => gameStarted = true;
@@ -123,6 +123,5 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameStarted = false;
-        Application.Quit();
     }
 }
