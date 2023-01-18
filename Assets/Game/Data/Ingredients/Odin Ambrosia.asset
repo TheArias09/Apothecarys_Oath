@@ -17,4 +17,5 @@ MonoBehaviour:
   fresnelPower: 2.5
   viscosity: 0.9
   symbol: {fileID: 21300000, guid: 90406b31ea8b342a0882099101c988b3, type: 3}
-  description: 
+  description: ' Apparently, the great Odin used to drink this mixture in order to
+    recover after each of his divine feasts. '

@@ -128,7 +128,18 @@ MonoBehaviour:
   lastPageGameObject: {fileID: 5103740286590065016}
   firstPageAnchor: {fileID: 5817568139393692582}
   lastPageAnchor: {fileID: 6449062566403608495}
-  grimoirePageDatas: []
+  grimoirePageDatas:
+  - {fileID: 11400000, guid: d16189241b804184ca19e0c11d9e8886, type: 2}
+  - {fileID: 11400000, guid: 252baf880b7d0ef41848a2585c20bdbc, type: 2}
+  - {fileID: 11400000, guid: 94c3da8f7f363434c9dcec455203af1e, type: 2}
+  - {fileID: 11400000, guid: 2a54c7b1131cf1e47b31aac90aba4bc4, type: 2}
+  - {fileID: 11400000, guid: d25dd66818062c24398b5846192c3061, type: 2}
+  - {fileID: 11400000, guid: 7b5fd73298c010646a0eab0226d808d1, type: 2}
+  - {fileID: 11400000, guid: 2d20243d190fda04db6239aa79fcd449, type: 2}
+  - {fileID: 11400000, guid: fa8a02b731a87914aa524fe8cb694e83, type: 2}
+  - {fileID: 11400000, guid: 85beeba2b48822b4db52b0e9127c8eb4, type: 2}
+  - {fileID: 11400000, guid: 0123fa3a2bd974a469a567b34f06f35c, type: 2}
+  - {fileID: 11400000, guid: 022ba8d26f1dd054e9c5543a34219670, type: 2}
 --- !u!114 &5817568139393692582 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4942226330629767573, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,

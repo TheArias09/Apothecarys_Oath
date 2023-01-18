@@ -19,8 +19,8 @@ public class GameManager : MonoBehaviour
     [Header("Parameters")]
     [SerializeField] private float scoreMultiplier = 5;
     [SerializeField] private int maxErrors = 3;
+    [SerializeField] private bool gameStarted = false;
 
-    private bool gameStarted = false;
     private float timer = 0;
     private int score = 0;
     private int errors = 0;
@@ -116,12 +116,21 @@ public class GameManager : MonoBehaviour
         if (errors >= maxErrors) GameOver();
     }
 
-    public void StartGame() => gameStarted = true;
+    public void StartGame()
+    {
+        Debug.Log("Start game");
+        gameStarted = true;
+    }
 
-    public void Restart() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    public void Restart()
+    {
+        Debug.Log("Restart game");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
     public void GameOver()
     {
+        Debug.Log("Game Over");
         gameStarted = false;
     }
 }
