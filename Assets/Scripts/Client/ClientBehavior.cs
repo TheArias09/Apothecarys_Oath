@@ -13,6 +13,10 @@ public class ClientBehavior : MonoBehaviour
     [SerializeField] private Gradient timerColor;
     [SerializeField] private Color uiColor;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioClip winSound;
+    [SerializeField] private AudioClip timeoutSound;
+
     [Header("Animation")]
     [SerializeField] private float tintTime;
     [Space(5)]
@@ -47,8 +51,12 @@ public class ClientBehavior : MonoBehaviour
     private float shakePeriod;
     private float shakeTimer;
 
+    private AudioSource audioSource;
+
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+
         initialPosition = transform.localPosition;
         shakePeriod = 1 / shakeFrequency;
     }
@@ -116,7 +124,7 @@ public class ClientBehavior : MonoBehaviour
         hasLeft = true;
 
         if (!success) GameManager.Instance.AddError();
-        StartCoroutine(TintTicket(success));
+        if (GameManager.Instance.GameStarted) StartCoroutine(TintTicket(success));
     }
 
     private IEnumerator TintTicket(bool success)
@@ -128,6 +136,8 @@ public class ClientBehavior : MonoBehaviour
 
             title.color = successColor;
             content.color = successColor;
+
+            audioSource.clip = winSound;
         }
         else
         {
@@ -136,7 +146,16 @@ public class ClientBehavior : MonoBehaviour
 
             title.color = errorColor;
             content.color = errorColor;
+
+            audioSource.clip = timeoutSound;
         }
+
+        audioSource.Play();
+        yield return new WaitForSeconds(tintTime);
+
+        outline.gameObject.SetActive(false);
+        board.gameObject.SetActive(false);
+        title.transform.parent.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(tintTime);
 
@@ -145,6 +164,10 @@ public class ClientBehavior : MonoBehaviour
 
         title.color = Color.white;
         content.color = uiColor;
+
+        outline.gameObject.SetActive(true);
+        board.gameObject.SetActive(true);
+        title.transform.parent.gameObject.SetActive(true);
 
         GameManager.Instance.ClientLeave(position);
     }

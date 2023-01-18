@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Dependancies")]
     [SerializeField] private ScoreDisplay scoreDisplay;
     [SerializeField] private Transform clientsParent;
     [SerializeField] private DiseaseBook diseaseBook;
+    [SerializeField] private GameObject winPage;
+    [SerializeField] private GameObject firedPage;
 
     [Header("Clients")]
     [SerializeField] private float timeBetweenClients = 60;
@@ -35,6 +39,7 @@ public class GameManager : MonoBehaviour
     private int clientsHealed = 0;
 
     public static GameManager Instance;
+    public bool GameStarted { get => gameStarted; }
 
     private void Awake()
     {
@@ -79,6 +84,13 @@ public class GameManager : MonoBehaviour
         clientNumber++;
     }
 
+    private string GetRank()
+    {
+        int index = 0;
+        while (ranks[index] < score) index++;
+        return rankTitles[index];
+    }
+
     public void GivePotion(IngredientWrapper wrapper)
     {
         Ingredient potion = wrapper.Ingredients[0];
@@ -107,7 +119,7 @@ public class GameManager : MonoBehaviour
         currentClients--;
         clientsParent.GetChild(position).gameObject.SetActive(false);
 
-        if (clientNumber >= maxClients) GameOver();
+        if (clientNumber >= maxClients) GameOver(true);
     }
 
     public void AddScore(float value)
@@ -122,7 +134,7 @@ public class GameManager : MonoBehaviour
         errors++;
         scoreDisplay.UpdateErrors(errors);
 
-        if (errors >= maxErrors) GameOver();
+        if (errors >= maxErrors) GameOver(false);
     }
 
     public void StartGame()
@@ -137,9 +149,26 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void GameOver()
+    public void GameOver(bool win)
     {
         Debug.Log("Game Over");
         gameStarted = false;
+
+        string rank = GetRank();
+
+        if (win)
+        {
+            winPage.SetActive(true);
+            winPage.GetComponent<WinningScroll>().WinDisplay(clientsHealed, score, rank);
+        }
+        else
+        {
+            firedPage.SetActive(true);
+            winPage.GetComponent<WinningScroll>().FiredDisplay(score, rank);
+        }
+
+        foreach (Transform child in clientsParent) child.gameObject.SetActive(false);
     }
+
+    public void QuitGame() => Application.Quit();
 }

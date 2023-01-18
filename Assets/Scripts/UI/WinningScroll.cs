@@ -8,9 +8,15 @@ public class WinningScroll : MonoBehaviour
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private TextMeshProUGUI rankText;
 
-    public void Display(int clientsHealed, int score, string rank)
+    public void WinDisplay(int clientsHealed, int score, string rank)
     {
         text.text = "You healed" + clientsHealed + "clients\n\nFinal score: " + score;
         rankText.text = rank;
+    }
+
+    public void FiredDisplay(int score, string Rank)
+    {
+        text.text = score.ToString();
+        rankText.text = Rank;
     }
 }

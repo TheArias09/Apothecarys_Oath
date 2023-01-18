@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 6946813374472407962}
   - component: {fileID: 1168152047124437611}
   m_Layer: 0
-  m_Name: Page
+  m_Name: Win Page
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -563,6 +563,7 @@ Transform:
   m_Children:
   - {fileID: 4100233342494387467}
   - {fileID: 7722580377326599483}
+  - {fileID: 638405193189155180}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 186.45, z: 0}
@@ -579,7 +580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 8243740022385774011}
-  rankText: {fileID: 0}
+  rankText: {fileID: 4429431449596962942}
 --- !u!1 &5603219197663841567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,3 +1068,78 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1001 &3904991414796095594
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6946813374472407962}
+    m_Modifications:
+    - target: {fileID: 4534354224331550981, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_Name
+      value: Pouf effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b07e20aa7930ea24b99ca6473edb2fbf, type: 3}
+--- !u!4 &638405193189155180 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+    type: 3}
+  m_PrefabInstance: {fileID: 3904991414796095594}
+  m_PrefabAsset: {fileID: 0}

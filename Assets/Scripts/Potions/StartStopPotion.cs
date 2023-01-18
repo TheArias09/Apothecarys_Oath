@@ -30,7 +30,7 @@ public class StartStopPotion : MonoBehaviour
 
             if (ing.Data == startIngredient) GameManager.Instance.StartGame();
             else if (ing.Data == restartIngredient) GameManager.Instance.Restart();
-            else if (ing.Data == quitIngredient) GameManager.Instance.GameOver();
+            else if (ing.Data == quitIngredient) GameManager.Instance.QuitGame();
 
             ingredientWrapper.Empty();
         }
