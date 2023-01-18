@@ -44,13 +44,13 @@ public class GrimoireDiseasePage : MonoBehaviour
             var descriptionText = "";
             for(int i = 0; i < data.disease.disease.symptoms.Count - 1; ++i)
             {
-                descriptionText += data.disease.disease.symptoms[i].ToString();
-                descriptionText += ", ";
+                descriptionText += "• " + data.disease.disease.symptoms[i].ToString();
+                descriptionText += "\n";
             }
-            descriptionText += data.disease.disease.symptoms[data.disease.disease.symptoms.Count - 1].ToString();
+            descriptionText += "• " + data.disease.disease.symptoms[data.disease.disease.symptoms.Count - 1].ToString();
 
             diseaseDescription.text = descriptionText;
-            potionDescription.text = data.curePotion.name;
+            potionDescription.text = "Treatment : \n\n  " + data.curePotion.name;
             diseaseName.text = data.name;
         }
     }

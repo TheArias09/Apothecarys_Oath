@@ -8,7 +8,9 @@ public class Respawner : MonoBehaviour
     [SerializeField] Transform respawnTarget;
     [SerializeField] BoxCollider respawnTargetBox;
     [SerializeField] Transform ultimateParentTransform;
+    [SerializeField] Rigidbody body;
     [SerializeField] Vector3 respawnEulerAngles = Vector3.zero;
+    [SerializeField] float yThreshold = -50f;
 
     [SerializeField] float collidingTimeBeforeRespawn;
     [SerializeField] float collidingTimeBeforeRespawnClock;
@@ -21,6 +23,12 @@ public class Respawner : MonoBehaviour
     [SerializeField] UnityEvent OnDespawnEnd;
     [SerializeField] UnityEvent OnRespawnStart;
     [SerializeField] UnityEvent OnRespawnEnd;
+
+    [SerializeField] List<GameObject> trackedGameObjects;
+    public List<GameObject> TrackedGameObjects => trackedGameObjects;
+
+    private bool coroutineLock = false;
+
 
     public void Init(BoxCollider boxCollider)
     {
@@ -43,6 +51,11 @@ public class Respawner : MonoBehaviour
 
     private void Update()
     {
+        if(transform.position.y < yThreshold)
+        {
+            if(!coroutineLock) StartCoroutine(SpawnAndRespawnCoroutine());
+        }
+
         if (colliderCount <= 0)
         {
             collidingTimeBeforeRespawnClock = 0f;
@@ -53,12 +66,17 @@ public class Respawner : MonoBehaviour
 
         if (collidingTimeBeforeRespawnClock < collidingTimeBeforeRespawn) return;
 
+
+        if (coroutineLock) return;
+
         collidingTimeBeforeRespawnClock = 0f;
-        StartCoroutine(SpawnAndRespawnCoroutine());
+        if (!coroutineLock) StartCoroutine(SpawnAndRespawnCoroutine());
     }
 
     private IEnumerator SpawnAndRespawnCoroutine()
     {
+        coroutineLock = true;
+
         OnDespawnStart?.Invoke();
         yield return new WaitForSeconds(despawnTime);
         OnDespawnEnd?.Invoke();
@@ -67,10 +85,13 @@ public class Respawner : MonoBehaviour
         var position = respawnTarget != null ? respawnTarget.position : RandomPointInBounds(respawnTargetBox.bounds);
         ultimateParentTransform.position = position;
         ultimateParentTransform.eulerAngles = respawnEulerAngles;
+        body.velocity = Vector3.zero;
 
         OnRespawnStart?.Invoke();
         yield return new WaitForSeconds(respawnTime);
         OnRespawnEnd?.Invoke();
+
+        coroutineLock = false;
     }
 
     public void StartRespawnCoroutine()

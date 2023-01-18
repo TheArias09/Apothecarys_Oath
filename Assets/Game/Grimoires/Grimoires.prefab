@@ -241,6 +241,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1736474845938730079}
     m_Modifications:
+    - target: {fileID: 2561481829490817514, guid: 6faef935f08516b43a5952a30c0ecb64,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7911ae85c496c429cbd80fd39f54ecfb,
+        type: 3}
     - target: {fileID: 2760191240654047352, guid: 6faef935f08516b43a5952a30c0ecb64,
         type: 3}
       propertyPath: m_fontAsset
@@ -325,6 +331,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -1.0610046
+      objectReference: {fileID: 0}
+    - target: {fileID: 7978238773089557383, guid: 6faef935f08516b43a5952a30c0ecb64,
+        type: 3}
+      propertyPath: m_text
+      value: Shake !
       objectReference: {fileID: 0}
     - target: {fileID: 7978238773089557383, guid: 6faef935f08516b43a5952a30c0ecb64,
         type: 3}

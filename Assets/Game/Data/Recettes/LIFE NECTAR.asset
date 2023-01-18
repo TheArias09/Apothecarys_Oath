@@ -31,5 +31,6 @@ MonoBehaviour:
     states: 
     recipeInstructions:
     - Pour 30cl of water in a recipient.
-    - Press a "Lemon" in order to add 10cl of its juice.
+    - Use your knife in order to cut a "Lemon" in half. Then extract 10cl of its
+      juice by pressing it.
     - Then add 10cl of gold nectar.

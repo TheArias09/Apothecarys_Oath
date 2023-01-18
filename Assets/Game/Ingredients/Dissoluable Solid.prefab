@@ -1,5 +1,124 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1708723352499389923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5404474756440271983}
+  - component: {fileID: 320734614989925406}
+  - component: {fileID: 1622373177608291876}
+  m_Layer: 7
+  m_Name: Respawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5404474756440271983
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708723352499389923}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1568944262316903181}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &320734614989925406
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708723352499389923}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1622373177608291876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708723352499389923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8565167f76f23de4c9cb5b74dadf3eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnTarget: {fileID: 0}
+  respawnTargetBox: {fileID: 0}
+  ultimateParentTransform: {fileID: 1568944262316903181}
+  body: {fileID: 2400318678859228253}
+  respawnEulerAngles: {x: 0, y: 0, z: 0}
+  yThreshold: -50
+  collidingTimeBeforeRespawn: 3
+  collidingTimeBeforeRespawnClock: 0
+  colliderCount: 0
+  despawnTime: 0.333
+  respawnTime: 0.333
+  OnDespawnStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4355692424287555571}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Despawn
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDespawnEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRespawnStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4355692424287555571}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Respawn
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1743548150223653101}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Respawn
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnRespawnEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  trackedGameObjects:
+  - {fileID: 1568944262316903180}
 --- !u!1001 &438162063777619773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -120,6 +239,26 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &4355692424287555571
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568944262316903180}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 837ec9744f45ae94e8eed1aed5c3a503, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1790476457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,10 +272,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredients:
-  - name: Jus Noir
+  - data: {fileID: 0}
     quantity: 0.25
     quality: 1
-    color: {r: 0.35444108, g: 0.4245283, b: 0.4245283, a: 1}
     states: 
   collisionTag: Bottleneck
   OnDissolutionStart:
@@ -158,3 +296,90 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   pourSpeed: 1
+--- !u!4 &1568944262316903181 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1428389218577355824, guid: fbe828282a84ef34a9206593f35276af,
+    type: 3}
+  m_PrefabInstance: {fileID: 438162063777619773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &2400318678859228253 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 2835876941765540704, guid: fbe828282a84ef34a9206593f35276af,
+    type: 3}
+  m_PrefabInstance: {fileID: 438162063777619773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2800976092969318889
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1568944262316903181}
+    m_Modifications:
+    - target: {fileID: 4534354224331550981, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_Name
+      value: Pouf effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b07e20aa7930ea24b99ca6473edb2fbf, type: 3}
+--- !u!198 &1743548150223653101 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4534354224331550980, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2800976092969318889}
+  m_PrefabAsset: {fileID: 0}
