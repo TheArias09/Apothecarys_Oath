@@ -13,9 +13,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 272199838631465495, guid: fbe828282a84ef34a9206593f35276af,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 272199838631465495, guid: fbe828282a84ef34a9206593f35276af,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: f11bd3aff86c69f40a11add9f5c03860, type: 2}
+      objectReference: {fileID: 9185737683893222716, guid: f59be2860e913a943a5e7a0aedd51c6f,
+        type: 3}
+    - target: {fileID: 272199838631465495, guid: fbe828282a84ef34a9206593f35276af,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: -3522955778539423533, guid: f59be2860e913a943a5e7a0aedd51c6f,
+        type: 3}
+    - target: {fileID: 272199838631465495, guid: fbe828282a84ef34a9206593f35276af,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: -6087771358165109452, guid: f59be2860e913a943a5e7a0aedd51c6f,
+        type: 3}
+    - target: {fileID: 272199838631465495, guid: fbe828282a84ef34a9206593f35276af,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 6699446615349125189, guid: f59be2860e913a943a5e7a0aedd51c6f,
+        type: 3}
     - target: {fileID: 1428389218577355824, guid: fbe828282a84ef34a9206593f35276af,
         type: 3}
       propertyPath: m_RootOrder
@@ -24,17 +48,17 @@ PrefabInstance:
     - target: {fileID: 1428389218577355824, guid: fbe828282a84ef34a9206593f35276af,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.13
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 1428389218577355824, guid: fbe828282a84ef34a9206593f35276af,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.11
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 1428389218577355824, guid: fbe828282a84ef34a9206593f35276af,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.11
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 1428389218577355824, guid: fbe828282a84ef34a9206593f35276af,
         type: 3}
@@ -89,13 +113,14 @@ PrefabInstance:
     - target: {fileID: 1428389218577355825, guid: fbe828282a84ef34a9206593f35276af,
         type: 3}
       propertyPath: m_Name
-      value: Lemon Old
+      value: Lemon Cutted Up
       objectReference: {fileID: 0}
     - target: {fileID: 7652621725952458520, guid: fbe828282a84ef34a9206593f35276af,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+      objectReference: {fileID: -2967937788857527475, guid: f59be2860e913a943a5e7a0aedd51c6f,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 9153299999916106716, guid: fbe828282a84ef34a9206593f35276af, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fbe828282a84ef34a9206593f35276af, type: 3}
@@ -124,7 +149,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -2967937788857527475, guid: f59be2860e913a943a5e7a0aedd51c6f, type: 3}
 --- !u!114 &198748711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +177,7 @@ MonoBehaviour:
   recipientQuantity: 1
   infiniteSource: 0
   ingredients:
-  - data: {fileID: 0}
+  - data: {fileID: 11400000, guid: 5fdc87b45b2a3414eb9884c62c43a04e, type: 2}
     quantity: 0.25
     quality: 1
     states: 
