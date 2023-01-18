@@ -445,7 +445,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 602b72d4617c3694aa94419fc1b68e04,
+      objectReference: {fileID: 21300000, guid: 7911ae85c496c429cbd80fd39f54ecfb,
         type: 3}
     - target: {fileID: 5504367187261575639, guid: a70d3fdd413f23c4d82a2db3238c4935,
         type: 3}
@@ -560,7 +560,7 @@ PrefabInstance:
     - target: {fileID: 6619317287647182797, guid: a70d3fdd413f23c4d82a2db3238c4935,
         type: 3}
       propertyPath: m_text
-      value: Mix !
+      value: Shake !
       objectReference: {fileID: 0}
     - target: {fileID: 8562516565342076946, guid: a70d3fdd413f23c4d82a2db3238c4935,
         type: 3}
