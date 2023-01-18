@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a21b436af6b00e44796c8e00d01eee0c, type: 3}
-  m_Name: Chastity
+  m_Name: Libidown
   m_EditorClassIdentifier: 
   disease: {fileID: 11400000, guid: b5c031e4d129544489d081e565745482, type: 2}
   curePotion: {fileID: 11400000, guid: 8c806baa19120bc409cd32db69e4b3c6, type: 2}
