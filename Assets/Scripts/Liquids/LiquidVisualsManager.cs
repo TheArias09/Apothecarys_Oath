@@ -236,10 +236,24 @@ public class LiquidVisualsManager : MonoBehaviour
         
         angleToTop = (FindAngleToTop() - 0.5f) * 2;
 
-        // f(x) = - x * a + b * (1 - abs(x))
-        // a étant le dFC et b le hDFC
-        float calculatedDisplayedFill = -angleToTop * displayFillCurve.Evaluate(totalTrueFill)
-                                        + horizontalDisplayFillCurve.Evaluate(totalTrueFill) * (1 - Mathf.Abs(angleToTop));
+        // a() étant le dFC et b() le hDFC et t le tTF
+        // angle entre -1 et 0 :
+        // f(x) = -x a(t) + (1+x) b(t)
+        // angle entre 0 et -1 :
+        // f(x) = - x a(1-t) + (1-x) b(t)
+
+        float calculatedDisplayedFill;
+
+        if (angleToTop < 0)
+        {
+            calculatedDisplayedFill = -angleToTop * displayFillCurve.Evaluate(totalTrueFill)
+                + (1 + angleToTop) * horizontalDisplayFillCurve.Evaluate(totalTrueFill) ;
+        }
+        else
+        {
+            calculatedDisplayedFill = -angleToTop * displayFillCurve.Evaluate(1-totalTrueFill)
+                                      + (1 - angleToTop) * horizontalDisplayFillCurve.Evaluate(totalTrueFill) ;
+        }
 
         return calculatedDisplayedFill;
     }
