@@ -15,4 +15,4 @@ MonoBehaviour:
   disease:
     name: 0
     symptoms: 000000000100000007000000
-    cure: Stimulant
+    sprite: {fileID: 21300000, guid: 16d558b37cafa4d988aa82e3f67faf8d, type: 3}

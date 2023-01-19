@@ -15,3 +15,4 @@ MonoBehaviour:
   disease:
     name: 3
     symptoms: 080000000700000005000000
+    sprite: {fileID: 21300000, guid: 1dc7dfe43d1934153a440b368c7f9f85, type: 3}
