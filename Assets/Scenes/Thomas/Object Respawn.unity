@@ -1235,6 +1235,8 @@ MonoBehaviour:
   scoreDisplay: {fileID: 1176801859}
   clientsParent: {fileID: 222129131}
   diseaseBook: {fileID: 11400000, guid: 100bcd3edecb1ce4bb0ea4ae9d870126, type: 2}
+  winPage: {fileID: 0}
+  firedPage: {fileID: 0}
   timeBetweenClients: 30
   clientStayTime: 120
   maxClients: 10
@@ -6131,6 +6133,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lemon Cuttable (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5183542325469955388, guid: f492c549ac793a947bf12815e1e4cef3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5572039451578542222, guid: f492c549ac793a947bf12815e1e4cef3,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5572039451578542222, guid: f492c549ac793a947bf12815e1e4cef3,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5572039451578542222, guid: f492c549ac793a947bf12815e1e4cef3,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5572039451578542222, guid: f492c549ac793a947bf12815e1e4cef3,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f492c549ac793a947bf12815e1e4cef3, type: 3}
 --- !u!4 &1360171025 stripped
@@ -7493,6 +7520,8 @@ MonoBehaviour:
   scoreDisplay: {fileID: 0}
   clientsParent: {fileID: 0}
   diseaseBook: {fileID: 0}
+  winPage: {fileID: 0}
+  firedPage: {fileID: 0}
   timeBetweenClients: 60
   clientStayTime: 120
   maxClients: 6
