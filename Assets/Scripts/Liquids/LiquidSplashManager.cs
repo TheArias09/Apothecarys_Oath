@@ -27,9 +27,6 @@ public class LiquidSplashManager : MonoBehaviour
         potion = transform.parent.transform.parent.gameObject;
         potionLiquids = potion.GetComponent<LiquidVisualsManager>();
 
-        SetTransform();
-        SetColor();
-        
         isSplashing = liquidFlow.IsFlowing;
     }
 

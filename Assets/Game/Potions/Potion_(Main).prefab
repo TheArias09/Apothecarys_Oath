@@ -149,7 +149,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.94
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4767,7 +4767,7 @@ GameObject:
   - component: {fileID: 2379327684039861390}
   - component: {fileID: 7465097533370888778}
   m_Layer: 0
-  m_Name: Potion_A_(Main)
+  m_Name: Potion_(Main)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

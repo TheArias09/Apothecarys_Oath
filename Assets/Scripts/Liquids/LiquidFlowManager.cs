@@ -130,8 +130,18 @@ public class LiquidFlowManager : MonoBehaviour
 
     public float GetTargetPointY()
     {
-        return targetPotion.transform.position.y + 
-               targetPotionLVM.FindTotalDisplayedFill();
+        if (targetPotionExists)
+        {
+            return targetPotion.transform.position.y + 
+                   targetPotionLVM.FindTotalDisplayedFill();
+        }
+        
+        Vector3 startPoint = potionFlowing.GetFlowPoint();
+        Ray ray = new Ray(startPoint, Vector3.down);
+        
+        Physics.Raycast(ray, out RaycastHit hit,5,11 );
+        return hit.point.y;
+
     }
 
     public Vector3 GetTargetPointPosition()
@@ -141,11 +151,15 @@ public class LiquidFlowManager : MonoBehaviour
         {
             return new Vector3(targetPotionPosition.x,targetPotionPosition.y + targetPotionLVM.FindTotalDisplayedFill(),targetPotionPosition.z);
         }
-        else
-        {
-            Vector3 startPoint = potionFlowing.GetFlowPoint();
-            return new Vector3(startPoint.x, 0, startPoint.z);
-        }
+
+        //Vector3 startPoint = potionFlowing.GetFlowPoint();
+        //return new Vector3(startPoint.x, 0, startPoint.z);
+        
+        Vector3 startPoint = potionFlowing.GetFlowPoint();
+        Ray ray = new Ray(startPoint, Vector3.down);
+        
+        Physics.Raycast(ray, out RaycastHit hit,5,11 );
+        return hit.point;
     }
 
     
@@ -178,15 +192,8 @@ public class LiquidFlowManager : MonoBehaviour
     void SetHeight()
     {
         float desiredHeight;
-        if (targetPotionExists)
-        {
-            desiredHeight = flowPosition.y - GetTargetPointY();
-        }
-        else
-        {
-            desiredHeight = flowPosition.y;
-        }
-        
+        desiredHeight = flowPosition.y - GetTargetPointY();
+
         flowSystemMain.gravityModifierMultiplier = 0.25f * desiredHeight;
     }
 
