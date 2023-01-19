@@ -290,6 +290,9 @@ public class LiquidVisualsManager : MonoBehaviour
         float fresnelPower;
         Color fresnelColor;
         float viscosity;
+        bool isTextured;
+        float noisePower;
+        Color noiseColor;
 
         float previousTotalTrueFill = 0;
 
@@ -320,6 +323,7 @@ public class LiquidVisualsManager : MonoBehaviour
             Mathf.Min(1f, liquidColor.g + 0.30f),
             Mathf.Min(1f, liquidColor.b + 0.30f)
         );
+        
 
         int liquidNumber = (liquids.Count);
 
@@ -339,6 +343,7 @@ public class LiquidVisualsManager : MonoBehaviour
         newLiquid.fresnelPower = fresnelPower;
         newLiquid.fresnelColor = fresnelColor;
         newLiquid.viscosity = viscosity;
+        
 
         Material liquidRendererMaterial = newLiquidVolume.GetComponent<Renderer>().material;
 
@@ -347,6 +352,27 @@ public class LiquidVisualsManager : MonoBehaviour
         liquidRendererMaterial.SetColor("_SurfaceColor", surfaceColor);
         liquidRendererMaterial.SetFloat("_FresnelPower", fresnelPower);
         liquidRendererMaterial.SetColor("_FresnelColor", fresnelColor);
+        
+        isTextured = Random.Range(0, 2) != 0;
+
+        if (isTextured)
+        {
+            noisePower = Random.Range(10, 100);
+            
+            noiseColor = new Color(
+                Mathf.Max(0, liquidColor.r - 0.10f),
+                Mathf.Max(0, liquidColor.g - 0.10f),
+                Mathf.Max(0, liquidColor.b - 0.10f)
+            );
+            
+            newLiquid.isTextured = true;
+            newLiquid.noisePower = noisePower;
+            newLiquid.noiseColor = noiseColor;
+            
+            liquidRendererMaterial.SetInt("_IsTextured",1);
+            liquidRendererMaterial.SetFloat("_NoisePower", noisePower);
+            liquidRendererMaterial.SetColor("_NoiseColor", noiseColor);
+        }
 
         liquidVolumes.Add(newLiquidVolume);
         liquids.Add(newLiquid);

@@ -7,6 +7,7 @@ public class Respawner : MonoBehaviour
 {
     [SerializeField] Transform respawnTarget;
     [SerializeField] BoxCollider respawnTargetBox;
+    public BoxCollider RespawnTargetBox => respawnTargetBox;
     [SerializeField] Transform ultimateParentTransform;
     [SerializeField] Rigidbody body;
     [SerializeField] Vector3 respawnEulerAngles = Vector3.zero;
@@ -29,6 +30,12 @@ public class Respawner : MonoBehaviour
 
     private bool coroutineLock = false;
 
+    private Vector3 startPosition = Vector3.zero;
+
+    private void Awake()
+    {
+        startPosition = transform.position;
+    }
 
     public void Init(BoxCollider boxCollider)
     {
@@ -82,8 +89,8 @@ public class Respawner : MonoBehaviour
         OnDespawnEnd?.Invoke();
 
 
-        var position = respawnTarget != null ? respawnTarget.position : RandomPointInBounds(respawnTargetBox.bounds);
-        ultimateParentTransform.position = position;
+        var spawnPosition = respawnTargetBox != null ? RandomPointInBounds(respawnTargetBox.bounds) : respawnTarget != null ? respawnTarget.position : startPosition;
+        ultimateParentTransform.position = spawnPosition;
         ultimateParentTransform.eulerAngles = respawnEulerAngles;
         body.velocity = Vector3.zero;
 
