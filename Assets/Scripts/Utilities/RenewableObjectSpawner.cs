@@ -26,7 +26,7 @@ public class RenewableObjectSpawner : MonoBehaviour
             betweenSpawnClock = 0f;
 
             var position = RandomPointInBounds(box.bounds);
-            var objectInstance = Instantiate(objectPrefab, position, Quaternion.identity);
+            var objectInstance = Instantiate(objectPrefab, position, Quaternion.Euler(0, Random.Range(0, 360f), 0));
 
             var respawn = objectInstance.GetComponentInChildren<Respawner>();
             if(respawn)

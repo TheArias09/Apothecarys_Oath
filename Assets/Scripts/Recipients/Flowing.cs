@@ -9,6 +9,7 @@ namespace Recipients
     public class Flowing : MonoBehaviour
     {
         [SerializeField] private Transform bottleneckCenterPoint;
+        [SerializeField] private Collider bottleneckCollider;
         [SerializeField] private float bottleneckRadius;
 
         [SerializeField] private float sphereCastRadius = 0.01f;
@@ -32,6 +33,7 @@ namespace Recipients
         {
             ingredientWrapper = GetComponent<IngredientWrapper>();
             grabHandInfo = GetComponent<GrabHandInfo>();
+            bottleneckRadius = bottleneckCollider.transform.lossyScale.x / 2;
         }
 
         private float GetFlowAngle()
@@ -71,14 +73,14 @@ namespace Recipients
 
         private bool GetLeftPalmInput()
         {
-            return OVRInput.Get(OVRInput.Button.Three) &&
+            return (OVRInput.Get(OVRInput.Button.Three) || OVRInput.Get(OVRInput.Button.Four)) &&
                    OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) != 0 &&
                    OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) != 0;
         }
 
         private bool GetRightPalmInput()
         {
-            return OVRInput.Get(OVRInput.Button.One) &&
+            return (OVRInput.Get(OVRInput.Button.One) || OVRInput.Get(OVRInput.Button.Two)) &&
                    OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) != 0 &&
                    OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger) != 0;
         }
