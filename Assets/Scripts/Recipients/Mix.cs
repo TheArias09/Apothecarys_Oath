@@ -17,6 +17,8 @@ public class Mix : MonoBehaviour
     Vector3 previousPosition;
     IngredientWrapper ingredientWrapper;
 
+    private float startClock = 1f;
+
     private void Awake()
     {
         ingredientWrapper = GetComponent<IngredientWrapper>(); 
@@ -30,6 +32,12 @@ public class Mix : MonoBehaviour
 
     private void Update()
     {
+        if (startClock > 0f)
+        {
+            startClock -= Time.deltaTime;
+            return;
+        }
+
         float currentAcceleration = (transform.position - 2 * previousPosition + previousPreviousPosition).sqrMagnitude * Time.deltaTime;
         if(currentAcceleration > accelerationThreshold * accelerationThreshold)
         {

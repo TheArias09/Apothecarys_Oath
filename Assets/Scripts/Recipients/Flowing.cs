@@ -33,7 +33,8 @@ namespace Recipients
         {
             ingredientWrapper = GetComponent<IngredientWrapper>();
             grabHandInfo = GetComponent<GrabHandInfo>();
-            bottleneckRadius = bottleneckCollider.transform.lossyScale.x / 2;
+            if(bottleneckCollider)
+                bottleneckRadius = bottleneckCollider.transform.lossyScale.x / 2;
         }
 
         private float GetFlowAngle()

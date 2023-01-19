@@ -107,6 +107,7 @@ public class GameManager : MonoBehaviour
             if (behavior.Client.Disease.name == potion.Cures)
             {
                 behavior.ReceivePotion(potion);
+                Debug.Log("Good Potion");
                 return;
             }
         }

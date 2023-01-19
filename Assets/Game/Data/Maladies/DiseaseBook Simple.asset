@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b1cac0918f54f4da98b77d7cccdb1d, type: 3}
+  m_Name: DiseaseBook Simple
+  m_EditorClassIdentifier: 
+  diseases:
+  - {fileID: 11400000, guid: 074c2bfb75e9b154cac8a0457500bf30, type: 2}
+  - {fileID: 11400000, guid: 0cc9d9abf0213374f81bff3be2b6d42b, type: 2}
+  - {fileID: 11400000, guid: a58548665ee18084194111cd5dca8e67, type: 2}
