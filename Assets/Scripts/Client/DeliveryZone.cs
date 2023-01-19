@@ -11,5 +11,11 @@ public class DeliveryZone : MonoBehaviour
 
         GameManager.Instance.GivePotion(ingredientWrapper);
         ingredientWrapper.Empty();
+
+        if (ingredientWrapper.Respawner)
+        {
+            ingredientWrapper.Respawner.MovePosition();
+            ingredientWrapper.Respawner.StartRespawnCoroutine();
+        }
     }
 }

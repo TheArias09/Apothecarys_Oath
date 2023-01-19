@@ -74,14 +74,14 @@ namespace Recipients
 
         private bool GetLeftPalmInput()
         {
-            return (OVRInput.Get(OVRInput.Button.Three) || OVRInput.Get(OVRInput.Button.Four)) &&
+            return (OVRInput.Get(OVRInput.Button.Three) || OVRInput.Get(OVRInput.Button.Four) || OVRInput.Get(OVRInput.Button.PrimaryThumbstick)) &&
                    OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) != 0 &&
                    OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) != 0;
         }
 
         private bool GetRightPalmInput()
         {
-            return (OVRInput.Get(OVRInput.Button.One) || OVRInput.Get(OVRInput.Button.Two)) &&
+            return (OVRInput.Get(OVRInput.Button.One) || OVRInput.Get(OVRInput.Button.Two) || OVRInput.Get(OVRInput.Button.SecondaryThumbstick)) &&
                    OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) != 0 &&
                    OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger) != 0;
         }

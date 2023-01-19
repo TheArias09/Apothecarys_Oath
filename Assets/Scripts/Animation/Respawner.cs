@@ -101,6 +101,14 @@ public class Respawner : MonoBehaviour
         coroutineLock = false;
     }
 
+    public void MovePosition()
+    {
+        var spawnPosition = respawnTargetBox != null ? RandomPointInBounds(respawnTargetBox.bounds) : respawnTarget != null ? respawnTarget.position : startPosition;
+        ultimateParentTransform.position = spawnPosition;
+        ultimateParentTransform.eulerAngles = respawnEulerAngles;
+        body.velocity = Vector3.zero;
+    }
+
     public void StartRespawnCoroutine()
     {
         StartCoroutine(RespawnCoroutine());

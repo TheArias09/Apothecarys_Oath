@@ -12,6 +12,9 @@ public class IngredientWrapper : MonoBehaviour
     [SerializeField] private List<Ingredient> ingredients;
     [SerializeField] private List<IngredientState> states;
 
+    [SerializeField] private Respawner respawner;
+    public Respawner Respawner => respawner;
+
     private float quantity = 0;
 
     public float RecipientQuantity { get => recipientQuantity; set => recipientQuantity = value; }
@@ -38,6 +41,8 @@ public class IngredientWrapper : MonoBehaviour
     /// <returns>true if liquid has been added, false if there is overflow</returns>
     public bool FillWith(List<Ingredient> ingredients, float deltaQty)
     {
+        if (infiniteSource) return false;
+
         if (quantity >= recipientQuantity) return false;
         else
         {
@@ -102,5 +107,6 @@ public class IngredientWrapper : MonoBehaviour
         Ingredients.Clear();
         States.Clear();
         quantity = 0;
+        OnQuantityUpdated?.Invoke();
     }
 }
