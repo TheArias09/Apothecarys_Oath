@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 5446464732321932044}
   - component: {fileID: 8083025914684466780}
   - component: {fileID: 409295257132805604}
+  - component: {fileID: 824318484222015319}
   m_Layer: 0
   m_Name: Cover
   m_TagString: Untagged
@@ -116,6 +117,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &824318484222015319
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2901281475846230278}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 1, z: 1.0000001}
+  m_Center: {x: 0.000000029802322, y: 0, z: -0.00000023841858}
 --- !u!1 &4080752922926060277
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,6 +141,7 @@ GameObject:
   - component: {fileID: 1222639977384856460}
   - component: {fileID: 5862271455909374640}
   - component: {fileID: 8592167116688903224}
+  - component: {fileID: 1050822340753451770}
   m_Layer: 0
   m_Name: Pages Mockup
   m_TagString: Untagged
@@ -199,6 +214,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1050822340753451770
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4080752922926060277}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 1, z: 1.0000001}
+  m_Center: {x: 0, y: -0.0000019073486, z: -0.00000023841858}
 --- !u!1 &6697251016117398054
 GameObject:
   m_ObjectHideFlags: 0
