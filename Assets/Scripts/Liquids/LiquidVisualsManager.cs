@@ -31,11 +31,11 @@ public class LiquidVisualsManager : MonoBehaviour
     
     [SerializeField] private AnimationCurve displayFillCurve;
     [SerializeField] private AnimationCurve horizontalDisplayFillCurve;
+    [SerializeField] private AnimationCurve splashSizeCurve;
     
     public float RecipientQuantity => recipientQuantity;
     public List<LiquidVisuals> Liquids => liquids;
     public int LiquidCount => liquidCount;
-    
     
     private void Awake()
     {
@@ -140,7 +140,83 @@ public class LiquidVisualsManager : MonoBehaviour
             liquidRenderersMaterials[i].SetFloat("_Fill",liquids[i].displayedFill);
         }
     }
+    
+    public float FindTotalTrueFill()
+    {
+        float totalTrueFill = 0f;
 
+        foreach (LiquidVisuals liquid in liquids)
+        {
+            totalTrueFill += liquid.trueFill;
+        }
+
+        return totalTrueFill;
+    }
+
+    public float FindTotalDisplayedFill()
+    {
+        if (liquidCount <= 0 )
+        {
+            return displayFillCurve.Evaluate(0f);
+        }
+        return liquids[^1].displayedFill;
+    }
+
+    public float CalculateDisplayedFill(float totalTrueFill)
+    {
+        
+        angleToTop = (FindAngleToTop() - 0.5f) * 2;
+
+        // a() étant le dFC et b() le hDFC et t le tTF
+        // angle entre -1 et 0 :
+        // f(x) = -x a(t) + (1+x) b(t)
+        // angle entre 0 et -1 :
+        // f(x) = - x a(1-t) + (1-x) b(t)
+
+        float calculatedDisplayedFill;
+
+        if (angleToTop < 0)
+        {
+            calculatedDisplayedFill = -angleToTop * displayFillCurve.Evaluate(totalTrueFill)
+                + (1 + angleToTop) * horizontalDisplayFillCurve.Evaluate(totalTrueFill) ;
+        }
+        else
+        {
+            calculatedDisplayedFill = -angleToTop * displayFillCurve.Evaluate(1-totalTrueFill)
+                                      + (1 - angleToTop) * horizontalDisplayFillCurve.Evaluate(totalTrueFill) ;
+        }
+
+        return calculatedDisplayedFill;
+    }
+    
+    public float FindViscosityFactor()
+    {
+        float returnFactor = 0f;
+
+        for (int i = 0; i < Liquids.Count; i++)
+        {
+            returnFactor += Liquids[i].viscosity * Liquids[i].trueFill;
+        }
+        
+        returnFactor /= FindTotalTrueFill();
+        return returnFactor;
+    }
+
+    public float FindAngleToTop() //0 Si vers le haut, 1 si vers le bas
+    {
+        var axis = Vector3.Cross(Vector3.up, transform.up);
+        var flowAngle = Vector3.SignedAngle(Vector3.up, transform.up, axis);
+        
+        float finalAngle = Mathf.Abs(flowAngle / 180f) ;
+
+        return finalAngle;
+    }
+
+    public float FindSplashSize()
+    {
+        return splashSizeCurve.Evaluate(FindTotalTrueFill());
+    }
+    
     void AddLiquid(Ingredient ingredient)
     {
         float trueFill;
@@ -208,77 +284,6 @@ public class LiquidVisualsManager : MonoBehaviour
         liquidVolumes.Add(newLiquidVolume);
         liquids.Add(newLiquid);
         liquidRenderersMaterials.Add(liquidRendererMaterial);
-    }
-
-    public float FindTotalTrueFill()
-    {
-        float totalTrueFill = 0f;
-
-        foreach (LiquidVisuals liquid in liquids)
-        {
-            totalTrueFill += liquid.trueFill;
-        }
-
-        return totalTrueFill;
-    }
-
-    public float FindTotalDisplayedFill()
-    {
-        if (liquidCount <= 0 )
-        {
-            return displayFillCurve.Evaluate(0f);
-        }
-        return liquids[liquidCount - 1].displayedFill;
-    }
-
-    public float CalculateDisplayedFill(float totalTrueFill)
-    {
-        
-        angleToTop = (FindAngleToTop() - 0.5f) * 2;
-
-        // a() étant le dFC et b() le hDFC et t le tTF
-        // angle entre -1 et 0 :
-        // f(x) = -x a(t) + (1+x) b(t)
-        // angle entre 0 et -1 :
-        // f(x) = - x a(1-t) + (1-x) b(t)
-
-        float calculatedDisplayedFill;
-
-        if (angleToTop < 0)
-        {
-            calculatedDisplayedFill = -angleToTop * displayFillCurve.Evaluate(totalTrueFill)
-                + (1 + angleToTop) * horizontalDisplayFillCurve.Evaluate(totalTrueFill) ;
-        }
-        else
-        {
-            calculatedDisplayedFill = -angleToTop * displayFillCurve.Evaluate(1-totalTrueFill)
-                                      + (1 - angleToTop) * horizontalDisplayFillCurve.Evaluate(totalTrueFill) ;
-        }
-
-        return calculatedDisplayedFill;
-    }
-    
-    public float FindViscosityFactor()
-    {
-        float returnFactor = 0f;
-
-        for (int i = 0; i < Liquids.Count; i++)
-        {
-            returnFactor += Liquids[i].viscosity * Liquids[i].trueFill;
-        }
-        
-        returnFactor /= FindTotalTrueFill();
-        return returnFactor;
-    }
-
-    public float FindAngleToTop() //0 Si vers le haut, 1 si vers le bas
-    {
-        var axis = Vector3.Cross(Vector3.up, transform.up);
-        var flowAngle = Vector3.SignedAngle(Vector3.up, transform.up, axis);
-        
-        float finalAngle = Mathf.Abs(flowAngle / 180f) ;
-
-        return finalAngle;
     }
     
     void AddRandomLiquid()
@@ -390,7 +395,6 @@ public class LiquidVisualsManager : MonoBehaviour
             Destroy(liquidToRemove);
         }
     }
-    
     
     void RemoveLiquidAt(int liquidNumber)
     {

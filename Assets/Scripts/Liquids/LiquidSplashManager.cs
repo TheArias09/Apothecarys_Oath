@@ -34,6 +34,7 @@ public class LiquidSplashManager : MonoBehaviour
     {
         SetTransform();
         SetColor();
+        SetScale();
 
         isSplashing = liquidFlow.IsFlowing;
         
@@ -57,7 +58,7 @@ public class LiquidSplashManager : MonoBehaviour
         transform.rotation = liquidFlow.GetTargetPointRotation();
     }
     
-    void SetColor()
+    private void SetColor()
     {
         if (potionLiquids.LiquidCount >= 1)
         {
@@ -67,5 +68,10 @@ public class LiquidSplashManager : MonoBehaviour
         {
             splashSystemMain.startColor = new ParticleSystem.MinMaxGradient( Color.white );;
         }
+    }
+
+    private void SetScale()
+    {
+        transform.localScale = Vector3.one * liquidFlow.GetSplashScale();
     }
 }

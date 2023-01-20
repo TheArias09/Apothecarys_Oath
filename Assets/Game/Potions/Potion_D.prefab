@@ -235,6 +235,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
+      propertyPath: splashSizeCurve.m_Curve.Array.data[0].value
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: splashSizeCurve.m_Curve.Array.data[1].value
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
       propertyPath: displayFillCurve.m_Curve.Array.data[0].value
       value: -0.142
       objectReference: {fileID: 0}
@@ -260,6 +270,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
+      propertyPath: splashSizeCurve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: splashSizeCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
       propertyPath: displayFillCurve.m_Curve.Array.data[0].inSlope
       value: 0.26399985
       objectReference: {fileID: 0}
@@ -277,6 +297,16 @@ PrefabInstance:
         type: 3}
       propertyPath: displayFillCurve.m_Curve.Array.data[3].inSlope
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: splashSizeCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: splashSizeCurve.m_Curve.Array.data[1].outSlope
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
