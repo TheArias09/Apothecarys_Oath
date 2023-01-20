@@ -112,11 +112,7 @@ public class ClientBehavior : MonoBehaviour
             GameManager.Instance.AddScore(potion.Quality);
             Leave(true);
         }
-        else
-        {
-            Debug.Log(Client.Name + " was not given the correct potion.");
-            Leave(false);
-        }
+        else Leave(false);
     }
 
     private void Leave(bool success)

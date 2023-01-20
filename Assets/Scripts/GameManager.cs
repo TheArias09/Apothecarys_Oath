@@ -91,16 +91,8 @@ public class GameManager : MonoBehaviour
         return rankTitles[index];
     }
 
-    public void GivePotion(IngredientWrapper wrapper)
+    public void GivePotion(Ingredient potion)
     {
-        Ingredient potion = wrapper.Ingredients[0];
-
-        if (potion.Cures == null || wrapper.Ingredients.Count != 1)
-        {
-            Debug.Log("No correct potion submited");
-            return;
-        }
-
         foreach (Transform child in clientsParent)
         {
             child.TryGetComponent(out ClientBehavior behavior);

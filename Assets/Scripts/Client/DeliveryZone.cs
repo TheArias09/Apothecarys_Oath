@@ -9,7 +9,15 @@ public class DeliveryZone : MonoBehaviour
         collision.gameObject.TryGetComponent<IngredientWrapper>(out var ingredientWrapper);
         if (ingredientWrapper == null) return;
 
-        GameManager.Instance.GivePotion(ingredientWrapper);
+        Ingredient potion = ingredientWrapper.Ingredients[0];
+
+        if (potion.Cures == null || ingredientWrapper.Ingredients.Count != 1)
+        {
+            Debug.Log("Incorrect potion submited");
+            return;
+        }
+
+        GameManager.Instance.GivePotion(potion);
         ingredientWrapper.Empty();
 
         if (ingredientWrapper.Respawner)
