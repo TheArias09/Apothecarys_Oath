@@ -137,12 +137,6 @@ public class GameManager : MonoBehaviour
         gameStarted = true;
     }
 
-    public void Restart()
-    {
-        Debug.Log("Restart game");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
     public void GameOver(bool win)
     {
         Debug.Log("Game Over");
