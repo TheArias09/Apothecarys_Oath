@@ -17,7 +17,7 @@ MonoBehaviour:
     cures: 4
     ingredients:
     - data: {fileID: 11400000, guid: 54955293b53b57449ab70af2ed354f1b, type: 2}
-      quantity: 2
+      quantity: 3
       quality: 0
       states: 
     - data: {fileID: 11400000, guid: 7048c975d7c8b4840b9d0eddee91dcda, type: 2}
@@ -25,7 +25,7 @@ MonoBehaviour:
       quality: 0
       states: 
     - data: {fileID: 11400000, guid: b3fede9b7257bf042b4932286f83106c, type: 2}
-      quantity: 2
+      quantity: 3
       quality: 0
       states: 
     states: 
