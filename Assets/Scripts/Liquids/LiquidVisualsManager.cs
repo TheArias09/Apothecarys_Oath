@@ -17,6 +17,8 @@ public class LiquidVisualsManager : MonoBehaviour
     [SerializeField] private float recipientQuantity;
     [SerializeField] private int liquidCount;
 
+    [SerializeField] private float baseScale;
+    
     private IngredientWrapper ingredientWrapper;
     private int previousLiquidCount;
     private float trueFill; //Entre 0 et 1
@@ -36,6 +38,8 @@ public class LiquidVisualsManager : MonoBehaviour
     public float RecipientQuantity => recipientQuantity;
     public List<LiquidVisuals> Liquids => liquids;
     public int LiquidCount => liquidCount;
+
+    public float BaseScale => baseScale;
     
     private void Awake()
     {
@@ -214,7 +218,7 @@ public class LiquidVisualsManager : MonoBehaviour
 
     public float FindSplashSize()
     {
-        return splashSizeCurve.Evaluate(FindTotalTrueFill());
+        return splashSizeCurve.Evaluate(FindTotalTrueFill()) * transform.localScale.x / baseScale;
     }
     
     void AddLiquid(Ingredient ingredient)

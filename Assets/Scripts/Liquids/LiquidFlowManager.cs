@@ -18,6 +18,7 @@ public class LiquidFlowManager : MonoBehaviour
     private ParticleSystem flowSystem;
     private ParticleSystem.MainModule flowSystemMain;
     private ParticleSystem.TrailModule flowSystemTrails;
+    private ParticleSystem.EmissionModule flowEmission;
 
     private bool targetPotionExists;
     private GameObject targetPotion;
@@ -46,9 +47,10 @@ public class LiquidFlowManager : MonoBehaviour
         flowSystem = gameObject.GetComponent<ParticleSystem>();
         flowSystemMain = flowSystem.main;
         flowSystemTrails = flowSystem.trails;
+        flowEmission = flowSystem.emission;
 
         isFlowing = potionFlowing.IsFlowing;
-        //flowSystem.Play();
+        flowSystem.Play();
         
         targetPotion = potionFlowing.GetTargetPotion();
         targetPotionExists = (targetPotion != null);
@@ -72,6 +74,7 @@ public class LiquidFlowManager : MonoBehaviour
 
         isFlowing = potionFlowing.IsFlowing;
         
+        //Avec le système
         if(isFlowing)
         {
             if(!flowSystem.isPlaying)
@@ -81,9 +84,28 @@ public class LiquidFlowManager : MonoBehaviour
         }else{
             if(flowSystem.isPlaying)
             {
-                flowSystem.Stop();
+                
+                //flowSystem.Clear();
+                flowSystem.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             }
         }
+
+        //Avec les émissions
+        /*
+        if(isFlowing)
+        {
+            if(!flowEmission.enabled)
+            {
+                flowEmission.enabled = true;
+            }
+        }else{
+            if(flowEmission.enabled)
+            {
+                
+                flowEmission.enabled = false;
+            }
+        }
+        */
         
         targetPotion = potionFlowing.GetTargetPotion();
         
@@ -128,7 +150,8 @@ public class LiquidFlowManager : MonoBehaviour
         float desiredHeight;
         desiredHeight = flowTransform.position.y - GetTargetPointY();
 
-        flowSystemMain.gravityModifierMultiplier = 0.25f * desiredHeight;
+        flowSystemMain.gravityModifierMultiplier = 0.25f * desiredHeight; //Lifetime de 0.95
+        //flowSystemMain.gravityModifierMultiplier = 0.45f * desiredHeight; //Lifetime de 0.5
     }
 
     void SetWidth()
@@ -141,13 +164,13 @@ public class LiquidFlowManager : MonoBehaviour
         if (targetPotionExists)
         {
             return targetPotion.transform.position.y + 
-                   targetPotionLVM.FindTotalDisplayedFill();
+                   targetPotionLVM.FindTotalDisplayedFill() * targetPotion.transform.lossyScale.y / targetPotionLVM.BaseScale;
         }
         
         Vector3 startPoint = potionFlowing.GetFlowPoint();
         Ray ray = new Ray(startPoint, Vector3.down);
         
-        Physics.Raycast(ray, out RaycastHit hit,5,11 );
+        Physics.Raycast(ray, out RaycastHit hit,5 );
         return hit.point.y;
 
     }
@@ -156,7 +179,7 @@ public class LiquidFlowManager : MonoBehaviour
     {
         if (targetPotionExists)
         {
-            return new Vector3(targetPotion.transform.position.x,targetPotion.transform.position.y + targetPotionLVM.FindTotalDisplayedFill(),targetPotion.transform.position.z);
+            return new Vector3(targetPotion.transform.position.x,targetPotion.transform.position.y + targetPotionLVM.FindTotalDisplayedFill()* targetPotion.transform.lossyScale.y / targetPotionLVM.BaseScale,targetPotion.transform.position.z);
         }
 
         //Vector3 startPoint = potionFlowing.GetFlowPoint();
@@ -165,7 +188,11 @@ public class LiquidFlowManager : MonoBehaviour
         Vector3 startPoint = potionFlowing.GetFlowPoint();
         Ray ray = new Ray(startPoint, Vector3.down);
         
-        Physics.Raycast(ray, out RaycastHit hit,5,11 );
+        Physics.Raycast(ray, out RaycastHit hit,5 );
+        if (hit.transform.gameObject.layer == 11)
+        {
+            return new Vector3(42000, 42000, 42000);
+        }
         return hit.point;
     }
 

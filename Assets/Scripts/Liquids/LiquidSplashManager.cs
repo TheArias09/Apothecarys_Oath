@@ -13,6 +13,9 @@ public class LiquidSplashManager : MonoBehaviour
     
     private GameObject potion;
     private LiquidVisualsManager potionLiquids;
+
+    private Vector3 targetPosition;
+    private bool splashingOnPotion;
     
     public bool isSplashing = true;
     void Start()
@@ -38,7 +41,7 @@ public class LiquidSplashManager : MonoBehaviour
 
         isSplashing = liquidFlow.IsFlowing;
         
-        if(isSplashing)
+        if(isSplashing && !splashingOnPotion)
         {
             if(!splashSystem.isPlaying)
             {
@@ -54,7 +57,9 @@ public class LiquidSplashManager : MonoBehaviour
 
     private void SetTransform()
     {
-        transform.position = liquidFlow.GetTargetPointPosition();
+        targetPosition = liquidFlow.GetTargetPointPosition();
+        splashingOnPotion = targetPosition == new Vector3(42000, 42000, 42000);
+        transform.position = targetPosition;
         transform.rotation = liquidFlow.GetTargetPointRotation();
     }
     

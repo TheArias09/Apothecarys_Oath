@@ -4756,6 +4756,7 @@ GameObject:
   - component: {fileID: 3318193849181367753}
   - component: {fileID: 3324059114002556979}
   - component: {fileID: 3318193849181367755}
+  - component: {fileID: 862170440434954420}
   - component: {fileID: 3318193849181367754}
   - component: {fileID: 3318193849181367757}
   - component: {fileID: 3318193849181367756}
@@ -4851,10 +4852,24 @@ BoxCollider:
   m_GameObject: {fileID: 3346590250814863891}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.756253, y: 1.76479, z: 1.756254}
   m_Center: {x: -0.0125104785, y: -0.10113999, z: 0}
+--- !u!64 &862170440434954420
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3346590250814863891}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 2681d1ae61ffe4b0ab792259fa7cf760, type: 3}
 --- !u!54 &3318193849181367754
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4890,6 +4905,7 @@ MonoBehaviour:
     type: 3}
   recipientQuantity: 1
   liquidCount: 0
+  baseScale: 0.15
   displayFillCurve:
     serializedVersion: 2
     m_Curve:
