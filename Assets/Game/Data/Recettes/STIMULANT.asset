@@ -17,14 +17,14 @@ MonoBehaviour:
     cures: 0
     ingredients:
     - data: {fileID: 11400000, guid: 5eb2c77c6b133f74ba26743c048d0cf1, type: 2}
-      quantity: 2
+      quantity: 6
       quality: 0
       states: 
     - data: {fileID: 11400000, guid: 7048c975d7c8b4840b9d0eddee91dcda, type: 2}
-      quantity: 1
+      quantity: 3
       quality: 0
       states: 
     states: 
     recipeInstructions:
-    - Pour 50cl of water in a recipient.
-    - Add 25cl of homeop... no, Vitalis.
+    - Pour 60cl of water in a recipient.
+    - Add 30cl of homeop... no, Vitalis.

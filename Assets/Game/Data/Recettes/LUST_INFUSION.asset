@@ -25,7 +25,7 @@ MonoBehaviour:
       quality: 0
       states: 
     - data: {fileID: 11400000, guid: 0e87a7a382bcf5c4bbb0cf5960a3b191, type: 2}
-      quantity: 1
+      quantity: 0.5
       quality: 0
       states: 
     - data: {fileID: 11400000, guid: 535d347ec0cfdf14893da570fd0004f0, type: 2}
@@ -36,5 +36,5 @@ MonoBehaviour:
     recipeInstructions:
     - Pour (with all your love) 40cl of water in a recipient.
     - Gently add 10cl of Venusia extract.
-    - 'Add a shiny nut in order to add some spice ;) '
+    - 'Add two shiny nuts in order to add some spice ;) '
     - Then pour 20cl of a Somnus potion.

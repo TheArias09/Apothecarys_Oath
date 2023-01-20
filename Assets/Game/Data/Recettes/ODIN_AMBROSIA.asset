@@ -21,11 +21,11 @@ MonoBehaviour:
       quality: 0
       states: 
     - data: {fileID: 11400000, guid: ede11d33b7d297e468c52db9c6cff76a, type: 2}
-      quantity: 2
+      quantity: 1
       quality: 0
       states: 
     - data: {fileID: 11400000, guid: 7048c975d7c8b4840b9d0eddee91dcda, type: 2}
-      quantity: 2
+      quantity: 3
       quality: 0
       states: 
     - data: {fileID: 11400000, guid: d1a11673555a0784f906bcbfdf9415a6, type: 2}
@@ -36,5 +36,5 @@ MonoBehaviour:
     recipeInstructions:
     - Pour 10cl of Venusia extract.
     - Then add 2 hydroxyl critals (you know, fight the fire with fire...)
-    - Add 20cl of Vitalis.
+    - Add 30cl of Vitalis.
     - And pour 20cl of fluffy Froth (looks better nah ?)

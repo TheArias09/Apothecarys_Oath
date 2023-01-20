@@ -25,7 +25,7 @@ MonoBehaviour:
       quality: 0
       states: 
     - data: {fileID: 11400000, guid: 56d69206c3eddd242be4782b6e72847b, type: 2}
-      quantity: 2
+      quantity: 3
       quality: 0
       states: 
     - data: {fileID: 11400000, guid: 982fc2afe38cf6c45bc73f1fe00e64fe, type: 2}
@@ -36,5 +36,5 @@ MonoBehaviour:
     recipeInstructions:
     - Pour 20cl of Venusia extract.
     - Extract and add 10cl of toad slime (be creative).
-    - Then pour 20cl of primal sand in the mix.
+    - Then pour 30cl of primal sand in the mix.
     - Finally add a protuding eye UwU.
