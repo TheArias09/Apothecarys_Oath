@@ -322,23 +322,7 @@ PrefabInstance:
     - target: {fileID: 5294065390567794828, guid: 45a4f2bd86587e94f9b51db9fc3f624b,
         type: 3}
       propertyPath: ingredients.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5294065390567794828, guid: 45a4f2bd86587e94f9b51db9fc3f624b,
-        type: 3}
-      propertyPath: ingredients.Array.data[0].data
-      value: 
-      objectReference: {fileID: 11400000, guid: 5eb2c77c6b133f74ba26743c048d0cf1,
-        type: 2}
-    - target: {fileID: 5294065390567794828, guid: 45a4f2bd86587e94f9b51db9fc3f624b,
-        type: 3}
-      propertyPath: ingredients.Array.data[0].quality
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5294065390567794828, guid: 45a4f2bd86587e94f9b51db9fc3f624b,
-        type: 3}
-      propertyPath: ingredients.Array.data[0].quantity
-      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45a4f2bd86587e94f9b51db9fc3f624b, type: 3}
@@ -1610,7 +1594,7 @@ MonoBehaviour:
   firedPage: {fileID: 3246251893210755468}
   timeBetweenClients: 80
   clientStayTime: 180
-  maxClients: 10
+  maxClients: 6
   minSymptoms: 2
   maxSymptoms: 3
   gameStarted: 0
@@ -1860,6 +1844,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: b75ec2979a06b624eaf73325cd5a9f97,
         type: 2}
+    - target: {fileID: 2212504353556948352, guid: d3a3a79a8c174a24ba700f5b6a3dc4b3,
+        type: 3}
+      propertyPath: ingredients.Array.data[0].cures
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2212504353556948352, guid: d3a3a79a8c174a24ba700f5b6a3dc4b3,
         type: 3}
       propertyPath: ingredients.Array.data[0].quantity
@@ -2763,6 +2752,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 56d69206c3eddd242be4782b6e72847b,
         type: 2}
+    - target: {fileID: 5597088858078759950, guid: 404fa7ca0f2af574db20f5c8c33ee2e6,
+        type: 3}
+      propertyPath: ingredients.Array.data[0].cures
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5597088858078759950, guid: 404fa7ca0f2af574db20f5c8c33ee2e6,
         type: 3}
       propertyPath: ingredients.Array.data[0].quantity
@@ -4436,6 +4430,11 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 7806563424418193364, guid: 2c02dd57591b1a4418b5a14d0a7e9cd2,
         type: 3}
+      propertyPath: ingredients.Array.data[0].cures
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806563424418193364, guid: 2c02dd57591b1a4418b5a14d0a7e9cd2,
+        type: 3}
       propertyPath: ingredients.Array.data[0].quantity
       value: 0.75
       objectReference: {fileID: 0}
@@ -5705,6 +5704,11 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 7806563424418193364, guid: 2c02dd57591b1a4418b5a14d0a7e9cd2,
         type: 3}
+      propertyPath: ingredients.Array.data[0].cures
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806563424418193364, guid: 2c02dd57591b1a4418b5a14d0a7e9cd2,
+        type: 3}
       propertyPath: ingredients.Array.data[0].quantity
       value: 0.75
       objectReference: {fileID: 0}
@@ -5909,6 +5913,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f5e35cb29a29af843ad48780551d76c4,
         type: 2}
+    - target: {fileID: 5597088858078759950, guid: 404fa7ca0f2af574db20f5c8c33ee2e6,
+        type: 3}
+      propertyPath: ingredients.Array.data[0].cures
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5597088858078759950, guid: 404fa7ca0f2af574db20f5c8c33ee2e6,
         type: 3}
       propertyPath: ingredients.Array.data[0].quantity
@@ -6559,6 +6568,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 54955293b53b57449ab70af2ed354f1b,
         type: 2}
+    - target: {fileID: 2212504353556948352, guid: d3a3a79a8c174a24ba700f5b6a3dc4b3,
+        type: 3}
+      propertyPath: ingredients.Array.data[0].cures
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2212504353556948352, guid: d3a3a79a8c174a24ba700f5b6a3dc4b3,
         type: 3}
       propertyPath: ingredients.Array.data[0].quantity
@@ -7401,6 +7415,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 73f13c5f213fb2744b6782f31c77f8ac,
         type: 2}
+    - target: {fileID: 2212504353556948352, guid: d3a3a79a8c174a24ba700f5b6a3dc4b3,
+        type: 3}
+      propertyPath: ingredients.Array.data[0].cures
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2212504353556948352, guid: d3a3a79a8c174a24ba700f5b6a3dc4b3,
         type: 3}
       propertyPath: ingredients.Array.data[0].quantity
@@ -8507,6 +8526,11 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 6557832940086024549, guid: b1cab37aa54efa843a22eca4ec995ad5,
         type: 3}
+      propertyPath: ingredients.Array.data[0].cures
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557832940086024549, guid: b1cab37aa54efa843a22eca4ec995ad5,
+        type: 3}
       propertyPath: ingredients.Array.data[0].quantity
       value: 0.75
       objectReference: {fileID: 0}
@@ -9591,27 +9615,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5294065390567794828, guid: 45a4f2bd86587e94f9b51db9fc3f624b,
-        type: 3}
-      propertyPath: ingredients.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5294065390567794828, guid: 45a4f2bd86587e94f9b51db9fc3f624b,
-        type: 3}
-      propertyPath: ingredients.Array.data[0].data
-      value: 
-      objectReference: {fileID: 11400000, guid: 7048c975d7c8b4840b9d0eddee91dcda,
-        type: 2}
-    - target: {fileID: 5294065390567794828, guid: 45a4f2bd86587e94f9b51db9fc3f624b,
-        type: 3}
-      propertyPath: ingredients.Array.data[0].quality
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5294065390567794828, guid: 45a4f2bd86587e94f9b51db9fc3f624b,
-        type: 3}
-      propertyPath: ingredients.Array.data[0].quantity
-      value: 0.25
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45a4f2bd86587e94f9b51db9fc3f624b, type: 3}
 --- !u!4 &1773464665 stripped
@@ -10233,6 +10236,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 5eb2c77c6b133f74ba26743c048d0cf1,
         type: 2}
+    - target: {fileID: 7806563424418193364, guid: 2c02dd57591b1a4418b5a14d0a7e9cd2,
+        type: 3}
+      propertyPath: ingredients.Array.data[0].cures
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7806563424418193364, guid: 2c02dd57591b1a4418b5a14d0a7e9cd2,
         type: 3}
       propertyPath: ingredients.Array.data[0].quantity

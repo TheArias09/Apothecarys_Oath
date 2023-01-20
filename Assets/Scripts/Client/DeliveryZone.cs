@@ -11,7 +11,7 @@ public class DeliveryZone : MonoBehaviour
 
         Ingredient potion = ingredientWrapper.Ingredients[0];
 
-        if (potion.Cures == null || ingredientWrapper.Ingredients.Count != 1)
+        if (potion.Cures == DiseaseName.NONE || ingredientWrapper.Ingredients.Count != 1)
         {
             Debug.Log("Incorrect potion submited");
             return;

@@ -15,7 +15,7 @@ public class Ingredient
     [SerializeField] private IngredientData data;
     [SerializeField] private float quantity;
     [SerializeField, Range(0, 1)] private float quality;
-    [SerializeField] private DiseaseName? cures;
+    [SerializeField] private DiseaseName cures;
 
     [SerializeField] private List<IngredientState> states;
 
@@ -26,9 +26,9 @@ public class Ingredient
     public Color Color { get => data.color; }
     public List<IngredientState> States { get => states; }
 
-    public DiseaseName? Cures { get => cures; set => cures = value; }
+    public DiseaseName Cures { get => cures; set => cures = value; }
 
-    public Ingredient(IngredientData ingData, float quantity, float quality, DiseaseName? disease)
+    public Ingredient(IngredientData ingData, float quantity, float quality, DiseaseName disease)
     {
         this.data = ingData;
         this.quantity = quantity;

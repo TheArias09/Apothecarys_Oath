@@ -107,7 +107,7 @@ public class ClientBehavior : MonoBehaviour
 
     public void ReceivePotion(Ingredient potion)
     {
-        if (potion.Cures != null && potion.Cures == Client.Disease.name)
+        if (potion.Cures != DiseaseName.NONE && potion.Cures == Client.Disease.name)
         {
             GameManager.Instance.AddScore(potion.Quality);
             Leave(true);
