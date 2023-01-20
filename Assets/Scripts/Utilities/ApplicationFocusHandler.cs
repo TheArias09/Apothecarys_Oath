@@ -11,7 +11,7 @@ public class ApplicationFocusHandler : MonoBehaviour
     private float baseTimeScale = 1f;
     private float pauseTimeScale = 0f;
 
-    private void OnApplicationFocus(bool focus)
+    private void OnApplicationPause(bool focus)
     {
         if(focus)
         {
