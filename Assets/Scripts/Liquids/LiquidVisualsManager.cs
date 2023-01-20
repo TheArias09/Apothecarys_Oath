@@ -443,10 +443,14 @@ public class LiquidVisualsManager : MonoBehaviour
             liquidCount -= 1;
         }
         
-        if (Input.GetKeyDown("r")) //r for refresh
+        if (Input.GetKeyDown("s")) //r for refresh
         {
-            Debug.Log("Refresh Liquids");
-            RefreshLiquids();
+            Time.timeScale = 0;
+        }
+        
+        if (Input.GetKeyDown("d")) //r for refresh
+        {
+            Time.timeScale = 1;
         }
         
         /*
