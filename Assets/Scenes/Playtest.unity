@@ -11454,11 +11454,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 12.400002
       objectReference: {fileID: 0}
-    - target: {fileID: 6953000214866137464, guid: 73c7e7291193ba94db64c40200436781,
-        type: 3}
-      propertyPath: m_TargetTexture
-      value: 
-      objectReference: {fileID: 8400000, guid: 120e4b6cfae19ce4dba6baac1d40b1c2, type: 2}
     - target: {fileID: 6998221649831661241, guid: 73c7e7291193ba94db64c40200436781,
         type: 3}
       propertyPath: m_AnchorMax.y
