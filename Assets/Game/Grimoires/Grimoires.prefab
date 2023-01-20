@@ -1548,21 +1548,6 @@ PrefabInstance:
       propertyPath: m_ScaleFactor
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5311736722474765535, guid: 9f16b04137eefe4408ad753f2efcc7a3,
-        type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311736722474765535, guid: 9f16b04137eefe4408ad753f2efcc7a3,
-        type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1024
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311736722474765535, guid: 9f16b04137eefe4408ad753f2efcc7a3,
-        type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1024
-      objectReference: {fileID: 0}
     - target: {fileID: 5428564752297138741, guid: 9f16b04137eefe4408ad753f2efcc7a3,
         type: 3}
       propertyPath: m_RootOrder
