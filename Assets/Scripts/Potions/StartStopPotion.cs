@@ -6,10 +6,8 @@ using UnityEngine;
 public class StartStopPotion : MonoBehaviour
 {
     [SerializeField] private bool start;
-    [SerializeField] private bool stop;
-    [SerializeField] private bool restart;
-    [Space(20)]
     [SerializeField] private float triggerQuantity;
+    [SerializeField] private GameObject uiText;
 
     private IngredientWrapper ingredientWrapper;
 
@@ -27,9 +25,9 @@ public class StartStopPotion : MonoBehaviour
             Debug.Log("Game potion triggered");
 
             if (start) GameManager.Instance.StartGame();
-            else if (restart) GameManager.Instance.Restart();
-            else if (stop) GameManager.Instance.QuitGame();
+            else GameManager.Instance.QuitGame();
 
+            uiText.SetActive(false);
             Destroy(gameObject);
         }
     }
