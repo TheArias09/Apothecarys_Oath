@@ -13,6 +13,8 @@ public class ApplicationFocusHandler : MonoBehaviour
 
     private void OnApplicationPause(bool focus)
     {
+        if (Application.platform != RuntimePlatform.Android) return;
+
         if(focus)
         {
             Resume();
