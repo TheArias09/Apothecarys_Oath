@@ -299,9 +299,9 @@ public class LiquidVisualsManager : MonoBehaviour
         float fresnelPower;
         Color fresnelColor;
         float viscosity;
-        bool isTextured;
-        float noisePower;
-        Color noiseColor;
+        //bool isTextured;
+        //float noisePower;
+        //Color noiseColor;
 
         float previousTotalTrueFill = 0;
 
@@ -362,6 +362,7 @@ public class LiquidVisualsManager : MonoBehaviour
         liquidRendererMaterial.SetFloat("_FresnelPower", fresnelPower);
         liquidRendererMaterial.SetColor("_FresnelColor", fresnelColor);
         
+        /*
         isTextured = Random.Range(0, 2) != 0;
 
         if (isTextured)
@@ -382,6 +383,7 @@ public class LiquidVisualsManager : MonoBehaviour
             liquidRendererMaterial.SetFloat("_NoisePower", noisePower);
             liquidRendererMaterial.SetColor("_NoiseColor", noiseColor);
         }
+        */
 
         liquidVolumes.Add(newLiquidVolume);
         liquids.Add(newLiquid);
@@ -442,17 +444,7 @@ public class LiquidVisualsManager : MonoBehaviour
             RemoveLiquid();
             liquidCount -= 1;
         }
-        
-        if (Input.GetKeyDown("s")) //r for refresh
-        {
-            Time.timeScale = 0;
-        }
-        
-        if (Input.GetKeyDown("d")) //r for refresh
-        {
-            Time.timeScale = 1;
-        }
-        
+
         /*
         if (Input.GetKeyDown("u")) //u for update
         {

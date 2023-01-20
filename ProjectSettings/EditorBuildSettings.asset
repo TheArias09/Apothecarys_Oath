@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Thomas/Object Respawn.unity
     guid: 8b836a3f7ab063645af1430acbb540b1
   - enabled: 1
-    path: Assets/Scenes/Nethos/Exterior added.unity
-    guid: 4b68750628407394aacfec3901c91e2c
-  - enabled: 1
     path: Assets/Scenes/Thomas/Grimoires.unity
     guid: ed43802418a851442b1b475aaa157abe
   m_configObjects:

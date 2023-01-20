@@ -58,9 +58,6 @@
             "m_Id": "bd9a17c81cb54f819337807bdd314c33"
         },
         {
-            "m_Id": "b34b3a0ef81f4e38ac0bf44c7d4b5881"
-        },
-        {
             "m_Id": "bf3abf3b6ac24225b1493f602a4fa3f7"
         },
         {
@@ -164,6 +161,9 @@
         },
         {
             "m_Id": "344a96a7245b493faeb980403be07cad"
+        },
+        {
+            "m_Id": "ad8e2cb6a2e9470da0fabf7a9860dad6"
         }
     ],
     "m_GroupDatas": [
@@ -283,6 +283,20 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
+                    "m_Id": "1f73f4369ee4478f9af201655d188680"
+                },
+                "m_SlotId": 2
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "bf3abf3b6ac24225b1493f602a4fa3f7"
+                },
+                "m_SlotId": 1
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
                     "m_Id": "2c5966fa4f434ae687b4dd07f483814c"
                 },
                 "m_SlotId": 2
@@ -320,20 +334,6 @@
                     "m_Id": "1f73f4369ee4478f9af201655d188680"
                 },
                 "m_SlotId": 1
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "344a96a7245b493faeb980403be07cad"
-                },
-                "m_SlotId": 3
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "bf3abf3b6ac24225b1493f602a4fa3f7"
-                },
-                "m_SlotId": 2
             }
         },
         {
@@ -563,20 +563,6 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
-                    "m_Id": "a80da8c272fc450091ef835c6c3fa2e5"
-                },
-                "m_SlotId": 3
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "bf3abf3b6ac24225b1493f602a4fa3f7"
-                },
-                "m_SlotId": 1
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
                     "m_Id": "a8f9d82b6aa94ea896c1c17dbbeeba0f"
                 },
                 "m_SlotId": 2
@@ -654,6 +640,20 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "344a96a7245b493faeb980403be07cad"
+                },
+                "m_SlotId": 2
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "e48ff54494ad4841964c7b98a14bd84e"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "bf3abf3b6ac24225b1493f602a4fa3f7"
                 },
                 "m_SlotId": 2
             }
@@ -759,8 +759,8 @@
     ],
     "m_VertexContext": {
         "m_Position": {
-            "x": 348.9999694824219,
-            "y": -157.99998474121095
+            "x": 349.60003662109377,
+            "y": -156.8000030517578
         },
         "m_Blocks": [
             {
@@ -787,7 +787,7 @@
                 "m_Id": "bd9a17c81cb54f819337807bdd314c33"
             },
             {
-                "m_Id": "b34b3a0ef81f4e38ac0bf44c7d4b5881"
+                "m_Id": "ad8e2cb6a2e9470da0fabf7a9860dad6"
             }
         ]
     },
@@ -799,7 +799,7 @@
         "preventRotation": false
     },
     "m_Path": "Shader Graphs",
-    "m_GraphPrecision": 1,
+    "m_GraphPrecision": 2,
     "m_PreviewMode": 2,
     "m_OutputNode": {
         "m_Id": ""
@@ -1416,10 +1416,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -784.7998657226563,
-            "y": -1329.5999755859375,
-            "width": 207.99993896484376,
-            "height": 301.5999755859375
+            "x": -784.7999877929688,
+            "y": -1458.400146484375,
+            "width": 208.0,
+            "height": 301.60009765625
         }
     },
     "m_Slots": [
@@ -2212,21 +2212,6 @@
     },
     "isMainColor": false,
     "m_ColorMode": 0
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "53956890acec4b20a7d8d26439c0f574",
-    "m_Id": 0,
-    "m_DisplayName": "Alpha Clip Threshold",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "AlphaClipThreshold",
-    "m_StageCapability": 2,
-    "m_Value": 0.5,
-    "m_DefaultValue": 0.5,
-    "m_Labels": []
 }
 
 {
@@ -3354,10 +3339,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -520.7999267578125,
-            "y": -1120.0,
-            "width": 208.0001220703125,
-            "height": 325.5999755859375
+            "x": -543.9999389648438,
+            "y": -1357.60009765625,
+            "width": 208.0,
+            "height": 325.60009765625
         }
     },
     "m_Slots": [
@@ -3535,7 +3520,7 @@
 {
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.BlockNode",
-    "m_ObjectId": "b34b3a0ef81f4e38ac0bf44c7d4b5881",
+    "m_ObjectId": "ad8e2cb6a2e9470da0fabf7a9860dad6",
     "m_Group": {
         "m_Id": ""
     },
@@ -3552,7 +3537,7 @@
     },
     "m_Slots": [
         {
-            "m_Id": "53956890acec4b20a7d8d26439c0f574"
+            "m_Id": "f3283126a72947d09f9c9fcc721d38ba"
         }
     ],
     "synonyms": [],
@@ -4623,10 +4608,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -967.2000122070313,
-            "y": -636.7999877929688,
+            "x": -968.0000610351563,
+            "y": -719.2000732421875,
             "width": 145.60003662109376,
-            "height": 33.60003662109375
+            "height": 33.5999755859375
         }
     },
     "m_Slots": [
@@ -4812,6 +4797,21 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "f3283126a72947d09f9c9fcc721d38ba",
+    "m_Id": 0,
+    "m_DisplayName": "Alpha Clip Threshold",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "AlphaClipThreshold",
+    "m_StageCapability": 2,
+    "m_Value": 0.5,
+    "m_DefaultValue": 0.5,
+    "m_Labels": []
 }
 
 {

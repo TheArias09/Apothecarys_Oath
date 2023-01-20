@@ -90,7 +90,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Fill: 0.043
+    - _Fill: -0.01
     - _FillV4: -0.1
     - _FresnelPower: 5
     - _FresnelPowerV4: 5
@@ -124,7 +124,7 @@ Material:
     - _LiquidColorV4: {r: 0, g: 0, b: 0, a: 0}
     - _NoiseColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _SurfaceColor: {r: 0.42745098, g: 0.42745098, b: 0.42745098, a: 0}
+    - _SurfaceColor: {r: 1, g: 1, b: 1, a: 0}
     - _SurfaceColorV4: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &694876380317209076
