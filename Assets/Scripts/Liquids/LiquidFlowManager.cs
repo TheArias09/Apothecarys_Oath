@@ -170,7 +170,13 @@ public class LiquidFlowManager : MonoBehaviour
         Vector3 startPoint = potionFlowing.GetFlowPoint();
         Ray ray = new Ray(startPoint, Vector3.down);
         
-        Physics.Raycast(ray, out RaycastHit hit,5 );
+        bool res = Physics.Raycast(ray, out RaycastHit hit,5 );
+
+        if (!res)
+        {
+            return 0;
+        }
+        
         return hit.point.y;
 
     }
@@ -188,11 +194,18 @@ public class LiquidFlowManager : MonoBehaviour
         Vector3 startPoint = potionFlowing.GetFlowPoint();
         Ray ray = new Ray(startPoint, Vector3.down);
         
-        Physics.Raycast(ray, out RaycastHit hit,5 );
+        bool res = Physics.Raycast(ray, out RaycastHit hit,5 );
+        
         if (hit.transform.gameObject.layer == 11)
         {
             return new Vector3(42000, 42000, 42000);
         }
+
+        if (!res)
+        {
+            return new Vector3(startPoint.x, 0, startPoint.z);
+        }
+        
         return hit.point;
     }
 
