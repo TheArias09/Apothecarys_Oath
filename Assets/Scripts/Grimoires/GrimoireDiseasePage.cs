@@ -50,7 +50,7 @@ public class GrimoireDiseasePage : MonoBehaviour
             descriptionText += "• " + data.disease.disease.symptoms[data.disease.disease.symptoms.Count - 1].ToString();
 
             diseaseDescription.text = descriptionText;
-            potionDescription.text = "Treatment : \n\n  " + data.curePotion.name;
+            potionDescription.text = "Treatment : \n" + data.curePotion.name;
             diseaseName.text = data.name;
         }
     }
