@@ -12,6 +12,10 @@ public class RenewableObjectSpawner : MonoBehaviour
     [SerializeField] float maxTimeBetweenSpawn = .1f;
     private float betweenSpawnClock = 0f;
 
+    //NOTE: Avoid editor's hierarchy clutter.
+    [SerializeField] GameObjectReference parentReference;
+
+
     private void Update()
     {
         IncreaseClock();
@@ -26,7 +30,7 @@ public class RenewableObjectSpawner : MonoBehaviour
             betweenSpawnClock = 0f;
 
             var position = RandomPointInBounds(box.bounds);
-            var objectInstance = Instantiate(objectPrefab, position, Quaternion.Euler(0, Random.Range(0, 360f), 0));
+            var objectInstance = Instantiate(objectPrefab, position, Quaternion.Euler(0, Random.Range(0, 360f), 0), parentReference.gameObject.transform);
 
             var respawn = objectInstance.GetComponentInChildren<Respawner>();
             if(respawn)

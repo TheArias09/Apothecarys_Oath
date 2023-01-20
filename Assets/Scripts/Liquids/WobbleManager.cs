@@ -51,7 +51,7 @@ public class WobbleManager : MonoBehaviour
         balancedRecovery = viscocityFactor * Recovery;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         liquidCount = liquidVisualsManager.LiquidCount;
         totalTrueFill = liquidVisualsManager.FindTotalTrueFill();

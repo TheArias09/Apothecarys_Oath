@@ -42,7 +42,7 @@ public class LiquidSurfaceManager : MonoBehaviour
         rotationX = 0f;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         SetPosition();
         SetRotation();

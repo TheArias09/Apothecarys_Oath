@@ -62,6 +62,8 @@ namespace Recipients
 
         public Vector3 GetFlowPoint()
         {
+            if (flowOnGrab) return transform.position;
+
             var xProjection = Vector3.Dot(bottleneckCenterPoint.right, Vector3.down);
             var zProjection = Vector3.Dot(bottleneckCenterPoint.forward, Vector3.down);
 
@@ -139,7 +141,7 @@ namespace Recipients
 
             CurrentDeltaQuantity = deltaQuantity;
 
-            var hits = Physics.SphereCastAll(flowOnGrab ? transform.position : GetFlowPoint(), sphereCastRadius, Vector3.down, maxSphereCastDistance, sphereCastLayerMask);
+            var hits = Physics.SphereCastAll(GetFlowPoint(), sphereCastRadius, Vector3.down, maxSphereCastDistance, sphereCastLayerMask);
 
             foreach (var hit in hits)
             {
@@ -174,7 +176,7 @@ namespace Recipients
 
         public GameObject GetTargetPotion()
         {
-            var hits = Physics.SphereCastAll(flowOnGrab ? transform.position : GetFlowPoint(), sphereCastRadius, Vector3.down, maxSphereCastDistance, sphereCastLayerMask);
+            var hits = Physics.SphereCastAll(GetFlowPoint(), sphereCastRadius, Vector3.down, maxSphereCastDistance, sphereCastLayerMask);
 
             foreach (var hit in hits)
             {
