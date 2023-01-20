@@ -231,11 +231,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8562516565342076946, guid: a70d3fdd413f23c4d82a2db3238c4935,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 30.099998
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70d3fdd413f23c4d82a2db3238c4935, type: 3}
 --- !u!114 &1571693897886633736 stripped
@@ -390,11 +385,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Recipe Part (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8562516565342076946, guid: a70d3fdd413f23c4d82a2db3238c4935,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 30.099998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70d3fdd413f23c4d82a2db3238c4935, type: 3}
@@ -561,11 +551,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Shake !
-      objectReference: {fileID: 0}
-    - target: {fileID: 8562516565342076946, guid: a70d3fdd413f23c4d82a2db3238c4935,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 30.099998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70d3fdd413f23c4d82a2db3238c4935, type: 3}
@@ -1096,11 +1081,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Recipe Part (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 8562516565342076946, guid: a70d3fdd413f23c4d82a2db3238c4935,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 30.099998
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70d3fdd413f23c4d82a2db3238c4935, type: 3}
 --- !u!224 &2660014832918821960 stripped
@@ -1256,11 +1236,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Recipe Part
       objectReference: {fileID: 0}
-    - target: {fileID: 8562516565342076946, guid: a70d3fdd413f23c4d82a2db3238c4935,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 30.099998
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70d3fdd413f23c4d82a2db3238c4935, type: 3}
 --- !u!114 &2856983019981361086 stripped
@@ -1415,11 +1390,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Recipe Part (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8562516565342076946, guid: a70d3fdd413f23c4d82a2db3238c4935,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 30.099998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70d3fdd413f23c4d82a2db3238c4935, type: 3}

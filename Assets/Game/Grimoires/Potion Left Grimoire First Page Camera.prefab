@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: 2390432345651276644, guid: 9f16b04137eefe4408ad753f2efcc7a3,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 9
+      value: 13.7
       objectReference: {fileID: 0}
     - target: {fileID: 3766505386770774267, guid: 9f16b04137eefe4408ad753f2efcc7a3,
         type: 3}
@@ -46,7 +46,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: "Lorem ipsum en bombe yohoooo derri\xE8re les feuillages cette potion
-        c'est une dingzzz"
+        c'est une dingzzzmbe yohoooo derri\xE8re les"
       objectReference: {fileID: 0}
     - target: {fileID: 5428564752297138741, guid: 9f16b04137eefe4408ad753f2efcc7a3,
         type: 3}
@@ -131,12 +131,12 @@ PrefabInstance:
     - target: {fileID: 6889961187310198673, guid: 9f16b04137eefe4408ad753f2efcc7a3,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 182.035
+      value: 163.167
       objectReference: {fileID: 0}
     - target: {fileID: 6889961187310198673, guid: 9f16b04137eefe4408ad753f2efcc7a3,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 51.382
+      value: 63.8
       objectReference: {fileID: 0}
     - target: {fileID: 6889961187310198673, guid: 9f16b04137eefe4408ad753f2efcc7a3,
         type: 3}
