@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     private int currentClients = 0;
     private int clientNumber = 0;
     private int clientsHealed = 0;
+    private int lastDisease = -1;
 
     public static GameManager Instance;
     public bool GameStarted { get => gameStarted; }
@@ -68,7 +69,12 @@ public class GameManager : MonoBehaviour
     {
         timer = timeBetweenClients;
 
-        int random = Random.Range(0, diseaseBook.diseases.Count);
+        //Never pick twice the same disease in a row
+        int random;
+        do random = Random.Range(0, diseaseBook.diseases.Count);
+        while (random == lastDisease);
+        lastDisease = random;
+
         int symptoms = Random.Range(minSymptoms, maxSymptoms + 1);
 
         Client client = new(clientNumber.ToString(), diseaseBook.diseases[random].disease, symptoms);

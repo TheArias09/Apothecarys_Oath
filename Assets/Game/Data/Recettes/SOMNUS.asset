@@ -17,14 +17,14 @@ MonoBehaviour:
     cures: 3
     ingredients:
     - data: {fileID: 11400000, guid: 59c3aec5fb4444c479e5d6848b2c37c7, type: 2}
-      quantity: 1
+      quantity: 4
       quality: 0
       states: 
     - data: {fileID: 11400000, guid: 54955293b53b57449ab70af2ed354f1b, type: 2}
-      quantity: 1
+      quantity: 4
       quality: 0
       states: 
     states: 
     recipeInstructions:
-    - Pour 35cl of Ghoul tears.
-    - Add 35cl of wonder sirup.
+    - Pour 40cl of Ghoul tears.
+    - Add 40cl of wonder sirup.
