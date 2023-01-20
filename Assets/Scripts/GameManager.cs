@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
 
         timer -= Time.deltaTime;
 
-        if (timer <= 0) CreateClient();
+        if (timer <= 0 || currentClients == 0) CreateClient();
     }
 
     private void CreateClient()
@@ -119,6 +119,7 @@ public class GameManager : MonoBehaviour
     {
         clientsHealed++;
         score += (int)(value * scoreMultiplier);
+        Debug.Log("score added: " + value);
         scoreDisplay.UpdateScore(score);
     }
 

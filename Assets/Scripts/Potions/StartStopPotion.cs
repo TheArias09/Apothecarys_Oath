@@ -5,11 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(IngredientWrapper))]
 public class StartStopPotion : MonoBehaviour
 {
+    [SerializeField] private bool start;
+    [SerializeField] private bool stop;
+    [SerializeField] private bool restart;
+    [Space(20)]
     [SerializeField] private float triggerQuantity;
-    [Space(10)]
-    [SerializeField] private IngredientData startIngredient;
-    [SerializeField] private IngredientData restartIngredient;
-    [SerializeField] private IngredientData quitIngredient;
 
     private IngredientWrapper ingredientWrapper;
 
@@ -20,19 +20,17 @@ public class StartStopPotion : MonoBehaviour
 
     void Update()
     {
-        if (ingredientWrapper.Ingredients.Count < 1) return;
-
         Ingredient ing = ingredientWrapper.Ingredients[0];
 
-        if (ing.Quantity >= triggerQuantity)
+        if (ing.Quantity <= triggerQuantity)
         {
             Debug.Log("Game potion triggered");
 
-            if (ing.Data == startIngredient) GameManager.Instance.StartGame();
-            else if (ing.Data == restartIngredient) GameManager.Instance.Restart();
-            else if (ing.Data == quitIngredient) GameManager.Instance.QuitGame();
+            if (start) GameManager.Instance.StartGame();
+            else if (restart) GameManager.Instance.Restart();
+            else if (stop) GameManager.Instance.QuitGame();
 
-            ingredientWrapper.Empty();
+            Destroy(gameObject);
         }
     }
 }
