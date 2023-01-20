@@ -4888,7 +4888,7 @@ MonoBehaviour:
   liquidRenderersMaterials: []
   liquidVolume: {fileID: 6778700540804885475, guid: c1b9dbc4f9db033449807fad77e758c1,
     type: 3}
-  recipientQuantity: 1.3
+  recipientQuantity: 1
   liquidCount: 0
   displayFillCurve:
     serializedVersion: 2
@@ -5043,7 +5043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02306037b2ed42e438ee35e480016fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recipientQuantity: 1.3
+  recipientQuantity: 1
   infiniteSource: 0
   ingredients: []
   states: 
