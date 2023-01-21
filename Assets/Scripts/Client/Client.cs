@@ -34,4 +34,10 @@ public class Client
             Symptoms.Add(s);
         }
     }
+
+    public void Cure()
+    {
+        Disease = null;
+        Symptoms.Clear();
+    }
 }

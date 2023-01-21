@@ -101,11 +101,12 @@ public class GameManager : MonoBehaviour
     {
         foreach (Transform child in clientsParent)
         {
+            if (!child.gameObject.activeInHierarchy) continue;
+
             child.TryGetComponent(out ClientBehavior behavior);
             if (behavior.Client.Disease.name == potion.Cures)
             {
                 behavior.ReceivePotion(potion);
-                Debug.Log("Good Potion");
                 return;
             }
         }
