@@ -17,7 +17,9 @@ public class DeliveryZone : MonoBehaviour
             return;
         }
 
-        GameManager.Instance.GivePotion(potion);
+        bool delivered = GameManager.Instance.GivePotion(potion);
+        if (!delivered) return;
+        
         ingredientWrapper.Empty();
 
         if (ingredientWrapper.Respawner)

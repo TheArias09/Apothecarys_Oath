@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
         return rankTitles[index];
     }
 
-    public void GivePotion(Ingredient potion)
+    public bool GivePotion(Ingredient potion)
     {
         foreach (Transform child in clientsParent)
         {
@@ -107,11 +107,12 @@ public class GameManager : MonoBehaviour
             if (behavior.Client.Disease.name == potion.Cures)
             {
                 behavior.ReceivePotion(potion);
-                return;
+                return true;
             }
         }
 
         Debug.Log("Potion does not correspond to any client");
+        return false;
     }
 
     public void ClientLeave(int position)

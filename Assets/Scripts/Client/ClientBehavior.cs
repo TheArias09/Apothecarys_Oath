@@ -113,7 +113,6 @@ public class ClientBehavior : MonoBehaviour
             Client.Cure();
             Leave(true);
         }
-        else Leave(false);
     }
 
     private void Leave(bool success)
