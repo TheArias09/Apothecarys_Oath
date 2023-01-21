@@ -7,7 +7,7 @@ public class DeliveryZone : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         collision.gameObject.TryGetComponent<IngredientWrapper>(out var ingredientWrapper);
-        if (ingredientWrapper == null) return;
+        if (ingredientWrapper == null || ingredientWrapper.Ingredients.Count == 0) return;
 
         Ingredient potion = ingredientWrapper.Ingredients[0];
 

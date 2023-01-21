@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     {
         maxTickets = clientsParent.childCount;
 
-        if (ranks.Count() != rankTitles.Count()) 
+        if (ranks.Count() +1 != rankTitles.Count()) 
             Debug.LogWarning("There should be an equal amount of ranks and rank titles.");
     }
 
@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
     private string GetRank()
     {
         int index = 0;
-        while (ranks[index] < score) index++;
+        while (ranks[index] < score && index < ranks.Length -1) index++;
         return rankTitles[index];
     }
 
@@ -155,12 +155,14 @@ public class GameManager : MonoBehaviour
         if (win)
         {
             winPage.SetActive(true);
+            winPage.GetComponentInChildren<Pouf>().MakePouf();
             winPage.GetComponent<WinningScroll>().WinDisplay(clientsHealed, score, rank);
         }
         else
         {
             firedPage.SetActive(true);
-            winPage.GetComponent<WinningScroll>().FiredDisplay(score, rank);
+            firedPage.GetComponentInChildren<Pouf>().MakePouf();
+            firedPage.GetComponent<WinningScroll>().FiredDisplay(score, rank);
         }
 
         foreach (Transform child in clientsParent) child.gameObject.SetActive(false);
