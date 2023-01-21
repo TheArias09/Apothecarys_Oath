@@ -9993,7 +9993,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1845532324}
-  - component: {fileID: 1845532325}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -10020,33 +10019,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1845532325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845532323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d0b45e316f0b7f449903ed6fdf39778, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreDisplay: {fileID: 0}
-  clientsParent: {fileID: 0}
-  diseaseBook: {fileID: 0}
-  winPage: {fileID: 0}
-  firedPage: {fileID: 0}
-  timeBetweenClients: 60
-  clientStayTime: 120
-  maxClients: 6
-  minSymptoms: 2
-  maxSymptoms: 3
-  gameStarted: 0
-  scoreMultiplier: 5
-  maxErrors: 3
-  ranks: 
-  rankTitles: []
 --- !u!224 &1849043433 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2692404475848444291, guid: ea46fe4f51b98654ba1394d4d3598052,
