@@ -1501,7 +1501,7 @@ MonoBehaviour:
   clientStayTime: 180
   maxClients: 6
   minSymptoms: 2
-  maxSymptoms: 3
+  maxSymptoms: 2
   gameStarted: 0
   scoreMultiplier: 50
   maxErrors: 3
