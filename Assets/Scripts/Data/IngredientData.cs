@@ -12,4 +12,7 @@ public class IngredientData : ScriptableObject
     [Space(10)]
     public Sprite symbol;
     public string description;
+    public GameObject continuousEffect;
+    public GameObject mixEffect;
+    public GameObject deliveryEffect;
 }

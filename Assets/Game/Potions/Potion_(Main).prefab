@@ -4767,6 +4767,7 @@ GameObject:
   - component: {fileID: 8545980648741706361}
   - component: {fileID: 2379327684039861390}
   - component: {fileID: 7465097533370888778}
+  - component: {fileID: -2579553934737380625}
   m_Layer: 11
   m_Name: Potion_(Main)
   m_TagString: Untagged
@@ -5252,6 +5253,18 @@ MonoBehaviour:
   mixCompletionDecreaseSpeed: 0.5
   mixCompletionThreshold: 1
   mixCompletion: 0
+--- !u!114 &-2579553934737380625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3346590250814863891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f735ad6b3f3dd6646abfe0c8b5b80d10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3683797719960888494
 GameObject:
   m_ObjectHideFlags: 0
@@ -9973,7 +9986,7 @@ MonoBehaviour:
           m_StringArgument: Respawn
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3579064945937465515}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -10159,12 +10172,6 @@ PrefabInstance:
 --- !u!4 &3579064945937465513 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4534354224331550982, guid: b07e20aa7930ea24b99ca6473edb2fbf,
-    type: 3}
-  m_PrefabInstance: {fileID: 1100610862675472815}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &3579064945937465515 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4534354224331550980, guid: b07e20aa7930ea24b99ca6473edb2fbf,
     type: 3}
   m_PrefabInstance: {fileID: 1100610862675472815}
   m_PrefabAsset: {fileID: 0}

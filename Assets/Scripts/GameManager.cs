@@ -20,11 +20,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxClients = 10;
     [SerializeField] private int minSymptoms = 2;
     [SerializeField] private int maxSymptoms = 3;
+    [SerializeField] private float minPotionQty = 0.4f;
+    [SerializeField] private float maxPotionQty = 1f;
 
     [Header("Parameters")]
     [SerializeField] private bool gameStarted = false;
-    [SerializeField] private float scoreMultiplier = 5;
     [SerializeField] private int maxErrors = 3;
+    [SerializeField] private float scoreMultiplier = 5;
+    [Space(10)]
+    [SerializeField] private float speedMultiplier = 2;
+    [SerializeField] private float minSpeedBonus = 0.5f;
+    [SerializeField] private float maxSpeedBonus = 1.5f;
     [Space(10)]
     [SerializeField] private int[] ranks;
     [SerializeField] private string[] rankTitles;
@@ -52,7 +58,7 @@ public class GameManager : MonoBehaviour
     {
         maxTickets = clientsParent.childCount;
 
-        if (ranks.Count() != rankTitles.Count()) 
+        if (ranks.Count() +1 != rankTitles.Count()) 
             Debug.LogWarning("There should be an equal amount of ranks and rank titles.");
     }
 
@@ -76,8 +82,9 @@ public class GameManager : MonoBehaviour
         lastDisease = random;
 
         int symptoms = Random.Range(minSymptoms, maxSymptoms + 1);
+        float potionQty = Random.Range(minPotionQty, maxPotionQty);
 
-        Client client = new(clientNumber.ToString(), diseaseBook.diseases[random].disease, symptoms);
+        Client client = new((clientNumber+1).ToString(), diseaseBook.diseases[random].disease, symptoms, potionQty);
         Transform clientObject = clientsParent.GetChild(clientNumber % maxTickets);
         ClientBehavior behavior = clientObject.GetComponent<ClientBehavior>();
 
@@ -93,24 +100,26 @@ public class GameManager : MonoBehaviour
     private string GetRank()
     {
         int index = 0;
-        while (ranks[index] < score) index++;
+        while (ranks[index] < score && index < ranks.Length -1) index++;
         return rankTitles[index];
     }
 
-    public void GivePotion(Ingredient potion)
+    public bool GivePotion(Ingredient potion)
     {
         foreach (Transform child in clientsParent)
         {
+            if (!child.gameObject.activeInHierarchy) continue;
+
             child.TryGetComponent(out ClientBehavior behavior);
             if (behavior.Client.Disease.name == potion.Cures)
             {
                 behavior.ReceivePotion(potion);
-                Debug.Log("Good Potion");
-                return;
+                return true;
             }
         }
 
         Debug.Log("Potion does not correspond to any client");
+        return false;
     }
 
     public void ClientLeave(int position)
@@ -121,12 +130,17 @@ public class GameManager : MonoBehaviour
         if (clientNumber >= maxClients) GameOver(true);
     }
 
-    public void AddScore(float value)
+    public float AddScore(float quality, float quantity, float speed)
     {
         clientsHealed++;
-        score += (int)(value * scoreMultiplier);
-        Debug.Log("score added: " + value);
+
+        float speedBonus = Mathf.Clamp(speed * speedMultiplier, minSpeedBonus, maxSpeedBonus);
+        int value = (int)(quality * quantity * speedBonus * scoreMultiplier);
+        score += value;
+
+        Debug.Log("Potion scores: Qual=" + quality + ", Quant=" + quantity + ", Speed=" + speedBonus);
         scoreDisplay.UpdateScore(score);
+        return value;
     }
 
     public void AddError()
@@ -153,12 +167,14 @@ public class GameManager : MonoBehaviour
         if (win)
         {
             winPage.SetActive(true);
+            winPage.GetComponentInChildren<Pouf>().MakePouf();
             winPage.GetComponent<WinningScroll>().WinDisplay(clientsHealed, score, rank);
         }
         else
         {
             firedPage.SetActive(true);
-            winPage.GetComponent<WinningScroll>().FiredDisplay(score, rank);
+            firedPage.GetComponentInChildren<Pouf>().MakePouf();
+            firedPage.GetComponent<WinningScroll>().FiredDisplay(score, rank);
         }
 
         foreach (Transform child in clientsParent) child.gameObject.SetActive(false);

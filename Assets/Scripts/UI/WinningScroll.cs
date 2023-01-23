@@ -10,7 +10,7 @@ public class WinningScroll : MonoBehaviour
 
     public void WinDisplay(int clientsHealed, int score, string rank)
     {
-        text.text = "You healed" + clientsHealed + "clients\n\nFinal score: " + score;
+        text.text = "You healed " + clientsHealed + " clients\n\nFinal score: " + score;
         rankText.text = rank;
     }
 

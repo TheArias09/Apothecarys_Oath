@@ -11,11 +11,13 @@ public class Client
     public string Name { get; private set; }
     public Disease Disease { get; private set; }
     public List<Symptom> Symptoms { get; private set; }
+    public float DesiredQty { get; private set; }
 
-    public Client(string name, Disease disease, int symptoms)
+    public Client(string name, Disease disease, int symptoms, float quantity)
     {
         Name = name;
         Disease = disease;
+        DesiredQty = quantity;
         Symptoms = new();
         AddSymptoms(symptoms);
     }
@@ -33,5 +35,11 @@ public class Client
             symptomsCopy.RemoveAt(rand);
             Symptoms.Add(s);
         }
+    }
+
+    public void Cure()
+    {
+        Disease = null;
+        Symptoms.Clear();
     }
 }

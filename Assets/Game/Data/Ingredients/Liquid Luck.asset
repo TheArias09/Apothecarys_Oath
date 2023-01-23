@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientName: Liquid luck
   color: {r: 0.35884655, g: 0.754717, b: 0.5299979, a: 1}
-  fresnelPower: 0
-  viscosity: 0
+  fresnelPower: 1
+  viscosity: 1
   symbol: {fileID: 21300000, guid: 10ae895f58fa5445fae58b4d1ab24995, type: 3}
   description: "Far less cumbersome than all the lucky charms you might have\u2026"
