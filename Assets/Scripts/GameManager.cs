@@ -20,11 +20,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxClients = 10;
     [SerializeField] private int minSymptoms = 2;
     [SerializeField] private int maxSymptoms = 3;
+    [SerializeField] private float minPotionQty = 0.4f;
+    [SerializeField] private float maxPotionQty = 1f;
 
     [Header("Parameters")]
     [SerializeField] private bool gameStarted = false;
-    [SerializeField] private float scoreMultiplier = 5;
     [SerializeField] private int maxErrors = 3;
+    [SerializeField] private float scoreMultiplier = 5;
+    [Space(10)]
+    [SerializeField] private float speedMultiplier = 2;
+    [SerializeField] private float minSpeedBonus = 0.5f;
+    [SerializeField] private float maxSpeedBonus = 1.5f;
     [Space(10)]
     [SerializeField] private int[] ranks;
     [SerializeField] private string[] rankTitles;
@@ -76,8 +82,9 @@ public class GameManager : MonoBehaviour
         lastDisease = random;
 
         int symptoms = Random.Range(minSymptoms, maxSymptoms + 1);
+        float potionQty = Random.Range(minPotionQty, maxPotionQty);
 
-        Client client = new((clientNumber+1).ToString(), diseaseBook.diseases[random].disease, symptoms);
+        Client client = new((clientNumber+1).ToString(), diseaseBook.diseases[random].disease, symptoms, potionQty);
         Transform clientObject = clientsParent.GetChild(clientNumber % maxTickets);
         ClientBehavior behavior = clientObject.GetComponent<ClientBehavior>();
 
@@ -123,12 +130,17 @@ public class GameManager : MonoBehaviour
         if (clientNumber >= maxClients) GameOver(true);
     }
 
-    public void AddScore(float value)
+    public float AddScore(float quality, float quantity, float speed)
     {
         clientsHealed++;
-        score += (int)(value * scoreMultiplier);
-        Debug.Log("score added: " + value);
+
+        float speedBonus = Mathf.Clamp(speed * speedMultiplier, minSpeedBonus, maxSpeedBonus);
+        int value = (int)(quality * quantity * speedBonus * scoreMultiplier);
+        score += value;
+
+        Debug.Log("Potion scores: Qual=" + quality + ", Quant=" + quantity + ", Speed=" + speedBonus);
         scoreDisplay.UpdateScore(score);
+        return value;
     }
 
     public void AddError()
