@@ -4767,6 +4767,7 @@ GameObject:
   - component: {fileID: 8545980648741706361}
   - component: {fileID: 2379327684039861390}
   - component: {fileID: 7465097533370888778}
+  - component: {fileID: -2579553934737380625}
   m_Layer: 11
   m_Name: Potion_(Main)
   m_TagString: Untagged
@@ -5252,6 +5253,18 @@ MonoBehaviour:
   mixCompletionDecreaseSpeed: 0.5
   mixCompletionThreshold: 1
   mixCompletion: 0
+--- !u!114 &-2579553934737380625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3346590250814863891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f735ad6b3f3dd6646abfe0c8b5b80d10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3683797719960888494
 GameObject:
   m_ObjectHideFlags: 0

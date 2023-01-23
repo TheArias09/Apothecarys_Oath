@@ -216,7 +216,7 @@ public class LiquidVisualsManager : MonoBehaviour
         return finalAngle;
     }
 
-    public float FindSplashSize()
+    public float FindInsideScale() //Useful for splash and effects
     {
         return splashSizeCurve.Evaluate(FindTotalTrueFill()) * transform.localScale.x / baseScale;
     }

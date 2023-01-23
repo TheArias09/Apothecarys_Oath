@@ -236,7 +236,7 @@ public class LiquidFlowManager : MonoBehaviour
     {
         if (targetPotionExists)
         {
-            return targetPotionLVM.FindSplashSize();
+            return targetPotionLVM.FindInsideScale();
         }
         return 0.004f;
     }
