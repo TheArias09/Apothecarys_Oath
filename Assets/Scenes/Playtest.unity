@@ -4965,11 +4965,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 537477452}
     m_Modifications:
+    - target: {fileID: 1169178845218808486, guid: 90036f5834e97754db4938cbc8405790,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.276
+      objectReference: {fileID: 0}
     - target: {fileID: 1169178845218808487, guid: 90036f5834e97754db4938cbc8405790,
         type: 3}
       propertyPath: maxCount
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1169178845218808487, guid: 90036f5834e97754db4938cbc8405790,
+        type: 3}
+      propertyPath: objectPrefab
+      value: 
+      objectReference: {fileID: 7035844459464392702, guid: 60b06768cff4afd418df8ec3c1353fac,
+        type: 3}
     - target: {fileID: 1169178845218808487, guid: 90036f5834e97754db4938cbc8405790,
         type: 3}
       propertyPath: parentReference
@@ -5049,13 +5060,24 @@ PrefabInstance:
     - target: {fileID: 1169178846743100844, guid: 90036f5834e97754db4938cbc8405790,
         type: 3}
       propertyPath: m_Name
-      value: Small Box (3)
+      value: Bezoar Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342987016717963103, guid: 90036f5834e97754db4938cbc8405790,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.35
       objectReference: {fileID: 0}
     - target: {fileID: 6815780886093099563, guid: 90036f5834e97754db4938cbc8405790,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6815780886147236032, guid: 90036f5834e97754db4938cbc8405790,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 12366419ecf3940ab88711be10e52db4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90036f5834e97754db4938cbc8405790, type: 3}
 --- !u!1001 &766637285
@@ -6115,7 +6137,7 @@ PrefabInstance:
     - target: {fileID: 1169178846743100832, guid: 90036f5834e97754db4938cbc8405790,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.10166668
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 1169178846743100832, guid: 90036f5834e97754db4938cbc8405790,
         type: 3}
