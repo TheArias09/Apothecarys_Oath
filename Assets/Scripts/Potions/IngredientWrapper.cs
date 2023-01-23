@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using UnityEngine;
 
 public class IngredientWrapper : MonoBehaviour
@@ -82,18 +83,20 @@ public class IngredientWrapper : MonoBehaviour
     public List<Ingredient> Pour(float deltaQty)
     {
         SetTotalQty();
-        if (deltaQty > quantity) deltaQty = quantity;
         if (quantity <= 0) return null;
 
         List<Ingredient> pouredIngredients = new();
+        float removedQty = 0;
 
-        foreach (var ing in ingredients)
+        if (deltaQty > quantity) deltaQty = quantity;
+        
+        for (int i=0; i < ingredients.Count && removedQty < deltaQty; i++)
         {
-            float removedQty = Mathf.Min(ing.Quantity, deltaQty * ing.Quantity / quantity);
+            Ingredient ing = ingredients[i];
+            removedQty += Mathf.Min(ing.Quantity, deltaQty);
+            
             if (!infiniteSource) ing.Quantity -= removedQty;
-
-            Ingredient pouredIngredient = new (ing.Data, removedQty, ing.Quality, ing.Cures);
-            pouredIngredients.Add(pouredIngredient);
+            pouredIngredients.Add(new(ing.Data, removedQty, ing.Quality, ing.Cures));
         }
 
         ingredients.RemoveAll(ing => ing.Quantity == 0);
