@@ -109,7 +109,7 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 1790476457, guid: f970b837f4182474ab5516076b86faf3, type: 3}
       propertyPath: ingredients.Array.data[0].quantity
-      value: 0.1
+      value: 0.025
       objectReference: {fileID: 0}
     - target: {fileID: 1790476457, guid: f970b837f4182474ab5516076b86faf3, type: 3}
       propertyPath: OnDissolutionStart.m_PersistentCalls.m_Calls.Array.data[0].m_Target

@@ -32,6 +32,10 @@ PrefabInstance:
       propertyPath: ingredients.Array.data[0].color.r
       value: 0.7971698
       objectReference: {fileID: 0}
+    - target: {fileID: 1790476457, guid: f970b837f4182474ab5516076b86faf3, type: 3}
+      propertyPath: ingredients.Array.data[0].quantity
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 419862108436974890, guid: f970b837f4182474ab5516076b86faf3,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
