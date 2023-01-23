@@ -12,6 +12,146 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300000, guid: 080a1d3ba1e9f4afb9b918750cfa323f, type: 3}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[0].time
+      value: 0.0003476357
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[1].time
+      value: 0.40022254
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[2].time
+      value: 0.90163714
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[3].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[0].value
+      value: 0.10294882
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[1].value
+      value: 0.34860343
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[2].value
+      value: 0.65038157
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[3].value
+      value: 0.9610863
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[0].inSlope
+      value: 0.16409442
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[1].inSlope
+      value: 0.40024307
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[2].inSlope
+      value: 0.4603665
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[3].inSlope
+      value: 0.43368417
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[0].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[0].outSlope
+      value: 0.16409442
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[1].inWeight
+      value: 0.10939406
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[1].outSlope
+      value: -0.014564363
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[2].outSlope
+      value: 0.25255403
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[3].inWeight
+      value: 0.5629578
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[3].outSlope
+      value: 0.43368417
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[0].outWeight
+      value: 0.21966329
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[1].outWeight
+      value: 0.095559604
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[2].outWeight
+      value: 0.24339014
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[1].tangentMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[2].tangentMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[3].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3318193849181367753, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: m_Mesh

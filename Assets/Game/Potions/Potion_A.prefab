@@ -7,6 +7,126 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[0].time
+      value: 0.00014923373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[1].time
+      value: 0.34965655
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[2].time
+      value: 0.85904044
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[3].time
+      value: 0.9988425
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[0].value
+      value: 0.36223182
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[1].value
+      value: 0.45083737
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[2].value
+      value: 0.5696423
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[3].value
+      value: 0.95104396
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[0].inSlope
+      value: 0.25351557
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[1].inSlope
+      value: 0.25351557
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[2].inSlope
+      value: 0.23323259
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[3].inSlope
+      value: 2.7281551
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[0].outSlope
+      value: 0.25351557
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[1].outSlope
+      value: 0.23323259
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[2].outSlope
+      value: 2.7281551
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[3].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[3].outSlope
+      value: 2.7281551
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[2].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[1].tangentMode
+      value: 69
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[2].tangentMode
+      value: 69
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[3].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: splashSizeCurve.m_Curve.Array.size
