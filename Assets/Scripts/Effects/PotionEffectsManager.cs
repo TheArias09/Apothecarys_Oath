@@ -26,6 +26,8 @@ public class PotionEffectsManager : MonoBehaviour
         liquidVisualsManager = GetComponent<LiquidVisualsManager>();
         liquidCount = ingredientWrapper.Ingredients.Count;
         previousLiquidCount = liquidCount;
+        
+        ContinuousEffect();
     }
 
     void Update()

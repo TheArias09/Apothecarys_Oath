@@ -218,8 +218,8 @@ public class LiquidFlowManager : MonoBehaviour
             float wobbleAmountZ = targetPotionWM.WobbleAmountZ;
         
             //Setting the desired rotation
-            float rotationZ = -90f * wobbleAmountZ * Mathf.Deg2Rad * 500;
-            float rotationX = -90f * wobbleAmountX * Mathf.Deg2Rad * 500;
+            float rotationZ = -90f * wobbleAmountZ * Mathf.Deg2Rad * 90;
+            float rotationX = -90f * wobbleAmountX * Mathf.Deg2Rad * 90;
 
             if (targetPotionLVM.LiquidCount == 0)
             {
