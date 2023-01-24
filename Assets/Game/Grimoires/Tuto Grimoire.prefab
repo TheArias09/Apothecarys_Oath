@@ -7,6 +7,64 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1472643645, guid: 5e1f67abbe690d54faaf9f29fe2bfb72, type: 3}
+      propertyPath: isTutoGrimoire
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472643645, guid: 5e1f67abbe690d54faaf9f29fe2bfb72, type: 3}
+      propertyPath: grimoirePageDatas.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472643645, guid: 5e1f67abbe690d54faaf9f29fe2bfb72, type: 3}
+      propertyPath: grimoirePageDatas.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: ee6da7969d42d3445982ff60ad58b2f9,
+        type: 2}
+    - target: {fileID: 1472643645, guid: 5e1f67abbe690d54faaf9f29fe2bfb72, type: 3}
+      propertyPath: grimoirePageDatas.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: ada10bf9166099844afea6080e87b02a,
+        type: 2}
+    - target: {fileID: 1472643645, guid: 5e1f67abbe690d54faaf9f29fe2bfb72, type: 3}
+      propertyPath: grimoirePageDatas.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 788e8e85c3680b04f96911ee919181a9,
+        type: 2}
+    - target: {fileID: 1472643645, guid: 5e1f67abbe690d54faaf9f29fe2bfb72, type: 3}
+      propertyPath: grimoirePageDatas.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: c88bd0d44938b1345b1a2eef9bd5c778,
+        type: 2}
+    - target: {fileID: 1472643645, guid: 5e1f67abbe690d54faaf9f29fe2bfb72, type: 3}
+      propertyPath: grimoirePageDatas.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: d31d0c1c58d9abd4d9e34ad4766b85fa,
+        type: 2}
+    - target: {fileID: 1472643645, guid: 5e1f67abbe690d54faaf9f29fe2bfb72, type: 3}
+      propertyPath: grimoirePageDatas.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3332fef06fccaa344a689cfd8bd58e39,
+        type: 2}
+    - target: {fileID: 1472643645, guid: 5e1f67abbe690d54faaf9f29fe2bfb72, type: 3}
+      propertyPath: grimoirePageDatas.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: cb97cdaa9c10d43438c0119790812ad6,
+        type: 2}
+    - target: {fileID: 1472643645, guid: 5e1f67abbe690d54faaf9f29fe2bfb72, type: 3}
+      propertyPath: grimoirePageDatas.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 55546b0a0d770af4e851befd4877a161,
+        type: 2}
+    - target: {fileID: 1472643645, guid: 5e1f67abbe690d54faaf9f29fe2bfb72, type: 3}
+      propertyPath: grimoirePageDatas.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: efa0cf0d97481be47bf1377109fa0ae2,
+        type: 2}
+    - target: {fileID: 1472643645, guid: 5e1f67abbe690d54faaf9f29fe2bfb72, type: 3}
+      propertyPath: grimoirePageDatas.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: 94774f6615f7e3543b46a5f861ace47c,
+        type: 2}
     - target: {fileID: 374403172625090673, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

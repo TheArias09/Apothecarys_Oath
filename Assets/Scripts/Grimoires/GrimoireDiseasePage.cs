@@ -22,7 +22,7 @@ public class GrimoireDiseasePage : MonoBehaviour
     [SerializeField] GameObject pagePanel;
     [SerializeField] GameObject frontCoverPanel;
     [SerializeField] GameObject backCoverPanel;
-    [SerializeField] GameObject tutorialPage;
+    [SerializeField] GameObject tutorialPanel;
 
     public void DisplayData(GrimoireDiseasePageData data)
     {
@@ -42,7 +42,7 @@ public class GrimoireDiseasePage : MonoBehaviour
         }
         else if (data.isTutorialPage)
         {
-            tutorialPage.SetActive(true);
+            tutorialPanel.SetActive(true);
             tutorialDescription.text = data.tutorialDescription;
             tutorialTitle.text = data.coverTitle;
             tutorialImage.sprite = data.coverSprite;

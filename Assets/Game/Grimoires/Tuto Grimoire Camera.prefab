@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 358431452400312160, guid: 9f16b04137eefe4408ad753f2efcc7a3,
+        type: 3}
+      propertyPath: m_Name
+      value: Tutorial Description
+      objectReference: {fileID: 0}
     - target: {fileID: 597751300689486342, guid: 9f16b04137eefe4408ad753f2efcc7a3,
         type: 3}
       propertyPath: m_IsActive
@@ -17,6 +22,36 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2817183092985783549, guid: 9f16b04137eefe4408ad753f2efcc7a3,
+        type: 3}
+      propertyPath: m_Name
+      value: Tutorial Name
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258825923154778942, guid: 9f16b04137eefe4408ad753f2efcc7a3,
+        type: 3}
+      propertyPath: tutorialPage
+      value: 
+      objectReference: {fileID: 4971887991503395435}
+    - target: {fileID: 4258825923154778942, guid: 9f16b04137eefe4408ad753f2efcc7a3,
+        type: 3}
+      propertyPath: tutorialImage
+      value: 
+      objectReference: {fileID: 5261978403670566652}
+    - target: {fileID: 4258825923154778942, guid: 9f16b04137eefe4408ad753f2efcc7a3,
+        type: 3}
+      propertyPath: tutorialPanel
+      value: 
+      objectReference: {fileID: 4971887991503395435}
+    - target: {fileID: 4258825923154778942, guid: 9f16b04137eefe4408ad753f2efcc7a3,
+        type: 3}
+      propertyPath: tutorialTitle
+      value: 
+      objectReference: {fileID: 5515467430468434863}
+    - target: {fileID: 4258825923154778942, guid: 9f16b04137eefe4408ad753f2efcc7a3,
+        type: 3}
+      propertyPath: tutorialDescription
+      value: 
+      objectReference: {fileID: 1823358779708556305}
     - target: {fileID: 5428564752297138741, guid: 9f16b04137eefe4408ad753f2efcc7a3,
         type: 3}
       propertyPath: m_RootOrder
@@ -127,5 +162,52 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tuto Grimoire Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 6156691257815559233, guid: 9f16b04137eefe4408ad753f2efcc7a3,
+        type: 3}
+      propertyPath: m_Name
+      value: Tutorial Image
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f16b04137eefe4408ad753f2efcc7a3, type: 3}
+--- !u!114 &1823358779708556305 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6195208486101892220, guid: 9f16b04137eefe4408ad753f2efcc7a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5527062902739630189}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &4971887991503395435 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 597751300689486342, guid: 9f16b04137eefe4408ad753f2efcc7a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5527062902739630189}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5261978403670566652 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 410495071512125073, guid: 9f16b04137eefe4408ad753f2efcc7a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5527062902739630189}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5515467430468434863 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 17717576713257922, guid: 9f16b04137eefe4408ad753f2efcc7a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5527062902739630189}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
