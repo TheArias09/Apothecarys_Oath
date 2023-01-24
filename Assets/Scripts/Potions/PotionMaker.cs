@@ -18,18 +18,28 @@ public class PotionMaker : MonoBehaviour
         else Destroy(this);
     }
 
-    public void CheckPotion(IngredientWrapper potion)
+    /// <summary>
+    /// Checks if an IngredientWrapper contains the ingredients corresponding to a recipe.
+    /// </summary>
+    /// <param name="potion">The IngredientWrapper to check.</param>
+    /// <returns>True if a recipe was crafted, false if nothing happened.</returns>
+    public bool CheckPotion(IngredientWrapper potion)
     {
         foreach(var recipeData in recipeBook.recipes)
         {
             float quality = CheckPotion(recipeData.recipe, potion);
-            if (quality > 0) return;
+            if (quality > 0) return true;
         }
+
+        Debug.Log("No recipe found, checking for dubious");
 
         foreach(var flexRecipe in recipeBook.flexibleRecipes)
         {
-            if (CheckFlexible(flexRecipe, potion)) return;
+            if (CheckFlexible(flexRecipe, potion)) return true;
         }
+
+        Debug.Log("Not dubious");
+        return false;
     }
 
 
@@ -87,6 +97,7 @@ public class PotionMaker : MonoBehaviour
             Ingredient result = new(recipe.result, potion.GetTotalQty(), 0, DiseaseName.NONE);
             potion.Ingredients.Clear();
             potion.Ingredients.Add(result);
+            Debug.Log("Dubious potion crafted...");
         }
 
         return success;

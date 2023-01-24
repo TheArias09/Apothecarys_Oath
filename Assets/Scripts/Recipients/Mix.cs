@@ -59,11 +59,10 @@ public class Mix : MonoBehaviour
     {
         if (ingredientWrapper.GetTotalQty() == 0) return;
 
-        PotionMaker.Instance.CheckPotion(ingredientWrapper);
+        ingredientWrapper.Mixed = PotionMaker.Instance.CheckPotion(ingredientWrapper);
         ingredientWrapper.CallOnQuantityUpdated();
 
         mixCompletion = 0f;
-        ingredientWrapper.Mixed = true;
         Debug.Log("Mix complete!");
     }
 
