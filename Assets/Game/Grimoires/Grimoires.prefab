@@ -1,5 +1,40 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &140003506053765610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4352148821697406051}
+  m_Layer: 0
+  m_Name: Tuto Cameras
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4352148821697406051
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140003506053765610}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2546, y: -73.58, z: 0.94}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 618916413737847603}
+  - {fileID: 6014222887983605040}
+  - {fileID: 3916328284643819258}
+  - {fileID: 4013447519542719737}
+  m_Father: {fileID: 8685470225313242857}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &955557861472209179
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,8 +65,10 @@ Transform:
   m_Children:
   - {fileID: 1736474846458635352}
   - {fileID: 1736474845938730079}
+  - {fileID: 4352148821697406051}
   - {fileID: 1853360089963281998}
   - {fileID: 6163609627321110774}
+  - {fileID: 6369276171860918365}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -105,6 +142,86 @@ Transform:
   m_Father: {fileID: 8685470225313242857}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1113767615150991723
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4352148821697406051}
+    m_Modifications:
+    - target: {fileID: 213188357760497362, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: f722ea0c25d5b814da8609ed31b92483, type: 2}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867860171179280585, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_Name
+      value: Tuto Grimoire First Page Camera
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e5b62313f5b1e54ab7de805cc78b316, type: 3}
+--- !u!4 &618916413737847603 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+    type: 3}
+  m_PrefabInstance: {fileID: 1113767615150991723}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1736474846036880970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -204,10 +321,40 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1736474845938730079}
     m_Modifications:
+    - target: {fileID: 769741259510968417, guid: 6faef935f08516b43a5952a30c0ecb64,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.400002
+      objectReference: {fileID: 0}
+    - target: {fileID: 812488776277784487, guid: 6faef935f08516b43a5952a30c0ecb64,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.400002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187938930789412237, guid: 6faef935f08516b43a5952a30c0ecb64,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.400002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877614550705464408, guid: 6faef935f08516b43a5952a30c0ecb64,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.400002
+      objectReference: {fileID: 0}
     - target: {fileID: 7167948522477551913, guid: 6faef935f08516b43a5952a30c0ecb64,
         type: 3}
       propertyPath: m_Name
       value: Potion Grimoire Middle Page Front Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108563321295002474, guid: 6faef935f08516b43a5952a30c0ecb64,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.400002
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499196250717360826, guid: 6faef935f08516b43a5952a30c0ecb64,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.400002
       objectReference: {fileID: 0}
     - target: {fileID: 8675963093175664434, guid: 6faef935f08516b43a5952a30c0ecb64,
         type: 3}
@@ -622,10 +769,40 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1736474845938730079}
     m_Modifications:
+    - target: {fileID: 769741259510968417, guid: 6faef935f08516b43a5952a30c0ecb64,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.400002
+      objectReference: {fileID: 0}
+    - target: {fileID: 812488776277784487, guid: 6faef935f08516b43a5952a30c0ecb64,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.400002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187938930789412237, guid: 6faef935f08516b43a5952a30c0ecb64,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.400002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877614550705464408, guid: 6faef935f08516b43a5952a30c0ecb64,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.400002
+      objectReference: {fileID: 0}
     - target: {fileID: 7167948522477551913, guid: 6faef935f08516b43a5952a30c0ecb64,
         type: 3}
       propertyPath: m_Name
       value: Potion Grimoire Last Page Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108563321295002474, guid: 6faef935f08516b43a5952a30c0ecb64,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.400002
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499196250717360826, guid: 6faef935f08516b43a5952a30c0ecb64,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.400002
       objectReference: {fileID: 0}
     - target: {fileID: 8675963093175664434, guid: 6faef935f08516b43a5952a30c0ecb64,
         type: 3}
@@ -904,7 +1081,7 @@ PrefabInstance:
     - target: {fileID: 5589170412597329664, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5589170412597329664, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
         type: 3}
@@ -1017,6 +1194,166 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5589170412597329664, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
     type: 3}
   m_PrefabInstance: {fileID: 1736474847344308214}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3481442823539807905
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4352148821697406051}
+    m_Modifications:
+    - target: {fileID: 213188357760497362, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: ed8569e5ce8e2ad4ab8f93dc871641e7, type: 2}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1270
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867860171179280585, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_Name
+      value: Tuto Grimoire Last Page Camera
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e5b62313f5b1e54ab7de805cc78b316, type: 3}
+--- !u!4 &4013447519542719737 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+    type: 3}
+  m_PrefabInstance: {fileID: 3481442823539807905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3583641955166985378
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4352148821697406051}
+    m_Modifications:
+    - target: {fileID: 213188357760497362, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: a9a63b9620c2c7742b927b776e6f5923, type: 2}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -959
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867860171179280585, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_Name
+      value: Tuto Grimoire Middle Page Back Camera
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e5b62313f5b1e54ab7de805cc78b316, type: 3}
+--- !u!4 &3916328284643819258 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+    type: 3}
+  m_PrefabInstance: {fileID: 3583641955166985378}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4612453485280818045
 PrefabInstance:
@@ -1204,7 +1541,7 @@ PrefabInstance:
     - target: {fileID: 6465708017526066483, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6465708017526066483, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,
         type: 3}
@@ -1258,6 +1595,181 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6465708017526066483, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,
     type: 3}
   m_PrefabInstance: {fileID: 4612453485280818045}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6094776942108673896
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4352148821697406051}
+    m_Modifications:
+    - target: {fileID: 213188357760497362, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: 63ec45cc2d4b0514991011dc088e2241, type: 2}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -509
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867860171179280585, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+        type: 3}
+      propertyPath: m_Name
+      value: Tuto Grimoire Middle Page Front Camera
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e5b62313f5b1e54ab7de805cc78b316, type: 3}
+--- !u!4 &6014222887983605040 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 568069882162733656, guid: 9e5b62313f5b1e54ab7de805cc78b316,
+    type: 3}
+  m_PrefabInstance: {fileID: 6094776942108673896}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6578140312646349479
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8685470225313242857}
+    m_Modifications:
+    - target: {fileID: 229130723105649402, guid: 528952e7bef04ac4b8cd318ad6ad535e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 229130723105649402, guid: 528952e7bef04ac4b8cd318ad6ad535e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 229130723105649402, guid: 528952e7bef04ac4b8cd318ad6ad535e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 229130723105649402, guid: 528952e7bef04ac4b8cd318ad6ad535e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 229130723105649402, guid: 528952e7bef04ac4b8cd318ad6ad535e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.872
+      objectReference: {fileID: 0}
+    - target: {fileID: 229130723105649402, guid: 528952e7bef04ac4b8cd318ad6ad535e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 229130723105649402, guid: 528952e7bef04ac4b8cd318ad6ad535e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.296
+      objectReference: {fileID: 0}
+    - target: {fileID: 229130723105649402, guid: 528952e7bef04ac4b8cd318ad6ad535e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9859086
+      objectReference: {fileID: 0}
+    - target: {fileID: 229130723105649402, guid: 528952e7bef04ac4b8cd318ad6ad535e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 229130723105649402, guid: 528952e7bef04ac4b8cd318ad6ad535e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.16728498
+      objectReference: {fileID: 0}
+    - target: {fileID: 229130723105649402, guid: 528952e7bef04ac4b8cd318ad6ad535e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 229130723105649402, guid: 528952e7bef04ac4b8cd318ad6ad535e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 229130723105649402, guid: 528952e7bef04ac4b8cd318ad6ad535e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 19.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 229130723105649402, guid: 528952e7bef04ac4b8cd318ad6ad535e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 229130723105649402, guid: 528952e7bef04ac4b8cd318ad6ad535e,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 460964005340730863, guid: 528952e7bef04ac4b8cd318ad6ad535e,
+        type: 3}
+      propertyPath: m_Name
+      value: Tuto Grimoire
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 528952e7bef04ac4b8cd318ad6ad535e, type: 3}
+--- !u!4 &6369276171860918365 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 229130723105649402, guid: 528952e7bef04ac4b8cd318ad6ad535e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6578140312646349479}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8555044869564018694
 PrefabInstance:

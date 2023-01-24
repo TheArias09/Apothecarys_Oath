@@ -15,9 +15,14 @@ public class GrimoireDiseasePage : MonoBehaviour
     [SerializeField] TMP_Text bookTitle;
     [SerializeField] Image bookImage;
 
+    [SerializeField] TMP_Text tutorialTitle;
+    [SerializeField] TMP_Text tutorialDescription;
+    [SerializeField] Image tutorialImage;
+
     [SerializeField] GameObject pagePanel;
     [SerializeField] GameObject frontCoverPanel;
     [SerializeField] GameObject backCoverPanel;
+    [SerializeField] GameObject tutorialPanel;
 
     public void DisplayData(GrimoireDiseasePageData data)
     {
@@ -34,6 +39,13 @@ public class GrimoireDiseasePage : MonoBehaviour
         else if (data.isBackCover)
         {
             backCoverPanel.SetActive(true);
+        }
+        else if (data.isTutorialPage)
+        {
+            tutorialPanel.SetActive(true);
+            tutorialDescription.text = data.tutorialDescription;
+            tutorialTitle.text = data.coverTitle;
+            tutorialImage.sprite = data.coverSprite;
         }
         else
         {

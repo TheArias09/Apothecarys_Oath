@@ -16,6 +16,8 @@ public class GrimoireDiseaseNavigator : MonoBehaviour
 
     [SerializeField] List<GrimoireDiseasePageData> grimoirePageDatas;
 
+    [SerializeField] bool isTutoGrimoire = false;
+
     private bool isLocked = false;
     private int currentIndex = 0;
     private int maxIndex => Mathf.CeilToInt((float)(grimoirePageDatas.Count - 1) / 2);
@@ -30,11 +32,20 @@ public class GrimoireDiseaseNavigator : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         firstPage.Clear();
-        firstPageGameObject.SetActive(false);
-        firstPageAnchor.DeactivateAnchor();
+        if (!isTutoGrimoire)
+        {
+            firstPageGameObject.SetActive(false);
+            firstPageAnchor.DeactivateAnchor();
+            lastPage.DisplayData(grimoirePageDatas[0]);
+        }
+        else
+        {
+            currentIndex++;
+            firstPage.DisplayData(grimoirePageDatas[1]);
+            lastPage.DisplayData(grimoirePageDatas[2]);
+        }
         middlePageFront.Clear();
         middlePageBack.Clear();
-        lastPage.DisplayData(grimoirePageDatas[0]);
     }
 
     private void Update()

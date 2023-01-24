@@ -15,7 +15,7 @@ MonoBehaviour:
   ingredientName: Restart
   color: {r: 0, g: 0, b: 1, a: 1}
   fresnelPower: 1
-  viscosity: 0
+  viscosity: 1
   symbol: {fileID: 0}
   description: 
   continuousEffect: {fileID: 0}

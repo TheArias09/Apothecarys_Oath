@@ -75,7 +75,7 @@ ParticleSystem:
   m_GameObject: {fileID: 3117309002783002928}
   serializedVersion: 8
   lengthInSec: 5
-  simulationSpeed: 0.75
+  simulationSpeed: 1.5
   stopAction: 0
   cullingMode: 3
   ringBufferMode: 0
@@ -4769,7 +4769,7 @@ GameObject:
   - component: {fileID: 7465097533370888778}
   - component: {fileID: -2579553934737380625}
   m_Layer: 11
-  m_Name: Potion_(Main)
+  m_Name: Potion_(Main)_DNU
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
