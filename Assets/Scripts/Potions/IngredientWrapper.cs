@@ -15,7 +15,7 @@ public class IngredientWrapper : MonoBehaviour
     [SerializeField] private Respawner respawner;
     public Respawner Respawner => respawner;
 
-    public bool Mixed { get; set; } = false;
+    public bool Mixed { get; set; } = true;
 
     private float quantity = 0;
 
