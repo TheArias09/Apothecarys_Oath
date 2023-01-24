@@ -11,7 +11,6 @@ public class IngredientWrapper : MonoBehaviour
     [SerializeField] private bool infiniteSource;
     [Space(10)]
     [SerializeField] private List<Ingredient> ingredients;
-    [SerializeField] private List<IngredientState> states;
 
     [SerializeField] private Respawner respawner;
     public Respawner Respawner => respawner;
@@ -22,7 +21,6 @@ public class IngredientWrapper : MonoBehaviour
 
     public float RecipientQuantity { get => recipientQuantity; set => recipientQuantity = value; }
     public List<Ingredient> Ingredients { get => ingredients; }
-    public List<IngredientState> States { get => states; }
 
     public event Action OnQuantityUpdated;
 
@@ -112,7 +110,6 @@ public class IngredientWrapper : MonoBehaviour
     public void Empty()
     {
         Ingredients.Clear();
-        States.Clear();
         quantity = 0;
         OnQuantityUpdated?.Invoke();
     }

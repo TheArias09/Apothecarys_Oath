@@ -39,9 +39,6 @@ public class PotionMaker : MonoBehaviour
     /// <returns>The quality of the crafted potion in case of success, 0 in other case.</returns>
     private float CheckPotion(Recipe recipe, IngredientWrapper potion)
     {
-        //Wrong States
-        if (recipe.States.Count != potion.States.Count || !recipe.States.All(potion.States.Contains)) return 0;
-
         //Wrong ingredients
         if (recipe.Ingredients.Count != potion.Ingredients.Count || !recipe.Ingredients.All(potion.Ingredients.Contains)) return 0;
 

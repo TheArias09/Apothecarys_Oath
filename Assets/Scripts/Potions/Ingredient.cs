@@ -17,14 +17,11 @@ public class Ingredient
     [SerializeField, Range(0, 1)] private float quality;
     [SerializeField] private DiseaseName cures;
 
-    [SerializeField] private List<IngredientState> states;
-
     public IngredientData Data { get => data; }
     public string Name { get => data.ingredientName; set => data.ingredientName = value; }
     public float Quantity { get => quantity; set => quantity = value; }
     public float Quality { get => quality; set => quality = value; }
     public Color Color { get => data.color; }
-    public List<IngredientState> States { get => states; }
 
     public DiseaseName Cures { get => cures; set => cures = value; }
 
@@ -34,17 +31,11 @@ public class Ingredient
         this.quantity = quantity;
         this.quality = quality;
         cures = disease;
-
-        states = new List<IngredientState>();
     }
-
-    public void AddState(IngredientState state) => States.Add(state);
 
     public override string ToString()
     {
         StringBuilder result = new (Name + ", Qty= " + Quantity + ", Qual= " + Quality + ", States: ");
-        if (States.Count > 0) result.Append(string.Join(", ", States));
-        else result.Append("NONE");
         return result.ToString();
     }
 
@@ -54,7 +45,6 @@ public class Ingredient
 
         Ingredient other = obj as Ingredient;
         if (other.Name != Name) return false;
-        if (other.states.Count != States.Count || !other.states.All(States.Contains)) return false;
 
         return true;
     }
