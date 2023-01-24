@@ -4753,6 +4753,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3342941435504424051}
+  - component: {fileID: 3318193849181367758}
   - component: {fileID: 3318193849181367753}
   - component: {fileID: 3324059114002556979}
   - component: {fileID: 3318193849181367755}
@@ -4760,7 +4761,6 @@ GameObject:
   - component: {fileID: 3318193849181367754}
   - component: {fileID: 3318193849181367757}
   - component: {fileID: 3318193849181367756}
-  - component: {fileID: 3318193849181367758}
   - component: {fileID: 1699042132820929040}
   - component: {fileID: 5486843988471007360}
   - component: {fileID: 8012480377573428420}
@@ -4794,6 +4794,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3318193849181367758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3346590250814863891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02306037b2ed42e438ee35e480016fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipientQuantity: 1
+  infiniteSource: 0
+  ingredients: []
+  respawner: {fileID: 0}
 --- !u!33 &3318193849181367753
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5048,23 +5064,6 @@ MonoBehaviour:
   MaxWobble: 0.005
   WobbleSpeed: 1
   Recovery: 1
---- !u!114 &3318193849181367758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3346590250814863891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02306037b2ed42e438ee35e480016fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  recipientQuantity: 1
-  infiniteSource: 0
-  ingredients: []
-  states: 
-  respawner: {fileID: 0}
 --- !u!114 &1699042132820929040
 MonoBehaviour:
   m_ObjectHideFlags: 0
