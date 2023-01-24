@@ -22,4 +22,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a882c5ef08e5dc84b9c26de274827cd3, type: 2}
   - {fileID: 11400000, guid: a9b5bdeeffa783244b20edaee760414b, type: 2}
   - {fileID: 11400000, guid: beedede4b9e7101418f8ab1946fa1cc1, type: 2}
-  - {fileID: 11400000, guid: 2d8e766804d70bc469dd5bf38cd160a6, type: 2}
+  flexibleRecipes: []

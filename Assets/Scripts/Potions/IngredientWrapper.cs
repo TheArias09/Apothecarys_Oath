@@ -16,6 +16,8 @@ public class IngredientWrapper : MonoBehaviour
     [SerializeField] private Respawner respawner;
     public Respawner Respawner => respawner;
 
+    public bool Mixed { get; set; } = false;
+
     private float quantity = 0;
 
     public float RecipientQuantity { get => recipientQuantity; set => recipientQuantity = value; }
@@ -43,6 +45,7 @@ public class IngredientWrapper : MonoBehaviour
     public bool FillWith(List<Ingredient> ingredients, float deltaQty)
     {
         if (infiniteSource) return false;
+        Mixed = false;
 
         if (quantity >= recipientQuantity) return false;
         else
@@ -79,7 +82,7 @@ public class IngredientWrapper : MonoBehaviour
     /// <summary>
     /// Called by the IngredientWrapper pouring its content.
     /// </summary>
-    /// <returns></returns>
+    /// <returns>The list of poured ingredients.</returns>
     public List<Ingredient> Pour(float deltaQty)
     {
         SetTotalQty();
@@ -90,6 +93,7 @@ public class IngredientWrapper : MonoBehaviour
 
         if (deltaQty > quantity) deltaQty = quantity;
         
+        //Pour ingredients one by one until removedQty corresponds to poured quantity
         for (int i=0; i < ingredients.Count && removedQty < deltaQty; i++)
         {
             Ingredient ing = ingredients[i];

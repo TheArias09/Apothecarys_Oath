@@ -9,7 +9,7 @@ public class ContinuousEffectManager : MonoBehaviour
     private LiquidVisualsManager liquidVisualsManager;
     private WobbleManager wobbleManager;
     
-    private ParticleSystem particleSystem;
+    private ParticleSystem particles;
 
     private float wobbleAmountX;
     private float wobbleAmountZ;
@@ -17,7 +17,7 @@ public class ContinuousEffectManager : MonoBehaviour
     private float rotationX;
     void Start()
     {
-        particleSystem = GetComponent<ParticleSystem>();
+        particles = GetComponent<ParticleSystem>();
 
         potion = transform.parent.gameObject;
         liquidVisualsManager = potion.GetComponent<LiquidVisualsManager>();

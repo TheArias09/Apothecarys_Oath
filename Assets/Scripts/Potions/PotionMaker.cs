@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,15 +23,21 @@ public class PotionMaker : MonoBehaviour
         foreach(var recipeData in recipeBook.recipes)
         {
             float quality = CheckPotion(recipeData.recipe, potion);
-            if (quality > 0) break;
+            if (quality > 0) return;
+        }
+
+        foreach(var flexRecipe in recipeBook.flexibleRecipes)
+        {
+            if (CheckFlexible(flexRecipe, potion)) return;
         }
     }
 
 
     /// <summary>
-    /// Checks if a potion followed a recipe correctly and returns a bool accordingly.
+    /// Checks if a potion followed a recipe correctly and returns a float accordingly.
     /// </summary>
-    public float CheckPotion(Recipe recipe, IngredientWrapper potion)
+    /// <returns>The quality of the crafted potion in case of success, 0 in other case.</returns>
+    private float CheckPotion(Recipe recipe, IngredientWrapper potion)
     {
         //Wrong States
         if (recipe.States.Count != potion.States.Count || !recipe.States.All(potion.States.Contains)) return 0;
@@ -70,5 +77,21 @@ public class PotionMaker : MonoBehaviour
 
         Debug.Log("std_dev: " + std_dev + " => quality: " + quality);
         return quality;
+    }
+
+    private bool CheckFlexible(FlexibleRecipe recipe, IngredientWrapper potion)
+    {
+        bool success = potion.Ingredients.Count >= recipe.minIngredientCount &&
+                      recipe.ingredients.All(potion.Ingredients.Select(i => i.Data).Contains) &&
+                      !potion.Ingredients.Select(i => i.Data).Any(recipe.nonIngredients.Contains);
+
+         if (success)
+        {
+            Ingredient result = new(recipe.result, potion.GetTotalQty(), 0, DiseaseName.NONE);
+            potion.Ingredients.Clear();
+            potion.Ingredients.Add(result);
+        }
+
+        return success;
     }
 }

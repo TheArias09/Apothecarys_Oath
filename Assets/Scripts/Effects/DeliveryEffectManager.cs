@@ -8,7 +8,7 @@ public class DeliveryEffectManager : MonoBehaviour
     private LiquidVisualsManager liquidVisualsManager;
     private WobbleManager wobbleManager;
     
-    private ParticleSystem particleSystem;
+    private ParticleSystem particles;
     
     private bool startedPlaying;
 
@@ -18,7 +18,7 @@ public class DeliveryEffectManager : MonoBehaviour
     private float rotationX;
     void Start()
     {
-        particleSystem = GetComponent<ParticleSystem>();
+        particles = GetComponent<ParticleSystem>();
 
         startedPlaying = false;
         
@@ -30,12 +30,12 @@ public class DeliveryEffectManager : MonoBehaviour
 
     void Update()
     {
-        if (!startedPlaying && particleSystem.isPlaying) //Checks if it starts
+        if (!startedPlaying && particles.isPlaying) //Checks if it starts
         {
             startedPlaying = true;
         }
 
-        if (startedPlaying && !particleSystem.isPlaying) //Has started and ended
+        if (startedPlaying && !particles.isPlaying) //Has started and ended
         {
             Destroy(gameObject); //We destroy the effect
         }

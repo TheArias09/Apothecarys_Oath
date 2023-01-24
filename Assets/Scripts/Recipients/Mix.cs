@@ -49,7 +49,7 @@ public class Mix : MonoBehaviour
             if(mixCompletion < 0) mixCompletion = 0;
         }
 
-        if(mixCompletion > mixCompletionThreshold) MixComplete();
+        if(mixCompletion > mixCompletionThreshold  && !ingredientWrapper.Mixed) MixComplete();
 
         previousPreviousPosition = previousPosition;
         previousPosition = transform.position;
@@ -58,10 +58,13 @@ public class Mix : MonoBehaviour
     private void MixComplete()
     {
         if (ingredientWrapper.GetTotalQty() == 0) return;
+
         PotionMaker.Instance.CheckPotion(ingredientWrapper);
         ingredientWrapper.CallOnQuantityUpdated();
-        Debug.Log("Mix complete!");
+
         mixCompletion = 0f;
+        ingredientWrapper.Mixed = true;
+        Debug.Log("Mix complete!");
     }
 
     //TODO: Prendre en compte le d�bordement (possibilit� de boucher ?)

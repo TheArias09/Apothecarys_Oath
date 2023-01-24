@@ -6,4 +6,5 @@ using UnityEngine;
 public class RecipeBook : ScriptableObject
 {
     public List<RecipeData> recipes = new();
+    public List<FlexibleRecipe> flexibleRecipes = new();
 }
