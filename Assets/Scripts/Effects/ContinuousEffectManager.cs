@@ -10,23 +10,35 @@ public class ContinuousEffectManager : MonoBehaviour
     private WobbleManager wobbleManager;
     
     private ParticleSystem particles;
+    private ParticleSystem.MainModule particlesMain;
+
+    public bool takesColor;
+    public float effectBaseScale;
 
     private float wobbleAmountX;
     private float wobbleAmountZ;
     private float rotationZ;
     private float rotationX;
+    
+    private float splashBaseScale = 0.003f;
     void Start()
     {
         particles = GetComponent<ParticleSystem>();
+        particlesMain = particles.main;
 
         potion = transform.parent.gameObject;
         liquidVisualsManager = potion.GetComponent<LiquidVisualsManager>();
         wobbleManager = potion.GetComponent<WobbleManager>();
-        SetScale();
+
+        if (takesColor)
+        {
+            SetColor();
+        }
     }
 
     void Update()
     {
+        SetScale();
         SetTransform();
     }
 
@@ -38,14 +50,25 @@ public class ContinuousEffectManager : MonoBehaviour
         wobbleAmountZ = wobbleManager.WobbleAmountZ;
         
         //Setting the desired rotation
-        rotationZ = -90f * wobbleAmountZ * Mathf.Deg2Rad * 500;
-        rotationX = -90f * wobbleAmountX * Mathf.Deg2Rad * 500;
+        rotationZ = -90f * wobbleAmountZ * Mathf.Deg2Rad * 90f;
+        rotationX = -90f * wobbleAmountX * Mathf.Deg2Rad * 90f;
 
         transform.rotation = Quaternion.Euler(rotationZ,0f,rotationX);        
     }
 
     void SetScale()
     {
-        transform.localScale = liquidVisualsManager.FindInsideScale() * Vector3.one;
+        transform.localScale = Vector3.one * (liquidVisualsManager.FindInsideScale() * effectBaseScale) / splashBaseScale;
+    }
+    
+    void SetColor()
+    {
+        Color liquidColor = liquidVisualsManager.Liquids[^1].liquidColor;
+        Color effectColor = new Color(
+            Mathf.Min(1f, liquidColor.r - 0.20f),
+            Mathf.Min(1f, liquidColor.g - 0.20f),
+            Mathf.Min(1f, liquidColor.b - 0.20f)
+        );
+        particlesMain.startColor = new ParticleSystem.MinMaxGradient( effectColor );
     }
 }

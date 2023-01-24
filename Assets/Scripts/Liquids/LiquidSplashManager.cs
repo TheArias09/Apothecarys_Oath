@@ -12,7 +12,8 @@ public class LiquidSplashManager : MonoBehaviour
     private ParticleSystem.MainModule liquidFlowMain;
     
     private GameObject potion;
-    private LiquidVisualsManager potionLiquids;
+    private IngredientWrapper potionLiquids;
+    //private LiquidVisualsManager potionLiquids;
 
     private Vector3 targetPosition;
     private bool splashingOnPotion;
@@ -28,7 +29,8 @@ public class LiquidSplashManager : MonoBehaviour
         splashSystemTrails = splashSystem.trails;
         
         potion = transform.parent.transform.parent.gameObject;
-        potionLiquids = potion.GetComponent<LiquidVisualsManager>();
+        potionLiquids = potion.GetComponent<IngredientWrapper>();
+        //potionLiquids = potion.GetComponent<LiquidVisualsManager>();
 
         isSplashing = liquidFlow.IsFlowing;
     }
@@ -65,9 +67,19 @@ public class LiquidSplashManager : MonoBehaviour
     
     private void SetColor()
     {
+        /*
         if (potionLiquids.LiquidCount >= 1)
         {
             splashSystemMain.startColor = new ParticleSystem.MinMaxGradient( potionLiquids.Liquids[potionLiquids.LiquidCount-1].liquidColor );
+        }
+        else
+        {
+            splashSystemMain.startColor = new ParticleSystem.MinMaxGradient( Color.white );;
+        }
+        */
+        if (potionLiquids.Ingredients.Count >= 1)
+        {
+            splashSystemMain.startColor = new ParticleSystem.MinMaxGradient( potionLiquids.Ingredients[^1].Data.color );
         }
         else
         {

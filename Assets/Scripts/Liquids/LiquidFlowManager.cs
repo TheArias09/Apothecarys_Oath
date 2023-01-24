@@ -10,7 +10,8 @@ public class LiquidFlowManager : MonoBehaviour
     
     private GameObject potion;
     private Flowing potionFlowing;
-    private LiquidVisualsManager potionLiquids;
+    private IngredientWrapper potionLiquids;
+    //private LiquidVisualsManager potionLVM;
     
     private int liquidCount;
     private int previousLiquidCount;
@@ -39,9 +40,10 @@ public class LiquidFlowManager : MonoBehaviour
 
         potion = flowTransform.parent.gameObject;
         potionFlowing = potion.GetComponent<Flowing>();
-        potionLiquids = potion.GetComponent<LiquidVisualsManager>();
+        potionLiquids = potion.GetComponent<IngredientWrapper>();
+        //potionLVM = potion.GetComponent<LiquidVisualsManager>();
         
-        liquidCount = potionLiquids.LiquidCount;
+        liquidCount = potionLiquids.Ingredients.Count;
         previousLiquidCount = liquidCount;
 
         flowSystem = gameObject.GetComponent<ParticleSystem>();
@@ -118,7 +120,7 @@ public class LiquidFlowManager : MonoBehaviour
             previousTargetPotion = targetPotion;
         }
 
-        liquidCount = potionLiquids.LiquidCount;
+        liquidCount = potionLiquids.Ingredients.Count;
         if (liquidCount != previousLiquidCount)
         {
             SetColor();
@@ -137,7 +139,7 @@ public class LiquidFlowManager : MonoBehaviour
     {
         if (liquidCount >= 1)
         {
-            flowSystemMain.startColor = new ParticleSystem.MinMaxGradient( potionLiquids.Liquids[liquidCount-1].liquidColor );
+            flowSystemMain.startColor = new ParticleSystem.MinMaxGradient( potionLiquids.Ingredients[liquidCount-1].Data.color );
         }
         else
         {
@@ -218,8 +220,8 @@ public class LiquidFlowManager : MonoBehaviour
             float wobbleAmountZ = targetPotionWM.WobbleAmountZ;
         
             //Setting the desired rotation
-            float rotationZ = -90f * wobbleAmountZ * Mathf.Deg2Rad * 500;
-            float rotationX = -90f * wobbleAmountX * Mathf.Deg2Rad * 500;
+            float rotationZ = -90f * wobbleAmountZ * Mathf.Deg2Rad * 90;
+            float rotationX = -90f * wobbleAmountX * Mathf.Deg2Rad * 90;
 
             if (targetPotionLVM.LiquidCount == 0)
             {
