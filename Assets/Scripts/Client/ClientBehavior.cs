@@ -109,10 +109,7 @@ public class ClientBehavior : MonoBehaviour
     {
         if (potion.Cures != DiseaseName.NONE && potion.Cures == Client.Disease.name)
         {
-            float quantRatio = potion.Quantity / Client.DesiredQty;
-            float quantScore = quantRatio < 1 ? quantRatio : 1/quantRatio;
-
-            GameManager.Instance.AddScore(potion.Quality, quantScore, uiTimer.fillAmount);
+            GameManager.Instance.AddScore(potion.Quality, potion.Quantity, uiTimer.fillAmount);
             Client.Cure();
             Leave(true);
         }

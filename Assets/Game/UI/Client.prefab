@@ -5341,7 +5341,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: bfc49a5a2ab079745a72b10f08372fc1, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -5473,8 +5473,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   uiColor: {r: 0.19215687, g: 0.69411767, b: 1, a: 1}
   winSound: {fileID: 8300000, guid: 45e914c9ecb2aad4ca588b664345f599, type: 3}
-  timeoutSound: {fileID: 8300000, guid: bfc49a5a2ab079745a72b10f08372fc1, type: 3}
-  tintTime: 0.5
+  timeoutSound: {fileID: 8300000, guid: 6480bf4beee6572409adc6782cbbbc8f, type: 3}
+  tintTime: 0.8
   outline: {fileID: 386734356996755277}
   board: {fileID: 386734356996850889}
   outlineMaterial: {fileID: 2100000, guid: ca2d033ea28116146bcf6f593bf0e2c5, type: 2}
