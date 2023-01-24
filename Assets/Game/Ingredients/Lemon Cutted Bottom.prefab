@@ -86,7 +86,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnRespawnStart.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 5451467129249436073}
+      objectReference: {fileID: 0}
     - target: {fileID: 5351911873093692972, guid: 1a22bef876f44574fb1ba411f21c3ae7,
         type: 3}
       propertyPath: m_Mesh
@@ -95,12 +95,6 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a22bef876f44574fb1ba411f21c3ae7, type: 3}
---- !u!198 &5451467129249436073 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7322217305679369914, guid: 1a22bef876f44574fb1ba411f21c3ae7,
-    type: 3}
-  m_PrefabInstance: {fileID: 3331042635264362259}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &7362538270144410380 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5194550517907338271, guid: 1a22bef876f44574fb1ba411f21c3ae7,

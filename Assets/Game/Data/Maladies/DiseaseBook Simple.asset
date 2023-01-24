@@ -15,4 +15,10 @@ MonoBehaviour:
   diseases:
   - {fileID: 11400000, guid: 074c2bfb75e9b154cac8a0457500bf30, type: 2}
   - {fileID: 11400000, guid: 0cc9d9abf0213374f81bff3be2b6d42b, type: 2}
+  - {fileID: 11400000, guid: b1da2edde1bd2e94f93d2732a8388d89, type: 2}
   - {fileID: 11400000, guid: a58548665ee18084194111cd5dca8e67, type: 2}
+  - {fileID: 11400000, guid: c6768b2bdf769504aae5aa6a07725694, type: 2}
+  - {fileID: 11400000, guid: 01794e8ef0683e2438c073d854a0dc0a, type: 2}
+  - {fileID: 11400000, guid: e5cc6bac01571a643a386794397dfe21, type: 2}
+  - {fileID: 11400000, guid: f2ad77d6330f9e044870145599e22e93, type: 2}
+  - {fileID: 11400000, guid: b5c031e4d129544489d081e565745482, type: 2}

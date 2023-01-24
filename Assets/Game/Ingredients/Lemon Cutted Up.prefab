@@ -46,7 +46,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnRespawnStart.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 7322217305679369914}
+      objectReference: {fileID: 0}
     - target: {fileID: 4334674689385509653, guid: cf5fec698ff2ee5408f96973769fde77,
         type: 3}
       propertyPath: OnDespawnStart.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -323,10 +323,12 @@ MonoBehaviour:
   infiniteSource: 0
   ingredients:
   - data: {fileID: 11400000, guid: 5fdc87b45b2a3414eb9884c62c43a04e, type: 2}
-    quantity: 0.25
+    quantity: 0.05
     quality: 1
+    cures: 0
     states: 
   states: 
+  respawner: {fileID: 0}
 --- !u!114 &1761117730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,6 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bottleneckCenterPoint: {fileID: 3721369641934243076}
+  bottleneckCollider: {fileID: 0}
   bottleneckRadius: 0.1
   sphereCastRadius: 0.01
   maxSphereCastDistance: 10
@@ -499,9 +502,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b07e20aa7930ea24b99ca6473edb2fbf, type: 3}
---- !u!198 &7322217305679369914 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4534354224331550980, guid: b07e20aa7930ea24b99ca6473edb2fbf,
-    type: 3}
-  m_PrefabInstance: {fileID: 6589046616788723646}
-  m_PrefabAsset: {fileID: 0}
