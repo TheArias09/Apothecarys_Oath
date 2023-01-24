@@ -15,6 +15,9 @@ MonoBehaviour:
   ingredientName: Start
   color: {r: 0, g: 0.5019608, b: 0, a: 1}
   fresnelPower: 1
-  viscosity: 0
+  viscosity: 1
   symbol: {fileID: 0}
   description: 
+  continuousEffect: {fileID: 0}
+  mixEffect: {fileID: 0}
+  deliveryEffect: {fileID: 0}
