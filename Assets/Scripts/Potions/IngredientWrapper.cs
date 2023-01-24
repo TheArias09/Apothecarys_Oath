@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class IngredientWrapper : MonoBehaviour
@@ -106,6 +107,22 @@ public class IngredientWrapper : MonoBehaviour
 
         OnQuantityUpdated?.Invoke();
         return pouredIngredients;
+    }
+    
+    //Calcule le facteur de viscosité dans le IngredientWrapper
+    public float FindViscosityFactor()
+    {
+        float returnFactor = 0f;
+        float totalTrueFill = 0f;
+
+        for (int i = 0; i < Ingredients.Count; i++)
+        {
+            returnFactor += Ingredients[i].Data.viscosity * Ingredients[i].Quantity;
+            totalTrueFill += Ingredients[i].Quantity;
+        }
+        
+        returnFactor /= totalTrueFill;
+        return returnFactor;
     }
 
     public void Empty()
