@@ -6,44 +6,41 @@ using UnityEngine.Events;
 [RequireComponent(typeof(IngredientWrapper))]
 public class StartStopPotion : MonoBehaviour
 {
-    public enum MenuPotionType { Start, Stop, Help }
-
-    [SerializeField] MenuPotionType type;
+    [SerializeField] GameAction OnPour;
 
     [SerializeField] private float triggerQuantity;
-    [SerializeField] private GameObject uiText;
 
     private IngredientWrapper ingredientWrapper;
 
-    [SerializeField] UnityEvent OnHelpEvent;
+    [SerializeField] Respawner respawner;
 
-    private void Start()
+    private Vector3 initialPosition;
+
+    [SerializeField] GameObject potionToSpawn;
+
+    private void Awake()
     {
         ingredientWrapper = GetComponent<IngredientWrapper>();
+        initialPosition = transform.position;
     }
 
     void Update()
     {
+        if (ingredientWrapper.Ingredients.Count == 0) return;
+
         Ingredient ing = ingredientWrapper.Ingredients[0];
 
         if (ing.Quantity <= triggerQuantity)
         {
+            if(potionToSpawn != null)
+            {
+                Instantiate(potionToSpawn, initialPosition, Quaternion.identity, transform.parent);
+            }
+
             Debug.Log("Game potion triggered");
 
-            if (type == MenuPotionType.Start)
-            {
-                GameManager.Instance.StartGame();
-            }
-            else if (type == MenuPotionType.Stop)
-            {
-                GameManager.Instance.QuitGame();
-            }
-            else if (type == MenuPotionType.Help)
-            {
-                OnHelpEvent?.Invoke();
-            }
+            OnPour.Raise();
 
-            uiText.SetActive(false);
             Destroy(gameObject);
         }
     }

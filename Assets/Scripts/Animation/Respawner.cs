@@ -1,3 +1,4 @@
+using Oculus.Interaction.HandGrab;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,6 +32,8 @@ public class Respawner : MonoBehaviour
     private bool coroutineLock = false;
 
     private Vector3 startPosition = Vector3.zero;
+
+    [SerializeField] HandGrabInteractable movementTrackerGrabbable;
 
     private void Awake()
     {
@@ -89,10 +92,7 @@ public class Respawner : MonoBehaviour
         OnDespawnEnd?.Invoke();
 
 
-        var spawnPosition = respawnTargetBox != null ? RandomPointInBounds(respawnTargetBox.bounds) : respawnTarget != null ? respawnTarget.position : startPosition;
-        ultimateParentTransform.position = spawnPosition;
-        ultimateParentTransform.eulerAngles = respawnEulerAngles;
-        body.velocity = Vector3.zero;
+        MovePosition();
 
         OnRespawnStart?.Invoke();
         yield return new WaitForSeconds(respawnTime);
@@ -103,10 +103,12 @@ public class Respawner : MonoBehaviour
 
     public void MovePosition()
     {
+        if(movementTrackerGrabbable) movementTrackerGrabbable.Disable();
         var spawnPosition = respawnTargetBox != null ? RandomPointInBounds(respawnTargetBox.bounds) : respawnTarget != null ? respawnTarget.position : startPosition;
         ultimateParentTransform.position = spawnPosition;
         ultimateParentTransform.eulerAngles = respawnEulerAngles;
         body.velocity = Vector3.zero;
+        if (movementTrackerGrabbable) movementTrackerGrabbable.Enable();
     }
 
     public void StartRespawnCoroutine()
