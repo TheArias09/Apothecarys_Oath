@@ -19,5 +19,5 @@ MonoBehaviour:
   coverSprite: {fileID: 0}
   coverTitle: Grab an object
   isTutorialPage: 1
-  tutorialDescription: You make it by pressing the back gachette. Turn page by grabbing
-    their corner!
+  tutorialDescription: You make it by pressing the back gachette. Turn a page by
+    grabbing its corner!
