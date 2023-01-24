@@ -92,7 +92,7 @@ public class IngredientWrapper : MonoBehaviour
         if (deltaQty > quantity) deltaQty = quantity;
         
         //Pour ingredients one by one until removedQty corresponds to poured quantity
-        for (int i=0; i < ingredients.Count && removedQty < deltaQty; i++)
+        for (int i= ingredients.Count -1; i > 0 && removedQty < deltaQty; i--)
         {
             Ingredient ing = ingredients[i];
             removedQty += Mathf.Min(ing.Quantity, deltaQty);
