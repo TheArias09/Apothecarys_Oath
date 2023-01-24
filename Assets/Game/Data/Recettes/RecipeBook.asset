@@ -22,4 +22,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a882c5ef08e5dc84b9c26de274827cd3, type: 2}
   - {fileID: 11400000, guid: a9b5bdeeffa783244b20edaee760414b, type: 2}
   - {fileID: 11400000, guid: beedede4b9e7101418f8ab1946fa1cc1, type: 2}
-  flexibleRecipes: []
+  flexibleRecipes:
+  - {fileID: 11400000, guid: ca5a54c147b5a844dafa0c6312d7e2ae, type: 2}
+  - {fileID: 11400000, guid: b9fe99360515ee244949418235e8b311, type: 2}
+  - {fileID: 11400000, guid: afe08ffbbe933dd429610aeac1473c1c, type: 2}
+  - {fileID: 11400000, guid: e4abe4a627b66564c9dbee9a4dac8e52, type: 2}
+  - {fileID: 11400000, guid: 7440b3532b8af1f4e968920cfc0e1ebb, type: 2}
+  - {fileID: 11400000, guid: 90bde4dee65aa434dbd5ce728d76b30d, type: 2}
+  - {fileID: 11400000, guid: 97b6e0c31485d0a4b8ee370d352e5c47, type: 2}
+  - {fileID: 11400000, guid: b531b68a78af461489328e6016ac18d8, type: 2}
+  - {fileID: 11400000, guid: 80c766749fd3af44b8d08d473d0ead8a, type: 2}
+  - {fileID: 11400000, guid: 5e26d2ef1f1d5554eb809161da41e90d, type: 2}
+  - {fileID: 11400000, guid: 7d4df78056c8f684780ce861c59091fd, type: 2}
+  - {fileID: 11400000, guid: 3c61d49e3c6737446a07a1b7e9c107eb, type: 2}
