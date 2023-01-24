@@ -20,8 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxClients = 10;
     [SerializeField] private int minSymptoms = 2;
     [SerializeField] private int maxSymptoms = 3;
-    [SerializeField] private float minPotionQty = 0.4f;
-    [SerializeField] private float maxPotionQty = 1f;
+    [SerializeField] private float minPotionQty = 0.5f;
 
     [Header("Parameters")]
     [SerializeField] private bool gameStarted = false;
@@ -64,7 +63,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (!gameStarted || currentClients >= maxTickets) return;
+        if (!gameStarted || currentClients >= maxTickets || clientNumber >= maxClients) return;
 
         timer -= Time.deltaTime;
 
@@ -82,9 +81,8 @@ public class GameManager : MonoBehaviour
         lastDisease = random;
 
         int symptoms = Random.Range(minSymptoms, maxSymptoms + 1);
-        float potionQty = Random.Range(minPotionQty, maxPotionQty);
 
-        Client client = new((clientNumber+1).ToString(), diseaseBook.diseases[random].disease, symptoms, potionQty);
+        Client client = new((clientNumber+1).ToString(), diseaseBook.diseases[random].disease, symptoms);
         Transform clientObject = clientsParent.GetChild(clientNumber % maxTickets);
         ClientBehavior behavior = clientObject.GetComponent<ClientBehavior>();
 
@@ -134,8 +132,10 @@ public class GameManager : MonoBehaviour
     {
         clientsHealed++;
 
+        float quantScore = Mathf.Min(quantity / minPotionQty, 1);
         float speedBonus = Mathf.Clamp(speed * speedMultiplier, minSpeedBonus, maxSpeedBonus);
-        int value = (int)(quality * quantity * speedBonus * scoreMultiplier);
+
+        int value = (int)(quality * quantScore * speedBonus * scoreMultiplier);
         score += value;
 
         Debug.Log("Potion scores: Qual=" + quality + ", Quant=" + quantity + ", Speed=" + speedBonus);
