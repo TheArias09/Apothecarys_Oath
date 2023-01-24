@@ -96,9 +96,10 @@ public class IngredientWrapper : MonoBehaviour
         {
             Ingredient ing = ingredients[i];
             removedQty += Mathf.Min(ing.Quantity, deltaQty);
-            
-            if (!infiniteSource) ing.Quantity -= removedQty;
-            pouredIngredients.Add(new(ing.Data, removedQty, ing.Quality, ing.Cures));
+
+            var quantityActuallyRemoved = removedQty * ing.Data.viscosity;
+            if (!infiniteSource) ing.Quantity -= quantityActuallyRemoved;
+            pouredIngredients.Add(new(ing.Data, quantityActuallyRemoved, ing.Quality, ing.Cures));
         }
 
         ingredients.RemoveAll(ing => ing.Quantity == 0);
