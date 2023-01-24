@@ -331,8 +331,6 @@ MonoBehaviour:
     quantity: 0.15
     quality: 1
     cures: 0
-    states: 
-  states: 
   respawner: {fileID: 0}
 --- !u!114 &1761117730
 MonoBehaviour:
