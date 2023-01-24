@@ -12,4 +12,6 @@ public class GrimoireDiseasePageData : ScriptableObject
     public bool isBackCover;
     public Sprite coverSprite;
     public string coverTitle;
+    public bool isTutorialPage;
+    public string tutorialDescription;
 }
