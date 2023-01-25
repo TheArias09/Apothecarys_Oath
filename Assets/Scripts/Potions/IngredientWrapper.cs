@@ -9,6 +9,7 @@ using UnityEngine;
 public class IngredientWrapper : MonoBehaviour
 {
     [SerializeField] private float recipientQuantity = 1;
+    [SerializeField] private float minQuantity = 0.01f;
     [SerializeField] private bool infiniteSource;
     [Space(10)]
     [SerializeField] private List<Ingredient> ingredients;
@@ -103,7 +104,7 @@ public class IngredientWrapper : MonoBehaviour
             pouredIngredients.Add(new(ing.Data, quantityActuallyRemoved, ing.Quality, ing.Cures));
         }
 
-        ingredients.RemoveAll(ing => ing.Quantity == 0);
+        ingredients.RemoveAll(ing => ing.Quantity <= minQuantity);
 
         OnQuantityUpdated?.Invoke();
         return pouredIngredients;
