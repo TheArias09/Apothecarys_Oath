@@ -45,6 +45,6 @@ public class StartStopPotion : MonoBehaviour
 
         OnPour.Raise();
 
-        Destroy(gameObject);
+        DestroyImmediate(gameObject);
     }
 }

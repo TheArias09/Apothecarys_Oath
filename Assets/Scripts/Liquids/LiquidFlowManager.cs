@@ -33,7 +33,7 @@ public class LiquidFlowManager : MonoBehaviour
     public bool IsFlowing => isFlowing;
     public bool TargetPotionExists => targetPotionExists;
     
-    void Start()
+    void Awake()
     {
         flowTransform = transform;
         //flowPosition = flowTransform.position;
