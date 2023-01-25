@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
 
         Client client = new((clientNumber+1).ToString(), diseaseBook.diseases[random].disease, symptoms);
         Transform clientObject = clientsParent.GetChild(clientNumber % maxTickets);
-        ClientBehavior behavior = clientObject.GetComponent<ClientBehavior>();
+        ClientBehavior behavior = clientObject.GetComponentInChildren<ClientBehavior>();
 
         behavior.Setup(client, clientStayTime, clientNumber % maxTickets);
         behavior.UpdateDisplay();
