@@ -120,8 +120,7 @@ public class GameManager : MonoBehaviour
                 return true;
             }
         }
-
-        Debug.Log("Potion does not correspond to any client");
+        
         return false;
     }
 
