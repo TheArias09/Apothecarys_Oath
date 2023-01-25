@@ -10,7 +10,7 @@ public class MusicManager : MonoBehaviour
     [SerializeField] AudioClip dayMusic;
     [SerializeField] AudioClip oneChanceLeftMusic;
     [SerializeField] AudioClip victoryMusic;
-    [SerializeField] AudioClip gameOverMusic;
+    [SerializeField] AudioClip gameOverJingle;
 
     private void Awake()
     {
@@ -26,7 +26,7 @@ public class MusicManager : MonoBehaviour
 
     private void Update()
     {
-        /*
+        
         if (Input.GetKeyDown("a"))
         {
             SwitchToChill();
@@ -56,12 +56,13 @@ public class MusicManager : MonoBehaviour
         {
             SwitchToGameOver();
             return;
-        }*/
+        }
     }
 
     public void SwitchToChill()
     {
         musicPlayer.Stop();
+        musicPlayer.loop = true;
         musicPlayer.clip = chillingMusic;
         musicPlayer.Play();
     }
@@ -69,6 +70,7 @@ public class MusicManager : MonoBehaviour
     public void SwitchToDay()
     {
         musicPlayer.Stop();
+        musicPlayer.loop = true;
         musicPlayer.clip = dayMusic;
         musicPlayer.Play();
     }
@@ -76,6 +78,7 @@ public class MusicManager : MonoBehaviour
     public void SwitchToLastChance()
     {
         musicPlayer.Stop();
+        musicPlayer.loop = true;
         musicPlayer.clip = oneChanceLeftMusic;
         musicPlayer.Play();
     }
@@ -83,14 +86,31 @@ public class MusicManager : MonoBehaviour
     public void SwitchToVictory()
     {
         musicPlayer.Stop();
+        musicPlayer.loop = true;
         musicPlayer.clip = victoryMusic;
         musicPlayer.Play();
     }
 
     public void SwitchToGameOver()
     {
+        StartCoroutine(GameOverMusicTransition());
+    }
+
+    private IEnumerator GameOverMusicTransition()
+    {
         musicPlayer.Stop();
-        musicPlayer.clip = gameOverMusic;
+        musicPlayer.loop = false;
+        musicPlayer.clip = gameOverJingle;
         musicPlayer.Play();
+
+        while (musicPlayer.isPlaying)
+        {
+            yield return null;
+        }
+
+        musicPlayer.Stop(); //?
+        musicPlayer.clip = chillingMusic;
+        musicPlayer.Play();
+        
     }
 }
