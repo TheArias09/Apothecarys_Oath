@@ -9,7 +9,7 @@ public class TutorialAppearOnFirstPlaythrough : MonoBehaviour
 
     private string playerPrefsKey = "First Playthrough";
 
-    private void Awake()
+    private void Start()
     {
         if(!PlayerPrefs.HasKey(playerPrefsKey))
         {
