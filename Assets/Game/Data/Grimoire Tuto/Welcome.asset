@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a21b436af6b00e44796c8e00d01eee0c, type: 3}
-  m_Name: Cover
+  m_Name: Welcome
   m_EditorClassIdentifier: 
   disease: {fileID: 0}
   curePotion: {fileID: 0}
   isFrontCover: 0
   isBackCover: 0
   coverSprite: {fileID: 0}
-  coverTitle: Grimory of the Newbie
+  coverTitle: Welcome!
   isTutorialPage: 1
-  tutorialDescription: 
+  tutorialDescription: You're the next Apothecary! This book aims to help you learn
+    controls
