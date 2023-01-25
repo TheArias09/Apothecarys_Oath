@@ -8,16 +8,14 @@ using UnityEngine.UIElements;
 public class GameManager : MonoBehaviour
 {
     [Header("Dependancies")]
-    [SerializeField] private ScoreDisplay scoreDisplay;
-    [SerializeField] private Transform clientsParent;
     [SerializeField] private DiseaseBook diseaseBook;
+    [SerializeField] private ProgressionParameters progressionParameters;
+    [SerializeField] private Transform clientsParent;
+    [SerializeField] private ScoreDisplay scoreDisplay;
     [SerializeField] private GameObject winPage;
     [SerializeField] private GameObject firedPage;
 
     [Header("Clients")]
-    [SerializeField] private float timeBetweenClients = 60;
-    [SerializeField] private float clientStayTime = 120;
-    [SerializeField] private int maxClients = 10;
     [SerializeField] private int minSymptoms = 2;
     [SerializeField] private int maxSymptoms = 3;
     [SerializeField] private float minPotionQty = 0.5f;
@@ -37,14 +35,19 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string[] rankTitles;
 
     private float timer = 0;
+    private int phase = 0;
     private int score = 0;
     private int errors = 0;
     private int maxTickets;
 
+    private int maxClients;
     private int currentClients = 0;
     private int clientNumber = 0;
     private int clientsHealed = 0;
     private int lastDisease = -1;
+
+    private float timeBetweenClients;
+    private float clientStayTime;
 
     public static GameManager Instance;
     public bool GameStarted { get => gameStarted; }
@@ -58,6 +61,10 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         maxTickets = clientsParent.childCount;
+        maxClients = progressionParameters.totalClients;
+
+        timeBetweenClients = progressionParameters.timeBetweenClients[0];
+        clientStayTime = progressionParameters.clientStayTime[0];
 
         if (gameRankThresholds.Count() +1 != rankTitles.Count()) 
             Debug.LogWarning("There should be an equal amount of ranks and rank titles.");
@@ -74,15 +81,13 @@ public class GameManager : MonoBehaviour
 
     private void CreateClient()
     {
-        timer = timeBetweenClients;
-
         //Never pick twice the same disease in a row
         int random;
-        do random = Random.Range(0, diseaseBook.diseases.Count);
+        do random = Random.Range(progressionParameters.diseases[phase].x, progressionParameters.diseases[phase].y +1);
         while (random == lastDisease);
         lastDisease = random;
 
-        int symptoms = Random.Range(minSymptoms, maxSymptoms + 1);
+        int symptoms = Random.Range(minSymptoms, maxSymptoms +1);
 
         Client client = new((clientNumber+1).ToString(), diseaseBook.diseases[random].disease, symptoms);
         Transform clientObject = clientsParent.GetChild(clientNumber % maxTickets);
@@ -95,6 +100,17 @@ public class GameManager : MonoBehaviour
 
         currentClients++;
         clientNumber++;
+
+        //Changing phase, new parameters
+        if (clientNumber >= progressionParameters.phaseEnd[phase])
+        {
+            phase++;
+            timeBetweenClients = progressionParameters.timeBetweenClients[phase];
+            clientStayTime = progressionParameters.clientStayTime[phase];
+            Debug.Log("Starting phase " + phase);
+        }
+
+        timer = timeBetweenClients;
     }
 
     public string GetRank(bool global)
