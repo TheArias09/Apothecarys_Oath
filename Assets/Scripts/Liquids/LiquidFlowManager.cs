@@ -21,7 +21,7 @@ public class LiquidFlowManager : MonoBehaviour
     private ParticleSystem.TrailModule flowSystemTrails;
     private ParticleSystem.EmissionModule flowEmission;
 
-    private bool targetPotionExists;
+    private bool targetPotionExists => targetPotion != null;
     private GameObject targetPotion;
     private GameObject previousTargetPotion;
     //private Vector3 targetPotionPosition;
@@ -55,7 +55,6 @@ public class LiquidFlowManager : MonoBehaviour
         flowSystem.Play();
         
         targetPotion = potionFlowing.GetTargetPotion();
-        targetPotionExists = (targetPotion != null);
         if (targetPotionExists)
         {
             previousTargetPotion = targetPotion;
@@ -111,7 +110,6 @@ public class LiquidFlowManager : MonoBehaviour
         
         targetPotion = potionFlowing.GetTargetPotion();
         
-        targetPotionExists = (targetPotion != null);
         if (targetPotion != previousTargetPotion && targetPotionExists)
         {
             //targetPotionPosition = targetPotion.transform.position;

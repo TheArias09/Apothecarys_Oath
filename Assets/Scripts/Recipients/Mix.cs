@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Mix : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class Mix : MonoBehaviour
     IngredientWrapper ingredientWrapper;
 
     private float startClock = 1f;
+
+    [SerializeField] UnityEvent OnMixComplete;
 
     private void Awake()
     {
@@ -58,6 +61,8 @@ public class Mix : MonoBehaviour
     private void MixComplete()
     {
         if (ingredientWrapper.GetTotalQty() == 0) return;
+
+        OnMixComplete?.Invoke();
 
         ingredientWrapper.Mixed = PotionMaker.Instance.CheckPotion(ingredientWrapper);
         ingredientWrapper.CallOnQuantityUpdated();
