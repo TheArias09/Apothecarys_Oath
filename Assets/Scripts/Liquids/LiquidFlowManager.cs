@@ -195,15 +195,15 @@ public class LiquidFlowManager : MonoBehaviour
         Ray ray = new Ray(startPoint, Vector3.down);
         
         bool res = Physics.Raycast(ray, out RaycastHit hit,5 );
-        
-        if (hit.transform.gameObject.layer == 11)
-        {
-            return new Vector3(42000, 42000, 42000);
-        }
 
         if (!res)
         {
             return new Vector3(startPoint.x, 0, startPoint.z);
+        }
+
+        if (hit.transform.gameObject.layer == 11)
+        {
+            return new Vector3(42000, 42000, 42000);
         }
         
         return hit.point;
