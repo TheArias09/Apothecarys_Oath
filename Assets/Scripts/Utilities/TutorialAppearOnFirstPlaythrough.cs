@@ -10,6 +10,7 @@ public class TutorialAppearOnFirstPlaythrough : MonoBehaviour
     private string playerPrefsKey = "First Playthrough";
 
     [SerializeField] bool deleteInStart = false;
+    [SerializeField] bool deleteAfterStart = false;
 
     private void Start()
     {
@@ -20,6 +21,8 @@ public class TutorialAppearOnFirstPlaythrough : MonoBehaviour
             OnFirstPlaythrough?.Invoke();
             ConfirmHavingDoneAPlaythrough();
         }
+
+        if (deleteAfterStart) Delete();
     }
 
     public void ConfirmHavingDoneAPlaythrough()
