@@ -66,8 +66,10 @@ public class ClientBehavior : MonoBehaviour
 
     void Update()
     {
+        if (hasLeft) return;
+
         float lifeTime = Time.time - birthTime;
-        if (lifeTime > stayTime && !hasLeft) Leave(false);
+        if (lifeTime > stayTime) Leave(false);
 
         uiTimer.fillAmount = 1 - (lifeTime / stayTime);
         uiTimer.color = timerColor.Evaluate(uiTimer.fillAmount);
@@ -122,10 +124,7 @@ public class ClientBehavior : MonoBehaviour
     {
         hasLeft = true;
 
-        if (success)
-        {
-            StartCoroutine(SuccessAnimation());
-        }
+        if (success) StartCoroutine(SuccessAnimation());
         else
         {
             GameManager.Instance.AddError();
@@ -164,6 +163,7 @@ public class ClientBehavior : MonoBehaviour
 
         scoreText.text = "+" + score;
         rank.text = GameManager.Instance.GetRank(false);
+        uiTimer.fillAmount = 0;
 
         GetComponent<Animator>().Play("Leave");
 
