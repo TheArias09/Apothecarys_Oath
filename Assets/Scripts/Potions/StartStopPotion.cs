@@ -32,16 +32,19 @@ public class StartStopPotion : MonoBehaviour
 
         if (ing.Quantity <= triggerQuantity)
         {
-            if(potionToSpawn != null)
-            {
-                Instantiate(potionToSpawn, initialPosition, Quaternion.identity, transform.parent);
-            }
-
-            Debug.Log("Game potion triggered");
-
-            OnPour.Raise();
-
-            Destroy(gameObject);
+            Trigger();
         }
+    }
+
+    public void Trigger()
+    {
+        if (potionToSpawn != null)
+        {
+            Instantiate(potionToSpawn, initialPosition, Quaternion.identity, transform.parent);
+        }
+
+        OnPour.Raise();
+
+        Destroy(gameObject);
     }
 }
