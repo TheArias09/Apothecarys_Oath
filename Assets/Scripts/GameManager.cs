@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
@@ -33,6 +34,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int[] potionRankThresholds;
     [SerializeField] private int[] gameRankThresholds;
     [SerializeField] private string[] rankTitles;
+
+    [Header("Events")]
+    [SerializeField] UnityEvent OnGameStart;
+    [SerializeField] UnityEvent OnDefeat;
+    [SerializeField] UnityEvent OnOneChanceLeft;
+    [SerializeField] UnityEvent OnVictory;
 
     private float timer = 0;
     private int phase = 0;
@@ -168,12 +175,17 @@ public class GameManager : MonoBehaviour
         errors++;
         scoreDisplay.UpdateErrors(errors);
 
+        if(errors == maxErrors - 1)
+        {
+            OnOneChanceLeft.Invoke();
+        }
+
         if (errors >= maxErrors) GameOver(false);
     }
 
     public void StartGame()
     {
-        Debug.Log("Start game");
+        OnGameStart.Invoke();
         gameStarted = true;
     }
 
@@ -186,12 +198,14 @@ public class GameManager : MonoBehaviour
 
         if (win)
         {
+            OnVictory.Invoke();
             winPage.SetActive(true);
             winPage.GetComponentInChildren<Pouf>().MakePouf();
             winPage.GetComponent<WinningScroll>().WinDisplay(clientsHealed, score, rank);
         }
         else
         {
+            OnDefeat.Invoke();
             firedPage.SetActive(true);
             firedPage.GetComponentInChildren<Pouf>().MakePouf();
             firedPage.GetComponent<WinningScroll>().FiredDisplay(score, rank);
