@@ -7,7 +7,7 @@ public class PotionEffectsManager : MonoBehaviour
     private IngredientWrapper ingredientWrapper;
     private List<Ingredient> ingredients;
     private Ingredient topIngredient;
-
+    
     private LiquidVisualsManager liquidVisualsManager;
     private int liquidCount;
     private int previousLiquidCount;
@@ -39,22 +39,8 @@ public class PotionEffectsManager : MonoBehaviour
             ContinuousEffect();
         }
     }
-    
-    /*
-    private void OnEnable()
-    {
-        ingredientWrapper.OnMixed += MixEffect;
-        ingredientWrapper.OnDelivered += DeliveryEffect;
-    }
 
-    private void OnDisable()
-    {
-        ingredientWrapper.OnMixed -= MixEffect;
-        ingredientWrapper.OnDelivered -= DeliveryEffect;
-    }
-    */
-
-    void MixEffect()
+    public void MixEffect()
     {
         if (liquidCount > 0)
         {
@@ -66,7 +52,7 @@ public class PotionEffectsManager : MonoBehaviour
         }
     }
 
-    void DeliveryEffect()
+    public void DeliveryEffect()
     {
         if (liquidCount > 0)
         {
@@ -79,7 +65,7 @@ public class PotionEffectsManager : MonoBehaviour
     }
 
     //supprime l'effet continu précédent et en lance un nouveau
-    void ContinuousEffect()
+    private void ContinuousEffect()
     {
         //delete last effect if it exists
         if (activeContinuousEffect != null)
