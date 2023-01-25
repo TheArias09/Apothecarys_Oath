@@ -562,6 +562,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 779825450459483152, guid: c1d713d9bf161b44190cbf7a7ee866c2,
+        type: 3}
+      propertyPath: m_Name
+      value: EventRegister
+      objectReference: {fileID: 0}
     - target: {fileID: 779825450459483154, guid: c1d713d9bf161b44190cbf7a7ee866c2,
         type: 3}
       propertyPath: OnHelpUnity.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -570,6 +575,16 @@ PrefabInstance:
     - target: {fileID: 779825450459483154, guid: c1d713d9bf161b44190cbf7a7ee866c2,
         type: 3}
       propertyPath: OnCloseHelpUnity.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 614957983}
+    - target: {fileID: 779825450459483154, guid: c1d713d9bf161b44190cbf7a7ee866c2,
+        type: 3}
+      propertyPath: gameActionRegistrations.Array.data[2].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 614957983}
+    - target: {fileID: 779825450459483154, guid: c1d713d9bf161b44190cbf7a7ee866c2,
+        type: 3}
+      propertyPath: gameActionRegistrations.Array.data[3].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 614957983}
     - target: {fileID: 779825450775671461, guid: c1d713d9bf161b44190cbf7a7ee866c2,
