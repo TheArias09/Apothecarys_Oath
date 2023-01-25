@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
         {
             if (!child.gameObject.activeInHierarchy) continue;
 
-            child.TryGetComponent(out ClientBehavior behavior);
+            child.GetChild(0).TryGetComponent(out ClientBehavior behavior);
             if (behavior.Client.Disease.name == potion.Cures)
             {
                 behavior.ReceivePotion(potion);
