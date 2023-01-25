@@ -6241,16 +6241,17 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   uiColor: {r: 0.19215687, g: 0.69411767, b: 1, a: 1}
-  winSound: {fileID: 8300000, guid: 45e914c9ecb2aad4ca588b664345f599, type: 3}
-  timeoutSound: {fileID: 8300000, guid: 6480bf4beee6572409adc6782cbbbc8f, type: 3}
-  tintTime: 0.8
+  scoreText: {fileID: 753095216450231752}
+  rank: {fileID: 1566991298748119509}
   outline: {fileID: 386734356996755277}
   board: {fileID: 386734356996850889}
   outlineMaterial: {fileID: 2100000, guid: ca2d033ea28116146bcf6f593bf0e2c5, type: 2}
   boardMaterial: {fileID: 2100000, guid: 2f3a07d5154510d4c89e667f69a25656, type: 2}
+  winSound: {fileID: 8300000, guid: 45e914c9ecb2aad4ca588b664345f599, type: 3}
+  timeoutSound: {fileID: 8300000, guid: 6480bf4beee6572409adc6782cbbbc8f, type: 3}
+  tintTime: 2
+  scoreDisplayTime: 3
   errorMaterial: {fileID: 2100000, guid: 5684899dead9766419b192fc8000023a, type: 2}
-  successMaterial: {fileID: 2100000, guid: d073608127492fa43bc3d77047ca1f35, type: 2}
-  successColor: {r: 0.2826906, g: 0.745283, b: 0.1364008, a: 1}
   errorColor: {r: 1, g: 0, b: 0, a: 1}
   shakeStart: 0.25
   shakeMagnitude: 0.02

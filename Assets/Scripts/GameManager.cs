@@ -30,8 +30,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float speedMultiplier = 2;
     [SerializeField] private float minSpeedBonus = 0.5f;
     [SerializeField] private float maxSpeedBonus = 1.5f;
-    [Space(10)]
-    [SerializeField] private int[] ranks;
+
+    [Header("Ranks")]
+    [SerializeField] private int[] potionRankThresholds;
+    [SerializeField] private int[] gameRankThresholds;
     [SerializeField] private string[] rankTitles;
 
     private float timer = 0;
@@ -57,7 +59,7 @@ public class GameManager : MonoBehaviour
     {
         maxTickets = clientsParent.childCount;
 
-        if (ranks.Count() +1 != rankTitles.Count()) 
+        if (gameRankThresholds.Count() +1 != rankTitles.Count()) 
             Debug.LogWarning("There should be an equal amount of ranks and rank titles.");
     }
 
@@ -95,10 +97,13 @@ public class GameManager : MonoBehaviour
         clientNumber++;
     }
 
-    private string GetRank()
+    public string GetRank(bool global)
     {
         int index = 0;
-        while (ranks[index] < score && index < ranks.Length -1) index++;
+
+        if (global) while (gameRankThresholds[index] < score && index < rankTitles.Length - 2) index++;
+        else while (potionRankThresholds[index] < score && index < rankTitles.Length - 2) index++;
+
         return rankTitles[index];
     }
 
@@ -128,7 +133,7 @@ public class GameManager : MonoBehaviour
         if (clientNumber >= maxClients) GameOver(true);
     }
 
-    public float AddScore(float quality, float quantity, float speed)
+    public int AddScore(float quality, float quantity, float speed)
     {
         clientsHealed++;
 
@@ -162,7 +167,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over");
         gameStarted = false;
 
-        string rank = GetRank();
+        string rank = GetRank(true);
 
         if (win)
         {

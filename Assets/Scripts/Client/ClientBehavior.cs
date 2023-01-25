@@ -13,23 +13,25 @@ public class ClientBehavior : MonoBehaviour
     [SerializeField] private Gradient timerColor;
     [SerializeField] private Color uiColor;
 
+    [Header("Back UI")]
+    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI rank;
+
+    [Header("Components")]
+    [SerializeField] private MeshRenderer outline;
+    [SerializeField] private MeshRenderer board;
+    [SerializeField] private Material outlineMaterial;
+    [SerializeField] private Material boardMaterial;
+
     [Header("Sounds")]
     [SerializeField] private AudioClip winSound;
     [SerializeField] private AudioClip timeoutSound;
 
     [Header("Animation")]
     [SerializeField] private float tintTime;
-    [Space(5)]
-    [SerializeField] private MeshRenderer outline;
-    [SerializeField] private MeshRenderer board;
-    [Space(5)]
-    [SerializeField] private Material outlineMaterial;
-    [SerializeField] private Material boardMaterial;
-    [Space(5)]
+    [SerializeField] private float scoreDisplayTime;
+    [Space(10)]
     [SerializeField] private Material errorMaterial;
-    [SerializeField] private Material successMaterial;
-    [Space(5)]
-    [SerializeField] private Color successColor;
     [SerializeField] private Color errorColor;
 
     [Header("Shaking")]
@@ -46,6 +48,7 @@ public class ClientBehavior : MonoBehaviour
     private int position;
 
     private bool hasLeft = false;
+    private int score; 
    
     private Vector3 initialPosition;
     private float shakePeriod;
@@ -109,7 +112,7 @@ public class ClientBehavior : MonoBehaviour
     {
         if (potion.Cures != DiseaseName.NONE && potion.Cures == Client.Disease.name)
         {
-            GameManager.Instance.AddScore(potion.Quality, potion.Quantity, uiTimer.fillAmount);
+            score = GameManager.Instance.AddScore(potion.Quality, potion.Quantity, uiTimer.fillAmount);
             Client.Cure();
             Leave(true);
         }
@@ -119,52 +122,52 @@ public class ClientBehavior : MonoBehaviour
     {
         hasLeft = true;
 
-        if (!success) GameManager.Instance.AddError();
-        if (GameManager.Instance.GameStarted) StartCoroutine(TintTicket(success));
-    }
-
-    private IEnumerator TintTicket(bool success)
-    {
         if (success)
         {
-            outline.material = successMaterial;
-            board.material = successMaterial;
-
-            title.color = successColor;
-            content.color = successColor;
-
-            audioSource.clip = winSound;
+            StartCoroutine(SuccessAnimation());
         }
         else
         {
-            outline.material = errorMaterial;
-            board.material = errorMaterial;
-
-            title.color = errorColor;
-            content.color = errorColor;
-
-            audioSource.clip = timeoutSound;
+            GameManager.Instance.AddError();
+            StartCoroutine(FailAnimation());
         }
+    }
 
+    private IEnumerator FailAnimation()
+    {
+        audioSource.clip = timeoutSound;
         audioSource.Play();
+
+        //Tint ticket
+        outline.material = errorMaterial;
+        board.material = errorMaterial;
+
+        title.color = errorColor;
+        content.color = errorColor;
+
         yield return new WaitForSeconds(tintTime);
 
-        outline.gameObject.SetActive(false);
-        board.gameObject.SetActive(false);
-        title.transform.parent.gameObject.SetActive(false);
-
-        yield return new WaitForSeconds(tintTime);
-
+        //Back to normal
         outline.material = outlineMaterial;
         board.material = boardMaterial;
 
         title.color = Color.white;
         content.color = uiColor;
 
-        outline.gameObject.SetActive(true);
-        board.gameObject.SetActive(true);
-        title.transform.parent.gameObject.SetActive(true);
+        GameManager.Instance.ClientLeave(position);
+    }
 
+    private IEnumerator SuccessAnimation()
+    {
+        audioSource.clip = winSound;
+        audioSource.Play();
+
+        scoreText.text = "+" + score;
+        rank.text = GameManager.Instance.GetRank(false);
+
+        GetComponent<Animator>().Play("Leave");
+
+        yield return new WaitForSeconds(scoreDisplayTime);
         GameManager.Instance.ClientLeave(position);
     }
 }
