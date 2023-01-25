@@ -17,7 +17,6 @@ MonoBehaviour:
   isFrontCover: 0
   isBackCover: 0
   coverSprite: {fileID: 0}
-  coverTitle: Welcome!
+  coverTitle: Grimory of the Newbie
   isTutorialPage: 1
-  tutorialDescription: You're the next Apothecary! This book aims to help you learn
-    controls
+  tutorialDescription: 

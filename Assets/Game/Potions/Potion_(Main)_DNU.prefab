@@ -5252,6 +5252,21 @@ MonoBehaviour:
   mixCompletionDecreaseSpeed: 0.5
   mixCompletionThreshold: 1
   mixCompletion: 0
+  OnMixComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -2579553934737380625}
+        m_TargetAssemblyTypeName: PotionEffectsManager, Assembly-CSharp
+        m_MethodName: MixEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-2579553934737380625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10001,6 +10016,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   trackedGameObjects: []
+  movementTrackerGrabbable: {fileID: 0}
 --- !u!1 &6190739063238049720
 GameObject:
   m_ObjectHideFlags: 0

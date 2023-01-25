@@ -25,6 +25,7 @@ public class MixEffectManager : MonoBehaviour
         potion = transform.parent.gameObject;
         liquidVisualsManager = potion.GetComponent<LiquidVisualsManager>();
         wobbleManager = potion.GetComponent<WobbleManager>();
+        
         SetScale();
     }
 
@@ -39,6 +40,7 @@ public class MixEffectManager : MonoBehaviour
         {
             Destroy(gameObject); //We destroy the effect
         }
+        
         SetTransform();
     }
 

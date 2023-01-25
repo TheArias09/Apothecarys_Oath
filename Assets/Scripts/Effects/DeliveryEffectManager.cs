@@ -26,6 +26,7 @@ public class DeliveryEffectManager : MonoBehaviour
         liquidVisualsManager = potion.GetComponent<LiquidVisualsManager>();
         wobbleManager = potion.GetComponent<WobbleManager>();
         SetScale();
+        SetTransform();
     }
 
     void Update()
@@ -39,7 +40,6 @@ public class DeliveryEffectManager : MonoBehaviour
         {
             Destroy(gameObject); //We destroy the effect
         }
-        SetTransform();
     }
 
     void SetTransform()
