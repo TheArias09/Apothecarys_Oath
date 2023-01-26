@@ -30,6 +30,8 @@ public class IngredientWrapper : MonoBehaviour
 
     public void SetTotalQty() => quantity = ingredients.Sum(ing => ing.Quantity);
 
+    public bool IsEmpty() => ingredients.Count == 0;
+
     public float GetTotalQty()
     {
         SetTotalQty();

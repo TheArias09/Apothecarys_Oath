@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Demo.unity
     guid: 33bcaf9fc789cbb428363e3fbae28961
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game.unity
     guid: 3843d39a6fc5e614e9904379550ea5bc
+  - enabled: 0
+    path: Assets/Scenes/Flegz/Playtest_Flegs.unity
+    guid: 384fae1b430d74623b5f560ffc4ff9cf
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c94fdcc67916ee742b39cd0b2d75b34d,
       type: 2}
