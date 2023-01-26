@@ -10000,9 +10000,9 @@ MonoBehaviour:
           m_StringArgument: Respawn
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
+      - m_Target: {fileID: 6521822972275739432}
+        m_TargetAssemblyTypeName: Pouf, Assembly-CSharp
+        m_MethodName: MakePouf
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10190,3 +10190,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1100610862675472815}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6521822972275739432 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6180078676148714119, guid: b07e20aa7930ea24b99ca6473edb2fbf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1100610862675472815}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1174cd6dee59a7941a9827648d344826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
