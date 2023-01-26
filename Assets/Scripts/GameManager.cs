@@ -125,8 +125,8 @@ public class GameManager : MonoBehaviour
     {
         int index = 0;
 
-        if (global) while (score > gameRankThresholds[index] && index < rankTitles.Length - 1) index++;
-        else while (score > potionRankThresholds[index] && index < rankTitles.Length - 1) index++;
+        if (global) while (index < rankTitles.Length - 1 && score > gameRankThresholds[index]) index++;
+        else while (index < rankTitles.Length - 1 && score > potionRankThresholds[index]) index++;
 
         return rankTitles[index];
     }
@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour
         currentClients--;
         clientsParent.GetChild(position).gameObject.SetActive(false);
 
-        if (clientNumber >= maxClients) GameOver(true);
+        if (clientsHealed + errors >= maxClients) GameOver(true);
     }
 
     public int AddScore(float quality, float quantity, float speed)
