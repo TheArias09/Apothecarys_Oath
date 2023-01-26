@@ -7,6 +7,176 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: displayFillCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: displayFillCurve.m_Curve.Array.data[0].value
+      value: -0.0552
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: displayFillCurve.m_Curve.Array.data[1].value
+      value: -0.0415
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: displayFillCurve.m_Curve.Array.data[2].value
+      value: -0.0305
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: displayFillCurve.m_Curve.Array.data[3].value
+      value: -0.0125
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: displayFillCurve.m_Curve.Array.data[4].value
+      value: 0.0417
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: displayFillCurve.m_Curve.Array.data[0].inSlope
+      value: 0.054800004
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: displayFillCurve.m_Curve.Array.data[1].inSlope
+      value: 0.049399998
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: displayFillCurve.m_Curve.Array.data[2].inSlope
+      value: 0.057999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: displayFillCurve.m_Curve.Array.data[3].inSlope
+      value: 0.077964716
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: displayFillCurve.m_Curve.Array.data[4].inSlope
+      value: 0.2168
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: displayFillCurve.m_Curve.Array.data[0].outSlope
+      value: 0.054800004
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: displayFillCurve.m_Curve.Array.data[1].outSlope
+      value: 0.049399998
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: displayFillCurve.m_Curve.Array.data[2].outSlope
+      value: 0.057999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: displayFillCurve.m_Curve.Array.data[3].inWeight
+      value: 0.9409287
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: displayFillCurve.m_Curve.Array.data[3].outSlope
+      value: 0.077964716
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: displayFillCurve.m_Curve.Array.data[4].outSlope
+      value: 0.2168
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: displayFillCurve.m_Curve.Array.data[3].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: horizontalDisplayFillCurve.m_Curve.Array.data[0].value
+      value: -0.0463
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: horizontalDisplayFillCurve.m_Curve.Array.data[1].value
+      value: -0.0155
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: horizontalDisplayFillCurve.m_Curve.Array.data[3].value
+      value: 0.0155
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: horizontalDisplayFillCurve.m_Curve.Array.data[4].value
+      value: 0.0417
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: horizontalDisplayFillCurve.m_Curve.Array.data[0].inSlope
+      value: 0.12320001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: horizontalDisplayFillCurve.m_Curve.Array.data[1].inSlope
+      value: 0.074691504
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: horizontalDisplayFillCurve.m_Curve.Array.data[2].inSlope
+      value: 0.062
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: horizontalDisplayFillCurve.m_Curve.Array.data[3].inSlope
+      value: 0.0834
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: horizontalDisplayFillCurve.m_Curve.Array.data[4].inSlope
+      value: 0.10480001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: horizontalDisplayFillCurve.m_Curve.Array.data[0].outSlope
+      value: 0.12320001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: horizontalDisplayFillCurve.m_Curve.Array.data[1].inWeight
+      value: 0.84810126
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: horizontalDisplayFillCurve.m_Curve.Array.data[1].outSlope
+      value: 0.074691504
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: horizontalDisplayFillCurve.m_Curve.Array.data[2].outSlope
+      value: 0.062
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: horizontalDisplayFillCurve.m_Curve.Array.data[3].outSlope
+      value: 0.0834
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: horizontalDisplayFillCurve.m_Curve.Array.data[4].outSlope
+      value: 0.10480001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367757, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: horizontalDisplayFillCurve.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3318193849181367758, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: infiniteSource

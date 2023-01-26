@@ -19,3 +19,7 @@ MonoBehaviour:
   symbol: {fileID: 21300000, guid: b5ce61843f9c94400b7aead1017e581a, type: 3}
   description: Even the greatest hypnotists agree on the fact that this potion is
     the most effective way to cope with insomnia.
+  continuousEffect: {fileID: 397561539142118835, guid: d225d0ab20907c34684142c7b0a6f5c8,
+    type: 3}
+  mixEffect: {fileID: 0}
+  deliveryEffect: {fileID: 0}

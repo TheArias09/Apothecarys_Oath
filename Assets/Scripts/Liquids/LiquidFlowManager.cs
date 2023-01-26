@@ -185,7 +185,7 @@ public class LiquidFlowManager : MonoBehaviour
     {
         if (targetPotionExists)
         {
-            return new Vector3(targetPotion.transform.position.x,targetPotion.transform.position.y + targetPotionLVM.FindTotalDisplayedFill()* targetPotion.transform.lossyScale.y / targetPotionLVM.BaseScale,targetPotion.transform.position.z);
+            return new Vector3(targetPotion.transform.position.x,targetPotion.transform.position.y + targetPotionLVM.FindTotalDisplayedFill() * targetPotion.transform.lossyScale.y / targetPotionLVM.BaseScale,targetPotion.transform.position.z);
         }
 
         //Vector3 startPoint = potionFlowing.GetFlowPoint();
@@ -236,7 +236,7 @@ public class LiquidFlowManager : MonoBehaviour
     {
         if (targetPotionExists)
         {
-            return targetPotionLVM.FindInsideScale();
+            return targetPotionLVM.FindInsideScale() * targetPotion.transform.lossyScale.y / targetPotionLVM.BaseScale;
         }
         return 0.004f;
     }

@@ -50,8 +50,8 @@ public class ContinuousEffectManager : MonoBehaviour
         wobbleAmountZ = wobbleManager.WobbleAmountZ;
         
         //Setting the desired rotation
-        rotationZ = -90f * wobbleAmountZ * Mathf.Deg2Rad * 90f;
-        rotationX = -90f * wobbleAmountX * Mathf.Deg2Rad * 90f;
+        rotationZ = 90f * wobbleAmountZ * Mathf.Deg2Rad * 90f;
+        rotationX = 90f * wobbleAmountX * Mathf.Deg2Rad * 90f;
 
         transform.rotation = Quaternion.Euler(rotationZ,0f,rotationX);        
     }
