@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour
         currentClients--;
         clientsParent.GetChild(position).gameObject.SetActive(false);
 
-        if (clientNumber >= maxClients) GameOver(true);
+        if (clientsHealed + errors >= maxClients) GameOver(true);
     }
 
     public int AddScore(float quality, float quantity, float speed)
