@@ -9509,11 +9509,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6583673188007457269, guid: affd85d75c3c8e54b802be2df6f1770f,
         type: 3}
-      propertyPath: m_text
-      value: "Score : 0\nR\xE9putation :"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6583673188007457269, guid: affd85d75c3c8e54b802be2df6f1770f,
-        type: 3}
       propertyPath: m_fontSize
       value: 500
       objectReference: {fileID: 0}

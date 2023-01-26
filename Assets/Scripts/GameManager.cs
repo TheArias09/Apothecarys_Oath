@@ -109,7 +109,8 @@ public class GameManager : MonoBehaviour
         clientNumber++;
 
         //Changing phase, new parameters
-        if (clientNumber >= progressionParameters.phaseEnd[phase])
+        if (phase < progressionParameters.phaseEnd.Count &&
+            clientNumber >= progressionParameters.phaseEnd[phase])
         {
             phase++;
             timeBetweenClients = progressionParameters.timeBetweenClients[phase];
