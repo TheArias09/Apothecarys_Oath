@@ -125,8 +125,8 @@ public class GameManager : MonoBehaviour
     {
         int index = 0;
 
-        if (global) while (gameRankThresholds[index] < score && index < rankTitles.Length - 2) index++;
-        else while (potionRankThresholds[index] < score && index < rankTitles.Length - 2) index++;
+        if (global) while (score > gameRankThresholds[index] && index < rankTitles.Length - 1) index++;
+        else while (score > potionRankThresholds[index] && index < rankTitles.Length - 1) index++;
 
         return rankTitles[index];
     }
