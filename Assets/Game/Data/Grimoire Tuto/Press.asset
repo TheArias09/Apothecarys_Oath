@@ -16,7 +16,7 @@ MonoBehaviour:
   curePotion: {fileID: 0}
   isFrontCover: 0
   isBackCover: 0
-  coverSprite: {fileID: 0}
+  coverSprite: {fileID: 21300000, guid: 4a0bef71e1b07044f8c0a3f8b847774e, type: 3}
   coverTitle: Press an object
   isTutorialPage: 1
   tutorialDescription: You make it by pressing both gachettes and a button. Usefull
