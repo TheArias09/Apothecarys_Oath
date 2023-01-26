@@ -90,7 +90,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Fill: -0.05
+    - _Fill: -0.0175
     - _FillV4: -0.1
     - _FresnelPower: 5
     - _FresnelPowerV4: 5
