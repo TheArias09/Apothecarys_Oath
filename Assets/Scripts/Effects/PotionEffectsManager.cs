@@ -20,8 +20,6 @@ public class PotionEffectsManager : MonoBehaviour
     public GameObject bestDeliveryEffect;
     public GameObject goodDeliveryEffect;
     public GameObject badDeliveryEffect;
-
-    public int PotionRank { get; set; }
     
     void Start()
     {
@@ -46,7 +44,7 @@ public class PotionEffectsManager : MonoBehaviour
         
         if (Input.GetKeyDown("d"))
         {
-            DeliveryEffect();
+            DeliveryEffect(Random.Range(0,6));
         }
     }
 
@@ -63,14 +61,15 @@ public class PotionEffectsManager : MonoBehaviour
         }
     }
 
-    public void DeliveryEffect()
+    public void DeliveryEffect(int potionRank)
     {
         Debug.Log("DeliveryEffect");
-        if (PotionRank <= 2)
+
+        if (potionRank <= 2)
         {
             deliveryEffect = badDeliveryEffect;
         }
-        else if (PotionRank <= 4)
+        else if (potionRank <= 4)
         {
             deliveryEffect = goodDeliveryEffect;
         }
@@ -78,9 +77,8 @@ public class PotionEffectsManager : MonoBehaviour
         {
             deliveryEffect = bestDeliveryEffect;
         }
-        
-        Instantiate(deliveryEffect, transform);
 
+        Instantiate(deliveryEffect, transform);
     }
 
     //supprime l'effet continu précédent et en lance un nouveau

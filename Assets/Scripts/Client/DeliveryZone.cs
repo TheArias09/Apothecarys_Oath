@@ -23,11 +23,7 @@ public class DeliveryZone : MonoBehaviour
         ingredientWrapper.Empty();
 
         collision.gameObject.TryGetComponent<PotionEffectsManager>(out var effectsManager);
-        if (effectsManager != null)
-        {
-            effectsManager.PotionRank = deliveryRank;
-            effectsManager.DeliveryEffect();
-        }
+        if (effectsManager != null) effectsManager.DeliveryEffect(deliveryRank);
 
         if (ingredientWrapper.Respawner)
         {

@@ -56,7 +56,7 @@ public class DeliveryEffectManager : MonoBehaviour
         rotationZ = -90f * wobbleAmountZ * Mathf.Deg2Rad * 500;
         rotationX = -90f * wobbleAmountX * Mathf.Deg2Rad * 500;
 
-        transform.rotation = Quaternion.Euler(rotationZ,0f,rotationX);        
+        transform.rotation = Quaternion.Euler(rotationZ,0f,rotationX);
     }
 
     void SetScale()
