@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Game/SFX and Music/FantomAudioSource.prefab.meta
 guid: 8512a44b5c8104c05b993fa162fcc77f
+=======
+guid: 3fdac274ed583b9459bea1171af24516
+>>>>>>> f833f0d744032d0f084c372339c206aa593029bf:Assets/Game/FX/Delivery/DeliveryEffect_Main.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

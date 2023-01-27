@@ -14,5 +14,4 @@ public class IngredientData : ScriptableObject
     public string description;
     public GameObject continuousEffect;
     public GameObject mixEffect;
-    public GameObject deliveryEffect;
 }

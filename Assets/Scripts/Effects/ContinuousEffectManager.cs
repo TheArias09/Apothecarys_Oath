@@ -14,13 +14,13 @@ public class ContinuousEffectManager : MonoBehaviour
 
     public bool takesColor;
     public float effectBaseScale;
+    private float splashBaseScale = 0.003f;
 
     private float wobbleAmountX;
     private float wobbleAmountZ;
     private float rotationZ;
     private float rotationX;
     
-    private float splashBaseScale = 0.003f;
     void Start()
     {
         particles = GetComponent<ParticleSystem>();

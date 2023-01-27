@@ -17,6 +17,16 @@ public class PotionEffectsManager : MonoBehaviour
     private GameObject continuousEffect;
     private GameObject activeContinuousEffect;
 
+    public GameObject bestDeliveryEffect;
+    public GameObject goodDeliveryEffect;
+    public GameObject badDeliveryEffect;
+
+    private int potionRank;
+
+    public int SetPotionRank
+    {
+        set => potionRank = value;
+    }
     
     void Start()
     {
@@ -38,6 +48,11 @@ public class PotionEffectsManager : MonoBehaviour
             previousLiquidCount = liquidCount;
             ContinuousEffect();
         }
+        
+        if (Input.GetKeyDown("d"))
+        {
+            DeliveryEffect();
+        }
     }
 
     public void MixEffect()
@@ -48,7 +63,7 @@ public class PotionEffectsManager : MonoBehaviour
             mixEffect = ingredients[^1].Data.mixEffect;
             if (mixEffect != null)
             {
-                Instantiate(mixEffect);
+                Instantiate(mixEffect, transform);
             }
         }
     }
@@ -56,14 +71,21 @@ public class PotionEffectsManager : MonoBehaviour
     public void DeliveryEffect()
     {
         Debug.Log("DeliveryEffect");
-        if (liquidCount > 0)
+        if (potionRank <= 2)
         {
-            deliveryEffect = ingredients[^1].Data.deliveryEffect;
-            if (deliveryEffect != null)
-            {
-                Instantiate(deliveryEffect);
-            }
+            deliveryEffect = badDeliveryEffect;
         }
+        else if (potionRank <= 4)
+        {
+            deliveryEffect = goodDeliveryEffect;
+        }
+        else
+        {
+            deliveryEffect = bestDeliveryEffect;
+        }
+        
+        Instantiate(deliveryEffect, transform);
+
     }
 
     //supprime l'effet continu précédent et en lance un nouveau

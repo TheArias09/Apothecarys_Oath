@@ -11,6 +11,9 @@ public class DeliveryEffectManager : MonoBehaviour
     private ParticleSystem particles;
     
     private bool startedPlaying;
+    
+    public float effectBaseScale;
+    private float splashBaseScale = 0.003f;
 
     private float wobbleAmountX;
     private float wobbleAmountZ;
@@ -58,6 +61,8 @@ public class DeliveryEffectManager : MonoBehaviour
 
     void SetScale()
     {
-        transform.localScale = liquidVisualsManager.FindInsideScale() * Vector3.one;
+        //transform.localScale = liquidVisualsManager.FindInsideScale() * Vector3.one;
+        transform.localScale = Vector3.one * (liquidVisualsManager.FindInsideScale() * effectBaseScale) / splashBaseScale;
+
     }
 }
