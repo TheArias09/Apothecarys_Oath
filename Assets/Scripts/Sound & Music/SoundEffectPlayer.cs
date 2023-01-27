@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SoundEffectPlayer : MonoBehaviour
 {
+    [SerializeField] GameObject fantomAudioSourcePrefab;
     [SerializeField] private List<AudioClip> audioClips;
     private AudioSource audioSource;
     
@@ -21,6 +22,18 @@ public class SoundEffectPlayer : MonoBehaviour
     {
         ChooseRandomClip();
         audioSource.Play();
+    }
+
+    public void LaunchOnDestroySFXPlay()
+    {
+        ChooseRandomClip();
+        if(fantomAudioSourcePrefab != null)
+        {
+            GameObject fantomSourceObject = Instantiate(fantomAudioSourcePrefab, transform.position, transform.rotation);
+            var fantomAudioSource = fantomSourceObject.GetComponent<FantomAudioSource>();
+            fantomAudioSource.SetFantomAudioClip(audioSource.clip);
+            fantomAudioSource.PlaySoundAndDestroy();
+        }
     }
 
     public void StopSFXPlay()

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4646572581916308949
+--- !u!1 &3006572254511252126
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1396962503595825736}
-  - component: {fileID: 6256253397691023074}
-  - component: {fileID: 8012654314560600880}
-  m_Layer: 11
-  m_Name: SoundEffectPlayer
+  - component: {fileID: 3006572254511252129}
+  - component: {fileID: 3006572254511252128}
+  - component: {fileID: 3006572254511252127}
+  m_Layer: 0
+  m_Name: FantomAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1396962503595825736
+--- !u!4 &3006572254511252129
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4646572581916308949}
+  m_GameObject: {fileID: 3006572254511252126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.65, y: 1.26, z: 1.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &6256253397691023074
+--- !u!82 &3006572254511252128
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4646572581916308949}
+  m_GameObject: {fileID: 3006572254511252126}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -129,18 +129,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8012654314560600880
+--- !u!114 &3006572254511252127
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4646572581916308949}
+  m_GameObject: {fileID: 3006572254511252126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69871352af7434980a2a6c3c896007cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 150dd5300d98c434495f769b1d337a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fantomAudioSourcePrefab: {fileID: 3006572254511252126, guid: 8512a44b5c8104c05b993fa162fcc77f,
-    type: 3}
-  audioClips: []

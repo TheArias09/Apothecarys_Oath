@@ -9844,7 +9844,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6535236057846598897}
         m_TargetAssemblyTypeName: SoundEffectPlayer, Assembly-CSharp
-        m_MethodName: LaunchSFXPlay
+        m_MethodName: LaunchOnDestroySFXPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

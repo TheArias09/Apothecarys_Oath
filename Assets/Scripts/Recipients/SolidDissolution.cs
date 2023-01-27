@@ -72,7 +72,7 @@ public class SolidDissolution : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        OnDissolutionStart?.Invoke();
+        OnDissolutionEnd?.Invoke();
         Destroy(gameObject);
     }
 }

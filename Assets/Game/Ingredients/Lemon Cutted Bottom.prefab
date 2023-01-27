@@ -256,7 +256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1761117730, guid: 1a22bef876f44574fb1ba411f21c3ae7, type: 3}
       propertyPath: OnPressingIngredient.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LaunchSFXPlay
+      value: LaunchOnDestroySFXPlay
       objectReference: {fileID: 0}
     - target: {fileID: 1761117730, guid: 1a22bef876f44574fb1ba411f21c3ae7, type: 3}
       propertyPath: OnStartFlowingInVoid.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -311,6 +311,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7265744515449303197, guid: f59be2860e913a943a5e7a0aedd51c6f,
         type: 3}
+    - target: {fileID: 904213765661354780, guid: 1a22bef876f44574fb1ba411f21c3ae7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3721369641934243076, guid: 1a22bef876f44574fb1ba411f21c3ae7,
         type: 3}
       propertyPath: m_RootOrder
@@ -385,6 +390,11 @@ PrefabInstance:
         type: 3}
       propertyPath: OnRespawnStart.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746509983708379809, guid: 1a22bef876f44574fb1ba411f21c3ae7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5351911873093692972, guid: 1a22bef876f44574fb1ba411f21c3ae7,
         type: 3}

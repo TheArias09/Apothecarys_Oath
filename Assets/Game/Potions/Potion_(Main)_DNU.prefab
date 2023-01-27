@@ -10835,3 +10835,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8827650818487178180}
   m_PrefabAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 1174cd6dee59a7941a9827648d344826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier:
