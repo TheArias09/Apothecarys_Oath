@@ -129,15 +129,17 @@ public class GameManager : MonoBehaviour
         return rankTitles[index];
     }
 
-    public string GetPotionRank(int value)
+    public int GetPotionRank(int value)
     {
         int index = 0;
 
         while (index < rankTitles.Length - 1 && value > potionRankThresholds[index]) index++;
-        return rankTitles[index];
+        return index;
     }
 
-    public bool GivePotion(Ingredient potion)
+    public string GetRankName(int index) => rankTitles[index];
+
+    public int GivePotion(Ingredient potion)
     {
         foreach (Transform child in clientsParent)
         {
@@ -146,12 +148,11 @@ public class GameManager : MonoBehaviour
             child.GetChild(0).TryGetComponent(out ClientBehavior behavior);
             if (behavior.Client.Disease.name == potion.Cures)
             {
-                behavior.ReceivePotion(potion);
-                return true;
+                return behavior.ReceivePotion(potion);
             }
         }
         
-        return false;
+        return -1;
     }
 
     public void ClientLeave(int position)

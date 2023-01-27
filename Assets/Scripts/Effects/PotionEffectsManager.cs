@@ -21,12 +21,7 @@ public class PotionEffectsManager : MonoBehaviour
     public GameObject goodDeliveryEffect;
     public GameObject badDeliveryEffect;
 
-    private int potionRank;
-
-    public int SetPotionRank
-    {
-        set => potionRank = value;
-    }
+    public int PotionRank { get; set; }
     
     void Start()
     {
@@ -71,11 +66,11 @@ public class PotionEffectsManager : MonoBehaviour
     public void DeliveryEffect()
     {
         Debug.Log("DeliveryEffect");
-        if (potionRank <= 2)
+        if (PotionRank <= 2)
         {
             deliveryEffect = badDeliveryEffect;
         }
-        else if (potionRank <= 4)
+        else if (PotionRank <= 4)
         {
             deliveryEffect = goodDeliveryEffect;
         }

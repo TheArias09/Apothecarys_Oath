@@ -17,10 +17,17 @@ public class DeliveryZone : MonoBehaviour
             return;
         }
 
-        bool delivered = GameManager.Instance.GivePotion(potion);
-        if (!delivered) return;
+        int deliveryRank = GameManager.Instance.GivePotion(potion);
+        if (deliveryRank == -1) return;
         
         ingredientWrapper.Empty();
+
+        collision.gameObject.TryGetComponent<PotionEffectsManager>(out var effectsManager);
+        if (effectsManager != null)
+        {
+            effectsManager.PotionRank = deliveryRank;
+            effectsManager.DeliveryEffect();
+        }
 
         if (ingredientWrapper.Respawner)
         {

@@ -15,7 +15,7 @@ public class ClientBehavior : MonoBehaviour
 
     [Header("Back UI")]
     [SerializeField] private TextMeshProUGUI scoreText;
-    [SerializeField] private TextMeshProUGUI rank;
+    [SerializeField] private TextMeshProUGUI rankText;
 
     [Header("Components")]
     [SerializeField] private MeshRenderer outline;
@@ -48,7 +48,8 @@ public class ClientBehavior : MonoBehaviour
     private int position;
 
     private bool hasLeft = false;
-    private int score; 
+    private int score;
+    private int rank;
    
     private Vector3 initialPosition;
     private float shakePeriod;
@@ -110,14 +111,20 @@ public class ClientBehavior : MonoBehaviour
         foreach (Symptom symptom in Client.Symptoms) content.text += symptom + "\n";
     }
 
-    public void ReceivePotion(Ingredient potion)
+    public int ReceivePotion(Ingredient potion)
     {
         if (potion.Cures != DiseaseName.NONE && potion.Cures == Client.Disease.name)
         {
             score = GameManager.Instance.AddScore(potion.Quality, potion.Quantity, uiTimer.fillAmount);
+            rank = GameManager.Instance.GetPotionRank(score);
+
             Client.Cure();
             Leave(true);
+
+            return rank;
         }
+
+        return -1;
     }
 
     private void Leave(bool success)
@@ -162,7 +169,7 @@ public class ClientBehavior : MonoBehaviour
         audioSource.Play();
 
         scoreText.text = "+" + score;
-        rank.text = GameManager.Instance.GetPotionRank(score);
+        rankText.text = GameManager.Instance.GetRankName(rank);
         uiTimer.fillAmount = 0;
 
         GetComponent<Animator>().Play("Leave");
