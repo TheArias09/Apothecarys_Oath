@@ -172,6 +172,7 @@ public class ClientBehavior : MonoBehaviour
         rankText.text = GameManager.Instance.GetRankName(rank);
         uiTimer.fillAmount = 0;
 
+        Debug.Log("Client satisfied!" + " Score: " + score + " Rank: " + rankText.text);
         GetComponent<Animator>().Play("Leave");
 
         yield return new WaitForSeconds(scoreDisplayTime);

@@ -183,10 +183,7 @@ public class GameManager : MonoBehaviour
         errors++;
         scoreDisplay.UpdateErrors(errors);
 
-        if(errors == maxErrors - 1)
-        {
-            OnOneChanceLeft.Invoke();
-        }
+        if(errors == maxErrors - 1) OnOneChanceLeft.Invoke();
 
         if (errors >= maxErrors) GameOver(false);
     }
