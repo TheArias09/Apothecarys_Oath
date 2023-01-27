@@ -6242,7 +6242,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   uiColor: {r: 0.19215687, g: 0.69411767, b: 1, a: 1}
   scoreText: {fileID: 753095216450231752}
-  rank: {fileID: 1566991298748119509}
+  rankText: {fileID: 1566991298748119509}
   outline: {fileID: 386734356996755277}
   board: {fileID: 386734356996850889}
   outlineMaterial: {fileID: 2100000, guid: ca2d033ea28116146bcf6f593bf0e2c5, type: 2}

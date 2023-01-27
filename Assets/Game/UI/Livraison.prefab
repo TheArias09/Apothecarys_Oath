@@ -60,6 +60,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b90db19fc7e795c45905779e2999dcfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bestDeliveryEffect: {fileID: 3965692896184420451, guid: ed8b17348ca4ee74687df003df555157,
+    type: 3}
+  goodDeliveryEffect: {fileID: 3965692896184420451, guid: ed8b17348ca4ee74687df003df555157,
+    type: 3}
+  badDeliveryEffect: {fileID: 3965692896184420451, guid: ed8b17348ca4ee74687df003df555157,
+    type: 3}
+  badThreshold: 2
+  goodThreshold: 4
 --- !u!1 &315532183783749419
 GameObject:
   m_ObjectHideFlags: 0
