@@ -16,8 +16,9 @@ MonoBehaviour:
   color: {r: 0.22184648, g: 0.18333928, b: 0.23584908, a: 1}
   fresnelPower: 4
   viscosity: 0.4
-  symbol: {fileID: 0}
-  description: 
+  symbol: {fileID: 21300000, guid: 3b5380f8d28b58f43aa9fb3b6ecdbf6a, type: 3}
+  description: The result of a hazardous mix, be careful of what you put in your
+    beakers if you don't want to end with this sticky goo!
   continuousEffect: {fileID: 0}
   mixEffect: {fileID: 0}
   deliveryEffect: {fileID: 0}

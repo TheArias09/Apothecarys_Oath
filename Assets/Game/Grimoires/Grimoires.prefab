@@ -1154,12 +1154,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d16189241b804184ca19e0c11d9e8886,
         type: 2}
-    - target: {fileID: 6817844715732764272, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
-        type: 3}
-      propertyPath: grimoirePageDatas.Array.data[10]
-      value: 
-      objectReference: {fileID: 11400000, guid: 022ba8d26f1dd054e9c5543a34219670,
-        type: 2}
     - target: {fileID: 7384983631321377164, guid: 5eb0e640b8797ea45ba4ddf5b3f71b56,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

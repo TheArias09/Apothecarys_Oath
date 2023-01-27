@@ -37,6 +37,10 @@ public class GrimoirePotionPage : MonoBehaviour
         else if (data.isBackCover)
         {
             backCoverPanel.SetActive(true);
+
+            potionImage.sprite = data.recipeData.recipe.Result.symbol;
+            potionDescription.text = data.recipeData.recipe.Result.description;
+            potionName.text = data.recipeData.recipe.Name;
         }
         else
         {

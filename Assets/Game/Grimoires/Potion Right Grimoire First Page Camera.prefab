@@ -877,12 +877,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3901878372451135885}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2493269273255632479 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1495087896912654290, guid: 9f16b04137eefe4408ad753f2efcc7a3,
-    type: 3}
-  m_PrefabInstance: {fileID: 3901878372451135885}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2863025907995501381 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1269385418864153288, guid: 9f16b04137eefe4408ad753f2efcc7a3,
@@ -963,7 +957,7 @@ MonoBehaviour:
   bookImage: {fileID: 3679315037365458059}
   pagePanel: {fileID: 2863025907995501381}
   frontCoverPanel: {fileID: 1681249026152919947}
-  backCoverPanel: {fileID: 2493269273255632479}
+  backCoverPanel: {fileID: 2863025907995501381}
 --- !u!1001 &7532610876204887455
 PrefabInstance:
   m_ObjectHideFlags: 0
