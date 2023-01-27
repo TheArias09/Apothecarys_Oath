@@ -60,11 +60,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b90db19fc7e795c45905779e2999dcfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bestDeliveryEffect: {fileID: 3965692896184420451, guid: ed8b17348ca4ee74687df003df555157,
+  bestDeliveryEffect: {fileID: 3538855223473840903, guid: f7ad064f582ff5a468b1bf562ab9e593,
     type: 3}
-  goodDeliveryEffect: {fileID: 3965692896184420451, guid: ed8b17348ca4ee74687df003df555157,
+  goodDeliveryEffect: {fileID: 3538855223473840903, guid: f7ad064f582ff5a468b1bf562ab9e593,
     type: 3}
-  badDeliveryEffect: {fileID: 3965692896184420451, guid: ed8b17348ca4ee74687df003df555157,
+  badDeliveryEffect: {fileID: 3538855223473840903, guid: f7ad064f582ff5a468b1bf562ab9e593,
     type: 3}
   badThreshold: 2
   goodThreshold: 4
