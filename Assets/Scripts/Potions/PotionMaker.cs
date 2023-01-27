@@ -78,7 +78,7 @@ public class PotionMaker : MonoBehaviour
         }
 
         float minProportion = proportions.Min();
-        proportions = proportions.Select(x => x * minProportion).ToArray();
+        proportions = proportions.Select(x => x / minProportion).ToArray();
 
         float avgProportion = proportions.Average();
         float deviation = proportions.Select(val => Math.Abs(val - avgProportion)).Sum();
