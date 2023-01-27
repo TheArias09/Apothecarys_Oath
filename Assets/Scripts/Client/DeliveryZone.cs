@@ -43,20 +43,9 @@ public class DeliveryZone : MonoBehaviour
 
     private void DeliveryEffect(int potionRank)
     {
-        Debug.Log("DeliveryEffect");
-
-        if (potionRank <= badThreshold)
-        {
-            deliveryEffect = badDeliveryEffect;
-        }
-        else if (potionRank <= goodThreshold)
-        {
-            deliveryEffect = goodDeliveryEffect;
-        }
-        else
-        {
-            deliveryEffect = bestDeliveryEffect;
-        }
+        if (potionRank <= badThreshold) deliveryEffect = badDeliveryEffect;
+        else if (potionRank <= goodThreshold) deliveryEffect = goodDeliveryEffect;
+        else deliveryEffect = bestDeliveryEffect;
 
         Instantiate(deliveryEffect, transform);
     }
