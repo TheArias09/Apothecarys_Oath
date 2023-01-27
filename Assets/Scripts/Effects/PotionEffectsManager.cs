@@ -42,6 +42,7 @@ public class PotionEffectsManager : MonoBehaviour
 
     public void MixEffect()
     {
+        Debug.Log("MixEffect");
         if (liquidCount > 0)
         {
             mixEffect = ingredients[^1].Data.mixEffect;
@@ -54,6 +55,7 @@ public class PotionEffectsManager : MonoBehaviour
 
     public void DeliveryEffect()
     {
+        Debug.Log("DeliveryEffect");
         if (liquidCount > 0)
         {
             deliveryEffect = ingredients[^1].Data.deliveryEffect;
