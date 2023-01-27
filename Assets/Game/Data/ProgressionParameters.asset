@@ -22,10 +22,10 @@ MonoBehaviour:
   timeBetweenClients:
   - 120
   - 90
-  - 80
-  - 80
+  - 75
+  - 60
   clientStayTime:
   - 180
-  - 180
-  - 180
-  - 180
+  - 170
+  - 160
+  - 150

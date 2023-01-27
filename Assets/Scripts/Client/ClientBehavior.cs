@@ -162,7 +162,7 @@ public class ClientBehavior : MonoBehaviour
         audioSource.Play();
 
         scoreText.text = "+" + score;
-        rank.text = GameManager.Instance.GetRank(false);
+        rank.text = GameManager.Instance.GetPotionRank(score);
         uiTimer.fillAmount = 0;
 
         GetComponent<Animator>().Play("Leave");

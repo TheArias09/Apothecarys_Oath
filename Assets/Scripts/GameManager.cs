@@ -121,13 +121,19 @@ public class GameManager : MonoBehaviour
         timer = timeBetweenClients;
     }
 
-    public string GetRank(bool global)
+    private string GetRank()
     {
         int index = 0;
 
-        if (global) while (index < rankTitles.Length - 1 && score > gameRankThresholds[index]) index++;
-        else while (index < rankTitles.Length - 1 && score > potionRankThresholds[index]) index++;
+        while (index < rankTitles.Length - 1 && score > gameRankThresholds[index]) index++;
+        return rankTitles[index];
+    }
 
+    public string GetPotionRank(int value)
+    {
+        int index = 0;
+
+        while (index < rankTitles.Length - 1 && value > potionRankThresholds[index]) index++;
         return rankTitles[index];
     }
 
@@ -195,7 +201,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over");
         gameStarted = false;
 
-        string rank = GetRank(true);
+        string rank = GetRank();
 
         if (win)
         {

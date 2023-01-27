@@ -8,6 +8,7 @@ using UnityEngine;
 public class PotionMaker : MonoBehaviour
 {
     [SerializeField] private float minQuality = 0.1f;
+    [SerializeField] private float deviationMultiplier = 2f;
     [SerializeField] private RecipeBook recipeBook;
 
     public static PotionMaker Instance;
@@ -78,11 +79,11 @@ public class PotionMaker : MonoBehaviour
 
         float avgProportion = proportions.Average();
         double squarDiff = proportions.Select(val => Math.Pow(val - avgProportion, 2)).Sum();
-        float std_dev = (float)Math.Sqrt(squarDiff / proportions.Length);
+        float deviation = deviationMultiplier * (float) squarDiff / proportions.Length;
 
-        float quality = std_dev > 1 ? Instance.minQuality : 1 - std_dev;
+        float quality = deviation > 1 ? Instance.minQuality : 1 - deviation;
 
-        Debug.Log("std_dev: " + std_dev + " => quality: " + quality);
+        Debug.Log("deviation : " + deviation + " => quality: " + quality);
         return quality;
     }
 
