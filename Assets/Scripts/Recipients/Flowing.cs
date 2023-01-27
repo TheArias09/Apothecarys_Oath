@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Recipients
 {
@@ -22,6 +23,16 @@ namespace Recipients
 
         [SerializeField] bool flowOnGrab = false;
 
+        private enum FlowingState {NOT_FLOWING, VOID_FLOWING, RECIPIENT_FLOWING};
+        private FlowingState currentFlowingState = FlowingState.NOT_FLOWING; 
+
+        [Header("Events")]
+        [SerializeField] UnityEvent OnStartFlowingInRecipient;
+        [SerializeField] UnityEvent OnStartFlowingInVoid;
+        [SerializeField] UnityEvent OnStopFlowing;
+        [SerializeField] UnityEvent OnPressingIngredient;
+        
+
         public bool IsFlowing { get; private set; } = false;
         public float CurrentDeltaQuantity { get; private set; } = 0f;
 
@@ -33,6 +44,7 @@ namespace Recipients
         {
             ingredientWrapper = GetComponent<IngredientWrapper>();
             grabHandInfo = GetComponent<GrabHandInfo>();
+            currentFlowingState = FlowingState.NOT_FLOWING;
             if(bottleneckCollider)
                 bottleneckRadius = bottleneckCollider.transform.lossyScale.x / 2;
         }
@@ -90,6 +102,9 @@ namespace Recipients
 
         private void Update()
         {
+            // Buffer old state
+            var oldFlowingState = currentFlowingState;
+
             if(flowOnGrab)
             {
                 if (grabHandInfo.GrabHand == GrabHandInfo.GrabHandType.Left && GetLeftPalmInput()
@@ -97,11 +112,16 @@ namespace Recipients
                     || Input.GetKey(KeyCode.Space)
                     )
                 {
+                    if (!IsFlowing)
+                    {
+                        OnPressingIngredient.Invoke();
+                    }
                     Flow(90f);
                 }
                 else
                 {
                     IsFlowing = false;
+                    currentFlowingState = FlowingState.NOT_FLOWING;
                     CurrentDeltaQuantity = 0;
                 }
 
@@ -109,6 +129,7 @@ namespace Recipients
                 {
                     Destroy(gameObject);
                 }
+                CheckFlowingTransition(oldFlowingState);
                 return;
             }
 
@@ -119,18 +140,23 @@ namespace Recipients
             if (snap && snap.Interactors.Count > 0)
             {
                 IsFlowing = false;
+                currentFlowingState = FlowingState.NOT_FLOWING;
                 CurrentDeltaQuantity = 0;
+                CheckFlowingTransition(oldFlowingState);
                 return;
             }
 
             if (deltaAngle <= 0)
             {
                 IsFlowing = false;
+                currentFlowingState = FlowingState.NOT_FLOWING;
                 CurrentDeltaQuantity = 0;
+                CheckFlowingTransition(oldFlowingState);
                 return;
             }
 
             Flow(deltaAngle);
+            CheckFlowingTransition(oldFlowingState);
         }
 
         private void Flow(float deltaAngle)
@@ -153,6 +179,7 @@ namespace Recipients
                 if (pouredIngredients != null && pouredIngredients.Count != 0)
                 {
                     IsFlowing = true;
+                    currentFlowingState = FlowingState.RECIPIENT_FLOWING;
                     deltaQuantity = pouredIngredients.Sum(ing => ing.Quantity);
 
                     var filledCorrectly = targetIngredientWrapper.FillWith(pouredIngredients, deltaQuantity);
@@ -161,9 +188,10 @@ namespace Recipients
                 else
                 {
                     IsFlowing = false;
+                    currentFlowingState = FlowingState.NOT_FLOWING;
                     CurrentDeltaQuantity = 0;
                 }
-                
+
                 return;
             }
 
@@ -171,8 +199,59 @@ namespace Recipients
             var pouredIngredientsInVoid = ingredientWrapper.Pour(deltaQuantity);
 
             IsFlowing = (pouredIngredientsInVoid != null) && (pouredIngredientsInVoid.Count != 0);
+            // UDPATE STATE ACCORDINGLY (either not flowing or flowing in Void)
+            currentFlowingState = IsFlowing ? FlowingState.VOID_FLOWING : FlowingState.NOT_FLOWING;
             if (!IsFlowing) CurrentDeltaQuantity = 0;
         }
+
+
+        private void CheckFlowingTransition(FlowingState oldState)
+        {
+            if(oldState == FlowingState.NOT_FLOWING)
+            {
+                if(currentFlowingState == FlowingState.VOID_FLOWING)
+                {
+                    OnStartFlowingInVoid.Invoke();
+                }
+
+                if(currentFlowingState == FlowingState.RECIPIENT_FLOWING)
+                {
+                    OnStartFlowingInRecipient.Invoke();
+                }
+
+                return;
+            }
+
+            if(oldState == FlowingState.VOID_FLOWING)
+            {
+                if(currentFlowingState == FlowingState.NOT_FLOWING)
+                {
+                    OnStopFlowing.Invoke();
+                }
+
+                if(currentFlowingState == FlowingState.RECIPIENT_FLOWING)
+                {
+                    OnStartFlowingInRecipient.Invoke();
+                }
+
+                return;
+            }
+
+            if(oldState == FlowingState.RECIPIENT_FLOWING)
+            {
+                if(currentFlowingState == FlowingState.NOT_FLOWING)
+                {
+                    OnStopFlowing.Invoke();
+                }
+                if(currentFlowingState == FlowingState.VOID_FLOWING)
+                {
+                    OnStartFlowingInVoid.Invoke();
+                }
+                return;
+            }
+
+        }
+
 
         public GameObject GetTargetPotion()
         {

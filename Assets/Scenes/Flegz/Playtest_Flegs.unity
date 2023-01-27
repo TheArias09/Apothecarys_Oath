@@ -1093,6 +1093,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3429607677598780093, guid: 3d4597788dd9334478d1a390d1490b67,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3431195555625449730, guid: 3d4597788dd9334478d1a390d1490b67,
         type: 3}
       propertyPath: m_Convex
@@ -1227,6 +1232,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7966056367752184020, guid: 3d4597788dd9334478d1a390d1490b67,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8557267133985702873, guid: 3d4597788dd9334478d1a390d1490b67,
         type: 3}
