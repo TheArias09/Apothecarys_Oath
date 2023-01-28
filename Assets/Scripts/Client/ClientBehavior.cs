@@ -87,7 +87,7 @@ public class ClientBehavior : MonoBehaviour
         shakeTimer = shakePeriod;
         float shakeEvalutation = (shakeStart - uiTimer.fillAmount) / shakeStart;
 
-        if (shakeEvalutation > 0)
+        if (!hasLeft && shakeEvalutation > 0)
             transform.localPosition = initialPosition + shakeEvolution.Evaluate(shakeEvalutation) * shakeMagnitude * Random.insideUnitSphere;
 
     }
@@ -116,7 +116,7 @@ public class ClientBehavior : MonoBehaviour
         if (potion.Cures != DiseaseName.NONE && potion.Cures == Client.Disease.name)
         {
             score = GameManager.Instance.AddScore(potion.Quality, potion.Quantity, uiTimer.fillAmount);
-            rank = GameManager.Instance.GetPotionRank(score);
+            rank = GameManager.Instance.GetRankIndex(score);
 
             Client.Cure();
             Leave(true);

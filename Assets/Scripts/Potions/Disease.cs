@@ -11,7 +11,7 @@ public enum DiseaseName
 [Serializable]
 public enum Symptom
 {
-    Headache, Tired, Fever, Cough, Sneeze, Cramps, Vomit, Weak, Hallucinations, Loneliness, Depression, Anxiety, Irritated, BluePox, Clumsy
+    Headache, Tired, Fever, Cough, Sneeze, Cramps, Vomit, Weak, Hallucinations, Loneliness, Depression, Anxiety, Irritated, Wrinkles, Clumsy
 }
 
 [Serializable]

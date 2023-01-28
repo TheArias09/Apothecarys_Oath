@@ -737,6 +737,21 @@ PrefabInstance:
       objectReference: {fileID: 1176801859}
     - target: {fileID: 779825450775671461, guid: c1d713d9bf161b44190cbf7a7ee866c2,
         type: 3}
+      propertyPath: maxSpeedBonus
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 779825450775671461, guid: c1d713d9bf161b44190cbf7a7ee866c2,
+        type: 3}
+      propertyPath: minSpeedBonus
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 779825450775671461, guid: c1d713d9bf161b44190cbf7a7ee866c2,
+        type: 3}
+      propertyPath: gameRankThresholds.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 779825450775671461, guid: c1d713d9bf161b44190cbf7a7ee866c2,
+        type: 3}
       propertyPath: OnDefeat.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1474848006}

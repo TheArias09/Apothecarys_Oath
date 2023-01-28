@@ -31,8 +31,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float maxSpeedBonus = 1.5f;
 
     [Header("Ranks")]
-    [SerializeField] private int[] potionRankThresholds;
-    [SerializeField] private int[] gameRankThresholds;
+    [SerializeField] private float[] rankThresholds;
     [SerializeField] private string[] rankTitles;
 
     [Header("Events")]
@@ -73,7 +72,7 @@ public class GameManager : MonoBehaviour
         timeBetweenClients = progressionParameters.timeBetweenClients[0];
         clientStayTime = progressionParameters.clientStayTime[0];
 
-        if (gameRankThresholds.Count() +1 != rankTitles.Count()) 
+        if (rankThresholds.Count() +1 != rankTitles.Count()) 
             Debug.LogWarning("There should be an equal amount of ranks and rank titles.");
     }
 
@@ -121,19 +120,12 @@ public class GameManager : MonoBehaviour
         timer = timeBetweenClients;
     }
 
-    private string GetRank()
+    public int GetRankIndex(int value)
     {
         int index = 0;
+        float maxScore = scoreMultiplier * maxSpeedBonus;
 
-        while (index < rankTitles.Length - 1 && score > gameRankThresholds[index]) index++;
-        return rankTitles[index];
-    }
-
-    public int GetPotionRank(int value)
-    {
-        int index = 0;
-
-        while (index < rankTitles.Length - 1 && value > potionRankThresholds[index]) index++;
+        while (index < rankTitles.Length - 1 && value > rankThresholds[index] * maxScore) index++;
         return index;
     }
 
@@ -174,7 +166,7 @@ public class GameManager : MonoBehaviour
         int value = (int)(quality * quantScore * speedScore * scoreMultiplier);
         score += value;
 
-        Debug.Log("Potion scores: Qual=" + quality + ", Quant=" + quantity + ", Speed=" + speedBonus);
+        Debug.Log("Potion scores: Qual=" + quality + ", Quant=" + quantScore + ", Speed=" + speedScore);
         scoreDisplay.UpdateScore(score);
         return value;
     }
@@ -200,7 +192,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over");
         gameStarted = false;
 
-        string rank = GetRank();
+        string rank = GetRankName(GetRankIndex(score));
 
         if (win)
         {
