@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minQuality: 0.1
-  deviationMultiplier: 1
+  deviationMultiplier: 0.8
   recipeBook: {fileID: 11400000, guid: 48636ae9784a3b847819afc6337b22dc, type: 2}
 --- !u!1 &779825450775671459
 GameObject:
