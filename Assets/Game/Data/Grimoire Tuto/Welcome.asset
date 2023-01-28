@@ -19,5 +19,5 @@ MonoBehaviour:
   coverSprite: {fileID: 0}
   coverTitle: Welcome!
   isTutorialPage: 1
-  tutorialDescription: You're the next Apothecary! This book aims to help you learn
-    controls
+  tutorialDescription: You're the next Apothecary! This book is there to help you
+    learn everything about potion making!
