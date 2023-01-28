@@ -19,5 +19,5 @@ MonoBehaviour:
   coverSprite: {fileID: 0}
   coverTitle: Clients' orders
   isTutorialPage: 1
-  tutorialDescription: During a day, you recieve tockets from sick clients that need
-    you to craft a specific potion
+  tutorialDescription: During a day, you receive tickets from sick clients that need
+    you to craft a specific potion.

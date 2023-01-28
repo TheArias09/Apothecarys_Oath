@@ -85,10 +85,10 @@ public class ClientBehavior : MonoBehaviour
         }
 
         shakeTimer = shakePeriod;
-        float shakeEvalutation = shakeStart - uiTimer.fillAmount;
+        float shakeEvalutation = (shakeStart - uiTimer.fillAmount) / shakeStart;
 
         if (shakeEvalutation > 0)
-            transform.localPosition = initialPosition + shakeEvolution.Evaluate(shakeEvalutation / shakeStart) * shakeMagnitude * Random.insideUnitSphere;
+            transform.localPosition = initialPosition + shakeEvolution.Evaluate(shakeEvalutation) * shakeMagnitude * Random.insideUnitSphere;
 
     }
 

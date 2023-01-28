@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minQuality: 0.1
+  deviationMultiplier: 1
   recipeBook: {fileID: 11400000, guid: 48636ae9784a3b847819afc6337b22dc, type: 2}
 --- !u!1 &779825450775671459
 GameObject:
@@ -265,10 +266,10 @@ MonoBehaviour:
   maxErrors: 3
   scoreMultiplier: 50
   speedMultiplier: 2
-  minSpeedBonus: 0.5
-  maxSpeedBonus: 1.5
-  potionRankThresholds: 0a00000014000000190000001e0000002800000032000000
-  gameRankThresholds: 6400000096000000e10000002c0100005401000086010000
+  minSpeedBonus: 0.7
+  maxSpeedBonus: 1.3
+  potionRankThresholds: 0f000000140000001e00000028000000320000003c000000
+  gameRankThresholds: c80000002c01000090010000f401000058020000d0020000
   rankTitles:
   - F
   - E

@@ -19,5 +19,5 @@ MonoBehaviour:
   coverSprite: {fileID: 0}
   coverTitle: Make a potion
   isTutorialPage: 1
-  tutorialDescription: Use les doseurs to make more precise measures. Don't forget
-    to shake a potion when all the ingredients are in!
+  tutorialDescription: Use the measuring cups to make precise doses. Don't forget
+    to shake a potion when all the ingredients are there!

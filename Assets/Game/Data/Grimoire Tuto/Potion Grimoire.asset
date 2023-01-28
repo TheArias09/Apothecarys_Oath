@@ -19,4 +19,4 @@ MonoBehaviour:
   coverSprite: {fileID: 0}
   coverTitle: Potion Grimoire
   isTutorialPage: 1
-  tutorialDescription: Search the steps to make the potion in the Potion Grimoire
+  tutorialDescription: Search the steps to make the potion in the Potion Grimoire.

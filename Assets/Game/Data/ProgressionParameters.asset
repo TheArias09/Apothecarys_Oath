@@ -26,6 +26,6 @@ MonoBehaviour:
   - 60
   clientStayTime:
   - 180
-  - 170
-  - 160
-  - 150
+  - 165
+  - 145
+  - 120

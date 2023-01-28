@@ -19,5 +19,5 @@ MonoBehaviour:
   coverSprite: {fileID: 0}
   coverTitle: The Store
   isTutorialPage: 1
-  tutorialDescription: To craft a potion, use all the ingredients in the closets
-    as well as the stencils
+  tutorialDescription: To craft a potion, use all the ingredients from the shelves
+    as well as the glassware.

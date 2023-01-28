@@ -19,5 +19,5 @@ MonoBehaviour:
   coverSprite: {fileID: 21300000, guid: 4a0bef71e1b07044f8c0a3f8b847774e, type: 3}
   coverTitle: Press an object
   isTutorialPage: 1
-  tutorialDescription: You make it by pressing both gachettes and a button. Usefull
-    for "lemons"!
+  tutorialDescription: You can press ingredients by holding down both triggers and
+    a button. Useful for extracting juice!
