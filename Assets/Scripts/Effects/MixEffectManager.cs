@@ -9,8 +9,13 @@ public class MixEffectManager : MonoBehaviour
     private WobbleManager wobbleManager;
 
     private ParticleSystem particles;
+    private ParticleSystem.MainModule particlesMain;
 
     private bool startedPlaying;
+    
+    public bool takesColor;
+    public float effectBaseScale;
+    private float splashBaseScale = 0.003f;
 
     private float wobbleAmountX;
     private float wobbleAmountZ;
@@ -27,6 +32,12 @@ public class MixEffectManager : MonoBehaviour
         wobbleManager = potion.GetComponent<WobbleManager>();
         
         SetScale();
+
+        if (takesColor)
+        {
+            SetColor();
+        }
+        
     }
 
     void Update()
@@ -46,7 +57,7 @@ public class MixEffectManager : MonoBehaviour
 
     void SetTransform()
     {
-        transform.position = potion.transform.position + new Vector3(0,liquidVisualsManager.FindTotalDisplayedFill() * potion.transform.lossyScale.y / liquidVisualsManager.BaseScale,0);
+        transform.position = potion.transform.position; //+ new Vector3(0,liquidVisualsManager.FindTotalDisplayedFill() * potion.transform.lossyScale.y / liquidVisualsManager.BaseScale,0)
         
         wobbleAmountX = wobbleManager.WobbleAmountX;
         wobbleAmountZ = wobbleManager.WobbleAmountZ;
@@ -60,6 +71,18 @@ public class MixEffectManager : MonoBehaviour
 
     void SetScale()
     {
-        transform.localScale = liquidVisualsManager.FindInsideScale() * Vector3.one;
+        //transform.localScale = liquidVisualsManager.FindInsideScale() * Vector3.one;
+        transform.localScale = Vector3.one * (liquidVisualsManager.FindInsideScale() * effectBaseScale) / splashBaseScale;
+    }
+    
+    void SetColor()
+    {
+        Color liquidColor = liquidVisualsManager.Liquids[^1].liquidColor;
+        Color effectColor = new Color(
+            Mathf.Min(1f, liquidColor.r - 0.20f),
+            Mathf.Min(1f, liquidColor.g - 0.20f),
+            Mathf.Min(1f, liquidColor.b - 0.20f)
+        );
+        particlesMain.startColor = new ParticleSystem.MinMaxGradient( effectColor );
     }
 }

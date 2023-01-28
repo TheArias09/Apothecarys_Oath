@@ -556,7 +556,7 @@ PrefabInstance:
     - target: {fileID: 3318193849181367758, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: recipientQuantity
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3318193849181367758, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}

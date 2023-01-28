@@ -64,7 +64,7 @@ MonoBehaviour:
     type: 3}
   goodDeliveryEffect: {fileID: 3538855223473840903, guid: c4aec3bbdbf534f40b4682b2b909e935,
     type: 3}
-  badDeliveryEffect: {fileID: 3538855223473840903, guid: f7ad064f582ff5a468b1bf562ab9e593,
+  badDeliveryEffect: {fileID: 9034249187233004924, guid: 9e5d4008162b8894da3e75beaf2aa546,
     type: 3}
   badThreshold: 1
   goodThreshold: 4

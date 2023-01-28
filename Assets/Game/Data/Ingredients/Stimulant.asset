@@ -20,5 +20,5 @@ MonoBehaviour:
   description: Exhausted ? This is the perfect energizer that one needs.
   continuousEffect: {fileID: 397561539142118835, guid: d225d0ab20907c34684142c7b0a6f5c8,
     type: 3}
-  mixEffect: {fileID: 0}
-  deliveryEffect: {fileID: 0}
+  mixEffect: {fileID: 3735780546860147373, guid: 461e5281f6162b949a157ae26f1c3456,
+    type: 3}

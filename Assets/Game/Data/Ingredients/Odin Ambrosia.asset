@@ -20,5 +20,5 @@ MonoBehaviour:
   description: ' Apparently, the great Odin used to drink this mixture in order to
     recover after each of his divine feasts. '
   continuousEffect: {fileID: 0}
-  mixEffect: {fileID: 0}
-  deliveryEffect: {fileID: 0}
+  mixEffect: {fileID: 3735780546860147373, guid: 461e5281f6162b949a157ae26f1c3456,
+    type: 3}

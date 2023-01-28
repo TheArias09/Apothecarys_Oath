@@ -18,3 +18,6 @@ MonoBehaviour:
   viscosity: 0.5
   symbol: {fileID: 21300000, guid: fe0ee52aef00b48a195a0e084f30d126, type: 3}
   description: 'A cure that contains the very essence of life. '
+  continuousEffect: {fileID: 0}
+  mixEffect: {fileID: 3735780546860147373, guid: 461e5281f6162b949a157ae26f1c3456,
+    type: 3}

@@ -18,3 +18,7 @@ MonoBehaviour:
   viscosity: 1
   symbol: {fileID: 21300000, guid: 0f244aef7e2144b1485a2eae4f58cc5e, type: 3}
   description: A powerful mixture which is effective against most poisons.
+  continuousEffect: {fileID: 397561539142118835, guid: d225d0ab20907c34684142c7b0a6f5c8,
+    type: 3}
+  mixEffect: {fileID: 3735780546860147373, guid: 461e5281f6162b949a157ae26f1c3456,
+    type: 3}

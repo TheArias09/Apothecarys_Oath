@@ -4826,4 +4826,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   takesColor: 1
-  effectBaseScale: 0.02
+  effectBaseScale: 0.015
