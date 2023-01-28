@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxErrors = 3;
     [SerializeField] private float scoreMultiplier = 5;
     [Space(10)]
-    [SerializeField] private float speedMultiplier = 2;
+    [SerializeField] private float timerThreshold = 0.25f;
     [SerializeField] private float minSpeedBonus = 0.5f;
     [SerializeField] private float maxSpeedBonus = 1.5f;
 
@@ -163,14 +163,15 @@ public class GameManager : MonoBehaviour
         if (clientsHealed + errors >= maxClients) GameOver(true);
     }
 
-    public int AddScore(float quality, float quantity, float speed)
+    public int AddScore(float quality, float quantity, float timer)
     {
         clientsHealed++;
 
         float quantScore = Mathf.Min(quantity / minPotionQty, 1);
-        float speedBonus = Mathf.Clamp(speed * speedMultiplier, minSpeedBonus, maxSpeedBonus);
+        float speedBonus = minSpeedBonus + (timer - timerThreshold) * (maxSpeedBonus - minSpeedBonus) / (1 - 2*timerThreshold);
+        float speedScore = Mathf.Clamp(speedBonus, minSpeedBonus, maxSpeedBonus);
 
-        int value = (int)(quality * quantScore * speedBonus * scoreMultiplier);
+        int value = (int)(quality * quantScore * speedScore * scoreMultiplier);
         score += value;
 
         Debug.Log("Potion scores: Qual=" + quality + ", Quant=" + quantity + ", Speed=" + speedBonus);

@@ -8,7 +8,7 @@ using UnityEngine;
 public class PotionMaker : MonoBehaviour
 {
     [SerializeField] private float minQuality = 0.1f;
-    [SerializeField] private float deviationMultiplier = 2f;
+    [SerializeField] private float deviationMultiplier = 1f;
     [SerializeField] private RecipeBook recipeBook;
 
     public static PotionMaker Instance;
