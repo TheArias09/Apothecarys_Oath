@@ -2,6 +2,7 @@ using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GrabHandInfo : MonoBehaviour
@@ -10,24 +11,26 @@ public class GrabHandInfo : MonoBehaviour
 
     public GrabHandType GrabHand { get; private set; }
 
-    private HandGrabInteractable interactable;
+    private List<HandGrabInteractable> interactables;
 
     private void Awake()
     {
-        interactable = GetComponent<HandGrabInteractable>();
+        interactables = GetComponentsInChildren<HandGrabInteractable>().ToList();
     }
 
     private void Update()
     {
-        if(interactable.Interactors.Count == 0)
-        {
-            GrabHand = GrabHandType.None;
-            return;
-        }
+        GrabHand = GrabHandType.None;
 
-        foreach (HandGrabInteractor interactor in interactable.Interactors)
+        foreach(var interactable in interactables)
         {
-            GrabHand = interactor.Hand.Handedness == Oculus.Interaction.Input.Handedness.Left ? GrabHandType.Left : GrabHandType.Right;
+            if (interactable.Interactors.Count == 0) continue;
+
+            foreach (var interactor in interactable.Interactors)
+            {
+                GrabHand = interactor.Hand.Handedness == Oculus.Interaction.Input.Handedness.Left ? GrabHandType.Left : GrabHandType.Right;
+                return;
+            }
         }
     }
 }
