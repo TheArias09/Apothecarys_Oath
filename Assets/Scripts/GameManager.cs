@@ -120,7 +120,16 @@ public class GameManager : MonoBehaviour
         timer = timeBetweenClients;
     }
 
-    public int GetRankIndex(int value)
+    private string GetGameRank(int value)
+    {
+        int index = 0;
+        float maxScore = scoreMultiplier * maxSpeedBonus * progressionParameters.totalClients;
+
+        while (index < rankTitles.Length - 1 && value > rankThresholds[index] * maxScore) index++;
+        return rankTitles[index];
+    }
+
+    public int GetPotionRank(int value)
     {
         int index = 0;
         float maxScore = scoreMultiplier * maxSpeedBonus;
@@ -192,7 +201,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over");
         gameStarted = false;
 
-        string rank = GetRankName(GetRankIndex(score));
+        string rank = GetGameRank(score);
 
         if (win)
         {
