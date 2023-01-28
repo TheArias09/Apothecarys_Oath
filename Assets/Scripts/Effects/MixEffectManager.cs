@@ -24,6 +24,7 @@ public class MixEffectManager : MonoBehaviour
     void Start()
     {
         particles = GetComponent<ParticleSystem>();
+        particlesMain = particles.main;
 
         startedPlaying = false;
 
