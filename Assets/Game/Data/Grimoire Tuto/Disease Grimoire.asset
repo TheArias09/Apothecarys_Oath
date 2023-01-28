@@ -19,5 +19,5 @@ MonoBehaviour:
   coverSprite: {fileID: 0}
   coverTitle: Disease Grimoire
   isTutorialPage: 1
-  tutorialDescription: Seach in the disease grimoire which potion can cure the disease
+  tutorialDescription: Search in the disease grimoire which potion can cure the disease
     depicted by the client's symptoms.

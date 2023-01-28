@@ -26,11 +26,8 @@ public class GrabHandInfo : MonoBehaviour
         {
             if (interactable.Interactors.Count == 0) continue;
 
-            foreach (var interactor in interactable.Interactors)
-            {
-                GrabHand = interactor.Hand.Handedness == Oculus.Interaction.Input.Handedness.Left ? GrabHandType.Left : GrabHandType.Right;
-                return;
-            }
+            HandGrabInteractor interactor = interactable.Interactors.First();
+            GrabHand = interactor.Hand.Handedness == Oculus.Interaction.Input.Handedness.Left ? GrabHandType.Left : GrabHandType.Right;
         }
     }
 }
