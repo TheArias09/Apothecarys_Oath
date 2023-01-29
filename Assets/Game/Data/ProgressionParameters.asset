@@ -20,12 +20,12 @@ MonoBehaviour:
   - {x: 2, y: 8}
   - {x: 6, y: 8}
   timeBetweenClients:
+  - 150
   - 120
+  - 100
   - 90
-  - 75
-  - 60
   clientStayTime:
+  - 200
   - 180
-  - 165
-  - 145
-  - 120
+  - 160
+  - 140
