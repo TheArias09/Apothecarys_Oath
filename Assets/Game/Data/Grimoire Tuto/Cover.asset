@@ -16,7 +16,7 @@ MonoBehaviour:
   curePotion: {fileID: 0}
   isFrontCover: 0
   isBackCover: 0
-  coverSprite: {fileID: 0}
+  coverSprite: {fileID: 21300000, guid: 3aa099c70df0347dbae0cabb7e4195d2, type: 3}
   coverTitle: Grimory of the Newbie
   isTutorialPage: 1
   tutorialDescription: 
