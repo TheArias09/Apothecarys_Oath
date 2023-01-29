@@ -24,40 +24,19 @@ public class MusicManager : MonoBehaviour
         musicPlayer.Play();
     }
 
+    /* For debug purposes
     private void Update()
     {
-        
-        if (Input.GetKeyDown("a"))
-        {
-            SwitchToChill();
-            return;
-        }
-
-        if (Input.GetKeyDown("z"))
-        {
-            Debug.Log("ZZZZZ");
-            SwitchToDay();
-            return;
-        }
-
-        if (Input.GetKeyDown("e"))
-        {
-            SwitchToVictory();
-            return;
-        }
-
-        if (Input.GetKeyDown("r"))
-        {
-            SwitchToLastChance();
-            return;
-        }
-
-        if (Input.GetKeyDown("t"))
-        {
-            SwitchToGameOver();
-            return;
-        }
+        if (Input.GetKeyDown(KeyCode.A)) SwitchToChill();
+        else if (Input.GetKeyDown(KeyCode.Z)) SwitchToDay();
+        else if (Input.GetKeyDown(KeyCode.E)) SwitchToVictory();
+        else if (Input.GetKeyDown(KeyCode.R)) SwitchToLastChance();
+        else if (Input.GetKeyDown(KeyCode.T)) SwitchToGameOver();
     }
+    */
+
+    public void PauseMusic() => musicPlayer.Pause();
+    public void UnpauseMusic() => musicPlayer.UnPause();
 
     public void SwitchToChill()
     {
