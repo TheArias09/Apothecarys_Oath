@@ -116,7 +116,7 @@ PrefabInstance:
     - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[1].time
-      value: 1
+      value: 1.0000567
       objectReference: {fileID: 0}
     - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
@@ -126,22 +126,22 @@ PrefabInstance:
     - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[1].value
-      value: 0.9610863
+      value: 0.9034503
       objectReference: {fileID: 0}
     - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[0].inSlope
-      value: 0.46036625
+      value: 0.40279746
       objectReference: {fileID: 0}
     - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[1].inSlope
-      value: 0.46036625
+      value: 0.40279746
       objectReference: {fileID: 0}
     - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[0].outSlope
-      value: 0.46036625
+      value: 0.40279746
       objectReference: {fileID: 0}
     - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
@@ -151,7 +151,7 @@ PrefabInstance:
     - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: fillCoefficientToAngleThreshold.m_Curve.Array.data[1].outSlope
-      value: 0.46036625
+      value: 0.40279746
       objectReference: {fileID: 0}
     - target: {fileID: 1699042132820929040, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
