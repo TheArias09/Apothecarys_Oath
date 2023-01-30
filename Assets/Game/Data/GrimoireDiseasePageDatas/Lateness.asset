@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lateness
   m_EditorClassIdentifier: 
   disease: {fileID: 11400000, guid: b3828090a7d5d49cea02c2150c79ff0d, type: 2}
-  curePotion: {fileID: 11400000, guid: 712f687ebeaa3423aa21f509bec54676, type: 2}
+  curePotion: {fileID: 11400000, guid: 8e6e653e811ca4a23a0774873ba542fc, type: 2}
   isFrontCover: 0
   isBackCover: 0
   coverSprite: {fileID: 0}

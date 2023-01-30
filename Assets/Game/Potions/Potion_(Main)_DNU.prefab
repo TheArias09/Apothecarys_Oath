@@ -5420,7 +5420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94b66fef0c3b0a4299425be84e9d235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 0.4
+  strength: 0.05
   frequency: 0.5
 --- !u!114 &-2579553934737380625
 MonoBehaviour:
