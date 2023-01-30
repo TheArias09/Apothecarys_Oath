@@ -244,6 +244,8 @@ public class GameManager : MonoBehaviour
         scoreDisplay.ResetErrors();
         gameStarted = restart;
 
+        foreach (Transform child in clientsParent) child.gameObject.SetActive(false);
+
         if (restart) OnGameStart?.Invoke();
         else OnGameStop?.Invoke();
     }
