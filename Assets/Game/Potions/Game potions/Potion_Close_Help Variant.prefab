@@ -330,6 +330,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d448e9bb9c7f65a449aac21a483a43eb,
         type: 2}
+    - target: {fileID: 3758141935981145100, guid: 783af8953a7083a4782f0d8138d89e4b,
+        type: 3}
+      propertyPath: ingredients.Array.data[0].cures
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3769387622868989361, guid: 783af8953a7083a4782f0d8138d89e4b,
         type: 3}
       propertyPath: m_RootOrder

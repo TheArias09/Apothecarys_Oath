@@ -420,6 +420,11 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 3318193849181367758, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
+      propertyPath: ingredients.Array.data[0].cures
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318193849181367758, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
       propertyPath: ingredients.Array.data[0].quality
       value: 1
       objectReference: {fileID: 0}
@@ -551,6 +556,9 @@ MonoBehaviour:
   OnPour: {fileID: 11400000, guid: 06590a8723af44a4996d7ff93c53ace9, type: 2}
   triggerQuantity: 0.1
   respawner: {fileID: 5960413853171235821}
+  serializedPotionToSpawn: {fileID: 0}
+  ingredients: []
+  bodyToDeactivate: {fileID: 0}
 --- !u!114 &6224036783801704706
 MonoBehaviour:
   m_ObjectHideFlags: 0

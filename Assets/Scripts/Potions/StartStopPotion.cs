@@ -1,3 +1,4 @@
+using Recipients;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,10 +10,27 @@ public class StartStopPotion : MonoBehaviour
     [SerializeField] GameAction OnPour;
     [SerializeField] private float triggerQuantity;
     [SerializeField] Respawner respawner;
-    //[SerializeField] GameObject potionToSpawn;
+    [SerializeField] Flowing serializedPotionToSpawn;
 
     private IngredientWrapper ingredientWrapper;
+
+    [SerializeField] List<Ingredient> ingredients;
+
     private Vector3 initialPosition;
+
+    private bool hasAlreadyTriggered = false;
+
+    private bool isReadyToTrigger = false;
+
+    [SerializeField] Rigidbody bodyToDeactivate;
+
+    private IEnumerator Start()
+    {
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        isReadyToTrigger = true;
+    }
 
     private void Awake()
     {
@@ -22,6 +40,9 @@ public class StartStopPotion : MonoBehaviour
 
     void Update()
     {
+        if (hasAlreadyTriggered) return;
+        if (!isReadyToTrigger) return;
+
         if (ingredientWrapper.Ingredients.Count == 0) return;
 
         Ingredient ing = ingredientWrapper.Ingredients[0];
@@ -32,6 +53,7 @@ public class StartStopPotion : MonoBehaviour
     public void Trigger()
     {
         OnPour.Raise();
+        hasAlreadyTriggered = true;
     }
 
     public void ReplaceWith(GameObject potionToSpawn)
@@ -41,6 +63,31 @@ public class StartStopPotion : MonoBehaviour
             Instantiate(potionToSpawn, initialPosition, Quaternion.identity, transform.parent);
         }
 
-        DestroyImmediate(gameObject);
+        Destroy(gameObject);
+    }
+
+    public void ReplaceWithSafe(GameObject potionToSpawn)
+    {
+        StartCoroutine(ReplaceCoroutine(potionToSpawn));
+    }
+
+    private IEnumerator ReplaceCoroutine(GameObject potionToSpawn)
+    {
+        if(bodyToDeactivate)
+        {
+            bodyToDeactivate.useGravity = false;
+        }
+
+        yield return new WaitForEndOfFrame();
+        if (potionToSpawn != null)
+        {
+            var instance = Instantiate(potionToSpawn, initialPosition, Quaternion.identity, transform.parent);
+            var wrapper = instance.GetComponent<IngredientWrapper>();
+            wrapper.Empty();
+            wrapper.Ingredients = ingredients;
+            wrapper.CallOnQuantityUpdated();
+        }
+
+        Destroy(gameObject);
     }
 }

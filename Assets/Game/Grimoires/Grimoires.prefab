@@ -1374,7 +1374,7 @@ PrefabInstance:
       objectReference: {fileID: 2522949486456826840}
     - target: {fileID: 1472643645, guid: 5e1f67abbe690d54faaf9f29fe2bfb72, type: 3}
       propertyPath: grimoirePageDatas.Array.size
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1472643645, guid: 5e1f67abbe690d54faaf9f29fe2bfb72, type: 3}
       propertyPath: grimoirePageDatas.Array.data[0]
@@ -1430,6 +1430,11 @@ PrefabInstance:
       propertyPath: grimoirePageDatas.Array.data[10]
       value: 
       objectReference: {fileID: 11400000, guid: f6dc79afba6c8aa41bd7c2926a1f1748,
+        type: 2}
+    - target: {fileID: 1472643645, guid: 5e1f67abbe690d54faaf9f29fe2bfb72, type: 3}
+      propertyPath: grimoirePageDatas.Array.data[11]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4ea19e60b58048f4fab4da6fc059b3fc,
         type: 2}
     - target: {fileID: 1731369198362099100, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,
         type: 3}

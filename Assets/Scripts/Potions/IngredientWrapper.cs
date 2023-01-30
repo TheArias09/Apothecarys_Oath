@@ -22,7 +22,7 @@ public class IngredientWrapper : MonoBehaviour
     private static readonly float minQuantity = 0.001f;
 
     public float RecipientQuantity { get => recipientQuantity; set => recipientQuantity = value; }
-    public List<Ingredient> Ingredients { get => ingredients; }
+    public List<Ingredient> Ingredients { get => ingredients; set => ingredients = value; }
 
     public event Action OnQuantityUpdated;
 
