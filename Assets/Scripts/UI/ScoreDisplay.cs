@@ -28,7 +28,7 @@ public class ScoreDisplay : MonoBehaviour
     {
         for (int i = 0; i < icons.childCount; i++)
         {
-            icons.GetChild(0).GetComponent<Image>().sprite = normalSprite;
+            icons.GetChild(i).GetComponent<Image>().sprite = normalSprite;
         }
     }
 }
