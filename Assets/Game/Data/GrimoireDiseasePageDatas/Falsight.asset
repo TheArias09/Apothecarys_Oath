@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a21b436af6b00e44796c8e00d01eee0c, type: 3}
+  m_Name: Falsight
+  m_EditorClassIdentifier: 
+  disease: {fileID: 11400000, guid: b00a2b8017291435d8ddfa7a395d9281, type: 2}
+  curePotion: {fileID: 11400000, guid: d5f1cf8cafeed437f90b9471add2be29, type: 2}
+  isFrontCover: 0
+  isBackCover: 0
+  coverSprite: {fileID: 0}
+  coverTitle: 
+  isTutorialPage: 0
+  tutorialDescription: 
