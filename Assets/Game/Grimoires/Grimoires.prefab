@@ -1361,6 +1361,10 @@ PrefabInstance:
       propertyPath: middlePageFront
       value: 
       objectReference: {fileID: 2522949486456826840}
+    - target: {fileID: 1472643645, guid: 5e1f67abbe690d54faaf9f29fe2bfb72, type: 3}
+      propertyPath: grimoirePageDatas.Array.size
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 1731369198362099100, guid: 5e1f67abbe690d54faaf9f29fe2bfb72,
         type: 3}
       propertyPath: m_UseGravity
