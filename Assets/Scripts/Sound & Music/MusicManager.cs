@@ -24,17 +24,6 @@ public class MusicManager : MonoBehaviour
         musicPlayer.Play();
     }
 
-    /* For debug purposes
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A)) SwitchToChill();
-        else if (Input.GetKeyDown(KeyCode.Z)) SwitchToDay();
-        else if (Input.GetKeyDown(KeyCode.E)) SwitchToVictory();
-        else if (Input.GetKeyDown(KeyCode.R)) SwitchToLastChance();
-        else if (Input.GetKeyDown(KeyCode.T)) SwitchToGameOver();
-    }
-    */
-
     public void PauseMusic() => musicPlayer.Pause();
     public void UnpauseMusic() => musicPlayer.UnPause();
 

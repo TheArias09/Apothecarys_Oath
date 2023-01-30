@@ -8,7 +8,11 @@ public class ScoreDisplay : MonoBehaviour
 {
     [SerializeField] private TextMeshPro board;
     [SerializeField] private Transform icons;
+
+    [Header("Icons")]
+    [SerializeField] private Sprite normalSprite;
     [SerializeField] private Sprite errorSprite;
+
 
     public void UpdateScore(int score)
     {
@@ -18,5 +22,13 @@ public class ScoreDisplay : MonoBehaviour
     public void UpdateErrors(int errors)
     {
         icons.GetChild(errors - 1).GetComponent<Image>().sprite = errorSprite;
+    }
+
+    public void ResetErrors()
+    {
+        for (int i = 0; i < icons.childCount; i++)
+        {
+            icons.GetChild(0).GetComponent<Image>().sprite = normalSprite;
+        }
     }
 }

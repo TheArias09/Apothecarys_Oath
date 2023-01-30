@@ -517,7 +517,7 @@ PrefabInstance:
         type: 3}
       propertyPath: movementTrackerGrabbable
       value: 
-      objectReference: {fileID: 6200931245946145090}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02055f7bc04734d408dc84367fa3e62e, type: 3}
 --- !u!54 &3758141935981145096 stripped
@@ -553,7 +553,8 @@ MonoBehaviour:
   OnPour: {fileID: 11400000, guid: 425ae0375992cd2459c9ff47df1c3987, type: 2}
   triggerQuantity: 0.1
   respawner: {fileID: 4677363442462413412}
-  potionToSpawn: {fileID: 0}
+  potionToSpawn: {fileID: 3772459091480951761, guid: 7dbd6867708398541bd6e36db8ce0872,
+    type: 3}
 --- !u!114 &4264377200675005772 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2379327684039861390, guid: 02055f7bc04734d408dc84367fa3e62e,
@@ -576,17 +577,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8565167f76f23de4c9cb5b74dadf3eb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6200931245946145090 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5486843988471007360, guid: 02055f7bc04734d408dc84367fa3e62e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1885615799531520450}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3772459091480951761}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9a7676b01585ce43908639a27765dfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

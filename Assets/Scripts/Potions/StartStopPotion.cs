@@ -7,16 +7,12 @@ using UnityEngine.Events;
 public class StartStopPotion : MonoBehaviour
 {
     [SerializeField] GameAction OnPour;
-
     [SerializeField] private float triggerQuantity;
+    [SerializeField] Respawner respawner;
+    [SerializeField] GameObject potionToSpawn;
 
     private IngredientWrapper ingredientWrapper;
-
-    [SerializeField] Respawner respawner;
-
     private Vector3 initialPosition;
-
-    [SerializeField] GameObject potionToSpawn;
 
     private void Awake()
     {
@@ -30,10 +26,7 @@ public class StartStopPotion : MonoBehaviour
 
         Ingredient ing = ingredientWrapper.Ingredients[0];
 
-        if (ing.Quantity <= triggerQuantity)
-        {
-            Trigger();
-        }
+        if (ing.Quantity <= triggerQuantity) Trigger();
     }
 
     public void Trigger()
@@ -44,6 +37,16 @@ public class StartStopPotion : MonoBehaviour
         }
 
         OnPour.Raise();
+
+        DestroyImmediate(gameObject);
+    }
+
+    public void Respawn()
+    {
+        if (potionToSpawn != null)
+        {
+            Instantiate(potionToSpawn, initialPosition, Quaternion.identity, transform.parent);
+        }
 
         DestroyImmediate(gameObject);
     }

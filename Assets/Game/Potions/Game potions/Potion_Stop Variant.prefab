@@ -522,7 +522,7 @@ PrefabInstance:
         type: 3}
       propertyPath: movementTrackerGrabbable
       value: 
-      objectReference: {fileID: 4922666974707048651}
+      objectReference: {fileID: 0}
     - target: {fileID: 8445051621534879995, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: m_IsActive
@@ -548,10 +548,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5667491523afacd4cab9f31c3633a610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnPour: {fileID: 11400000, guid: 28d2ac89ad47cb14b87c7c23f2115470, type: 2}
+  OnPour: {fileID: 11400000, guid: 06590a8723af44a4996d7ff93c53ace9, type: 2}
   triggerQuantity: 0.1
   respawner: {fileID: 5960413853171235821}
-  potionToSpawn: {fileID: 0}
+  potionToSpawn: {fileID: 2739461925558702680, guid: 38ba0b49b63ca1e4f9bee8cd319074a8,
+    type: 3}
 --- !u!4 &2743113867454602296 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3342941435504424051, guid: 02055f7bc04734d408dc84367fa3e62e,
@@ -574,18 +575,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4922666974707048651 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5486843988471007360, guid: 02055f7bc04734d408dc84367fa3e62e,
-    type: 3}
-  m_PrefabInstance: {fileID: 609670406881192011}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2739461925558702680}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9a7676b01585ce43908639a27765dfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &5960413853171235821 stripped

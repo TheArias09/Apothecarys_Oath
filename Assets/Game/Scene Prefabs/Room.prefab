@@ -8236,7 +8236,7 @@ PrefabInstance:
     - target: {fileID: 2739461925558702680, guid: 38ba0b49b63ca1e4f9bee8cd319074a8,
         type: 3}
       propertyPath: m_Name
-      value: Potion_Stop
+      value: Potion_Quit
       objectReference: {fileID: 0}
     - target: {fileID: 2743113867454602296, guid: 38ba0b49b63ca1e4f9bee8cd319074a8,
         type: 3}
@@ -10446,6 +10446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   board: {fileID: 3286610675717748517}
   icons: {fileID: 8557267134934424549}
+  normalSprite: {fileID: 21300000, guid: ed45d6ddeb7d3b748bbe0f573146ba90, type: 3}
   errorSprite: {fileID: 21300000, guid: acf43aa3f81e9e141993cf9b18eb5e88, type: 3}
 --- !u!4 &8557267134791363720 stripped
 Transform:

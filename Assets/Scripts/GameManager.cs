@@ -35,10 +35,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string[] rankTitles;
 
     [Header("Events")]
-    [SerializeField] UnityEvent OnGameStart;
-    [SerializeField] UnityEvent OnDefeat;
-    [SerializeField] UnityEvent OnOneChanceLeft;
-    [SerializeField] UnityEvent OnVictory;
+    [SerializeField] private UnityEvent OnGameStart;
+    [SerializeField] private UnityEvent OnDefeat;
+    [SerializeField] private UnityEvent OnOneChanceLeft;
+    [SerializeField] private UnityEvent OnVictory;
+    [SerializeField] private UnityEvent OnGameStop;
 
     private float timer = 0;
     private int phase = 0;
@@ -219,6 +220,30 @@ public class GameManager : MonoBehaviour
         }
 
         foreach (Transform child in clientsParent) child.gameObject.SetActive(false);
+    }
+
+    public void ResetGame(bool restart)
+    {
+        timer = 0;
+        phase = 0;
+        score = 0;
+        errors = 0;
+        currentClients = 0;
+        clientNumber = 0;
+        clientsHealed = 0;
+        lastDisease = -1;
+
+        maxTickets = clientsParent.childCount;
+        maxClients = progressionParameters.totalClients;
+
+        timeBetweenClients = progressionParameters.timeBetweenClients[0];
+        clientStayTime = progressionParameters.clientStayTime[0];
+
+        scoreDisplay.ResetErrors();
+        gameStarted = restart;
+
+        if (restart) OnGameStart?.Invoke();
+        else OnGameStop?.Invoke();
     }
 
     public void QuitGame() => Application.Quit();
