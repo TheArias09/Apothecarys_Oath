@@ -577,6 +577,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 779825450459483154, guid: c1d713d9bf161b44190cbf7a7ee866c2,
         type: 3}
+      propertyPath: gameActionRegistrations.Array.data[5].unityEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 779825450459483154, guid: c1d713d9bf161b44190cbf7a7ee866c2,
+        type: 3}
+      propertyPath: gameActionRegistrations.Array.data[5].unityEvent.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 779825450459483154, guid: c1d713d9bf161b44190cbf7a7ee866c2,
+        type: 3}
       propertyPath: gameActionRegistrations.Array.data[6].unityEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 6
       objectReference: {fileID: 0}
@@ -602,6 +612,11 @@ PrefabInstance:
       objectReference: {fileID: 8557267134333359845}
     - target: {fileID: 779825450459483154, guid: c1d713d9bf161b44190cbf7a7ee866c2,
         type: 3}
+      propertyPath: gameActionRegistrations.Array.data[5].unityEvent.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 46514628}
+    - target: {fileID: 779825450459483154, guid: c1d713d9bf161b44190cbf7a7ee866c2,
+        type: 3}
       propertyPath: gameActionRegistrations.Array.data[6].unityEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1863415462}
@@ -615,6 +630,11 @@ PrefabInstance:
       propertyPath: gameActionRegistrations.Array.data[6].unityEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
       objectReference: {fileID: 1863415462}
+    - target: {fileID: 779825450459483154, guid: c1d713d9bf161b44190cbf7a7ee866c2,
+        type: 3}
+      propertyPath: gameActionRegistrations.Array.data[5].unityEvent.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 779825450459483154, guid: c1d713d9bf161b44190cbf7a7ee866c2,
         type: 3}
       propertyPath: gameActionRegistrations.Array.data[6].unityEvent.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
@@ -642,6 +662,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 779825450459483154, guid: c1d713d9bf161b44190cbf7a7ee866c2,
         type: 3}
+      propertyPath: gameActionRegistrations.Array.data[5].unityEvent.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: SwitchToChill
+      objectReference: {fileID: 0}
+    - target: {fileID: 779825450459483154, guid: c1d713d9bf161b44190cbf7a7ee866c2,
+        type: 3}
       propertyPath: gameActionRegistrations.Array.data[6].unityEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
@@ -654,6 +679,11 @@ PrefabInstance:
         type: 3}
       propertyPath: gameActionRegistrations.Array.data[6].unityEvent.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 779825450459483154, guid: c1d713d9bf161b44190cbf7a7ee866c2,
+        type: 3}
+      propertyPath: gameActionRegistrations.Array.data[5].unityEvent.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
+      value: MusicManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 779825450459483154, guid: c1d713d9bf161b44190cbf7a7ee866c2,
         type: 3}
@@ -679,6 +709,11 @@ PrefabInstance:
         type: 3}
       propertyPath: gameActionRegistrations.Array.data[6].unityEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 779825450459483154, guid: c1d713d9bf161b44190cbf7a7ee866c2,
+        type: 3}
+      propertyPath: gameActionRegistrations.Array.data[5].unityEvent.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 779825450459483154, guid: c1d713d9bf161b44190cbf7a7ee866c2,
         type: 3}
