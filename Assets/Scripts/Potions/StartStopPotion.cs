@@ -22,8 +22,6 @@ public class StartStopPotion : MonoBehaviour
 
     private bool isReadyToTrigger = false;
 
-    [SerializeField] Rigidbody bodyToDeactivate;
-
     private IEnumerator Start()
     {
         yield return new WaitForEndOfFrame();
@@ -68,25 +66,11 @@ public class StartStopPotion : MonoBehaviour
 
     public void ReplaceWithSafe(GameObject potionToSpawn)
     {
-        StartCoroutine(ReplaceCoroutine(potionToSpawn));
-    }
-
-    private IEnumerator ReplaceCoroutine(GameObject potionToSpawn)
-    {
-        if(bodyToDeactivate)
-        {
-            bodyToDeactivate.useGravity = false;
-        }
-
-        yield return new WaitForEndOfFrame();
-        if (potionToSpawn != null)
-        {
-            var instance = Instantiate(potionToSpawn, initialPosition, Quaternion.identity, transform.parent);
-            var wrapper = instance.GetComponent<IngredientWrapper>();
-            wrapper.Empty();
-            wrapper.Ingredients = ingredients;
-            wrapper.CallOnQuantityUpdated();
-        }
+        var instance = Instantiate(potionToSpawn, initialPosition, Quaternion.identity, transform.parent);
+        var wrapper = instance.GetComponent<IngredientWrapper>();
+        wrapper.Empty();
+        wrapper.Ingredients = ingredients;
+        wrapper.CallOnQuantityUpdated();
 
         Destroy(gameObject);
     }
