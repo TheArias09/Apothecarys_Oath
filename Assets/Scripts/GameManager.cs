@@ -224,6 +224,8 @@ public class GameManager : MonoBehaviour
 
     public void ResetGame(bool restart)
     {
+
+        Debug.Log("Reset");
         timer = 0;
         phase = 0;
         score = 0;

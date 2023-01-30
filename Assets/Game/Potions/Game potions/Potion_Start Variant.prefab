@@ -553,8 +553,36 @@ MonoBehaviour:
   OnPour: {fileID: 11400000, guid: 425ae0375992cd2459c9ff47df1c3987, type: 2}
   triggerQuantity: 0.1
   respawner: {fileID: 4677363442462413412}
-  potionToSpawn: {fileID: 3772459091480951761, guid: 7dbd6867708398541bd6e36db8ce0872,
-    type: 3}
+--- !u!114 &1831302905944627606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3772459091480951761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e48970bc0937924f81399444e9e25b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameActionRegistrations:
+  - gameAction: {fileID: 11400000, guid: 425ae0375992cd2459c9ff47df1c3987, type: 2}
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2098943028}
+          m_TargetAssemblyTypeName: StartStopPotion, Assembly-CSharp
+          m_MethodName: ReplaceWith
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 3772459091480951761, guid: 7dbd6867708398541bd6e36db8ce0872,
+              type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &4264377200675005772 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2379327684039861390, guid: 02055f7bc04734d408dc84367fa3e62e,

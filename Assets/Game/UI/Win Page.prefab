@@ -542,6 +542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6946813374472407962}
   - component: {fileID: 1168152047124437611}
+  - component: {fileID: 5794089330242998280}
   m_Layer: 0
   m_Name: Win Page
   m_TagString: Untagged
@@ -581,6 +582,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 8243740022385774011}
   rankText: {fileID: 4429431449596962942}
+--- !u!114 &5794089330242998280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5555875163785693981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e48970bc0937924f81399444e9e25b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameActionRegistrations:
+  - gameAction: {fileID: 11400000, guid: a5b67c5ea97e86f4cba8a6680d2162e0, type: 2}
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5555875163785693981}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5603219197663841567
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class StartStopPotion : MonoBehaviour
     [SerializeField] GameAction OnPour;
     [SerializeField] private float triggerQuantity;
     [SerializeField] Respawner respawner;
-    [SerializeField] GameObject potionToSpawn;
+    //[SerializeField] GameObject potionToSpawn;
 
     private IngredientWrapper ingredientWrapper;
     private Vector3 initialPosition;
@@ -31,17 +31,10 @@ public class StartStopPotion : MonoBehaviour
 
     public void Trigger()
     {
-        if (potionToSpawn != null)
-        {
-            Instantiate(potionToSpawn, initialPosition, Quaternion.identity, transform.parent);
-        }
-
         OnPour.Raise();
-
-        DestroyImmediate(gameObject);
     }
 
-    public void Respawn()
+    public void ReplaceWith(GameObject potionToSpawn)
     {
         if (potionToSpawn != null)
         {

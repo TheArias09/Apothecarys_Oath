@@ -214,6 +214,18 @@ PrefabInstance:
       propertyPath: OnHelpEvent.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1831302905944627606, guid: 783af8953a7083a4782f0d8138d89e4b,
+        type: 3}
+      propertyPath: gameActionRegistrations.Array.data[0].gameAction
+      value: 
+      objectReference: {fileID: 11400000, guid: 694efc4d6d79f804ba3eb7eb50703fb9,
+        type: 2}
+    - target: {fileID: 1831302905944627606, guid: 783af8953a7083a4782f0d8138d89e4b,
+        type: 3}
+      propertyPath: gameActionRegistrations.Array.data[0].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 7002418094978445526, guid: b4e81eec4bc9d354595c4454bbd7e053,
+        type: 3}
     - target: {fileID: 2428260233184008642, guid: 783af8953a7083a4782f0d8138d89e4b,
         type: 3}
       propertyPath: m_IsActive
