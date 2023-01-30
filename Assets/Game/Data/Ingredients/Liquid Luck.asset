@@ -18,7 +18,7 @@ MonoBehaviour:
   viscosity: 1
   symbol: {fileID: 21300000, guid: 10ae895f58fa5445fae58b4d1ab24995, type: 3}
   description: "Far less cumbersome than all the lucky charms you might have\u2026"
-  continuousEffect: {fileID: 115565717285145849, guid: 9dc1f461353165a4c97634993d03370f,
+  continuousEffect: {fileID: 4049155452101452450, guid: a4d945a6e3706a7408606ddaa2e54c2b,
     type: 3}
   mixEffect: {fileID: 3735780546860147373, guid: 461e5281f6162b949a157ae26f1c3456,
     type: 3}
