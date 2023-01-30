@@ -513,15 +513,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Potion_Start Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 4294714705833039872, guid: 02055f7bc04734d408dc84367fa3e62e,
+    - target: {fileID: 3893898843986714803, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294714705833039872, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6539887261967586214, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: movementTrackerGrabbable
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539887261967586214, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: OnDespawnStart.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445051621534879995, guid: 02055f7bc04734d408dc84367fa3e62e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02055f7bc04734d408dc84367fa3e62e, type: 3}
@@ -560,7 +575,6 @@ MonoBehaviour:
   respawner: {fileID: 4677363442462413412}
   serializedPotionToSpawn: {fileID: 0}
   ingredients: []
-  bodyToDeactivate: {fileID: 0}
 --- !u!114 &1831302905944627606
 MonoBehaviour:
   m_ObjectHideFlags: 0

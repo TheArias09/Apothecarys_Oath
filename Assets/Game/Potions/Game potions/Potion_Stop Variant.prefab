@@ -521,7 +521,7 @@ PrefabInstance:
     - target: {fileID: 4294714705833039872, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6539887261967586214, guid: 02055f7bc04734d408dc84367fa3e62e,
         type: 3}
@@ -558,7 +558,6 @@ MonoBehaviour:
   respawner: {fileID: 5960413853171235821}
   serializedPotionToSpawn: {fileID: 0}
   ingredients: []
-  bodyToDeactivate: {fileID: 0}
 --- !u!114 &6224036783801704706
 MonoBehaviour:
   m_ObjectHideFlags: 0
