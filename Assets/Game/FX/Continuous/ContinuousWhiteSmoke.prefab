@@ -74,6 +74,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 397561539142118863, guid: d225d0ab20907c34684142c7b0a6f5c8,
         type: 3}
+      propertyPath: NoiseModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 397561539142118863, guid: d225d0ab20907c34684142c7b0a6f5c8,
+        type: 3}
+      propertyPath: NoiseModule.separateAxes
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 397561539142118863, guid: d225d0ab20907c34684142c7b0a6f5c8,
+        type: 3}
+      propertyPath: NoiseModule.strength.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 397561539142118863, guid: d225d0ab20907c34684142c7b0a6f5c8,
+        type: 3}
+      propertyPath: NoiseModule.strengthY.scalar
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 397561539142118863, guid: d225d0ab20907c34684142c7b0a6f5c8,
+        type: 3}
+      propertyPath: NoiseModule.strengthZ.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 397561539142118863, guid: d225d0ab20907c34684142c7b0a6f5c8,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 397561539142118863, guid: d225d0ab20907c34684142c7b0a6f5c8,
+        type: 3}
+      propertyPath: InitialModule.startSizeY.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 397561539142118863, guid: d225d0ab20907c34684142c7b0a6f5c8,
+        type: 3}
+      propertyPath: InitialModule.startSizeZ.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 397561539142118863, guid: d225d0ab20907c34684142c7b0a6f5c8,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 397561539142118863, guid: d225d0ab20907c34684142c7b0a6f5c8,
+        type: 3}
+      propertyPath: InitialModule.startSizeZ.minScalar
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 397561539142118863, guid: d225d0ab20907c34684142c7b0a6f5c8,
+        type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
       value: 1
       objectReference: {fileID: 0}
