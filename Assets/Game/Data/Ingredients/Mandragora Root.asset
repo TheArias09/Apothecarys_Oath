@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 875f619f2023d2f47b6bdce6459e35f7, type: 3}
-  m_Name: Root
+  m_Name: Mandragora Root
   m_EditorClassIdentifier: 
-  ingredientName: Wonder sirup
-  color: {r: 0.23494123, g: 0.6320754, b: 0.5452443, a: 1}
+  ingredientName: Mandragora Root
+  color: {r: 0.4245283, g: 0.3961016, b: 0.33041117, a: 1}
   fresnelPower: 2.3
   viscosity: 0.75
   symbol: {fileID: 21300000, guid: 36331bc6a913140658d2d709453da1cf, type: 3}
   description: 
   continuousEffect: {fileID: 0}
   mixEffect: {fileID: 0}
-  deliveryEffect: {fileID: 0}
