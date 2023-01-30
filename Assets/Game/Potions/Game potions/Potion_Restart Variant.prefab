@@ -575,8 +575,7 @@ MonoBehaviour:
           m_MethodName: ReplaceWith
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 3772459091480951761, guid: 783af8953a7083a4782f0d8138d89e4b,
-              type: 3}
+            m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
