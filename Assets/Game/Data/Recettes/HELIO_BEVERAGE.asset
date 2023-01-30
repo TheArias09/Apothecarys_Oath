@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0416a5a902d56bd4ab8cb5b09b603502, type: 3}
+  m_Name: HELIO_BEVERAGE
+  m_EditorClassIdentifier: 
+  recipe:
+    result: {fileID: 11400000, guid: d5f1cf8cafeed437f90b9471add2be29, type: 2}
+    cures: 10
+    ingredients:
+    - data: {fileID: 11400000, guid: 982fc2afe38cf6c45bc73f1fe00e64fe, type: 2}
+      quantity: 2
+      quality: 0
+      cures: 0
+    - data: {fileID: 11400000, guid: e3960cd0881bb1f4d8d7c73519648236, type: 2}
+      quantity: 2
+      quality: 0
+      cures: 0
+    - data: {fileID: 11400000, guid: b75ec2979a06b624eaf73325cd5a9f97, type: 2}
+      quantity: 1
+      quality: 0
+      cures: 0
+    - data: {fileID: 11400000, guid: 59c3aec5fb4444c479e5d6848b2c37c7, type: 2}
+      quantity: 2
+      quality: 0
+      cures: 0
+    states: 
+    recipeInstructions:
+    - Put two protuding eyes in a recipient. (new sight, new eyes !)
+    - Cut a mandrake root in four and put all the pieces in the recipient.
+    - Then, add 10cl of Salamender blood.
+    - Finally, pour 20cl of Ghoul tears (no need to cry).

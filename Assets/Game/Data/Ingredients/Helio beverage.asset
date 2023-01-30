@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 875f619f2023d2f47b6bdce6459e35f7, type: 3}
+  m_Name: Helio beverage
+  m_EditorClassIdentifier: 
+  ingredientName: Helio beverage
+  color: {r: 1, g: 0.97909135, b: 0.41037738, a: 1}
+  fresnelPower: 1.2
+  viscosity: 1
+  symbol: {fileID: 21300000, guid: f7fbf3ef5bf0e49628d9825376cfc016, type: 3}
+  description: Cures any vision issue. If you're able to read this, you probably
+    don't need it :P
+  continuousEffect: {fileID: 397561539142118835, guid: d225d0ab20907c34684142c7b0a6f5c8,
+    type: 3}
+  mixEffect: {fileID: 3735780546860147373, guid: 461e5281f6162b949a157ae26f1c3456,
+    type: 3}

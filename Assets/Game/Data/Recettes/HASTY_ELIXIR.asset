@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0416a5a902d56bd4ab8cb5b09b603502, type: 3}
+  m_Name: HASTY_ELIXIR
+  m_EditorClassIdentifier: 
+  recipe:
+    result: {fileID: 11400000, guid: 8e6e653e811ca4a23a0774873ba542fc, type: 2}
+    cures: 12
+    ingredients:
+    - data: {fileID: 11400000, guid: e3960cd0881bb1f4d8d7c73519648236, type: 2}
+      quantity: 3
+      quality: 0
+      cures: 0
+    - data: {fileID: 11400000, guid: 5fdc87b45b2a3414eb9884c62c43a04e, type: 2}
+      quantity: 1.5
+      quality: 0
+      cures: 0
+    - data: {fileID: 11400000, guid: b5e29ac798fd1424ab0b0ccee02e22f1, type: 2}
+      quantity: 3
+      quality: 0
+      cures: 0
+    states: 
+    recipeInstructions:
+    - Put 6 quarters of mandrake root in a recipient.
+    - 'Extract and add 15cl of "lemon" juice. '
+    - Finally, add 30cl of lucky bulb juice !

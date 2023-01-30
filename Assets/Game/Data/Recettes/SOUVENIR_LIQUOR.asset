@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0416a5a902d56bd4ab8cb5b09b603502, type: 3}
+  m_Name: SOUVENIR_LIQUOR
+  m_EditorClassIdentifier: 
+  recipe:
+    result: {fileID: 11400000, guid: 712f687ebeaa3423aa21f509bec54676, type: 2}
+    cures: 11
+    ingredients:
+    - data: {fileID: 11400000, guid: fbf61fa49ae3bdf4194b663eaab3c3e0, type: 2}
+      quantity: 3
+      quality: 0
+      cures: 0
+    - data: {fileID: 11400000, guid: 56d69206c3eddd242be4782b6e72847b, type: 2}
+      quantity: 2
+      quality: 0
+      cures: 0
+    - data: {fileID: 11400000, guid: ede11d33b7d297e468c52db9c6cff76a, type: 2}
+      quantity: 0.5
+      quality: 0
+      cures: 0
+    - data: {fileID: 11400000, guid: 982fc2afe38cf6c45bc73f1fe00e64fe, type: 2}
+      quantity: 1
+      quality: 0
+      cures: 0
+    states: 
+    recipeInstructions:
+    - Prepare and pour 30cl of Stimulant.
+    - Then add 20cl of primal sand.
+    - Put an hydroxyl cristal in the mix.
+    - Finally add a protuding eye (your ancester is watching you !).

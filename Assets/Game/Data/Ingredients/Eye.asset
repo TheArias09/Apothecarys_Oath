@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875f619f2023d2f47b6bdce6459e35f7, type: 3}
   m_Name: Eye
   m_EditorClassIdentifier: 
-  ingredientName: Portruding eye
+  ingredientName: Protruding eye
   color: {r: 1, g: 1, b: 1, a: 1}
   fresnelPower: 6
   viscosity: 0.7
   symbol: {fileID: 21300000, guid: c7b27c1264a614af4858733ec3b6e316, type: 3}
   description: 
+  continuousEffect: {fileID: 0}
+  mixEffect: {fileID: 0}

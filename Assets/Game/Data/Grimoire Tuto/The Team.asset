@@ -16,7 +16,7 @@ MonoBehaviour:
   curePotion: {fileID: 0}
   isFrontCover: 0
   isBackCover: 0
-  coverSprite: {fileID: 21300000, guid: cc142948e82c840e8982283950d481be, type: 3}
+  coverSprite: {fileID: 21300000, guid: b1257862e293c49e1a9e17673716273d, type: 3}
   coverTitle: A game made by...
   isTutorialPage: 1
   tutorialDescription: "Cl\xE9mence MEREDITH SMITH, Thomas BESSIERES, Adrien MAGINOT
