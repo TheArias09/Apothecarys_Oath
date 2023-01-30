@@ -6247,8 +6247,10 @@ MonoBehaviour:
   board: {fileID: 386734356996850889}
   outlineMaterial: {fileID: 2100000, guid: ca2d033ea28116146bcf6f593bf0e2c5, type: 2}
   boardMaterial: {fileID: 2100000, guid: 2f3a07d5154510d4c89e667f69a25656, type: 2}
+  hurryTimeCoefficient: 0.25
   winSound: {fileID: 8300000, guid: 45e914c9ecb2aad4ca588b664345f599, type: 3}
   timeoutSound: {fileID: 8300000, guid: 6480bf4beee6572409adc6782cbbbc8f, type: 3}
+  hurryUpSound: {fileID: 8300000, guid: c7a4b77c0c83740019f519d5dc11f581, type: 3}
   tintTime: 2
   scoreDisplayTime: 3
   errorMaterial: {fileID: 2100000, guid: 5684899dead9766419b192fc8000023a, type: 2}

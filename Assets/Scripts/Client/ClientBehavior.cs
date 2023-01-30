@@ -24,8 +24,10 @@ public class ClientBehavior : MonoBehaviour
     [SerializeField] private Material boardMaterial;
 
     [Header("Sounds")]
+    [SerializeField, Range(0,1)] private float hurryTimeCoefficient = 0.25f;
     [SerializeField] private AudioClip winSound;
     [SerializeField] private AudioClip timeoutSound;
+    [SerializeField] private AudioClip hurryUpSound;
 
     [Header("Animation")]
     [SerializeField] private float tintTime;
@@ -45,6 +47,7 @@ public class ClientBehavior : MonoBehaviour
 
     private float birthTime;
     private float stayTime;
+    private bool hurryFlag = false;
     private int position;
 
     private bool hasLeft = false;
@@ -73,6 +76,12 @@ public class ClientBehavior : MonoBehaviour
         if (lifeTime > stayTime) Leave(false);
 
         uiTimer.fillAmount = 1 - (lifeTime / stayTime);
+        if (uiTimer.fillAmount <= hurryTimeCoefficient && !hurryFlag)
+        {
+            hurryFlag = true;
+            audioSource.clip = hurryUpSound;
+            audioSource.Play();
+        }
         uiTimer.color = timerColor.Evaluate(uiTimer.fillAmount);
     }
 
@@ -101,6 +110,7 @@ public class ClientBehavior : MonoBehaviour
         this.position = position;
 
         hasLeft = false;
+        hurryFlag = false;
     }
 
     public void UpdateDisplay()
