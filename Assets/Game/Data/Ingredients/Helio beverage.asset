@@ -19,7 +19,7 @@ MonoBehaviour:
   symbol: {fileID: 21300000, guid: f7fbf3ef5bf0e49628d9825376cfc016, type: 3}
   description: Cures any vision issue. If you're able to read this, you probably
     don't need it :P
-  continuousEffect: {fileID: 397561539142118835, guid: d225d0ab20907c34684142c7b0a6f5c8,
+  continuousEffect: {fileID: 115565717285145849, guid: 9dc1f461353165a4c97634993d03370f,
     type: 3}
   mixEffect: {fileID: 3735780546860147373, guid: 461e5281f6162b949a157ae26f1c3456,
     type: 3}
