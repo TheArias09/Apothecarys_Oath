@@ -24,7 +24,7 @@ MonoBehaviour:
       quantity: 1.5
       quality: 0
       cures: 0
-    - data: {fileID: 11400000, guid: b5e29ac798fd1424ab0b0ccee02e22f1, type: 2}
+    - data: {fileID: 11400000, guid: ddf10fa9dbc3fbd448510821d3101037, type: 2}
       quantity: 3
       quality: 0
       cures: 0
