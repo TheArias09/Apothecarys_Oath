@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: takesColor
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 397561539142118833, guid: d225d0ab20907c34684142c7b0a6f5c8,
+        type: 3}
+      propertyPath: effectBaseScale
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 397561539142118835, guid: d225d0ab20907c34684142c7b0a6f5c8,
         type: 3}
       propertyPath: m_Name

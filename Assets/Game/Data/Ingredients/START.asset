@@ -20,4 +20,3 @@ MonoBehaviour:
   description: 
   continuousEffect: {fileID: 0}
   mixEffect: {fileID: 0}
-  deliveryEffect: {fileID: 0}
